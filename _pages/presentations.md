@@ -29,6 +29,10 @@ of the University of Oxford
 - **2021/03/02**: "*Scaling Graph Neural Networks to Twitter-scale*" with [Zak Jost](https://www.youtube.com/channel/UCxw9_WYmLqlj5PyXu2AWU_g) \[[Video](https://www.youtube.com/watch?v=ZSMEXchR3w8)\]
 - **2021/01/14**: "*My journey, my research at Twitter and Imperial College, and my work at LeadTheFuture*" with [The Smarter Podcast](https://italia-podcast.it/podcast/smarter-podcast) \[[Video](https://www.youtube.com/watch?v=x4CeQ3S_DCA) (in Italian)\]
 
+### Panels
+##### 2022
+- **2022/12/03**: [Temporal Graph Learning Workshop](https://sites.google.com/view/tglworkshop2022/home#h.q1t0lweplm6e)
+
 ### Workshop Program Committee
 - **2022/02**: [NeurReps Workshop – Symmetry and Geometry in Neural Representations](https://www.neurreps.org/) (at Neurips 2022)
 - **2022/02**: [GCLR 22 – 2nd Workshop on Graphs and more complex structures for learning and reasoning](https://sites.google.com/view/gclr2022/home?authuser=0) (at AAAI 2022)

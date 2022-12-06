@@ -6,10 +6,13 @@ years: [2022, 2021, 2020, 2019]
 nav: true
 sort_menu: 1
 ---
-My research interests span a wide array of topics around graph neural networks. Rather than focusing on a particular niche, I like to constantly look for new interesting and impactful problems. Some of the problems in graph neural networks that have caught my interest so far are:
-- **Scalability**: How do we scale GNNs to billion nodes graphs?
-- **Dynamic Graphs**: How do we learn on graphs that change over time? 
-- **Missing Node Features**: How do apply GNNs to graphs where we only observe only a subset of features for each node (which is almost always the case in practice)?
+My research focuses on bridging the gap between purely academic research and real-world applications of Graph Neural Networks. In the real-world, graphs are often extremely large, dynamic, and have nodes with partially missing features. This raises the following research questions:
+
+- **Scalability**: How can we scale GNNs to handle billion-node graphs and beyond?
+- **Dynamic Graphs**: How can we learn from graphs that change over time, such as social networks or financial networks?
+- **Missing Node Features**: How can we apply GNNs to graphs where we only observe a subset of features for each node?
+
+Through my research, I aim to develop solutions to these challenges and enable GNNs to be used more widely and effectively in real-world applications.
 
 ### Publications
 Below is a list of my publications in reversed chronological order. 

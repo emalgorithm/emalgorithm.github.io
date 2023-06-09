@@ -17,6 +17,7 @@ profile:
 
 news: true
 social: true
+selected_papers: true
 ---
 
 I am a final-year PhD student at Imperial College London, working on Graph Neural Networks and supervised by [Prof. Michael Bronstein](https://en.wikipedia.org/wiki/Michael_Bronstein). Until November 2022, I also worked as a Machine Learning Researcher at Twitter. Prior to that, I was at Fabula AI, which was then [acquired by Twitter](https://techcrunch.com/2019/06/03/twitter-bags-deep-learning-talent-behind-london-startup-fabula-ai/) in June 2019. Previously, I completed an MPhil at the University of Cambridge and a BEng at Imperial College London, both in Computer Science. 

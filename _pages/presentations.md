@@ -7,6 +7,13 @@ nav: true
 sort_menu: 2
 ---
 ### Talks
+##### 2023
+- **2022/09/14**: "*Edge Directionality Improves Learning on Heterophilic Graphs*" at the [Temporal Graph Reading Group
+](https://www.cs.mcgill.ca/~shuang43/rg.html) \[[Slides](../assets/pdf/dirgnn_tgl_reading_group.pdf)\]\[[Video](https://www.youtube.com/watch?v=VjpUSR1NZvI)\]
+- **2022/09/07**: "*Edge Directionality Improves Learning on Heterophilic Graphs*" at the [Explainability and Applicability of Graph Neural Networks Workshop
+](https://www.gain-group.de/html/events.html) in Kassel
+  
+### Talks
 ##### 2022
 - **2022/09/28**: "*Improving Machine Learning at Twitter using Graphs*" at [Privacy Week](https://privacyweek.it/) \[[Video](https://privacyweek.it/event/potenziare-lapprendimento-automatico-su-twitter-utilizzando-i-grafi/) (in Italian)]
 - **2022/09/09**: "*Learning on Graphs with Missing Node Features*" at the [Tiger Graph](https://www.tigergraph.com/) Reading Group

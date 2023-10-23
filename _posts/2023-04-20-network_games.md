@@ -23,9 +23,6 @@ toc:
   - name: Experimental Results
 ---
 
-
-<!-- # Direction Improves Graph Learning  -->
-
 <figure style="text-align: center;">
   <img src="/assets/img/blog/network_games/cover.png" />
   <figcaption>Illustration based on based on Shutterstock.</figcaption>
@@ -37,9 +34,7 @@ toc:
 
 [Game theory](https://en.wikipedia.org/wiki/Game_theory) is a mathematical framework for modelling and analysing situations where multiple decision makers interact with each other, and where the outcome of each decision depends on the actions of all players involved. In _network games_<d-footnote>See <a href="https://web.stanford.edu/~jacksonm/GamesNetworks.pdf">Games on Networks</a><d-cite key="jackson2014games"></d-cite> for an overview.</d-footnote> the players are connected in a network (graph), and the outcome of the game depends not only on the players' strategies but also on the structure of the network. Each player tries to maximise their _utility function_, which in the case of network games depends both on their own actions and the actions of their neighbours. 
 
-_Equilibrium actions_ refer to a set of strategies where no player has an incentive to 
-
-change their strategy, given the strategies of the other players. In other words, at equilibrium, each player's strategy is optimal, given the strategies of the other players. In network games, the equilibrium actions depend on the graph structure, along with other parameters dependent on the game. 
+_Equilibrium actions_ refer to a set of strategies where no player has an incentive to change their strategy, given the strategies of the other players. In other words, at equilibrium, each player's strategy is optimal, given the strategies of the other players. In network games, the equilibrium actions depend on the graph structure, along with other parameters dependent on the game. 
 
 Consider, for example, a scenario where individuals on a social network can decide how much time to spend on the platform. In such a case, their behaviours may be influenced by their friends on the network, which creates a strategic interdependence between players. For instance, if Joe's friends spend a lot of time on the platform, Joe might perceive a greater benefit from using the platform himself. 
 
@@ -85,7 +80,7 @@ $$\mathbf{x}^* = \mathcal{F} (\mathbf{A}) \mathcal{H} (\mathbf{b})$$
 
 where the function $$\mathcal{F} (\mathbf{A})$$ accounts for the influence from the actions of one’s neighbours in the network and encodes the specific utility function of the game, and conversely, $$\mathcal{H} (\mathbf{b})$$ is only affected by one’s characteristics, such as the marginal benefit of an individual player. 
 
-In the paper we further show <d-footnote>Section 3.3 in our paper<d-cite key="rossi2022networkgames"></d-cite>.</d-footnote> that the players’ actions contain information about the spectrum of the graph, confirming that it is possible to reconstruct the graph structure from only the actions and justifying our approach outlined below.
+In the paper we further show<d-footnote>Section 3.3 in our paper<d-cite key="rossi2022networkgames"></d-cite>.</d-footnote> that the players’ actions contain information about the spectrum of the graph, confirming that it is possible to reconstruct the graph structure from only the actions and justifying our approach outlined below.
 
 
 ## Machine Learning Approach
@@ -137,7 +132,7 @@ The resulting model is permutation-invariant over the set of games. This means t
 
 ## Experimental Results
 
-We conducted experiments to validate the effectiveness of our approach in learning the network structure from players' actions, using both synthetic and real-world datasets. As baselines, we used DeepGraph [9] (the only machine learning approach we are aware of), optimisation methods specific to the game type, and simple correlation and anticorrelation of actions between nodes.
+We conducted experiments to validate the effectiveness of our approach in learning the network structure from players' actions, using both synthetic and real-world datasets. As baselines, we used DeepGraph<d-cite key="belilovsky2017learning"></d-cite> (the only machine learning approach we are aware of), optimisation methods specific to the game type, and simple correlation and anticorrelation of actions between nodes.
 
 On synthetic datasets, our model, NuGgeT, consistently outperformed previous methods across a range of different games and graphs types.
 

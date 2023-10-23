@@ -65,3 +65,63 @@
 "Restelli":
   - firstname: ["Marcello"]
     url: https://scholar.google.com/citations?user=xdgxRiEAAAAJ&hl=en
+
+"Giovanni":
+  - firstname: ["Francesco Di"]
+    url: https://francescodgv.github.io/
+
+"Charpentier":
+  - firstname: ["Bertrand"]
+    url: https://sharpenb.github.io/
+
+"Günnemann":
+  - firstname: ["Stephan"]
+    url: https://scholar.google.de/citations?user=npqoAWwAAAAJ&hl=en
+
+"Hammerla":
+  - firstname: ["Nils"]
+    url: https://scholar.google.com/citations?user=Qk_ziKsAAAAJ&hl=en
+
+"Shirobokov":
+  - firstname: ["Sergey"]
+    url: https://scholar.google.com/citations?user=GSMIOIEAAAAJ&hl=en
+
+"Markovich":
+  - firstname: ["Thomas"]
+    url: https://scholar.google.com/citations?user=GSMIOIEAAAAJ&hl=en
+
+"Hansmire":
+  - firstname: ["Max"]
+    url: https://github.com/hansmire
+
+"Huang":
+  - firstname: ["Shenyang"]
+    url: https://www.cs.mcgill.ca/~shuang43/
+
+"Poursafaei":
+  - firstname: ["Farimah"]
+    url: https://fpour.github.io/
+
+"Danovitch":
+  - firstname: ["Jacob"]
+    url: https://jacobdanovitch.me/
+
+"Fey":
+  - firstname: ["Matthias"]
+    url: https://rusty1s.github.io/#/
+
+"Hu":
+  - firstname: ["Weihua"]
+    url: https://weihua916.github.io/
+
+"Leskovec":
+  - firstname: ["Jure"]
+    url: https://cs.stanford.edu/people/jure/
+
+"Rabusseau":
+  - firstname: ["Guillaume"]
+    url: https://scholar.google.fr/citations?user=t2i4V4EAAAAJ&hl=en
+
+"Rabbany":
+  - firstname: ["Reihaneh"]
+    url: https://www.reirab.com/

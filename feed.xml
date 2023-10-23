@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://emalgorithm.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://emalgorithm.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-10-23T16:29:19+00:00</updated><id>https://emalgorithm.github.io/feed.xml</id><title type="html">Emanuele Rossi</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">GNNs on Directed Graphs</title><link href="https://emalgorithm.github.io/blog/2023/dirgnn/" rel="alternate" type="text/html" title="GNNs on Directed Graphs" /><published>2023-06-08T00:00:00+00:00</published><updated>2023-06-08T00:00:00+00:00</updated><id>https://emalgorithm.github.io/blog/2023/dirgnn</id><content type="html" xml:base="https://emalgorithm.github.io/blog/2023/dirgnn/"><![CDATA[<figure style="text-align: center;">
+  <img src="/assets/img/blog/dir_gnn/cover.png" />
+  <figcaption>Illustration based on based on Shutterstock.</figcaption>
+</figure>
+
+<p><em>This post is based on the paper <a href="https://arxiv.org/abs/2305.10498">Edge Directionality Improves Learning on Heterophilic Graphs</a><d-cite key="dirgnn_rossi_2023"></d-cite>, a collaboration with <a href="https://twitter.com/Bertrand_Charp">Bertrand Charpentier</a>, <a href="https://twitter.com/Francesco_dgv">Francesco Di Giovanni</a>, <a href="https://twitter.com/ffabffrasca">Fabrizio Frasca</a> and <a href="https://twitter.com/guennemann">Stephan Günnemann</a></em><d-footnote>The title of this post, “Direction improves graph learning,” is an intentional play on a previous work J. Gasteiger, S. Weissenberger, and S. Günnemann, <a href="https://proceedings.neurips.cc/paper_files/paper/2019/file/23c894276a2c5a16470e6a31f4618d73-Paper.pdf" target="_blank">Diffusion improves graph learning,</a> (2019), NeurIPS by one of the authors, which showed that a diffusion-based graph rewiring scheme (DIGL) improves the performance of GNNs in homophilic settings. Here, we focus on the heterophilic case.</d-footnote>. <em>The code for the paper can be found <a href="https://github.com/emalgorithm/directed-graph-neural-network">here</a>. The same blog post has been also published on <a href="https://towardsdatascience.com/direction-improves-graph-learning-170e797e94fe">Medium</a>.</em></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Many interesting real-world graphs, encountered in modelling social, transportation, financial transactions, or academic citation networks, are <em>directed</em>. The direction of the edges often conveys crucial insights, otherwise lost if one considers only the connectivity pattern of the graph.</p>
+
+<p>In contrast, most Graph Neural Networks (GNNs) that have made remarkable strides in a variety of graph ML applications, operate under the assumption that the input graph is <em>undirected</em>. Making the input graph undirected has become so prevalent over the years that PyTorch-Geometric, one of the most popular GNN libraries, includes a general utility function that automatically makes graphs undirected when loading datasets<d-footnote><a href="https://github.com/pyg-team/pytorch_geometric/blob/66b17806b1f4a2008e8be766064d9ef9a883ff03/torch_geometric/io/npz.py#L26">This Pytorch-Geometric routine</a> is used to load datasets stored in an npz format. It makes some directed datasets, such as <a href="https://github.com/pyg-team/pytorch_geometric/blob/6fa2ee7bfef32311df73ca78266c18c4449a7382/torch_geometric/datasets/citation_full.py#L99">Cora-ML</a> and <a href="https://github.com/pyg-team/pytorch_geometric/blob/6fa2ee7bfef32311df73ca78266c18c4449a7382/torch_geometric/datasets/citation_full.py#L99">Citeseer-Full</a>, automatically undirected without any option to get the directed version instead.
+</d-footnote>.</p>
+
+<p>This inclination towards undirected graphs comes, in our opinion, from two “primordial sins” of GNNs. First, undirected graphs have symmetric Laplacians with orthogonal eigenvectors offering a natural generalisation of the Fourier transform, on which early spectral GNNs relied to function properly. Second, early datasets used to benchmark GNNs were predominantly <em>homophilic</em> graphs<d-footnote>Homophily refers to the assumption that nodes with similar properties (typically labels and sometimes features) tend to be connected. In homophilic graphs, the neighbourhood of a node looks like the node itself, often allowing to predict the property of a node from a simple aggregation (e.g., averaging) of the neighbours. Graphs violating this assumption are called heterophilic.</d-footnote>, such as Cora and Pubmed<d-footnote>The Cora dataset was introduced by <a href="https://people.cs.umass.edu/~mccallum/data.html">Andrew McCallum</a> in the late 1990s and is for GNNs what MNIST Digits datasets is for CNNs.
+</d-footnote>. On such datasets disregarding the direction by converting the directed graph into an undirected one appears to be advantageous, early evidence whereof has helped cement the “undirected” paradigm.</p>
+
+<p>We challenge this <em>status quo</em> in our recent paper<d-cite key="dirgnn_rossi_2023"></d-cite>, showing that directionality can bring extensive gains in heterophilic settings.</p>
+
+<figure style="text-align: center;">
+  <img src="/assets/img/blog/dir_gnn/aggregated_results.png" style="width: 500px;" />
+  <figcaption>Direction is largely useless in homophilic graphs (left), an observation that has led to the majority of current GNNs disregarding this information. In contrast, in the heterophilic setting (right), the use of direction can bring large gains (10% to 15%) if used correctly, like proposed in our Dir-GNN framework.</figcaption>
+</figure>
+
+<h2 id="measuring-homophily-in-directed-graphs">Measuring Homophily in Directed Graphs</h2>
+
+<p>The homophily of a graph is typically measured as the fraction of neighbours with the same label as the node itself, averaged across all nodes (<em>node homophily</em>). For directed graphs, we propose the <em>weighted node homophily</em>:</p>
+
+\[h(\mathbf{S}) = \frac{1}{|V|} \sum_{i \in V} \frac{\sum\limits_{j \in \mathcal{N}(i)} s_{ij}  I[y_i = y_j]}{\sum\limits_{j \in \mathcal{N}(i)} s_{ij}}\]
+
+<p>where \(I\) denotes the indicator function, \(n\) is the number of nodes, and \(\mathbf{S}\) is a general adjacency matrix, which can be picked up as \(\mathbf{A}\) or \(\mathbf{A}^\top\), or as higher-order matrices, such as \(\mathbf{AA}^\top\) or \(\mathbf{A}^2\) for directed graphs, or as the symmetric matrix \(\mathbf{A}_u = \frac{\mathbf{A} + \mathbf{A}^\top}{2}\) and its higher-order counterpart \(\mathbf{A}_u^2\), if the graph is considered as undirected.</p>
+
+<p>Even when 1-hop neighbours are heterophilic, the situation may change when going to farther nodes. Compared to the undirected case, there are four distinct 2-hops in directed graphs represented by the matrices \(\mathbf{A}^2\), \((\mathbf{A}^\top)^2\), \(\mathbf{AA}^\top\) and \(\mathbf{A}^\top\mathbf{A}\), which can manifest different levels of (weighted) homophily.</p>
+
+<p>Given that GNNs operate through multiple-hop aggregations, they can leverage the homophily of any 2-hop (or even further hops) of a graph. To have a comprehensive metric capturing the maximum homophily a GNN can leverage in principle, we introduce the notion of <em>effective homophily</em>, defined as the maximum weighted node homophily at any hop of the graph.</p>
+
+<p>Empirically, we observe that the effective homophily of directed homophilic datasets is left unchanged when making the graph undirected. In heterophilic graphs, in contrast, this conversion decreases the effective homophily by almost 30% on average.</p>
+
+<figure style="text-align: center;">
+  <img src="/assets/img/blog/dir_gnn/homophily_table.png" />
+  <figcaption>We compare the weighted homophily of both directed and undirected diffusion matrices for a variety of homophilic and heterophilic datasets. We mark in bold the highest entry for each row. The effective homophily of the directed graph ($h_d^{(\text{eff})}$) is much larger than that of the undirected graph ($h_u^{(\text{eff})}$) for heterophilic datasets, suggesting a potential gain from using directionality effectively.</figcaption>
+</figure>
+
+<h2 id="a-toy-example">A Toy Example</h2>
+
+<p>In particular, we observe that \(\mathbf{AA}^\top\) and \(\mathbf{A}^\top\mathbf{A}\) consistently appear to be the “most homophilic matrices” for heterophilic graphs.</p>
+
+<p>To provide an intuition about why this is the case, imagine we are trying to predict the publication year of a specific academic paper, for instance, the Kipf &amp; Welling 2016 GCN paper, given the directed citation network and the year of publication of the other papers. Consider two different kinds of 2-hop relationships: one where we look at papers cited by the papers that our paper of interest <em>v</em> cites (represented by the \(v^{th}\) row of the matrix \(\mathbf{A}^2\)), and another where we look at papers that cite the same sources as our paper (represented by \((\mathbf{AA}^\top)_v\)).</p>
+
+<p>In the first case (\(\mathbf{A}^2\)), let us start from the GCN paper and follow its citations twice. We land on a paper by Frasconi <em>et al.</em> from 1998. This older paper does not give us much helpful information about when our GCN paper was published because it is too far in the past.</p>
+
+<figure style="text-align: center;">
+  <img src="/assets/img/blog/dir_gnn/diagram.svg" style="width: 400px;" />
+  <figcaption>Simple example of a directed citation network with publication year as the node labels.</figcaption>
+</figure>
+
+<p>Simple example of a directed citation network with publication year as the node labels.</p>
+
+<p>In the second case (\(\mathbf{AA}^\top\)), we begin with the GCN paper, follow a citation, and then come back to a paper that cites the same source, like the 2017 GAT paper. This paper is much closer to our GCN paper’s publication year and thus provides a better clue. More generally, nodes that share more references, like in our second example, will have higher scores in \(\mathbf{AA}^\top\), and thus contribute more to our final prediction.</p>
+
+<p>Now, consider an undirected 2-hop relationship (\(\mathbf{A}_u^2\)), which is just the average of the four possible 2-hop matrices. This includes our first type (like Frasconi et al.), which was not very helpful. Therefore, the highly useful \(\mathbf{AA}^\top\) matrix gets diluted by less informative matrices, like \(\mathbf{A}^2\), leading to a less homophilic operator, resulting in a less reliable predictor overall.</p>
+
+<p>While we have used a citation network in our example, this intuition applies more broadly. In a social network, for instance, an influencer’s characteristics are more likely to resemble those of users who share many followers with them, represented by \(\mathbf{A}^\top\mathbf{A}\). Similarly, in a transaction network, two accounts sending money to the same set of accounts (captured by \(\mathbf{AA}^\top\)), are likely to exhibit similar behaviour.</p>
+
+<h2 id="dir-gnn-directed-graph-neural-network">Dir-GNN: Directed Graph Neural Network</h2>
+
+<p>In order to leverage directionality effectively, we propose the <em>Directed Graph Neural Network</em> (Dir-GNN) framework, which extends MPNNs to directed graphs by performing separate aggregations over the in- and out-neighbours of a node:</p>
+
+\[\begin{align}
+    \mathbf{m}^{(k)}_{i,\leftarrow} &amp;= \mathrm{AGG}^{(k)}_{\leftarrow}\left(\{\{ \mathbf{x}_{j}^{(k-1)} : \, (j,i)\in E\}\} \right) \notag \\  
+    \mathbf{m}^{(k)}_{i,\rightarrow} &amp;= \mathrm{AGG}^{(k)}_{\rightarrow}\left(\{\{ \mathbf{x}_{j}^{(k-1)} : \, (i,j)\in E \}\}  \right) \notag \\
+    \mathbf{x}_{i}^{(k)} &amp;= \mathrm{COM}^{(k)}\left(\mathbf{x}_{i}^{(k-1)},\mathbf{m}^{(k)}_{i,\leftarrow}, \mathbf{m}^{(k)}_{i,\rightarrow}\right) \notag
+\end{align}\]
+
+<p>where the aggregation maps \(\mathrm{AGG}^{(k)}_{\leftarrow}\) and \(\mathrm{AGG}^{(k)}_{\rightarrow}\), as well as the combination maps \(\mathrm{COM}\) are learnable (usually a small neural network). Importantly, \(\mathrm{AGG}^{(k)}_{\leftarrow}\) and \(\mathrm{AGG}^{(k)}_{\rightarrow}\) can have independent set of parameters to allow for different aggregations over in- and out-edges<d-footnote>It’s important to note that we are not the first to deal with directed graphs and to propose separate aggregation of in- and out-neighbours. However, our contribution is providing a more comprehensive treatment of directed graphs, which includes 1) a general framework (Dir-GNN), 2) overarching empirical evidence for the benefit of directionality, particularly in the context of heterophily, and 3) a starting point to analyse the expressiveness of models for directed graphs. See the “Related Work” section of <a href="https://arxiv.org/abs/2305.10498">our paper</a> for a more thorough overview of previous works.</d-footnote>.</p>
+
+<p>Interestingly, this procedural pattern resembles the one implemented by a natural extension of the 1-WL algorithm to directed graphs<d-footnote>While several extensions of the WL test on directed graphs have been proposed, the variant discussed by <a href="https://www.lics.rwth-aachen.de/global/show_document.asp?id=aaaaaaaaabbtcqu">Color Refinement and its Applications</a><d-cite key="Grohe2021ColorRA"></d-cite>, treats in- and out-neighbours separately.
+</d-footnote>. This connection is instrumental: in terms of discriminative power, we show that Dir-GNN is strictly more powerful than standard MPNNs, which either convert the graph to undirected or propagate messages only in the direction of the edges.</p>
+
+<p>Our framework is also flexible: it is easy to define directed counterparts  of specific architectures such as GCN, GraphSAGE or GAT. For example, we can define Dir-GCN as:</p>
+
+\[\mathbf{X}^{(k)} =  \sigma\left(\mathbf{A}_{\rightarrow}\mathbf{X}^{(k-1)}\mathbf{W}^{(k)}_{\rightarrow} + \mathbf{A}^\top_{\rightarrow}\mathbf{X}^{(k-1)}\mathbf{W}^{(k)}_{\leftarrow}\right)\]
+
+<p>where \(\mathbf{A}_{\rightarrow} = \mathbf{D}_{\rightarrow}^{-1/2}\mathbf{A}\mathbf{D}_{\leftarrow}^{-1/2}\) and \(\mathbf{D}_{\leftarrow}\) and \(\mathbf{D}_{\rightarrow}\) represent the diagonal in- and out-degree matrices, respectively.</p>
+
+<p>We also show that Dir-GNN, when iteratively applied over multiple layers, leads to more homophilic aggregations. Unlike other models, Dir-GNN can access the four 2-hop matrices \(\mathbf{A}^2\), \((\mathbf{A}^\top)^2\), \(\mathbf{AA}^\top\) and \(\mathbf{A}^\top\mathbf{A}\) and learn to weight them differently. In contrast, a model operating on the undirected graph has only access to \(\mathbf{A}_u^2\), while models propagating information exclusively along in- or out-edges are limited to \((\mathbf{A}^\top)^2\) and \(\mathbf{A}^2\) respectively.</p>
+
+<p>Dir-GNN, thanks to its separate aggregation of the two directions, is therefore the only model operating on \(\mathbf{AA}^\top\) and \(\mathbf{A}^\top\mathbf{A}\), which we have shown to be the most homophilic matrices and therefore the most reliable predictor.</p>
+
+<h2 id="experimental-results">Experimental Results</h2>
+
+<p>We first compared GraphSAGE and its directed extension (Dir-SAGE) on a synthetic task requiring directionality information. The results confirm that only Dir-SAGE(in+out), with access to both in- and out-edges is able to almost perfectly solve the task. The model acting on the undirected version of the graph performs no better than chance, while the models acting on only in- or out-edges perform similarly obtaining around 75% accuracy.</p>
+
+<figure style="text-align: center;"> 
+  <img src="/assets/img/blog/dir_gnn/synthetic_accuracy.png" style="width: 350px;" />
+  <figcaption>When examining the performance of GraphSAGE and its Dir- extensions on a synthetic task requiring directionality information, only Dir-SAGE(in+out), which utilises information from both directions, is capable of solving the task.</figcaption>
+</figure>
+
+<p>We further validated our approach with an ablation study comparing GCN, GraphSAGE and GAT base models with their Dir- extensions.On heterophilic datasets, using directionality brings exceptionally large gains (10% to 20% absolute) in accuracy across all three base GNN models. Moreover, Dir-GNN beats state-of-the-art models designed especially for heterophilic graphs. These results suggest that, when present, using the edge direction can significantly improve learning on heterophilic graphs. In contrast, discarding it is so harmful that not even complex architectures can make up for this loss of information.</p>
+
+<figure style="text-align: center;">
+  <img src="/assets/img/blog/dir_gnn/full_results.png" />
+  <figcaption>New state-of-the-art results on heterophilic graphs, by using direction wisely.</figcaption>
+</figure>
+
+<p>On the other hand, on homophilic datasets using directionality leaves the performance unchanged (or even slightly hurts). This is in line with our findings that using directionality as in our framework generally increases the effective homophily of heterophilic datasets, while leaving it almost unchanged for homophilic datasets.</p>
+
+<p>In conclusion, our paper showcases the benefit of leveraging directionality in GNNs, particularly in the case of heterophilic graphs. We hope that these findings will instigate a paradigm shift, elevating direction as a first-class citizen in GNNs. In short, <strong>think twice before making your graph undirected!</strong></p>
+
+<p><em>We would like to thank Christopher Morris and Chaitanya K. Joshi for insightful discussions and pointing us to relevant papers.</em></p>]]></content><author><name>Emanuele Rossi</name></author><summary type="html"><![CDATA[Graph Neural Networks (GNNs) are extremely effective at modelling relational data. However, current GNN models frequently assume the input graph to be undirected, overlooking the inherent directionality of many real-world graphs, such as social, transportation, transaction, and citation networks. In this blog post, we explore the impact of edge directionality in the context of heterophilic graphs and outline Dir-GNN, a novel message passing scheme for directed graphs allowing a separate aggregation of incoming and outgoing edges. Despite its simplicity, this scheme achieves significant performance improvement on multiple real-world heterophilic directed graphs.]]></summary></entry><entry><title type="html">Learning Network Games</title><link href="https://emalgorithm.github.io/blog/2023/network_games/" rel="alternate" type="text/html" title="Learning Network Games" /><published>2023-04-20T00:00:00+00:00</published><updated>2023-04-20T00:00:00+00:00</updated><id>https://emalgorithm.github.io/blog/2023/network_games</id><content type="html" xml:base="https://emalgorithm.github.io/blog/2023/network_games/"><![CDATA[<figure style="text-align: center;">
+  <img src="/assets/img/blog/network_games/cover.png" />
+  <figcaption>Illustration based on based on Shutterstock.</figcaption>
+</figure>
+
+<p><em>This post is based on the paper <a href="https://arxiv.org/abs/2206.08119">Learning to infer the structure of network games</a><d-cite key="rossi2022networkgames"></d-cite>, a collaboration with <a href="https://scholar.google.it/citations?user=NUdNFucAAAAJ&amp;hl=it">Federico Monti</a>, <a href="https://yleng.github.io/www/">Yan Leng</a>, and <a href="https://eng.ox.ac.uk/people/xiaowen-dong/">Xiaowen Dong</a>. The same blog post has been also published on <a href="https://towardsdatascience.com/learning-network-games-29970aee44bb">Medium</a>.</em></p>
+
+<h2 id="network-games">Network Games</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Game_theory">Game theory</a> is a mathematical framework for modelling and analysing situations where multiple decision makers interact with each other, and where the outcome of each decision depends on the actions of all players involved. In <em>network games</em><d-footnote>See <a href="https://web.stanford.edu/~jacksonm/GamesNetworks.pdf">Games on Networks</a><d-cite key="jackson2014games"></d-cite> for an overview.</d-footnote> the players are connected in a network (graph), and the outcome of the game depends not only on the players’ strategies but also on the structure of the network. Each player tries to maximise their <em>utility function</em>, which in the case of network games depends both on their own actions and the actions of their neighbours.</p>
+
+<p><em>Equilibrium actions</em> refer to a set of strategies where no player has an incentive to change their strategy, given the strategies of the other players. In other words, at equilibrium, each player’s strategy is optimal, given the strategies of the other players. In network games, the equilibrium actions depend on the graph structure, along with other parameters dependent on the game.</p>
+
+<p>Consider, for example, a scenario where individuals on a social network can decide how much time to spend on the platform. In such a case, their behaviours may be influenced by their friends on the network, which creates a strategic interdependence between players. For instance, if Joe’s friends spend a lot of time on the platform, Joe might perceive a greater benefit from using the platform himself.</p>
+
+<p>In a different setting, Joe is a user of an e-commerce platform deciding whether to buy a book. If his friend has already purchased the book, Joe might be less likely to buy it, as he can borrow it from his friend. These examples illustrate how actions in network games can be affected by the actions of neighbouring players, leading to strategic interdependence and the emergence of equilibrium actions.</p>
+
+<figure style="text-align: center;">
+  <img src="/assets/img/blog/network_games/network_games_examples.png" />
+  <figcaption>Examples of network games. Left: a person is likely to spend more time on a social app if their friends are also spending time on the app. Right: a person has less incentive to buy a book if their friend bought it, because they can borrow it.</figcaption>
+</figure>
+
+<h2 id="inferring-the-network-from-the-actions">Inferring the Network from the Actions</h2>
+
+<p>In the above examples, we assumed to know the friends of Joe, i.e., the network structure of the game. However, in many situations, the underlying network structure is not directly available to us. Instead, we may only observe the equilibrium actions that result from the interactions between agents. In these cases, a crucial question is whether we can reconstruct the network structure based solely on these equilibrium actions. Knowing the network structure can be helpful in predicting behaviour and planning network-based interventions, such as marketing campaigns or information diffusion.</p>
+
+<p>It was previously shown that, under specific assumptions about the mathematical form of the utility function and game types, it is possible to reconstruct the graph governing the network game<d-cite key="leng2020learning"></d-cite>. However, such assumptions can be unrealistic, especially when little is known about the game being played. To address this, in a recent paper<d-cite key="rossi2022networkgames"></d-cite> we developed an approach that does not require assumptions about the form of the utility function and can be applied to a broad range of network games.</p>
+
+<p>We start by studying three common types of network games, <em>Linear Quadratic</em>, <em>Linear Influence</em>, and <em>Barik-Honorio</em><d-cite key="barik2020provable"></d-cite>. The three types of games differ by the form of the utility function, leading to different levels of smoothness of the actions in the graph.</p>
+
+<figure style="text-align: center;">
+  <img src="/assets/img/blog/network_games/network_games_types.png" />
+  <figcaption>Specific instances of three different types of games common in the game theory literature. The colours represent the actions taken by the players, which in this case are continuous values normalised between -1 and 1. </figcaption>
+</figure>
+
+<p>For example, <em>Linear Quadratic</em> games have the following utility function:</p>
+
+\[u_i = b_i x_i -\frac{1}{2} x_i^2 + \beta \sum_{j \in \mathcal{N}_i} a_{ij} x_i x_j\]
+
+<p>where \(x_i\) is the continuous action taken by player $i$, \(b_i\) is the player’s <em>marginal benefit</em>, \(\beta\) is a game parameter representing the strength of dependencies between actions of neighbours in the network, and \(a_{ij}\) is the entry in the adjacency matrix of the graph representing the strength of the connection between \(i\) and \(j\).  The first term represents the marginal benefit for taking a larger action, the second (quadratic) term represents the cost for taking the action, while the third term represents the relation with the neighbours actions<d-footnote>If $\beta$ is positive, the incentive of a player to take a higher action is increasing in the number of their neighbours also taking a higher action, something referred to as a <i>strategic complement relationship</i>. On the other hand, if $\beta$ is negative the incentive of a player to take a higher action is decreasing in the number of their neighbours taking a higher action (<i>strategic substitute relationship</i>).</d-footnote>. Taking as example the aforementioned scenario of time spent on a social platform, the first term of the equation would capture the individual benefit from using the platform, such as staying up-to-date with the news, the second term would represent the cost from doing so, such as having less time to do other more important things, while the third term would capture the interdependence with the friends actions. In particular, \(\beta\) would be positive, as a person has an incentive to spend more time on the app if their friends (neighbours) do so.</p>
+
+<p>The pure-strategy <a href="https://en.wikipedia.org/wiki/Nash_equilibrium">Nash equilibrium</a> of <em>Linear Quadratic</em> games is:</p>
+
+\[\mathbf{x}^* = \big( \mathbf{I} - \beta \mathbf{A} \big)^{-1} \mathbf{b}\]
+
+<p>where \(\mathbf{x}\)* is a vector of dimension \(n\) (equal to the number of players, or nodes of the graph), \(\mathbf{A}\) is the unknown \(n \times n\) adjacency matrix of the graph, \(\mathbf{b}\) is the \(n\)-dimensional vector of marginal benefits of the players.</p>
+
+<p>Similar formulas can be derived for <em>Linear Influence</em> and <em>Barik-Honorio</em> games. A formula for the equilibrium actions \(\mathbf{x}^*\) that generalizes all three games has the form<d-footnote>In this formula, the choice $f(\mathbf{A})=(\mathbf{I} - \beta\mathbf{A})^{-1}$ and $h(\mathbf{b})=\mathbf{b}$ yields a Linear Quadratic game, $f(\mathbf{A})=\mathbf{A}^{-1}$ and $h(\mathbf{b})=\mathbf{b}$ a Linear Influence game, and $f(\mathbf{A})=\mathbf{u}_1$ (the largest eigenvector of $\mathbf{A}$) and $h(\mathbf{b})=1$ a game of the Barik-Honorio type.
+</d-footnote></p>
+
+\[\mathbf{x}^* = \mathcal{F} (\mathbf{A}) \mathcal{H} (\mathbf{b})\]
+
+<p>where the function \(\mathcal{F} (\mathbf{A})\) accounts for the influence from the actions of one’s neighbours in the network and encodes the specific utility function of the game, and conversely, \(\mathcal{H} (\mathbf{b})\) is only affected by one’s characteristics, such as the marginal benefit of an individual player.</p>
+
+<p>In the paper we further show<d-footnote>Section 3.3 in our paper<d-cite key="rossi2022networkgames"></d-cite>.</d-footnote> that the players’ actions contain information about the spectrum of the graph, confirming that it is possible to reconstruct the graph structure from only the actions and justifying our approach outlined below.</p>
+
+<h2 id="machine-learning-approach">Machine Learning Approach</h2>
+
+<p>To tackle the problem of inferring the network structure of a game, we approach it as a machine learning problem. We train a model to map the players’ actions to the network structure of the game, without any prior knowledge of the underlying utility function. To achieve this, we gather a dataset of actions and network pairs (\(\mathbf{x}\), \(\mathbf{A}\)) from games played with the same utility function (although this function is unknown to us). This allows us to avoid making strong assumptions about the utility function and instead train a model that is agnostic to it.</p>
+
+<p>Such an approach is particularly useful in scenarios where social network and decision data exist for a small population, and we aim to learn the mapping from decisions to the network structure of a larger population. For instance, governments, public agencies, and researchers can collect social network data on a small population by asking individuals to nominate their friends, and then use the proposed method to learn the network interactions for a larger population in a cost-effective manner.</p>
+
+<p>Our ML model has an encoder-decoder architecture that is invariant to the permutation of both the players and the games, corresponding to the rows and columns of the \(n \times K\) matrix \(\mathbf{x}\), where \(k\) denotes the number of games. To achieve this, we modify a Transformer model, which is naturally permutation-invariant over the set of nodes but not over the set of games.</p>
+
+<figure style="text-align: center;">
+  <img src="/assets/img/blog/network_games/model.svg" />
+  <figcaption>Diagram representing the encoder-decoder architecture of our model. The $n \times K$ input matrix $\mathbf{x}$ containing the players’ actions is encoded into the $n \times F \times K$ tensor $\mathbf{Z}$, where $\mathbf{z}_{ik}$ is the embedding for node $i$ in game $k$, obtained by attending over the actions of the other players in the same game. $\mathbf{Z}$ is then decoded into the $n \times n$ adjacency matrix $\tilde{\mathbf{A}}$ where the entry $\tilde{\mathbf{a}}_{ij}$ contains the probability of an edge between $i$ and $j$.</figcaption>
+</figure>
+
+<p>Our encoder produces \(K\) vectors for each player as follows:</p>
+
+<p>The scalar action \(\mathbf{x}_{ik}\) of player \(i\) for game \(k\) is first passed through a non-linear transformation resulting in an \(F\)-dimensional vector</p>
+
+\[\mathbf{y}_{ik} = \text{ReLU}(\mathbf{x}_{ik}\mathbf{W} + \mathbf{b})\]
+
+<p>We then calculate the unnormalised attention scores</p>
+
+\[s_{ij} = \sum_{k} \mathbf{y}_{ik}^T \mathbf{W} \mathbf{W}_k \mathbf{y}_{jk}\]
+
+<p>between players \(i\) and \(j\) by first computing per-game scores using a ‘learned dot-product’ with query and key weight matrices \(\mathbf{W}\) and \(\mathbf{W}_k\) as in the original Transformer<d-footnote>See "<a href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a>" blog post for an intuitive explanation of the Transformer and the role of the query and weight matrices.</d-footnote>, and then summing them over the games.</p>
+
+<p>The attention scores</p>
+
+\[\alpha_{ij} = \text{softmax}_{j}(u_{ij})\]
+
+<p>are obtained by taking the softmax over the unnormalised scores over the second dimension.</p>
+
+<p>Finally, the \(F\)-dimension embedding</p>
+
+\[\mathbf{z}_{ik} = \phi\left(\sum_{v} \alpha_{ij}\mathbf{y}_{jk}\right)\]
+
+<p>of node \(i\) for game \(k\) is obtained by aggregating the \(\mathbf{y}_{ik}\) vectors of other nodes weighted by the attention scores, before passing the result through a 2-layer MLP \(\phi\).</p>
+
+<p>The decoder outputs probabilities for each entry of the adjacency matrix by aggregating the \(k\) vectors for players \(i\) and \(j\). This is done by taking the dot product of the two vectors for each game and summing the results before feeding them into a multilayer perceptron (MLP):</p>
+
+\[\hat{a}_{ij} = \psi\left(\sum_{k} \mathbf{z}_{ik} \odot \mathbf{Z}_{jk}\right)\]
+
+<p>where \(\odot\) represents the dot product and \(\psi\) is a 2-layer MLP.</p>
+
+<p>The resulting model is permutation-invariant over the set of games. This means that it produces the same predicted adjacency matrix regardless of the order in which the games are presented. To achieve this, the model computes separate node embeddings for each game and aggregates them through summation, which is a permutation-invariant operation. In practice, this property of the model ensures that we obtain consistent and reliable predictions, regardless of how the input data is ordered.</p>
+
+<h2 id="experimental-results">Experimental Results</h2>
+
+<p>We conducted experiments to validate the effectiveness of our approach in learning the network structure from players’ actions, using both synthetic and real-world datasets. As baselines, we used DeepGraph<d-cite key="belilovsky2017learning"></d-cite> (the only machine learning approach we are aware of), optimisation methods specific to the game type, and simple correlation and anticorrelation of actions between nodes.</p>
+
+<p>On synthetic datasets, our model, NuGgeT, consistently outperformed previous methods across a range of different games and graphs types.</p>
+
+<figure style="text-align: center;">
+  <img src="/assets/img/blog/network_games/linear_quadratic_results.png" />
+  <figcaption>We report the results on <em>Linear Influence</em> games (see the paper for <em>Linear Quadratic</em> and <em>Barik-Honorio</em>) on three different types of synthetic graphs (Watts–Strogatz, Erdős–Rényi and Barabási–Albert) and with varying smoothness of the marginal benefit (a hyperparameter of this type of game). Our method, called NuGgeT, consistently outperforms the baselines.</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+  <img src="/assets/img/blog/network_games/ablation.png" />
+  <figcaption>The performance of our model in learning the mapping depends on the number of available games and training graphs, and we conducted ablations to evaluate both factors. Generally, a higher number of games and graphs are beneficial for our approach. However, we observe that the model performance tends to plateau at around 100 games and 500 graphs in most cases.</figcaption>
+</figure>
+
+<p>We further validated our approach on two real-world datasets: the <em>Indian Villages</em> dataset<d-footnote>The dataset accompanies the paper <a href="https://www.science.org/doi/10.1126/science.1236498">"The Diffusion of Microfinance"</a> <d-cite key="banerjee2013diffusion"></d-cite>. Two authors of the paper (Abhijit Banerjee and Esther Duflo) went on to receive the 2019 Economics Nobel prize.</d-footnote> and the <em>Yelp Ratings</em> dataset<d-footnote><a href="https://www.yelp.com/dataset">Yelp Open dataset</a>.</d-footnote>. The former contains data from a survey of social networks in 75 villages in India. Each village constitutes a social network graph, where nodes are households and edges are self-reported friendships. We consider as actions the number of rooms, number of beds and other decisions families have to make related to their household. The reasoning is that if neighbours adopt a specific facility, villagers tend to gain higher payoff by doing the same, i.e., complying with social norms.</p>
+
+<p>The <em>Yelp Ratings</em> dataset consists of user ratings of businesses and social connectivity between users. We extracted 5000 sub-graphs representing communities from the raw data, where the actions were the average rating of users for 22 categories of businesses.</p>
+
+<p>On both real-world datasets, NuGgeT outperforms previous methods, showcasing the efficacy of our approach in cases where the game utility is not explicitly known. The gain is particularly large on the <em>Indian Villages</em> dataset, where the competing DeepGraph method fails to learn altogether. We conjecture this is due to NuGgeT being more data-efficient thanks to its built-in invariances, as confirmed by the above ablation over the number of training graphs.</p>
+
+<figure style="text-align: center;">
+  <img src="/assets/img/blog/network_games/table_results.png" style="width: 500px;" />
+  <figcaption>The table reports ROC AUC on the test set. NuGgeT outperforms previous methods on both the two real-world datasets we tested on, confirming its efficacy in cases where the game utility function is not explicitly known.</figcaption>
+</figure>
+
+<p>In conclusion, our paper highlights the fruitful connection between game theory and graph machine learning, particularly in the context of network games. By developing a new machine learning approach to infer network structure from observed game outcomes, we show the potential for utilising game theory ideas to enhance machine learning and vice versa. Looking forward, there is ample opportunity to explore further connections between network games and graph neural networks, paving the way for more exciting developments in these fields.</p>]]></content><author><name>Emanuele Rossi</name></author><summary type="html"><![CDATA[Network games are a powerful tool for modelling strategic interactions between individuals or organisations played out on networks, where a player's payoff depends not only on their own actions but also on those of their neighbours. Such games have numerous applications in economics and social sciences, including studying the spread of influence in social networks, the dynamics of financial markets, and the formation of alliances in international relations. The study of network games typically assumes the underlying network structure to be known, which is often wishful thinking. Recently, machine learning approaches have been proposed to tackle this problem by leveraging the observed actions of players to learn the underlying network structure. In this blog post, we outline a novel approach that uses a transformer-like architecture to infer the network structure of a game without explicit knowledge of the utility function associated with the game.]]></summary></entry></feed>

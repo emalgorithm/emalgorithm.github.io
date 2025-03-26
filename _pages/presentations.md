@@ -8,9 +8,9 @@ sort_menu: 2
 ---
 ### Talks
 ##### 2023
-- **2022/09/14**: "*Edge Directionality Improves Learning on Heterophilic Graphs*" at the [Temporal Graph Reading Group
+- **2023/09/14**: "*Edge Directionality Improves Learning on Heterophilic Graphs*" at the [Temporal Graph Reading Group
 ](https://www.cs.mcgill.ca/~shuang43/rg.html) \[[Slides](../assets/pdf/dirgnn_tgl_reading_group.pdf)\]\[[Video](https://www.youtube.com/watch?v=VjpUSR1NZvI)\]
-- **2022/09/07**: "*Edge Directionality Improves Learning on Heterophilic Graphs*" at the [Explainability and Applicability of Graph Neural Networks Workshop
+- **2023/09/07**: "*Edge Directionality Improves Learning on Heterophilic Graphs*" at the [Explainability and Applicability of Graph Neural Networks Workshop
 ](https://www.gain-group.de/html/events.html) in Kassel
   
 ### Talks

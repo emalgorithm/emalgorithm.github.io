@@ -2,6 +2,8 @@
 layout: page
 permalink: /research/
 title: Research
+description: "My research spans from machine learning for biology to graph neural networks"
+keywords: "graph neural networks, directed graphs, temporal graphs, machine learning, feature propagation, biology, drug discovery, generative models"
 years: [2024, 2023, 2022, 2021, 2020, 2019]
 nav: true
 sort_menu: 1

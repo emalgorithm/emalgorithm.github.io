@@ -2,21 +2,13 @@
 layout: page
 permalink: /research/
 title: Research
-years: [2023, 2022, 2021, 2020, 2019]
+description: "My research spans from machine learning for biology to graph neural networks"
+keywords: "graph neural networks, directed graphs, temporal graphs, machine learning, feature propagation, biology, drug discovery, generative models"
+years: [2024, 2023, 2022, 2021, 2020, 2019]
 nav: true
 sort_menu: 1
 ---
-My research focuses on bridging the gap between purely academic research and real-world applications of Graph Neural Networks. In the real-world, graphs are often extremely large, dynamic, directed, and have nodes with partially missing features. This raises the following research questions:
-
-- **Scalability**: How can we scale GNNs to handle billion-node graphs and beyond?
-- **Dynamic Graphs**: How can we learn from graphs that change over time, such as social or transaction networks?
-- **Directionality**: How can we learn from graphs that have directed edges, such as transportation or citation networks?
-- **Missing Node Features**: How can we apply GNNs to graphs where we only observe a subset of features for each node?
-
-Through my research, I aim to develop solutions to these challenges and enable GNNs to be used more widely and effectively in real-world applications.
-
-### Publications
-Below is a list of my publications in reversed chronological order. 
+Below is a list of my publications in reversed chronological order, with links to all the relevant resources such as arXiv, GitHub, slides, etc. An always up-to-date list of my papers is available on [Google Scholar](https://scholar.google.com/citations?user=DHlkBOYAAAAJ).
 
 <div class="publications">
 

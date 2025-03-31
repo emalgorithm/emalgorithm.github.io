@@ -20,7 +20,7 @@ nav_order: 4
 ##### 2022
 - **2022/09/28**: "*Improving Machine Learning at Twitter using Graphs*" at [Privacy Week](https://privacyweek.it/) \[[Video](https://privacyweek.it/event/potenziare-lapprendimento-automatico-su-twitter-utilizzando-i-grafi/) (in Italian)]
 - **2022/09/09**: "*Learning on Graphs with Missing Node Features*" at the [Tiger Graph](https://www.tigergraph.com/) Reading Group
-- **2022/03/01**: "*Learning on Graphs with Missing Node Features*" at the [Learning on Graphs and Geometry Reading Group](https://hannes-stark.com/logag-reading-group) \[[Slides](https://docs.google.com/presentation/d/11dAeJRalTI7K1YAxMNz_yElZ0lVO5Bw7n0LBqSd-OUY/edit#slide=id.g1017b3d77ca_0_0)\]\[[Video](https://www.youtube.com/watch?v=xe5A-xQTBdM)\]
+- **2022/03/01**: "*Learning on Graphs with Missing Node Features*" at the [Learning on Graphs and Geometry Reading Group](https://portal.valencelabs.com/logg) \[[Slides](https://docs.google.com/presentation/d/11dAeJRalTI7K1YAxMNz_yElZ0lVO5Bw7n0LBqSd-OUY/edit#slide=id.g1017b3d77ca_0_0)\]\[[Video](https://www.youtube.com/watch?v=xe5A-xQTBdM)\]
 - **2022/02/24**: "*Learning on Graphs with Missing Node Features*" at the [Machine Learning Research Group](https://www.robots.ox.ac.uk/~parg/)
 of the University of Oxford
 

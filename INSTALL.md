@@ -1,6 +1,7 @@
-# Table of Contents
+# Installing and Deploying
 
-- [Table of Contents](#table-of-contents)
+<!--ts-->
+
 - [Installing and Deploying](#installing-and-deploying)
   - [Recommended Approach](#recommended-approach)
   - [Local setup on Windows](#local-setup-on-windows)
@@ -14,12 +15,12 @@
     - [For project pages](#for-project-pages)
     - [Enabling automatic deployment](#enabling-automatic-deployment)
     - [Manual deployment to GitHub Pages](#manual-deployment-to-github-pages)
-    - [Deploy on Netlify](#deploy-on-netlify)
+    - [Deploy on <a href="https://www.netlify.com/" rel="nofollow">Netlify</a>](https://www.netlify.com/)
     - [Deployment to another hosting server (non GitHub Pages)](#deployment-to-another-hosting-server-non-github-pages)
     - [Deployment to a separate repository (advanced users only)](#deployment-to-a-separate-repository-advanced-users-only)
   - [Upgrading from a previous version](#upgrading-from-a-previous-version)
 
-# Installing and Deploying
+<!--te-->
 
 ## Recommended Approach
 
@@ -242,7 +243,7 @@ If you installed **al-folio** as described above, you can manually update your c
 # Assuming the current directory is <your-repo-name>
 $ git remote add upstream https://github.com/alshedivat/al-folio.git
 $ git fetch upstream
-$ git rebase v0.14.4
+$ git rebase v0.14.6
 ```
 
 If you have extensively customized a previous version, it might be trickier to upgrade.

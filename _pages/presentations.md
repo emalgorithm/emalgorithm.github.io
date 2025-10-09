@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Presentations
-permalink: /presentations/
-description: Collection of some presentations and talks I have given in the past.
+title: Outreach
+permalink: /outreach/
+description: Talks, panels, community work, and research mentoring.
 nav: true
 nav_order: 4
 ---
 
-<!-- pages/presentations.md -->
+<!-- pages/outreach.md -->
 
 ### Talks
 
@@ -59,3 +59,8 @@ nav_order: 4
 - **2021/10**: [GReS – Workshop on Graph Neural Networks for Recommendation and Search](https://europe.naverlabs.com/gres-workshop/) (at ACM RecSys 2021)
 - **2021/04**: [GNNSys'21 -- Workshop on Graph Neural Networks and Systems](https://gnnsys.github.io/) (at MLSys 2021)
 - **2021/02**: [AAAI-21 GCLR](https://sites.google.com/view/gclr2021/home) (at AAAI 2021)
+
+### Mentoring
+
+- Jane Doe — 2024-06 — 2024-09 — MSc Research Intern; Project: Graph representation learning for dynamic interactions
+- John Roe — 2023-02 — 2023-12 — Research Assistant; Project: Missing node features in large-scale GNNs

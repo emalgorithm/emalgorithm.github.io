@@ -84,6 +84,8 @@ If you are a **prospective student interested in working with me**, I encourage 
 - **Thomas Castiglione** - <small>2024-03 — 2025-04</small> — ML Researcher @ VantAI<br/>
   Project: [Neo 1: a unified model for all-atom structure prediction and generation of all biomolecules](https://www.vant.ai/neo-1)
 - **[Andy Huang](https://shenyanghuang.github.io/)** - <small>2024-03 — 2025-04</small> — PhD Student @ Mila<br/>
-  Project: [UTG: Towards a Unified View of Snapshot and Event Based Models for Temporal Graphs](/publications/#huang_utg_2024)
+  Projects:
+  - [TGB: Temporal Graph Benchmark for Machine Learning on Temporal Graphs](/publications/#tgb_huang_2023)
+  - [UTG: Towards a Unified View of Snapshot and Event Based Models for Temporal Graphs](/publications/#huang_utg_2024)
 - **Vincent** — <small>2023-11 — 2024-05</small> — ML Engineer @ Amboss Technologies<br/>
   Project: [Channel Balance Interpolation in the Lightning Network via Machine Learning](/publications/#vincent_lightning_2024)

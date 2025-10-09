@@ -68,7 +68,17 @@ nav_order: 4
 
 ## Mentoring
 
-- **Jane Doe** — <small>2024-06 — 2024-09</small> — MSc Research Intern<br/>
-  Project: Graph representation learning for dynamic interactions
-- **John Roe** — <small>2023-02 — 2023-12</small> — Research Assistant<br/>
-  Project: Missing node features in large-scale GNNs
+- **Davide Marincione** — <small>2025-05 — Present</small> — PhD Student @ Sapienza University of Rome<br/>
+  Project: Model Merging Enables In-Context Learning for Bioacoustics Foundation Models (Under Review)
+- **Harrison Rush** — <small>2024-08 — Present</small> — ML Engineer @ Amboss Technologies<br/>
+  Project: MP-Flow: A Deep Graph Reinforcement Learning Agent for Maximizing Throughput in the Lightning Network (Under Review)
+- **Simone Antonelli** - <small>2024-10 — Present</small> — ML Research Intern @ Amboss Technologies<br/>
+  Project: Predicting Link Closure in the Lightning Network with Temporal Graph Networks (Work in Progress)
+- **Marco Pegoraro** - <small>2024-10 — 2025-04</small> — ML Research Intern @ VantAI<br/>
+  Project: [Neo 1: a unified model for all-atom structure prediction and generation of all biomolecules](https://www.vant.ai/neo-1)
+- **Thomas Castiglione** - <small>2024-03 — 2025-04</small> — ML Researcher @ VantAI<br/>
+  Project: [Neo 1: a unified model for all-atom structure prediction and generation of all biomolecules](https://www.vant.ai/neo-1)
+- **Andy Huang** - <small>2024-03 — 2025-04</small> — PhD Student @ Mila<br/>
+  Project: [UTG: Towards a Unified View of Snapshot and Event Based Models for Temporal Graphs](/publications/#huang_utg_2024)
+- **Vincent** — <small>2023-11 — 2024-05</small> — ML Engineer @ Amboss Technologies<br/>
+  Project: [Channel Balance Interpolation in the Lightning Network via Machine Learning](/publications/#vincent_lightning_2024)

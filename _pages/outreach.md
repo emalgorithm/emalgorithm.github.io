@@ -18,8 +18,6 @@ nav_order: 4
 - **2023/09/07**: "_Edge Directionality Improves Learning on Heterophilic Graphs_" at the [Explainability and Applicability of Graph Neural Networks Workshop
   ](https://www.gain-group.de/html/events.html) in Kassel
 
-### Talks
-
 ##### 2022
 
 - **2022/09/28**: "_Improving Machine Learning at Twitter using Graphs_" at [Privacy Week](https://privacyweek.it/) \[[Video](https://privacyweek.it/event/potenziare-lapprendimento-automatico-su-twitter-utilizzando-i-grafi/) (in Italian)]

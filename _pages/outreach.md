@@ -73,32 +73,32 @@ One of the most rewarding aspects of research for me is the opportunity to super
 Below is a list of students I have had the pleasure to supervise.
 If you are a **prospective student interested in working with me**, I encourage you to reach out to some of my former mentees to get a sense of my mentoring style and what our collaboration might look like.
 
-- **[Davide Marincione](https://gladia.di.uniroma1.it/authors/marincione/)** — <small>2025-05 — Present</small> — PhD Student @ Sapienza University of Rome
+- **[Davide Marincione](https://gladia.di.uniroma1.it/authors/marincione/)** — <small>2025-05 — Present</small> — PhD Student @ Sapienza University of Rome<br>
   Project: Model Merging Enables In-Context Learning for Bioacoustics Foundation Models (Under Review)
   <br>
 
-- **Harrison Rush** — <small>2024-08 — Present</small> — ML Engineer @ Amboss Technologies
+- **Harrison Rush** — <small>2024-08 — Present</small> — ML Engineer @ Amboss Technologies<br>
   Project: MP-Flow: A Deep Graph Reinforcement Learning Agent for Maximizing Throughput in the Lightning Network (Under Review)
   <br>
 
-- **[Simone Antonelli](https://siantonelli.github.io/)** - <small>2024-10 — Present</small> — ML Research Intern @ Amboss Technologies
+- **[Simone Antonelli](https://siantonelli.github.io/)** - <small>2024-10 — Present</small> — ML Research Intern @ Amboss Technologies<br>
   Project: Predicting Link Closure in the Lightning Network with Temporal Graph Networks (Work in Progress)
   <br>
 
-- **Marco Pegoraro** - <small>2024-10 — 2025-04</small> — ML Research Intern @ VantAI
+- **Marco Pegoraro** - <small>2024-10 — 2025-04</small> — ML Research Intern @ VantAI<br>
   Project: [Neo 1: a unified model for all-atom structure prediction and generation of all biomolecules](https://www.vant.ai/neo-1)
   <br>
 
-- **Thomas Castiglione** - <small>2024-03 — 2025-04</small> — ML Researcher @ VantAI
+- **Thomas Castiglione** - <small>2024-03 — 2025-04</small> — ML Researcher @ VantAI<br>
   Project: [Neo 1: a unified model for all-atom structure prediction and generation of all biomolecules](https://www.vant.ai/neo-1)
   <br>
 
-- **[Andy Huang](https://shenyanghuang.github.io/)** - <small>2024-03 — 2025-04</small> — PhD Student @ Mila
-  Projects:
-  &nbsp;&nbsp;- [TGB: Temporal Graph Benchmark for Machine Learning on Temporal Graphs](/publications/#tgb_huang_2023)
+- **[Andy Huang](https://shenyanghuang.github.io/)** - <small>2024-03 — 2025-04</small> — PhD Student @ Mila<br>
+  Projects:<br>
+  &nbsp;&nbsp;- [TGB: Temporal Graph Benchmark for Machine Learning on Temporal Graphs](/publications/#tgb_huang_2023)<br>
   &nbsp;&nbsp;- [UTG: Towards a Unified View of Snapshot and Event Based Models for Temporal Graphs](/publications/#huang_utg_2024)
   <br>
 
-- **Vincent** — <small>2023-11 — 2024-05</small> — ML Engineer @ Amboss Technologies
+- **Vincent** — <small>2023-11 — 2024-05</small> — ML Engineer @ Amboss Technologies<br>
   Project: [Channel Balance Interpolation in the Lightning Network via Machine Learning](/publications/#vincent_lightning_2024)
   <br>

@@ -23,12 +23,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-presentations",
-          title: "Presentations",
-          description: "Collection of some presentations and talks I have given in the past.",
+        },{id: "nav-outreach",
+          title: "Outreach",
+          description: "Talks, panels, community work, and research mentoring.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/presentations/";
+            window.location.href = "/outreach/";
           },
         },{id: "nav-cv",
           title: "CV",
@@ -129,7 +129,7 @@ ninja.data = [{
         
           title: 'Simple scalable graph neural networks | by Michael Bronstein | TDS Archive |... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "Graph Neural Networks (GNNs) are a class of ML models that have emerged in recent years for learning on graph-structured data. GNNs have been successfully applied to model systems of relation and…",
+        description: "Deep learning on giant graphs Simple scalable graph neural networks One of the challenges that have so far precluded the wide adoption of graph neural networks in industrial applications is the …",
         section: "Posts",
         handler: () => {
           

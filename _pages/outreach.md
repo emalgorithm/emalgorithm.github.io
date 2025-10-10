@@ -68,10 +68,10 @@ nav_order: 4
 
 ## Supervision and Mentoring
 
-One of the most rewarding aspects of research for me is the opportunity to supervise and mentor bright, motivated students. I am deeply grateful for the curiosity and creativity they bring, and for how much I learn from them in return.
+Mentoring bright and motivated students is one of the most rewarding aspects of my research. I am grateful for their creativity and curiosity, and for how much I learn from them in return.
 
-Below is a list of students I have had the pleasure to supervise.
-If you are a **prospective student interested in working with me**, I encourage you to reach out to some of my former mentees to get a sense of my mentoring style and what our collaboration might look like.
+Below are the students I have had the pleasure to supervise.
+If you are a **prospective student interested in working with me**, feel free to contact my former mentees to learn more about my mentoring style and what collaboration with me looks like.
 
 - **[Davide Marincione](https://gladia.di.uniroma1.it/authors/marincione/)** — <small>2025-05 — Present</small> — PhD Student @ Sapienza University of Rome<br>
   Project: Model Merging Enables In-Context Learning for Bioacoustics Foundation Models (Under Review)

@@ -95,8 +95,8 @@ If you are a **prospective student interested in working with me**, feel free to
 
 - **[Andy Huang](https://shenyanghuang.github.io/)** - <small>2024-03 — 2025-04</small> — PhD Student @ Mila<br>
   Projects:<br>
-  &nbsp;&nbsp;- [TGB: Temporal Graph Benchmark for Machine Learning on Temporal Graphs](/publications/#tgb_huang_2023)<br>
-  &nbsp;&nbsp;- [UTG: Towards a Unified View of Snapshot and Event Based Models for Temporal Graphs](/publications/#huang_utg_2024)
+  &nbsp;&nbsp;• [TGB: Temporal Graph Benchmark for Machine Learning on Temporal Graphs](/publications/#tgb_huang_2023)<br>
+  &nbsp;&nbsp;• [UTG: Towards a Unified View of Snapshot and Event Based Models for Temporal Graphs](/publications/#huang_utg_2024)
   <br>
 
 - **Vincent** — <small>2023-11 — 2024-05</small> — ML Engineer @ Amboss Technologies<br>

@@ -13,6 +13,7 @@ nav_order: 4
 
 #### 2023
 
+- **2023/11/22**: "_A Primer on Graph Neural Networks_" at the [COLT Seminar](https://www.upf.edu/web/colt), University of Pompeu Fabra, Barcelona [[Slides](../assets/pdf/gnn_primer.pdf)]
 - **2023/09/14**: "_Edge Directionality Improves Learning on Heterophilic Graphs_" at the [Temporal Graph Reading Group
   ](https://www.cs.mcgill.ca/~shuang43/rg.html) [[Slides](../assets/pdf/dirgnn_tgl_reading_group.pdf)][[Video](https://www.youtube.com/watch?v=VjpUSR1NZvI)]
 - **2023/09/07**: "_Edge Directionality Improves Learning on Heterophilic Graphs_" at the [Explainability and Applicability of Graph Neural Networks Workshop

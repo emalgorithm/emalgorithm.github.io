@@ -48,11 +48,17 @@ nav_order: 4
 
 ---
 
-## Panels
+## Workshop Organized
+
+- **2023/12**: [Temporal Graph Learning Workshop @ NeurIPS 2023](https://sites.google.com/view/tglworkshop-2023/home)
+
+---
+
+## Workshop Panels
 
 #### 2022
 
-- **2022/12/03**: [Temporal Graph Learning Workshop](https://sites.google.com/view/tglworkshop2022/home#h.q1t0lweplm6e)
+- **2022/12/03**: [Temporal Graph Learning Workshop @ NeurIPS 2022](https://sites.google.com/view/tglworkshop2022/home#h.q1t0lweplm6e)
 
 ---
 

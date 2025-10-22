@@ -48,21 +48,17 @@ nav_order: 4
 
 ---
 
-## Workshop Organized
+## Workshop Involvement
+
+#### Organized
 
 - **2023/12**: [Temporal Graph Learning Workshop @ NeurIPS 2023](https://sites.google.com/view/tglworkshop-2023/home)
 
----
+#### Panel Participation
 
-## Workshop Panels
+- **2022/12**: [Temporal Graph Learning Workshop @ NeurIPS 2022](https://sites.google.com/view/tglworkshop2022/home#h.q1t0lweplm6e)
 
-#### 2022
-
-- **2022/12/03**: [Temporal Graph Learning Workshop @ NeurIPS 2022](https://sites.google.com/view/tglworkshop2022/home#h.q1t0lweplm6e)
-
----
-
-## Workshop Program Committee
+#### Program Committee
 
 - **2022/12**: [NeurReps Workshop – Symmetry and Geometry in Neural Representations](https://www.neurreps.org/) (at Neurips 2022)
 - **2022/02**: [GCLR 22 – 2nd Workshop on Graphs and more complex structures for learning and reasoning](https://sites.google.com/view/gclr2022/home?authuser=0) (at AAAI 2022)

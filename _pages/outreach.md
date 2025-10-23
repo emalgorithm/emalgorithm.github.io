@@ -13,6 +13,7 @@ nav_order: 4
 
 #### 2023
 
+- **2023/11/22**: "_A Primer on Graph Neural Networks_" at the [COLT Seminar](https://www.upf.edu/web/colt), University of Pompeu Fabra, Barcelona [[Slides](../assets/pdf/gnn_primer.pdf)]
 - **2023/09/14**: "_Edge Directionality Improves Learning on Heterophilic Graphs_" at the [Temporal Graph Reading Group
   ](https://www.cs.mcgill.ca/~shuang43/rg.html) [[Slides](../assets/pdf/dirgnn_tgl_reading_group.pdf)][[Video](https://www.youtube.com/watch?v=VjpUSR1NZvI)]
 - **2023/09/07**: "_Edge Directionality Improves Learning on Heterophilic Graphs_" at the [Explainability and Applicability of Graph Neural Networks Workshop
@@ -48,15 +49,17 @@ nav_order: 4
 
 ---
 
-## Panels
+## Workshop Involvement
 
-#### 2022
+#### Organized
 
-- **2022/12/03**: [Temporal Graph Learning Workshop](https://sites.google.com/view/tglworkshop2022/home#h.q1t0lweplm6e)
+- **2023/12**: [Temporal Graph Learning Workshop @ NeurIPS 2023](https://sites.google.com/view/tglworkshop-2023/home)
 
----
+#### Panel Participation
 
-## Workshop Program Committee
+- **2022/12**: [Temporal Graph Learning Workshop @ NeurIPS 2022](https://sites.google.com/view/tglworkshop2022/home#h.q1t0lweplm6e)
+
+#### Program Committee
 
 - **2022/12**: [NeurReps Workshop – Symmetry and Geometry in Neural Representations](https://www.neurreps.org/) (at Neurips 2022)
 - **2022/02**: [GCLR 22 – 2nd Workshop on Graphs and more complex structures for learning and reasoning](https://sites.google.com/view/gclr2022/home?authuser=0) (at AAAI 2022)

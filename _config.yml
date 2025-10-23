@@ -331,6 +331,8 @@ filtered_bibtex_keywords:
     poster,
     preview,
     pubtype,
+    docs,
+    dataset,
     selected,
     slides,
     supp,

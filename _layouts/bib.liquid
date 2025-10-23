@@ -25,6 +25,7 @@
           <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
         {% endif %}
       {% endif %}
+
       {% if entry.preview %}
         {% if entry.preview contains '://' %}
           <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
@@ -41,6 +42,28 @@
             alt=entry.preview
           %}
         {% endif %}
+      {% endif %}
+
+      <!-- Publication Type Tag -->
+      {% if entry.pubtype %}
+        <div class="pubtype-tags">
+          {% assign pubtypes = entry.pubtype | split: ',' %}
+          {% for type in pubtypes %}
+            {% assign clean_type = type | strip %}
+            {% case clean_type %}
+              {% when 'conference' %}
+                <span class="badge badge-conference">Conference</span>
+              {% when 'workshop' %}
+                <span class="badge badge-workshop">Workshop</span>
+              {% when 'journal' %}
+                <span class="badge badge-journal">Journal</span>
+              {% when 'preprint' %}
+                <span class="badge badge-preprint">Preprint</span>
+              {% else %}
+                <span class="badge badge-default">{{ clean_type | capitalize }}</span>
+            {% endcase %}
+          {% endfor %}
+        </div>
       {% endif %}
     </div>
   {% endif %}

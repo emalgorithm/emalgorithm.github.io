@@ -330,6 +330,7 @@ filtered_bibtex_keywords:
     pdf,
     poster,
     preview,
+    pubtype,
     selected,
     slides,
     supp,

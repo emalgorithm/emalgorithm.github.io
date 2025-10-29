@@ -34,7 +34,7 @@ nav_order: 4
 - **2021/06/16**: "_Machine Learning on Dynamic Graphs: Temporal Graph Networks_" at [MLOps World 2021](https://mlopsworld.com/)
 - **2021/04/26**: "_Machine Learning on Dynamic Graphs: Temporal Graph Networks_" at Intel ML Seminar [[Slides](../assets/pdf/intel_tgn.pdf)]
 - **2021/04/09**: "_Machine Learning on Dynamic Graphs: Temporal Graph Networks_" at the [GNNSys'21](https://gnnsys.github.io/) workshop
-- **2021/01/22**: "_Dynamic Graphs and Temporal Graph Networks_" at the University of Liverpool, Department of Computer Science. [[Slides](../assets/pdf/TGN_2021_01_22.pdf)]
+- **2021/01/22**: "_Dynamic Graphs and Temporal Graph Networks_" at the University of Liverpool [Networks and Distributed Computing Series](https://seminars.csc.liv.ac.uk/abstract.php?id=979) [[Slides](../assets/pdf/TGN_2021_01_22.pdf)]
 
 #### 2020
 

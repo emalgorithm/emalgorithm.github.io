@@ -1,35 +1,5 @@
 ---
 ---
-@article{tgb2_gastinger_2024,
-  title       = {TGB 2.0: A Benchmark for Learning on Temporal Knowledge Graphs and Heterogeneous Graphs},
-  author      = {Julia Gastinger and Shenyang Huang and Mikhail Galkin and Erfan Loghmani and Ali Parviz and Farimah Poursafaei and Jacob Danovitch and Emanuele Rossi and Ioannis Koutis and Heiner Stuckenschmidt and Reihaneh Rabbany and Guillaume Rabusseau},
-  year        = {2024},
-  journal     = {Advances in Neural Information Processing Systems},
-  volume      = {37},
-  pages       = {140199-140229},
-  abbr        = {NeurIPS},
-  arxiv       = {2406.09639},
-  proceedings = {https://proceedings.neurips.cc/paper_files/paper/2024/hash/fda026cf2423a01fcbcf1e1e43ee9a50-Abstract-Datasets_and_Benchmarks_Track.html},
-  preview     = {tgb2.png},
-  code        = {https://github.com/shenyangHuang/TGB},
-  website     = {https://tgb.complexdatalab.com/},
-  pubtype     = {conference},
-  bibtex_show = {true}
-}
-
-@article{malitesta_multimodal_2024,
-  title       = {Do We Really Need to Drop Items with Missing Modalities in Multimodal Recommendation?},
-  author      = {Daniele Malitesta and Emanuele Rossi and Claudio Pomo and Tommaso Di Noia and Fragkiskos D. Malliaros},
-  year        = {2024},
-  journal     = {Proceedings of the 33rd ACM International Conference on Information},
-  doi         = {10.1145/3627673.3679898},
-  arxiv       = {2408.11767},
-  proceedings = {https://dl.acm.org/doi/10.1145/3627673.3679898},
-  abbr        = {ACM},
-  preview     = {multimodal.png},
-  pubtype     = {conference},
-  bibtex_show = {true}
-}
 
 @article{singh_bayesian_2024,
   title       = {Bayesian Binary Search},
@@ -46,6 +16,53 @@
   abstract    = {We present Bayesian Binary Search (BBS), a novel probabilistic variant of the classical binary search/bisection algorithm. BBS leverages machine learning/statistical techniques to estimate the probability density of the search space and modifies the bisection step to split based on probability density rather than the traditional midpoint, allowing for the learned distribution of the search space to guide the search algorithm. Search space density estimation can flexibly be performed using supervised probabilistic machine learning techniques (e.g., Gaussian process regression, Bayesian neural networks, quantile regression) or unsupervised learning algorithms (e.g., Gaussian mixture models, kernel density estimation (KDE), maximum likelihood estimation (MLE)). We demonstrate significant efficiency gains of using BBS on both simulated data across a variety of distributions and in a real-world binary search use case of probing channel balances in the Bitcoin Lightning Network, for which we have deployed the BBS algorithm in a production setting.}
 }
 
+@article{vincent_lightning_2024,
+  title       = {Channel Balance Interpolation in the Lightning Network via Machine Learning},
+  author      = {Vincent Davis and Vikash Singh and Emanuele Rossi},
+  year        = {2025},
+  journal     = {IEEE International Conference on Blockchain and Cryptocurrency (ICBC)},
+  proceedings = {https://ieeexplore.ieee.org/document/11185091},
+  arxiv       = {2405.12087},
+  abbr        = {ICBC},
+  preview     = {lightning.png},
+  pubtype     = {conference},
+  bibtex_show = {true},
+  abstract    = {The Bitcoin Lightning Network is a Layer 2 payment protocol that addresses Bitcoin's scalability by facilitating quick and cost effective transactions through payment channels. This research explores the feasibility of using machine learning models to interpolate channel balances within the network, which can be used for optimizing the network's pathfinding algorithms. While there has been much exploration in balance probing and multipath payment protocols, predicting channel balances using solely node and channel features remains an uncharted area. This paper evaluates the performance of several machine learning models against two heuristic baselines and investigates the predictive capabilities of various features. Our model performs favorably in experimental evaluation, outperforming by 10% against an equal split baseline where both edges are assigned half of the channel capacity.}
+}
+
+@article{tgb2_gastinger_2024,
+  title       = {TGB 2.0: A Benchmark for Learning on Temporal Knowledge Graphs and Heterogeneous Graphs},
+  author      = {Julia Gastinger and Shenyang Huang and Mikhail Galkin and Erfan Loghmani and Ali Parviz and Farimah Poursafaei and Jacob Danovitch and Emanuele Rossi and Ioannis Koutis and Heiner Stuckenschmidt and Reihaneh Rabbany and Guillaume Rabusseau},
+  year        = {2024},
+  journal     = {Advances in Neural Information Processing Systems},
+  volume      = {37},
+  pages       = {140199-140229},
+  abbr        = {NeurIPS},
+  arxiv       = {2406.09639},
+  proceedings = {https://proceedings.neurips.cc/paper_files/paper/2024/hash/fda026cf2423a01fcbcf1e1e43ee9a50-Abstract-Datasets_and_Benchmarks_Track.html},
+  preview     = {tgb2.png},
+  code        = {https://github.com/shenyangHuang/TGB},
+  website     = {https://tgb.complexdatalab.com/},
+  pubtype     = {conference},
+  bibtex_show = {true},
+  abstract    = {Multi-relational temporal graphs are powerful tools for modeling real-world data, capturing the evolving and interconnected nature of entities over time. Recently, many novel models are proposed for ML on such graphs intensifying the need for robust evaluation and standardized benchmark datasets. However, the availability of such resources remains scarce and evaluation faces added complexity due to reproducibility issues in experimental protocols. To address these challenges, we introduce Temporal Graph Benchmark 2.0 (TGB 2.0), a novel benchmarking framework tailored for evaluating methods for predicting future links on Temporal Knowledge Graphs and Temporal Heterogeneous Graphs with a focus on large-scale datasets, extending the Temporal Graph Benchmark. TGB 2.0 facilitates comprehensive evaluations by presenting eight novel datasets spanning five domains with up to 53 million edges. TGB 2.0 datasets are significantly larger than existing datasets in terms of number of nodes, edges, or timestamps. In addition, TGB 2.0 provides a reproducible and realistic evaluation pipeline for multi-relational temporal graphs. Through extensive experimentation, we observe that 1) leveraging edge-type information is crucial to obtain high performance, 2) simple heuristic baselines are often competitive with more complex methods, 3) most methods fail to run on our largest datasets, highlighting the need for research on more scalable methods.}
+}
+
+@article{malitesta_multimodal_2024,
+  title       = {Do We Really Need to Drop Items with Missing Modalities in Multimodal Recommendation?},
+  author      = {Daniele Malitesta and Emanuele Rossi and Claudio Pomo and Tommaso Di Noia and Fragkiskos D. Malliaros},
+  year        = {2024},
+  journal     = {Proceedings of the 33rd ACM International Conference on Information},
+  doi         = {10.1145/3627673.3679898},
+  arxiv       = {2408.11767},
+  proceedings = {https://dl.acm.org/doi/10.1145/3627673.3679898},
+  abbr        = {ACM},
+  preview     = {multimodal.png},
+  pubtype     = {conference},
+  bibtex_show = {true},
+  abstract    = {Generally, items with missing modalities are dropped in multimodal recommendation. However, with this work, we question this procedure, highlighting that it would further damage the pipeline of any multimodal recommender system. First, we show that the lack of (some) modalities is, in fact, a widely-diffused phenomenon in multimodal recommendation. Second, we propose a pipeline that imputes missing multimodal features in recommendation by leveraging traditional imputation strategies in machine learning. Then, given the graph structure of the recommendation data, we also propose three more effective imputation solutions that leverage the item-item co-purchase graph and the multimodal similarities of co-interacted items. Our method can be plugged into any multimodal RSs in the literature working as an untrained pre-processing phase, showing (through extensive experiments) that any data pre-filtering is not only unnecessary but also harmful to the performance.}
+}
+
 @article{kovtun_pinder_2024,
   title       = {PINDER: The Protein Interaction Dataset and Evaluation Resource},
   author      = {Daniel Kovtun and Mehmet Akdel and Alexander Goncearenco and Guoqing Zhou and Graham Holt and David Baugher and Dejun Lin and Yusuf Adeshina and Thomas Castiglione and Xiaoyun Wang and Céline Marquet and Matt McPartlon and Tomas Geffner and Gabriele Corso and Hannes Stärk and Zachary Carpenter and Emine Kucukbenli and Michael Bronstein and Luca Naef},
@@ -58,7 +75,8 @@
   code        = {https://github.com/pinder-org/pinder},
   docs        = {https://pinder-org.github.io/pinder},
   pubtype     = {preprint},
-  bibtex_show = {true}
+  bibtex_show = {true},
+  abstract    = {Protein-protein interactions (PPIs) are fundamental to understanding biological processes and play a key role in therapeutic advancements. As deep-learning docking methods for PPIs gain traction, benchmarking protocols and datasets tailored for effective training and evaluation of their generalization capabilities and performance across real-world scenarios become imperative. Aiming to overcome limitations of existing approaches, we introduce PINDER, a comprehensive annotated dataset that uses structural clustering to derive non-redundant interface-based data splits and includes holo (bound), apo (unbound), and computationally predicted structures. PINDER consists of 2,319,564 dimeric PPI systems (and up to 25 million augmented PPIs) and 1,955 high-quality test PPIs with interface data leakage removed. Additionally, PINDER provides a test subset with 180 dimers for comparison to AlphaFold-Multimer without any interface leakage with respect to its training set. Unsurprisingly, the PINDER benchmark reveals that the performance of existing docking models is highly overestimated when evaluated on leaky test sets. Most importantly, by retraining DiffDock-PP on PINDER interface-clustered splits, we show that interface cluster-based sampling of the training split, along with the diverse and less leaky validation split, leads to strong generalization improvements.}
 }
 
 @article{durairaj_plinder_2024,
@@ -74,7 +92,8 @@
   dataset     = {https://console.cloud.google.com/storage/browser/plinder},
   docs        = {https://plinder-org.github.io/plinder},
   pubtype     = {workshop},
-  bibtex_show = {true}
+  bibtex_show = {true},
+  abstract    = {Protein-protein interactions (PPIs) are fundamental to understanding biological processes and play a key role in therapeutic advancements. As deep-learning docking methods for PPIs gain traction, benchmarking protocols and datasets tailored for effective training and evaluation of their generalization capabilities and performance across real-world scenarios become imperative. Aiming to overcome limitations of existing approaches, we introduce PINDER, a comprehensive annotated dataset that uses structural clustering to derive non-redundant interface-based data splits and includes holo (bound), apo (unbound), and computationally predicted structures. PINDER consists of 2,319,564 dimeric PPI systems (and up to 25 million augmented PPIs) and 1,955 high-quality test PPIs with interface data leakage removed. Additionally, PINDER provides a test subset with 180 dimers for comparison to AlphaFold-Multimer without any interface leakage with respect to its training set. Unsurprisingly, the PINDER benchmark reveals that the performance of existing docking models is highly overestimated when evaluated on leaky test sets. Most importantly, by retraining DiffDock-PP on PINDER interface-clustered splits, we show that interface cluster-based sampling of the training split, along with the diverse and less leaky validation split, leads to strong generalization improvements.}
 }
 
 @article{huang_utg_2024,
@@ -88,20 +107,8 @@
   preview     = {utg.png},
   video       = {https://www.youtube.com/watch?v=zLfzIIRj5uo},
   pubtype     = {conference},
-  bibtex_show = {true}
-}
-
-@article{vincent_lightning_2024,
-  title       = {Channel Balance Interpolation in the Lightning Network via Machine Learning},
-  author      = {Vincent Davis and Vikash Singh and Emanuele Rossi},
-  year        = {2025},
-  journal     = {IEEE International Conference on Blockchain and Cryptocurrency (ICBC)},
-  proceedings = {https://ieeexplore.ieee.org/document/11185091},
-  arxiv       = {2405.12087},
-  abbr        = {ICBC},
-  preview     = {lightning.png},
-  pubtype     = {conference},
-  bibtex_show = {true}
+  bibtex_show = {true},
+  abstract    = {Many real world graphs are inherently dynamic, constantly evolving with node and edge additions. These graphs can be represented by temporal graphs, either through a stream of edge events or a sequence of graph snapshots. Until now, the development of machine learning methods for both types has occurred largely in isolation, resulting in limited experimental comparison and theoretical crosspollination between the two. In this paper, we introduce Unified Temporal Graph (UTG), a framework that unifies snapshot-based and event-based machine learning models under a single umbrella, enabling models developed for one representation to be applied effectively to datasets of the other. We also propose a novel UTG training procedure to boost the performance of snapshot-based models in the streaming setting. We comprehensively evaluate both snapshot and event-based models across both types of temporal graphs on the temporal link prediction task. Our main findings are threefold: first, when combined with UTG training, snapshot-based models can perform competitively with event-based models such as TGN and GraphMixer even on event datasets. Second, snapshot-based models are at least an order of magnitude faster than most event-based models during inference. Third, while event-based methods such as NAT and DyGFormer outperforms snapshot-based methods on both types of temporal graphs, this is because they leverage joint neighborhood structural features thus emphasizing the potential to incorporate these features into snapshotbased models as well. These findings highlight the importance of comparing model architectures independent of the data format and suggest the potential of combining the efficiency of snapshot-based models with the performance of event-based models in the future.}
 }
 
 @phdthesis{rossi2024thesis,
@@ -116,7 +123,8 @@
   selected    = {true},
   pubtype     = {thesis},
   bibtex_show = {true},
-  preview     = {thesis.png}
+  preview     = {thesis.png},
+  abstract    = {Graph Neural Networks (GNNs) have become a central tool for learning on graph-structured data, yet their applicability to real-world systems remains limited by key challenges such as scalability, temporality, directionality, data incompleteness, and structural uncertainty. This thesis introduces a series of models addressing these limitations: SIGN for scalable graph learning, TGN for temporal graphs, Dir-GNN for directed and heterophilic networks, Feature Propagation (FP) for learning with missing node features, and NuGget for game-theoretic structural inference. Together, these contributions bridge the gap between academic benchmarks and industrial-scale graphs, enabling the use of GNNs in domains such as social and recommender systems.}
 }
 
 @article{tgb_huang_2023,
@@ -133,7 +141,8 @@
   selected    = {true},
   preview     = {tgb.png},
   pubtype     = {conference},
-  bibtex_show = {true}
+  bibtex_show = {true},
+  abstract    = {We present the Temporal Graph Benchmark (TGB), a collection of challenging and diverse benchmark datasets for realistic, reproducible, and robust evaluation of machine learning models on temporal graphs. TGB datasets are of large scale, spanning years in duration, incorporate both node and edge-level prediction tasks and cover a diverse set of domains including social, trade, transaction, and transportation networks. For both tasks, we design evaluation protocols based on realistic use-cases. We extensively benchmark each dataset and find that the performance of common models can vary drastically across datasets. In addition, on dynamic node property prediction tasks, we show that simple methods often achieve superior performance compared to existing temporal graph models. We believe that these findings open up opportunities for future research on temporal graphs. Finally, TGB provides an automated machine learning pipeline for reproducible and accessible temporal graph research, including data loading, experiment setup and performance evaluation. TGB will be maintained and updated on a regular basis and welcomes community feedback. TGB datasets, data loaders, example codes, evaluation setup, and leaderboards are publicly available at this https URL.}
 }
 
 @article{dirgnn_rossi_2023,
@@ -149,7 +158,8 @@
   selected    = {true},
   preview     = {dir-gnn.png},
   pubtype     = {conference},
-  bibtex_show = {true}
+  bibtex_show = {true},
+  abstract    = {Graph Neural Networks (GNNs) have become the de-facto standard tool for modeling relational data. However, while many real-world graphs are directed, the majority of today's GNN models discard this information altogether by simply making the graph undirected. The reasons for this are historical: 1) many early variants of spectral GNNs explicitly required undirected graphs, and 2) the first benchmarks on homophilic graphs did not find significant gain from using direction. In this paper, we show that in heterophilic settings, treating the graph as directed increases the effective homophily of the graph, suggesting a potential gain from the correct use of directionality information. To this end, we introduce Directed Graph Neural Network (Dir-GNN), a novel general framework for deep learning on directed graphs. Dir-GNN can be used to extend any Message Passing Neural Network (MPNN) to account for edge directionality information by performing separate aggregations of the incoming and outgoing edges. We prove that Dir-GNN matches the expressivity of the Directed Weisfeiler-Lehman test, exceeding that of conventional MPNNs. In extensive experiments, we validate that while our framework leaves performance unchanged on homophilic datasets, it leads to large gains over base models such as GCN, GAT and GraphSage on heterophilic benchmarks, outperforming much more complex methods and achieving new state-of-the-art results.}
 }
 
 @article{chamberlain2022lpsketching,
@@ -164,7 +174,8 @@
   preview     = {lp.png},
   video       = {https://www.youtube.com/watch?v=TPqR1xG9wgY},
   pubtype     = {conference},
-  bibtex_show = {true}
+  bibtex_show = {true},
+  abstract    = {Many Graph Neural Networks (GNNs) perform poorly compared to simple heuristics on Link Prediction (LP) tasks. This is due to limitations in expressive power such as the inability to count triangles (the backbone of most LP heuristics) and because they can not distinguish automorphic nodes (those having identical structural roles). Both expressiveness issues can be alleviated by learning link (rather than node) representations and incorporating structural features such as triangle counts. Since explicit link representations are often prohibitively expensive, recent works resorted to subgraph-based methods, which have achieved state-of-the-art performance for LP, but suffer from poor efficiency due to high levels of redundancy between subgraphs. We analyze the components of subgraph GNN (SGNN) methods for link prediction. Based on our analysis, we propose a novel full-graph GNN called ELPH (Efficient Link Prediction with Hashing) that passes subgraph sketches as messages to approximate the key components of SGNNs without explicit subgraph construction. ELPH is provably more expressive than Message Passing GNNs (MPNNs). It outperforms existing SGNN models on many standard LP benchmarks while being orders of magnitude faster. However, it shares the common GNN limitation that it is only efficient when the dataset fits in GPU memory. Accordingly, we develop a highly scalable model, called BUDDY, which uses feature precomputation to circumvent this limitation without sacrificing predictive performance. Our experiments show that BUDDY also outperforms SGNNs on standard LP benchmarks while being highly scalable and faster than ELPH.}
 }
 
 @article{mutti2022causalrl,
@@ -178,22 +189,23 @@
   preview     = {causal_rl.png},
   abbr        = {AAAI},
   pubtype     = {conference},
-  bibtex_show = {true}
+  bibtex_show = {true},
+  abstract    = {In the sequential decision making setting, an agent aims to achieve systematic generalization over a large, possibly infinite, set of environments. Such environments are modeled as discrete Markov decision processes with both states and actions represented through a feature vector. The underlying structure of the environments allows the transition dynamics to be factored into two components: one that is environment-specific and another that is shared. Consider a set of environments that share the laws of motion as an example. In this setting, the agent can take a finite amount of reward-free interactions from a subset of these environments. The agent then must be able to approximately solve any planning task defined over any environment in the original set, relying on the above interactions only. Can we design a provably efficient algorithm that achieves this ambitious goal of systematic generalization? In this paper, we give a partially positive answer to this question. First, we provide a tractable formulation of systematic generalization by employing a causal viewpoint. Then, under specific structural assumptions, we provide a simple learning algorithm that guarantees any desired planning error up to an unavoidable sub-optimality term, while showcasing a polynomial sample complexity.}
 }
 
 @article{rossi2022networkgames,
   title       = {Learning to Infer Structures of Network Games},
   author      = {Emanuele Rossi and Federico Monti and Yan Leng and Michael M. Bronstein and Xiaowen Dong},
   year        = {2022},
-  journal     = {Proceedings of the 39th International Conference on Machine Learning,
-                 {ICML}},
+  journal     = {Proceedings of the 39th International Conference on Machine Learning, {ICML}},
   arxiv       = {2206.08119},
   abbr        = {ICML},
   proceedings = {https://proceedings.mlr.press/v162/rossi22a.html},
   blog        = {../blog/2023/network_games/},
   preview     = {network_games.webp},
   pubtype     = {conference},
-  bibtex_show = {true}
+  bibtex_show = {true},
+  abstract    = {Strategic interactions between a group of individuals or organisations can be modelled as games played on networks, where a player's payoff depends not only on their actions but also on those of their neighbours. Inferring the network structure from observed game outcomes (equilibrium actions) is an important problem with numerous potential applications in economics and social sciences. Existing methods mostly require the knowledge of the utility function associated with the game, which is often unrealistic to obtain in real-world scenarios. We adopt a transformer-like architecture which correctly accounts for the symmetries of the problem and learns a mapping from the equilibrium actions to the network structure of the game without explicit knowledge of the utility function. We test our method on three different types of network games using both synthetic and real-world data, and demonstrate its effectiveness in network structure inference and superior performance over existing methods.}
 }
 
 @article{rossi2021fp,
@@ -209,7 +221,8 @@
   blog        = {https://towardsdatascience.com/learning-on-graphs-with-missing-features-dd34be61b06},
   preview     = {fp.gif},
   pubtype     = {conference},
-  bibtex_show = {true}
+  bibtex_show = {true},
+  abstract    = {While Graph Neural Networks (GNNs) have recently become the de facto standard for modeling relational data, they impose a strong assumption on the availability of the node or edge features of the graph. In many real-world applications, however, features are only partially available; for example, in social networks, age and gender are available only for a small subset of users. We present a general approach for handling missing features in graph machine learning applications that is based on minimization of the Dirichlet energy and leads to a diffusion-type differential equation on the graph. The discretization of this equation produces a simple, fast and scalable algorithm which we call Feature Propagation. We experimentally show that the proposed approach outperforms previous methods on seven common node-classification benchmarks and can withstand surprisingly high rates of missing features: on average we observe only around 4% relative accuracy drop when 99% of the features are missing. Moreover, it takes only 10 seconds to run on a graph with ∼2.5M nodes and ∼123M edges on a single GPU.}
 }
 
 @article{chamberlain2021grand,
@@ -225,7 +238,8 @@
   blog        = {https://blog.twitter.com/engineering/en_us/topics/insights/2021/graph-neural-networks-as-neural-diffusion-pdes},
   preview     = {grand.png},
   pubtype     = {conference},
-  bibtex_show = {true}
+  bibtex_show = {true},
+  abstract    = {We present Graph Neural Diffusion (GRAND) that approaches deep learning on graphs as a continuous diffusion process and treats Graph Neural Networks (GNNs) as discretisations of an underlying PDE. In our model, the layer structure and topology correspond to the discretisation choices of temporal and spatial operators. Our approach allows a principled development of a broad new class of GNNs that are able to address the common plights of graph learning models such as depth, oversmoothing, and bottlenecks. Key to the success of our models are stability with respect to perturbations in the data and this is addressed for both implicit and explicit discretisation schemes. We develop linear and nonlinear versions of GRAND, which achieve competitive results on many standard graph benchmarks.}
 }
 
 @article{chamberlain2020word2vec,
@@ -239,7 +253,8 @@
   proceedings = {https://dl.acm.org/doi/10.1145/3383313.3418486},
   preview     = {word2vec.png},
   pubtype     = {conference},
-  bibtex_show = {true}
+  bibtex_show = {true},
+  abstract    = {Word2vec is a powerful machine learning tool that emerged from Natural Lan-guage Processing (NLP) and is now applied in multiple domains, including recom-mender systems, forecasting, and network analysis. As Word2vec is often used offthe shelf, we address the question of whether the default hyperparameters are suit-able for recommender systems. The answer is emphatically no. In this paper, wefirst elucidate the importance of hyperparameter optimization and show that un-constrained optimization yields an average 221% improvement in hit rate over thedefault parameters. However, unconstrained optimization leads to hyperparametersettings that are very expensive and not feasible for large scale recommendationtasks. To this end, we demonstrate 138% average improvement in hit rate with aruntime budget-constrained hyperparameter optimization. Furthermore, to makehyperparameter optimization applicable for large scale recommendation problemswhere the target dataset is too large to search over, we investigate generalizinghyperparameters settings from samples. We show that applying constrained hy-perparameter optimization using only a 10% sample of the data still yields a 91%average improvement in hit rate over the default parameters when applied to thefull datasets. Finally, we apply hyperparameters learned using our method of con-strained optimization on a sample to the Who To Follow recommendation serviceat Twitter and are able to increase follow rates by 15%.}
 }
 
 @article{rossi2020tgn,
@@ -256,7 +271,8 @@
   preview     = {tgn.png},
   pubtype     = {workshop},
   bibtex_show = {true},
-  proceedings = {https://icml.cc/virtual/2020/7729}
+  proceedings = {https://icml.cc/virtual/2020/7729},
+  abstract    = {Graph Neural Networks (GNNs) have recently become increasingly popular due to their ability to learn complex systems of relations or interactions arising in a broad spectrum of problems ranging from biology and particle physics to social networks and recommendation systems. Despite the plethora of different models for deep learning on graphs, few approaches have been proposed thus far for dealing with graphs that present some sort of dynamic nature (e.g. evolving features or connectivity over time). In this paper, we present Temporal Graph Networks (TGNs), a generic, efficient framework for deep learning on dynamic graphs represented as sequences of timed events. Thanks to a novel combination of memory modules and graph-based operators, TGNs are able to significantly outperform previous approaches being at the same time more computationally efficient. We furthermore show that several previous models for learning on dynamic graphs can be cast as specific instances of our framework. We perform a detailed ablation study of different components of our framework and devise the best configuration that achieves state-of-the-art performance on several transductive and inductive prediction tasks for dynamic graphs.}
 }
 
 @article{rossi2020sign,
@@ -272,7 +288,8 @@
   preview     = {sign.png},
   pubtype     = {workshop},
   bibtex_show = {true},
-  proceedings = {https://icml.cc/virtual/2020/7734}
+  proceedings = {https://icml.cc/virtual/2020/7734},
+  abstract    = {Graph representation learning has recently been applied to a broad spectrum of problems ranging from computer graphics and chemistry to high energy physics and social media. The popularity of graph neural networks has sparked interest, both in academia and in industry, in developing methods that scale to very large graphs such as Facebook or Twitter social networks. In most of these approaches, the computational cost is alleviated by a sampling strategy retaining a subset of node neighbors or subgraphs at training time. In this paper we propose a new, efficient and scalable graph deep learning architecture which sidesteps the need for graph sampling by using graph convolutional filters of different size that are amenable to efficient precomputation, allowing extremely fast training and inference. Our architecture allows using different local graph operators (e.g. motif-induced adjacency matrices or Personalized Page Rank diffusion matrix) to best suit the task at hand. We conduct extensive experimental evaluation on various open benchmarks and show that our approach is competitive with other state-of-the-art architectures, while requiring a fraction of the training and inference time. Moreover, we obtain state-of-the-art results on ogbn-papers100M, the largest public graph dataset, with over 110 million nodes and 1.5 billion edges.}
 }
 
 @article{rossi2019ncrna,
@@ -286,5 +303,6 @@
   preview     = {rna.png},
   pubtype     = {workshop},
   bibtex_show = {true},
-  proceedings = {https://deep-learning-graphs.bitbucket.io/dlg-kdd19/accepted_papers/DLG_2019_paper_17.pdf}
+  proceedings = {https://deep-learning-graphs.bitbucket.io/dlg-kdd19/accepted_papers/DLG_2019_paper_17.pdf},
+  abstract    = {Non-coding RNA (ncRNA) are RNA sequences which don't code for a gene but instead carry important biological functions. The task of ncRNA classification consists in classifying a given ncRNA sequence into its family. While it has been shown that the graph structure of an ncRNA sequence folding is of great importance for the prediction of its family, current methods make use of machine learning classifiers on hand-crafted graph features. We improve on the state-of-the-art for this task with a graph convolutional network model which achieves an accuracy of 85.73% and an F1-score of 85.61% over 13 classes. Moreover, our model learns in an end-to-end fashion from the raw RNA graphs and removes the need for expensive feature extraction. To the best of our knowledge, this also represents the first successful application of graph convolutional networks to RNA folding data.}
 }

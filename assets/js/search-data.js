@@ -9,14 +9,7 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-blog",
-          title: "Blog",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/blog/";
-          },
-        },{id: "nav-publications",
+  },{id: "nav-publications",
           title: "Publications",
           description: "",
           section: "Navigation",
@@ -30,12 +23,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/outreach/";
           },
-        },{id: "nav-cv",
-          title: "CV",
+        },{id: "nav-blog",
+          title: "Blog",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/cv/";
+            window.location.href = "/blog/";
           },
         },{id: "post-temporal-graph-learning-in-2024-towards-data-science",
         

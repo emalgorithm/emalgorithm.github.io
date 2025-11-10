@@ -77,7 +77,7 @@ Below are the students I have had the pleasure to supervise.
 If you are a **prospective student interested in working with me**, feel free to contact my former mentees to learn more about my mentoring style and what collaboration with me looks like.
 
 - **[Davide Marincione](https://gladia.di.uniroma1.it/authors/marincione/)** — <small>2025-05 — Present</small> — PhD Student @ Sapienza University of Rome<br>
-  Project: Model Merging Enables In-Context Learning for Bioacoustics Foundation Models (Under Review)
+  Project: [Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models](/publications/#marincione2025bio)
   <br>
 
 - **Harrison Rush** — <small>2024-08 — Present</small> — ML Engineer @ Amboss Technologies<br>

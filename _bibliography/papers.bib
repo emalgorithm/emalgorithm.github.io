@@ -4,7 +4,7 @@
   title       = {Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models},
   author      = {Davide Marincione and Donato Crisostomi and Roberto Dess\`i and Emanuele Rodol\`a and Emanuele Rossi},
   year        = {2025},
-  journal     = {NeurIPS Workshops on AI for Animal Communication},
+  journal     = {NeurIPS Workshop on AI for Animal Communication},
   proceedings = {https://openreview.net/forum?id=8YmupGWwvl},
   arxiv       = {2511.05171},
   abbr        = {NeurIPS},
@@ -12,7 +12,8 @@
   code        = {https://github.com/gladia-research-group/model-merging-NatureLM-audio},
   pubtype     = {workshop},
   bibtex_show = {true},
-  abstract    = {Foundation models capable of generalizing across species and tasks represent a promising new frontier in bioacoustics, with NatureLM being one of the most prominent examples. While its domain-specific fine-tuning yields strong performance on bioacoustic benchmarks, we observe that it also introduces trade-offs in instruction-following flexibility. For instance, NatureLM achieves high accuracy when prompted for either the common or scientific name individually, but its accuracy drops significantly when both are requested in a single prompt. We address this by applying a simple model merging strategy that interpolates NatureLM with its base language model, recovering instruction-following capabilities with minimal loss of domain expertise. Finally, we show that the merged model exhibits markedly stronger zero-shot generalization, achieving over a 200% relative improvement and setting a new state-of-the-art in closed-set zero-shot classification of unseen species.}
+  abstract    = {Foundation models capable of generalizing across species and tasks represent a promising new frontier in bioacoustics, with NatureLM being one of the most prominent examples. While its domain-specific fine-tuning yields strong performance on bioacoustic benchmarks, we observe that it also introduces trade-offs in instruction-following flexibility. For instance, NatureLM achieves high accuracy when prompted for either the common or scientific name individually, but its accuracy drops significantly when both are requested in a single prompt. We address this by applying a simple model merging strategy that interpolates NatureLM with its base language model, recovering instruction-following capabilities with minimal loss of domain expertise. Finally, we show that the merged model exhibits markedly stronger zero-shot generalization, achieving over a 200% relative improvement and setting a new state-of-the-art in closed-set zero-shot classification of unseen species.},
+  selected    = {true}
 }
 
 
@@ -86,7 +87,7 @@
   abbr        = {bioRxiv},
   preview     = {pinder.png},
   biorxiv     = {2024.07.17.603980v4},
-  selected    = {true},
+  selected    = {false},
   code        = {https://github.com/pinder-org/pinder},
   docs        = {https://pinder-org.github.io/pinder},
   pubtype     = {preprint},
@@ -123,6 +124,7 @@
   video       = {https://www.youtube.com/watch?v=zLfzIIRj5uo},
   pubtype     = {conference},
   bibtex_show = {true},
+  selected    = {true},
   abstract    = {Many real world graphs are inherently dynamic, constantly evolving with node and edge additions. These graphs can be represented by temporal graphs, either through a stream of edge events or a sequence of graph snapshots. Until now, the development of machine learning methods for both types has occurred largely in isolation, resulting in limited experimental comparison and theoretical crosspollination between the two. In this paper, we introduce Unified Temporal Graph (UTG), a framework that unifies snapshot-based and event-based machine learning models under a single umbrella, enabling models developed for one representation to be applied effectively to datasets of the other. We also propose a novel UTG training procedure to boost the performance of snapshot-based models in the streaming setting. We comprehensively evaluate both snapshot and event-based models across both types of temporal graphs on the temporal link prediction task. Our main findings are threefold: first, when combined with UTG training, snapshot-based models can perform competitively with event-based models such as TGN and GraphMixer even on event datasets. Second, snapshot-based models are at least an order of magnitude faster than most event-based models during inference. Third, while event-based methods such as NAT and DyGFormer outperforms snapshot-based methods on both types of temporal graphs, this is because they leverage joint neighborhood structural features thus emphasizing the potential to incorporate these features into snapshotbased models as well. These findings highlight the importance of comparing model architectures independent of the data format and suggest the potential of combining the efficiency of snapshot-based models with the performance of event-based models in the future.}
 }
 
@@ -135,7 +137,7 @@
   proceedings = {https://spiral.imperial.ac.uk/entities/publication/dad8da86-7861-4218-98dc-ce29931bf214},
   arxiv       = {2510.21994},
   abbr        = {PhD Thesis},
-  selected    = {true},
+  selected    = {false},
   pubtype     = {thesis},
   bibtex_show = {true},
   preview     = {thesis.png},
@@ -299,7 +301,7 @@
   abbr        = {ICML},
   code        = {https://pytorch-geometric.readthedocs.io/en/latest/_modules/torch_geometric/transforms/sign.html},
   blog        = {https://towardsdatascience.com/simple-scalable-graph-neural-networks-7eb04f366d07},
-  selected    = {true},
+  selected    = {false},
   preview     = {sign.png},
   pubtype     = {workshop},
   bibtex_show = {true},

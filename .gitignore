@@ -18,3 +18,4 @@ vendor
 *.fls
 *.log
 *.synctex.gz
+.venv

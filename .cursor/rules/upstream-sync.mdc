@@ -1,0 +1,44 @@
+---
+alwaysApply: false
+description: "Sync local al-folio fork with upstream while preserving customizations"
+---
+
+I need to update my repository with changes from the upstream `al-folio` repository while preserving my personal customizations.
+
+Please execute the following "Upstream Sync Workflow":
+
+**Phase 1: Clean Start**
+1.  Check status to ensure the working tree is clean. If not, stop and tell me.
+2.  Switch to the `main` branch: `git checkout main`.
+3.  Pull the latest changes from my remote: `git pull origin main`.
+4.  Create and switch to a new temporary sync branch: `git checkout -b chore/sync-upstream-$(date +%Y%m%d)`. **Important:** Check if a branch with this name already exists (in case another integration was done or tried on the same date). If it exists, append a numbering suffix starting with `-1`, then `-2`, etc., until you find an available branch name (e.g., `chore/sync-upstream-20240115-1`, `chore/sync-upstream-20240115-2`).
+
+**Phase 2: Fetch & Merge**
+1.  Fetch the upstream remote: `git fetch upstream`.
+2.  Attempt to merge upstream master: `git merge upstream/master`.
+
+**Phase 3: Intelligent Conflict Resolution**
+If the merge stops due to conflicts, do not abort. For every conflicting file, **critically assess** the conflict by analyzing the `<<<< HEAD` (my changes) vs `>>>> upstream` (their changes). Consider the context, purpose, and impact of each change. Choose the resolution that makes the most sense based on the specific circumstances, then apply these rules:
+
+* **Global Rule:** If the conflict is purely formatting or whitespace, prefer Upstream.
+* **Rule for `_config.yml`:**
+    * KEEP my personal values (e.g., `title`, `email`, `url`, `repository`, social links).
+    * ACCEPT new configuration keys/settings added by upstream.
+    * UPDATE version numbers or dependencies if upstream changed them.
+* **Rule for Content (`_pages/`, `_bibliography/`, `_posts/`):**
+    * Heavily bias towards MY changes. I do not want to overwrite my bio or papers with the template defaults.
+    * Only accept upstream changes if they look like structural fixes (e.g., front matter syntax updates).
+* **Rule for Layouts/Includes (`_layouts/`, `_includes/`, `_sass/`):**
+    * Heavily bias towards UPSTREAM changes to get new features/bug fixes.
+    * **Crucial:** Check if I added custom scripts (like analytics), custom CSS classes, or specific HTML blocks. If so, re-inject my custom code into the new upstream structure.
+
+**Phase 4: Finalization**
+1.  For each resolved file, automatically `git add` it.
+2.  If you are unsure about a specific conflict (e.g., logic is too complex to merge safely), stop and ask me for guidance on that specific file.
+3.  Once all conflicts are resolved, commit the merge with the message: "chore: sync with upstream al-folio".
+4.  Push the branch to origin: `git push origin <branch-name>`.
+5.  Create a pull request for the branch targeting `main`. Include the conflict resolution report in the PR description.
+6.  **Report:** At the end, output a Markdown table summarizing:
+    * Files that had conflicts.
+    * The resolution strategy you used (e.g., "Kept Local Content", "Merged Config", "Adopted Upstream Structure").
+    * **For each conflict, report on the specific choice made and the reasoning behind it** (e.g., "Kept local analytics script because it's custom functionality not present upstream", "Adopted upstream bug fix in layout while preserving custom CSS class").

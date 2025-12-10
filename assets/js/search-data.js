@@ -118,11 +118,11 @@ ninja.data = [{
             window.open("https://blog.x.com/engineering/en_us/topics/insights/2021/temporal-graph-networks", "_blank");
           
         },
-      },{id: "post-simple-scalable-graph-neural-networks-by-michael-bronstein-tds-archive-medium",
+      },{id: "post-just-a-moment",
         
-          title: 'Simple scalable graph neural networks | by Michael Bronstein | TDS Archive |... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+          title: 'Just a moment... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "Deep learning on giant graphs Simple scalable graph neural networks One of the challenges that have so far precluded the wide adoption of graph neural networks in industrial applications is the …",
+        description: "",
         section: "Posts",
         handler: () => {
           

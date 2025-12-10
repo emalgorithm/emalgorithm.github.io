@@ -14,7 +14,7 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: favicon.ico # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: dolphin.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://emalgorithm.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -75,6 +75,7 @@ google_analytics: # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
 cronitor_analytics: # cronitor RUM analytics site ID (format: XXXXXXXXX)
 pirsch_analytics: # your Pirsch analytics site ID (length 32 characters)
 openpanel_analytics: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+umami_analytics: 50feeb64-c144-4d7b-a713-583ada640dcc # your Umami website ID
 
 # For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
 google_site_verification: # your google-site-verification ID (Google Search Console)
@@ -318,7 +319,6 @@ filtered_bibtex_keywords:
     additional_info,
     altmetric,
     annotation,
-    arxiv,
     award,
     award_name,
     bibtex_show,
@@ -330,11 +330,16 @@ filtered_bibtex_keywords:
     pdf,
     poster,
     preview,
+    proceedings,
+    pubtype,
+    docs,
+    dataset,
     selected,
     slides,
     supp,
     video,
     website,
+    xthread,
   ]
 
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
@@ -394,6 +399,7 @@ enable_google_analytics: false # enables google analytics
 enable_cronitor_analytics: false # enables cronitor RUM analytics
 enable_pirsch_analytics: false # enables Pirsch analytics (https://pirsch.io/)
 enable_openpanel_analytics: false # enables Openpanel analytics (https://openpanel.dev/)
+enable_umami_analytics: true # enables Umami analytics (https://umami.is/)
 enable_google_verification: false # enables google site verification
 enable_bing_verification: false # enables bing site verification
 enable_masonry: true # enables automatic project cards arrangement

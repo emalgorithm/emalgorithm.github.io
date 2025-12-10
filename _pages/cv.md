@@ -1,18 +1,11 @@
 ---
-layout: page
+layout: cv
 permalink: /cv/
-title: CV
-nav: false
+title: cv
+nav: true
 nav_order: 5
+cv_pdf: example_pdf.pdf # you can also use external links here
+description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
+toc:
+  sidebar: left
 ---
-
-<div class="row mt-3">
-    <div class="col-sm-12">
-        <div class="text-center">
-            <iframe src="{{ '/assets/pdf/emanuele_rossi_cv.pdf' | relative_url }}" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
-            This browser does not support PDFs. Please download the PDF to view it:
-            <a href="{{ '/assets/pdf/emanuele_rossi_cv.pdf' | relative_url }}">Download PDF</a>
-            </iframe>
-        </div>
-    </div>
-</div>

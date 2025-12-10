@@ -11,10 +11,4 @@ assets/libs/
 node_modules/
 vendor
 .idea
-
-# LaTeX build files
-*.aux
-*.fdb_latexmk
-*.fls
-*.log
-*.synctex.gz
+.venv

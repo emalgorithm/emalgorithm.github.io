@@ -41,3 +41,5 @@ If the merge stops due to conflicts, do not abort. For every conflicting file, a
 5.  **Report:** At the end, output a Markdown table summarizing:
     * Files that had conflicts.
     * The resolution strategy you used (e.g., "Kept Local Content", "Merged Config", "Adopted Upstream Structure").
+
+At the end, remind me to use a regular merge (not a squash merge) when merging the PR into main. This preserves the detailed commit history of al-folio, making future upstream syncs smoother.

@@ -1568,3 +1568,7 @@ html[data-theme="dark"] {
     }
   }
 }
+
+mjx-container[jax="CHTML"][display="true"] {
+  overflow-x: auto;
+}

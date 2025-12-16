@@ -1,0 +1,83 @@
+// Custom styles for emalgorithm.github.io
+// These styles are kept separate from _base.scss to minimize merge conflicts with upstream updates
+
+// Fix for margin between paper figure and publication type badge
+.bibliography {
+  .abbr {
+    figure {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Publication Type Badges
+.pubtype-tags {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.25rem;
+    border-radius: 0.25rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .badge-conference {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .badge-workshop {
+    background-color: #28a745;
+    color: white;
+  }
+
+  .badge-journal {
+    background-color: #dc3545;
+    color: white;
+  }
+
+  .badge-preprint {
+    background-color: #ffc107;
+    color: #212529;
+  }
+
+  .badge-default {
+    background-color: #6c757d;
+    color: white;
+  }
+}
+
+// Dark mode adaptations for publication type badges
+html[data-theme="dark"] {
+  .pubtype-tags {
+    .badge-conference {
+      background-color: #4dabf7;
+      color: var(--global-card-bg-color) !important;
+    }
+
+    .badge-workshop {
+      background-color: #51cf66;
+      color: var(--global-card-bg-color) !important;
+    }
+
+    .badge-journal {
+      background-color: #ff6b6b;
+      color: var(--global-card-bg-color) !important;
+    }
+
+    .badge-preprint {
+      background-color: #ffd43b;
+      color: var(--global-card-bg-color) !important;
+    }
+
+    .badge-default {
+      background-color: #868e96;
+      color: var(--global-card-bg-color) !important;
+    }
+  }
+}

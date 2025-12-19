@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2025-12-17'
+  last_updated: '2025-12-19'
 papers:
   DHlkBOYAAAAJ:4TOpqqG69KYC:
     citations: 0
@@ -50,7 +50,7 @@ papers:
     title: Bayesian Binary Search
     year: '2025'
   DHlkBOYAAAAJ:d1gkVwhDpl0C:
-    citations: 1243
+    citations: 1244
     title: Temporal Graph Networks for Deep Learning on Dynamic Graphs
     year: '2020'
   DHlkBOYAAAAJ:hqOjcs7Dif8C:
@@ -62,7 +62,7 @@ papers:
     title: 'Tgb 2.0: A benchmark for learning on temporal knowledge graphs and heterogeneous graphs'
     year: '2024'
   DHlkBOYAAAAJ:u-x6o8ySG0sC:
-    citations: 528
+    citations: 529
     title: 'SIGN: Scalable Inception Graph Neural Networks'
     year: '2020'
   DHlkBOYAAAAJ:u5HHmVD_uO8C:
@@ -70,10 +70,10 @@ papers:
     title: ncRNA Classification with Graph Convolutional Networks
     year: '2019'
   DHlkBOYAAAAJ:ufrVoPGSRksC:
-    citations: 160
+    citations: 162
     title: On the unreasonable effectiveness of feature propagation in learning on graphs with missing node features
     year: '2021'
   DHlkBOYAAAAJ:zYLM7Y9cAGgC:
-    citations: 445
+    citations: 446
     title: 'Grand: Graph neural diffusion'
     year: '2021'

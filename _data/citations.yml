@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-01-30'
+  last_updated: '2026-02-02'
 papers:
   DHlkBOYAAAAJ:4TOpqqG69KYC:
     citations: 1
@@ -18,7 +18,7 @@ papers:
     title: 'UTG: Towards a unified view of snapshot and event based models for temporal graphs'
     year: '2024'
   DHlkBOYAAAAJ:LkGwnXOMwfcC:
-    citations: 28
+    citations: 29
     title: Provably Efficient Causal Model-Based Reinforcement Learning for Systematic Generalization
     year: '2022'
   DHlkBOYAAAAJ:M3ejUd6NZC8C:
@@ -26,7 +26,7 @@ papers:
     title: Channel balance interpolation in the lightning network via machine learning
     year: '2025'
   DHlkBOYAAAAJ:Se3iqnhoufwC:
-    citations: 197
+    citations: 198
     title: Graph Neural Networks for Link Prediction with Subgraph Sketching
     year: '2022'
   DHlkBOYAAAAJ:ULOm3_A8WrAC:
@@ -34,7 +34,7 @@ papers:
     title: 'PINDER: The protein interaction dataset and evaluation resource'
     year: '2024'
   DHlkBOYAAAAJ:YOwf2qJgpHMC:
-    citations: 28
+    citations: 30
     title: Do We Really Need to Drop Items with Missing Modalities in Multimodal Recommendation?
     year: '2024'
   DHlkBOYAAAAJ:Zph67rFs4hoC:
@@ -62,7 +62,7 @@ papers:
     title: 'Tgb 2.0: A benchmark for learning on temporal knowledge graphs and heterogeneous graphs'
     year: '2024'
   DHlkBOYAAAAJ:u-x6o8ySG0sC:
-    citations: 545
+    citations: 546
     title: 'SIGN: Scalable Inception Graph Neural Networks'
     year: '2020'
   DHlkBOYAAAAJ:u5HHmVD_uO8C:
@@ -70,10 +70,10 @@ papers:
     title: ncRNA Classification with Graph Convolutional Networks
     year: '2019'
   DHlkBOYAAAAJ:ufrVoPGSRksC:
-    citations: 167
+    citations: 168
     title: On the unreasonable effectiveness of feature propagation in learning on graphs with missing node features
     year: '2021'
   DHlkBOYAAAAJ:zYLM7Y9cAGgC:
-    citations: 455
+    citations: 456
     title: 'Grand: Graph neural diffusion'
     year: '2021'

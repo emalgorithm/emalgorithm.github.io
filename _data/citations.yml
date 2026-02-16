@@ -1,20 +1,20 @@
 metadata:
-  last_updated: '2026-02-02'
+  last_updated: '2026-02-16'
 papers:
   DHlkBOYAAAAJ:4TOpqqG69KYC:
     citations: 1
     title: Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models
     year: '2025'
   DHlkBOYAAAAJ:8k81kl-MbHgC:
-    citations: 211
+    citations: 218
     title: Temporal Graph Benchmark for Machine Learning on Temporal Graphs
     year: '2023'
   DHlkBOYAAAAJ:9yKSN-GCB0IC:
-    citations: 37
+    citations: 36
     title: Tuning word2vec for large scale recommendation systems
     year: '2020'
   DHlkBOYAAAAJ:KlAtU1dfN6UC:
-    citations: 16
+    citations: 17
     title: 'UTG: Towards a unified view of snapshot and event based models for temporal graphs'
     year: '2024'
   DHlkBOYAAAAJ:LkGwnXOMwfcC:
@@ -26,7 +26,7 @@ papers:
     title: Channel balance interpolation in the lightning network via machine learning
     year: '2025'
   DHlkBOYAAAAJ:Se3iqnhoufwC:
-    citations: 198
+    citations: 200
     title: Graph Neural Networks for Link Prediction with Subgraph Sketching
     year: '2022'
   DHlkBOYAAAAJ:ULOm3_A8WrAC:
@@ -34,11 +34,11 @@ papers:
     title: 'PINDER: The protein interaction dataset and evaluation resource'
     year: '2024'
   DHlkBOYAAAAJ:YOwf2qJgpHMC:
-    citations: 30
-    title: Do We Really Need to Drop Items with Missing Modalities in Multimodal Recommendation?
+    citations: 31
+    title: Do we really need to drop items with missing modalities in multimodal recommendation?
     year: '2024'
   DHlkBOYAAAAJ:Zph67rFs4hoC:
-    citations: 66
+    citations: 67
     title: 'PLINDER: The protein-ligand interactions dataset and evaluation resource'
     year: '2024'
   DHlkBOYAAAAJ:_FxGoFyzp5QC:
@@ -50,30 +50,30 @@ papers:
     title: Bayesian Binary Search
     year: '2025'
   DHlkBOYAAAAJ:d1gkVwhDpl0C:
-    citations: 1321
+    citations: 1370
     title: Temporal Graph Networks for Deep Learning on Dynamic Graphs
     year: '2020'
   DHlkBOYAAAAJ:hqOjcs7Dif8C:
-    citations: 157
+    citations: 168
     title: Edge Directionality Improves Learning on Heterophilic Graphs
     year: '2023'
   DHlkBOYAAAAJ:kNdYIx-mwKoC:
-    citations: 26
+    citations: 27
     title: 'Tgb 2.0: A benchmark for learning on temporal knowledge graphs and heterogeneous graphs'
     year: '2024'
   DHlkBOYAAAAJ:u-x6o8ySG0sC:
-    citations: 546
+    citations: 552
     title: 'SIGN: Scalable Inception Graph Neural Networks'
     year: '2020'
   DHlkBOYAAAAJ:u5HHmVD_uO8C:
-    citations: 35
+    citations: 37
     title: ncRNA Classification with Graph Convolutional Networks
     year: '2019'
   DHlkBOYAAAAJ:ufrVoPGSRksC:
-    citations: 168
+    citations: 171
     title: On the unreasonable effectiveness of feature propagation in learning on graphs with missing node features
     year: '2021'
   DHlkBOYAAAAJ:zYLM7Y9cAGgC:
-    citations: 456
+    citations: 461
     title: 'Grand: Graph neural diffusion'
     year: '2021'

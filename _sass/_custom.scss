@@ -82,6 +82,28 @@ html[data-theme="dark"] {
   }
 }
 
+// Standalone section divider — matches the .projects h2.category pattern
+// but usable on any page (e.g. outreach)
+h2.category {
+  color: var(--global-divider-color);
+  border-bottom: 1px solid var(--global-divider-color);
+  padding-top: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+// Year sub-dividers — muted label style, visually subordinate to h2.category
+h3.year {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--global-text-color-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .publications {
   ol.bibliography {
     li {
@@ -91,6 +113,25 @@ html[data-theme="dark"] {
           padding-right: 0.5rem;
         }
       }
+    }
+  }
+}
+
+// Bordered link buttons for standalone .links divs (e.g. outreach page)
+// Mirrors the scoped rule in _publications.scss which only applies inside .publications ol.bibliography li
+.links {
+  a.btn {
+    color: var(--global-text-color);
+    border: 1px solid var(--global-text-color);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    margin-left: 0;
+
+    &:hover {
+      color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
     }
   }
 }

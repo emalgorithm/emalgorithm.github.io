@@ -140,14 +140,18 @@ external_sources:
     posts:
       - url: https://blog.x.com/engineering/en_us/topics/insights/2021/temporal-graph-networks
         published_date: 2021-01-25
+        title: "Deep Learning on Dynamic Graphs"
         thumbnail: /assets/img/publication_preview/tgn.png
       - url: https://blog.x.com/engineering/en_us/topics/insights/2022/graph-machine-learning-with-missing-node-features
         published_date: 2022-03-17
+        title: "Graph Machine Learning with Missing Node Features"
         thumbnail: /assets/img/publication_preview/fp.gif
   - name: Medium
     posts:
       - url: https://medium.com/data-science/simple-scalable-graph-neural-networks-7eb04f366d07
         published_date: 2020-08-08
+        title: "Simple Scalable Graph Neural Networks"
+        thumbnail: /assets/img/publication_preview/sign.png
   - name: GraphCore Blog
     posts:
       - url: https://www.graphcore.ai/posts/accelerating-and-scaling-temporal-graph-networks-on-the-graphcore-ipu

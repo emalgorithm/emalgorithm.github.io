@@ -9,47 +9,136 @@ nav_order: 4
 
 <!-- pages/outreach.md -->
 
-## Talks
+<h2 class="category">Talks</h2>
 
-#### 2023
+Invited talks and presentations at academic seminars, workshops, and industry events.
 
-- **2023/11/22**: "_A Primer on Graph Neural Networks_" at the [COLT Seminar](https://www.upf.edu/web/colt), University of Pompeu Fabra, Barcelona [[Slides](../assets/pdf/gnn_primer.pdf)]
-- **2023/09/14**: "_Edge Directionality Improves Learning on Heterophilic Graphs_" at the [Temporal Graph Reading Group
-  ](https://www.cs.mcgill.ca/~shuang43/rg.html) [[Slides](../assets/pdf/dirgnn_tgl_reading_group.pdf)][[Video](https://www.youtube.com/watch?v=VjpUSR1NZvI)]
-- **2023/09/07**: "_Edge Directionality Improves Learning on Heterophilic Graphs_" at the [Explainability and Applicability of Graph Neural Networks Workshop
-  ](https://www.gain-group.de/html/events.html) in Kassel
+<h3 class="year">2023</h3>
 
-#### 2022
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      <tr>
+        <td class="text-nowrap" style="width:5rem"><small class="text-muted">Nov 22</small></td>
+        <td><em>A Primer on Graph Neural Networks</em><br><small><a href="https://www.upf.edu/web/colt" target="_blank" rel="noopener noreferrer">COLT Seminar</a>, University of Pompeu Fabra, Barcelona</small></td>
+        <td class="text-nowrap"><small><a href="../assets/pdf/gnn_primer.pdf">[Slides]</a></small></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">Sep 14</small></td>
+        <td><em>Edge Directionality Improves Learning on Heterophilic Graphs</em><br><small><a href="https://www.cs.mcgill.ca/~shuang43/rg.html" target="_blank" rel="noopener noreferrer">Temporal Graph Reading Group</a></small></td>
+        <td class="text-nowrap"><small><a href="../assets/pdf/dirgnn_tgl_reading_group.pdf">[Slides]</a>&nbsp;<a href="https://www.youtube.com/watch?v=VjpUSR1NZvI" target="_blank" rel="noopener noreferrer">[Video]</a></small></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">Sep 07</small></td>
+        <td><em>Edge Directionality Improves Learning on Heterophilic Graphs</em><br><small><a href="https://www.gain-group.de/html/events.html" target="_blank" rel="noopener noreferrer">Explainability and Applicability of GNNs Workshop</a>, Kassel</small></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-- **2022/09/28**: "_Improving Machine Learning at Twitter using Graphs_" at [Privacy Week](https://privacyweek.it/) [[Video](https://privacyweek.it/event/potenziare-lapprendimento-automatico-su-twitter-utilizzando-i-grafi/) (in Italian)]
-- **2022/09/09**: "_Learning on Graphs with Missing Node Features_" at the [Tiger Graph](https://www.tigergraph.com/) Reading Group
-- **2022/03/01**: "_Learning on Graphs with Missing Node Features_" at the [Learning on Graphs and Geometry Reading Group](https://portal.valencelabs.com/logg) [[Slides](https://docs.google.com/presentation/d/11dAeJRalTI7K1YAxMNz_yElZ0lVO5Bw7n0LBqSd-OUY/edit#slide=id.g1017b3d77ca_0_0)][[Video](https://www.youtube.com/watch?v=xe5A-xQTBdM)]
-- **2022/02/24**: "_Learning on Graphs with Missing Node Features_" at the [Machine Learning Research Group](https://www.robots.ox.ac.uk/~parg/)
-  of the University of Oxford
+<h3 class="year">2022</h3>
 
-#### 2021
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      <tr>
+        <td class="text-nowrap" style="width:5rem"><small class="text-muted">Sep 28</small></td>
+        <td><em>Improving Machine Learning at Twitter using Graphs</em><br><small><a href="https://privacyweek.it/" target="_blank" rel="noopener noreferrer">Privacy Week</a></small></td>
+        <td class="text-nowrap"><small><a href="https://privacyweek.it/event/potenziare-lapprendimento-automatico-su-twitter-utilizzando-i-grafi/" target="_blank" rel="noopener noreferrer">[Video]</a> <span class="text-muted">(it)</span></small></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">Sep 09</small></td>
+        <td><em>Learning on Graphs with Missing Node Features</em><br><small><a href="https://www.tigergraph.com/" target="_blank" rel="noopener noreferrer">TigerGraph</a> Reading Group</small></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">Mar 01</small></td>
+        <td><em>Learning on Graphs with Missing Node Features</em><br><small><a href="https://portal.valencelabs.com/logg" target="_blank" rel="noopener noreferrer">Learning on Graphs and Geometry Reading Group</a></small></td>
+        <td class="text-nowrap"><small><a href="https://docs.google.com/presentation/d/11dAeJRalTI7K1YAxMNz_yElZ0lVO5Bw7n0LBqSd-OUY/edit#slide=id.g1017b3d77ca_0_0" target="_blank" rel="noopener noreferrer">[Slides]</a>&nbsp;<a href="https://www.youtube.com/watch?v=xe5A-xQTBdM" target="_blank" rel="noopener noreferrer">[Video]</a></small></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">Feb 24</small></td>
+        <td><em>Learning on Graphs with Missing Node Features</em><br><small><a href="https://www.robots.ox.ac.uk/~parg/" target="_blank" rel="noopener noreferrer">Machine Learning Research Group</a>, University of Oxford</small></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-- **2021/11/23**: "_Learning on Graphs with Missing Node Features_" at University of Cambridge [AI Research Group Talks](http://talks.cam.ac.uk/talk/index/165859)
-- **2021/11/17**: "_Graph Neural Networks with Almost No Features_" at the [Toronto Machine Learning Summit](https://www.torontomachinelearning.com/)
-- **2021/06/16**: "_Machine Learning on Dynamic Graphs: Temporal Graph Networks_" at [MLOps World 2021](https://mlopsworld.com/)
-- **2021/04/26**: "_Machine Learning on Dynamic Graphs: Temporal Graph Networks_" at Intel ML Seminar [[Slides](../assets/pdf/intel_tgn.pdf)]
-- **2021/04/09**: "_Machine Learning on Dynamic Graphs: Temporal Graph Networks_" at the [GNNSys'21](https://gnnsys.github.io/) workshop
-- **2021/01/22**: "_Dynamic Graphs and Temporal Graph Networks_" at the University of Liverpool [Networks and Distributed Computing Series](https://seminars.csc.liv.ac.uk/abstract.php?id=979) [[Slides](../assets/pdf/TGN_2021_01_22.pdf)]
+<h3 class="year">2021</h3>
 
-#### 2020
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      <tr>
+        <td class="text-nowrap" style="width:5rem"><small class="text-muted">Nov 23</small></td>
+        <td><em>Learning on Graphs with Missing Node Features</em><br><small>University of Cambridge <a href="http://talks.cam.ac.uk/talk/index/165859" target="_blank" rel="noopener noreferrer">AI Research Group Talks</a></small></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">Nov 17</small></td>
+        <td><em>Graph Neural Networks with Almost No Features</em><br><small><a href="https://www.torontomachinelearning.com/" target="_blank" rel="noopener noreferrer">Toronto Machine Learning Summit</a></small></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">Jun 16</small></td>
+        <td><em>Machine Learning on Dynamic Graphs: Temporal Graph Networks</em><br><small><a href="https://mlopsworld.com/" target="_blank" rel="noopener noreferrer">MLOps World 2021</a></small></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">Apr 26</small></td>
+        <td><em>Machine Learning on Dynamic Graphs: Temporal Graph Networks</em><br><small>Intel ML Seminar</small></td>
+        <td class="text-nowrap"><small><a href="../assets/pdf/intel_tgn.pdf">[Slides]</a></small></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">Apr 09</small></td>
+        <td><em>Machine Learning on Dynamic Graphs: Temporal Graph Networks</em><br><small><a href="https://gnnsys.github.io/" target="_blank" rel="noopener noreferrer">GNNSys'21 Workshop</a></small></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">Jan 22</small></td>
+        <td><em>Dynamic Graphs and Temporal Graph Networks</em><br><small>University of Liverpool <a href="https://seminars.csc.liv.ac.uk/abstract.php?id=979" target="_blank" rel="noopener noreferrer">Networks and Distributed Computing Series</a></small></td>
+        <td class="text-nowrap"><small><a href="../assets/pdf/TGN_2021_01_22.pdf">[Slides]</a></small></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-- **2020/07/21**: "_TGN: Temporal Graph Networks_" at [AISC](https://ai.science/) [[Slides](../assets/pdf/tgn_aisc_2020.pdf)][[Video](https://www.youtube.com/watch?v=W1GvX2ZcUmY)]
+<h3 class="year">2020</h3>
 
----
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      <tr>
+        <td class="text-nowrap" style="width:5rem"><small class="text-muted">Jul 21</small></td>
+        <td><em>TGN: Temporal Graph Networks</em><br><small><a href="https://ai.science/" target="_blank" rel="noopener noreferrer">AISC</a></small></td>
+        <td class="text-nowrap"><small><a href="../assets/pdf/tgn_aisc_2020.pdf">[Slides]</a>&nbsp;<a href="https://www.youtube.com/watch?v=W1GvX2ZcUmY" target="_blank" rel="noopener noreferrer">[Video]</a></small></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-## Conversations
+<h2 class="category">Conversations</h2>
 
-- **2021/03/02**: "_Scaling Graph Neural Networks to Twitter-scale_" with [Zak Jost](https://www.youtube.com/channel/UCxw9_WYmLqlj5PyXu2AWU_g) [[Video](https://www.youtube.com/watch?v=ZSMEXchR3w8)]
-- **2021/01/14**: "_My journey, my research at Twitter and Imperial College, and my work at LeadTheFuture_" with [The Smarter Podcast](https://italia-podcast.it/podcast/smarter-podcast) [[Video](https://www.youtube.com/watch?v=x4CeQ3S_DCA) (in Italian)]
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      <tr>
+        <td class="text-nowrap" style="width:5rem"><small class="text-muted">2021/03/02</small></td>
+        <td><em>Scaling Graph Neural Networks to Twitter-scale</em><br><small>with <a href="https://www.youtube.com/channel/UCxw9_WYmLqlj5PyXu2AWU_g" target="_blank" rel="noopener noreferrer">Zak Jost</a></small></td>
+        <td class="text-nowrap"><small><a href="https://www.youtube.com/watch?v=ZSMEXchR3w8" target="_blank" rel="noopener noreferrer">[Video]</a></small></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">2021/01/14</small></td>
+        <td><em>My journey, my research at Twitter and Imperial College, and my work at LeadTheFuture</em><br><small>with <a href="https://italia-podcast.it/podcast/smarter-podcast" target="_blank" rel="noopener noreferrer">The Smarter Podcast</a></small></td>
+        <td class="text-nowrap"><small><a href="https://www.youtube.com/watch?v=x4CeQ3S_DCA" target="_blank" rel="noopener noreferrer">[Video]</a> <span class="text-muted">(it)</span></small></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
----
-
-## Workshop Involvement
+<h2 class="category">Workshop Involvement</h2>
 
 #### Organized
 
@@ -61,15 +150,13 @@ nav_order: 4
 
 #### Program Committee
 
-- **2022/12**: [NeurReps Workshop – Symmetry and Geometry in Neural Representations](https://www.neurreps.org/) (at Neurips 2022)
+- **2022/12**: [NeurReps Workshop – Symmetry and Geometry in Neural Representations](https://www.neurreps.org/) (at NeurIPS 2022)
 - **2022/02**: [GCLR 22 – 2nd Workshop on Graphs and more complex structures for learning and reasoning](https://sites.google.com/view/gclr2022/home?authuser=0) (at AAAI 2022)
 - **2021/10**: [GReS – Workshop on Graph Neural Networks for Recommendation and Search](https://europe.naverlabs.com/gres-workshop/) (at ACM RecSys 2021)
 - **2021/04**: [GNNSys'21 -- Workshop on Graph Neural Networks and Systems](https://gnnsys.github.io/) (at MLSys 2021)
 - **2021/02**: [AAAI-21 GCLR](https://sites.google.com/view/gclr2021/home) (at AAAI 2021)
 
----
-
-## Supervision and Mentoring
+<h2 class="category">Supervision and Mentoring</h2>
 
 Mentoring bright and motivated students is one of the most rewarding aspects of my research. I am grateful for their creativity and curiosity, and for how much I learn from them in return.
 

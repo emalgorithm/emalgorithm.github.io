@@ -67,6 +67,7 @@ module ExternalPosts
       doc.data['description'] = content[:summary]
       doc.data['date'] = content[:published]
       doc.data['redirect'] = url
+      doc.data['thumbnail'] = content[:thumbnail] if content[:thumbnail]
 
       # Apply default categories and tags from source configuration
       if src['categories'] && src['categories'].is_a?(Array) && !src['categories'].empty?
@@ -85,6 +86,7 @@ module ExternalPosts
         puts "...fetching #{post['url']}"
         content = fetch_content_from_url(post['url'])
         content[:published] = parse_published_date(post['published_date'])
+        content[:thumbnail] = post['thumbnail'] if post.key?('thumbnail')
         create_document(site, src['name'], post['url'], content, src)
       end
     end
@@ -109,13 +111,17 @@ module ExternalPosts
       description ||= parsed_html.at('head meta[name="og:description"]')&.attr('content')
       description ||= parsed_html.at('head meta[property="og:description"]')&.attr('content')
 
+      thumbnail = parsed_html.at('head meta[property="og:image"]')&.attr('content')
+      thumbnail ||= parsed_html.at('head meta[name="og:image"]')&.attr('content')
+
       body_content = parsed_html.search('p').map { |e| e.text }
       body_content = body_content.join() || ''
 
       {
         title: title,
         content: body_content,
-        summary: description
+        summary: description,
+        thumbnail: thumbnail
         # Note: The published date is now added in the fetch_from_urls method.
       }
     end

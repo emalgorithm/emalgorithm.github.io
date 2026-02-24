@@ -87,6 +87,7 @@ module ExternalPosts
         content = fetch_content_from_url(post['url'])
         content[:published] = parse_published_date(post['published_date'])
         content[:thumbnail] = post['thumbnail'] if post.key?('thumbnail')
+        content[:title] = post['title'] if post.key?('title')
         create_document(site, src['name'], post['url'], content, src)
       end
     end

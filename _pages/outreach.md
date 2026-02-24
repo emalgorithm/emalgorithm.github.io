@@ -202,21 +202,54 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
 
 <h2 class="category">Workshop Involvement</h2>
 
-#### Organized
-
-- **2023/12**: [Temporal Graph Learning Workshop @ NeurIPS 2023](https://sites.google.com/view/tglworkshop-2023/home)
-
-#### Panel Participation
-
-- **2022/12**: [Temporal Graph Learning Workshop @ NeurIPS 2022](https://sites.google.com/view/tglworkshop2022/home#h.q1t0lweplm6e)
-
-#### Program Committee
-
-- **2022/12**: [NeurReps Workshop – Symmetry and Geometry in Neural Representations](https://www.neurreps.org/) (at NeurIPS 2022)
-- **2022/02**: [GCLR 22 – 2nd Workshop on Graphs and more complex structures for learning and reasoning](https://sites.google.com/view/gclr2022/home?authuser=0) (at AAAI 2022)
-- **2021/10**: [GReS – Workshop on Graph Neural Networks for Recommendation and Search](https://europe.naverlabs.com/gres-workshop/) (at ACM RecSys 2021)
-- **2021/04**: [GNNSys'21 -- Workshop on Graph Neural Networks and Systems](https://gnnsys.github.io/) (at MLSys 2021)
-- **2021/02**: [AAAI-21 GCLR](https://sites.google.com/view/gclr2021/home) (at AAAI 2021)
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      <tr>
+        <td class="text-nowrap" style="width:5rem"><small class="text-muted">2023/12</small></td>
+        <td><a href="https://sites.google.com/view/tglworkshop-2023/home" target="_blank" rel="noopener noreferrer">Temporal Graph Learning Workshop</a></td>
+        <td class="text-nowrap"><small class="text-muted">NeurIPS 2023</small></td>
+        <td class="text-nowrap"><small class="text-muted">Organizer</small></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">2022/12</small></td>
+        <td><a href="https://sites.google.com/view/tglworkshop2022/home#h.q1t0lweplm6e" target="_blank" rel="noopener noreferrer">Temporal Graph Learning Workshop</a></td>
+        <td class="text-nowrap"><small class="text-muted">NeurIPS 2022</small></td>
+        <td class="text-nowrap"><small class="text-muted">Panel</small></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">2022/12</small></td>
+        <td><a href="https://www.neurreps.org/" target="_blank" rel="noopener noreferrer">NeurReps Workshop – Symmetry and Geometry in Neural Representations</a></td>
+        <td class="text-nowrap"><small class="text-muted">NeurIPS 2022</small></td>
+        <td class="text-nowrap"><small class="text-muted">PC Member</small></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">2022/02</small></td>
+        <td><a href="https://sites.google.com/view/gclr2022/home?authuser=0" target="_blank" rel="noopener noreferrer">GCLR 22 – 2nd Workshop on Graphs and more complex structures for learning and reasoning</a></td>
+        <td class="text-nowrap"><small class="text-muted">AAAI 2022</small></td>
+        <td class="text-nowrap"><small class="text-muted">PC Member</small></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">2021/10</small></td>
+        <td><a href="https://europe.naverlabs.com/gres-workshop/" target="_blank" rel="noopener noreferrer">GReS – Workshop on Graph Neural Networks for Recommendation and Search</a></td>
+        <td class="text-nowrap"><small class="text-muted">ACM RecSys 2021</small></td>
+        <td class="text-nowrap"><small class="text-muted">PC Member</small></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">2021/04</small></td>
+        <td><a href="https://gnnsys.github.io/" target="_blank" rel="noopener noreferrer">GNNSys'21 – Workshop on Graph Neural Networks and Systems</a></td>
+        <td class="text-nowrap"><small class="text-muted">MLSys 2021</small></td>
+        <td class="text-nowrap"><small class="text-muted">PC Member</small></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap"><small class="text-muted">2021/02</small></td>
+        <td><a href="https://sites.google.com/view/gclr2021/home" target="_blank" rel="noopener noreferrer">AAAI-21 GCLR</a></td>
+        <td class="text-nowrap"><small class="text-muted">AAAI 2021</small></td>
+        <td class="text-nowrap"><small class="text-muted">PC Member</small></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <h2 class="category">Supervision and Mentoring</h2>
 

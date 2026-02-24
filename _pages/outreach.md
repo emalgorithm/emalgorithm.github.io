@@ -21,12 +21,12 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
       <tr>
         <td class="text-nowrap" style="width:5rem"><small class="text-muted">Nov 22</small></td>
         <td><em>A Primer on Graph Neural Networks</em><br><small><a href="https://www.upf.edu/web/colt" target="_blank" rel="noopener noreferrer">COLT Seminar</a>, University of Pompeu Fabra, Barcelona</small></td>
-        <td class="text-nowrap"><small><a href="../assets/pdf/gnn_primer.pdf">[Slides]</a></small></td>
+        <td><a href="../assets/pdf/gnn_primer.pdf" class="btn btn-sm z-depth-0" role="button">Slides</a></td>
       </tr>
       <tr>
         <td class="text-nowrap"><small class="text-muted">Sep 14</small></td>
         <td><em>Edge Directionality Improves Learning on Heterophilic Graphs</em><br><small><a href="https://www.cs.mcgill.ca/~shuang43/rg.html" target="_blank" rel="noopener noreferrer">Temporal Graph Reading Group</a></small></td>
-        <td class="text-nowrap"><small><a href="../assets/pdf/dirgnn_tgl_reading_group.pdf">[Slides]</a>&nbsp;<a href="https://www.youtube.com/watch?v=VjpUSR1NZvI" target="_blank" rel="noopener noreferrer">[Video]</a></small></td>
+        <td><a href="../assets/pdf/dirgnn_tgl_reading_group.pdf" class="btn btn-sm z-depth-0" role="button">Slides</a> <a href="https://www.youtube.com/watch?v=VjpUSR1NZvI" target="_blank" rel="noopener noreferrer" class="btn btn-sm z-depth-0" role="button">Video</a></td>
       </tr>
       <tr>
         <td class="text-nowrap"><small class="text-muted">Sep 07</small></td>
@@ -45,7 +45,7 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
       <tr>
         <td class="text-nowrap" style="width:5rem"><small class="text-muted">Sep 28</small></td>
         <td><em>Improving Machine Learning at Twitter using Graphs</em><br><small><a href="https://privacyweek.it/" target="_blank" rel="noopener noreferrer">Privacy Week</a></small></td>
-        <td class="text-nowrap"><small><a href="https://privacyweek.it/event/potenziare-lapprendimento-automatico-su-twitter-utilizzando-i-grafi/" target="_blank" rel="noopener noreferrer">[Video]</a> <span class="text-muted">(it)</span></small></td>
+        <td><a href="https://privacyweek.it/event/potenziare-lapprendimento-automatico-su-twitter-utilizzando-i-grafi/" target="_blank" rel="noopener noreferrer" class="btn btn-sm z-depth-0" role="button">Video <small class="text-muted">it</small></a></td>
       </tr>
       <tr>
         <td class="text-nowrap"><small class="text-muted">Sep 09</small></td>
@@ -55,7 +55,7 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
       <tr>
         <td class="text-nowrap"><small class="text-muted">Mar 01</small></td>
         <td><em>Learning on Graphs with Missing Node Features</em><br><small><a href="https://portal.valencelabs.com/logg" target="_blank" rel="noopener noreferrer">Learning on Graphs and Geometry Reading Group</a></small></td>
-        <td class="text-nowrap"><small><a href="https://docs.google.com/presentation/d/11dAeJRalTI7K1YAxMNz_yElZ0lVO5Bw7n0LBqSd-OUY/edit#slide=id.g1017b3d77ca_0_0" target="_blank" rel="noopener noreferrer">[Slides]</a>&nbsp;<a href="https://www.youtube.com/watch?v=xe5A-xQTBdM" target="_blank" rel="noopener noreferrer">[Video]</a></small></td>
+        <td><a href="https://docs.google.com/presentation/d/11dAeJRalTI7K1YAxMNz_yElZ0lVO5Bw7n0LBqSd-OUY/edit#slide=id.g1017b3d77ca_0_0" target="_blank" rel="noopener noreferrer" class="btn btn-sm z-depth-0" role="button">Slides</a> <a href="https://www.youtube.com/watch?v=xe5A-xQTBdM" target="_blank" rel="noopener noreferrer" class="btn btn-sm z-depth-0" role="button">Video</a></td>
       </tr>
       <tr>
         <td class="text-nowrap"><small class="text-muted">Feb 24</small></td>
@@ -89,7 +89,7 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
       <tr>
         <td class="text-nowrap"><small class="text-muted">Apr 26</small></td>
         <td><em>Machine Learning on Dynamic Graphs: Temporal Graph Networks</em><br><small>Intel ML Seminar</small></td>
-        <td class="text-nowrap"><small><a href="../assets/pdf/intel_tgn.pdf">[Slides]</a></small></td>
+        <td><a href="../assets/pdf/intel_tgn.pdf" class="btn btn-sm z-depth-0" role="button">Slides</a></td>
       </tr>
       <tr>
         <td class="text-nowrap"><small class="text-muted">Apr 09</small></td>
@@ -99,7 +99,7 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
       <tr>
         <td class="text-nowrap"><small class="text-muted">Jan 22</small></td>
         <td><em>Dynamic Graphs and Temporal Graph Networks</em><br><small>University of Liverpool <a href="https://seminars.csc.liv.ac.uk/abstract.php?id=979" target="_blank" rel="noopener noreferrer">Networks and Distributed Computing Series</a></small></td>
-        <td class="text-nowrap"><small><a href="../assets/pdf/TGN_2021_01_22.pdf">[Slides]</a></small></td>
+        <td><a href="../assets/pdf/TGN_2021_01_22.pdf" class="btn btn-sm z-depth-0" role="button">Slides</a></td>
       </tr>
     </tbody>
   </table>
@@ -113,7 +113,7 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
       <tr>
         <td class="text-nowrap" style="width:5rem"><small class="text-muted">Jul 21</small></td>
         <td><em>TGN: Temporal Graph Networks</em><br><small><a href="https://ai.science/" target="_blank" rel="noopener noreferrer">AISC</a></small></td>
-        <td class="text-nowrap"><small><a href="../assets/pdf/tgn_aisc_2020.pdf">[Slides]</a>&nbsp;<a href="https://www.youtube.com/watch?v=W1GvX2ZcUmY" target="_blank" rel="noopener noreferrer">[Video]</a></small></td>
+        <td><a href="../assets/pdf/tgn_aisc_2020.pdf" class="btn btn-sm z-depth-0" role="button">Slides</a> <a href="https://www.youtube.com/watch?v=W1GvX2ZcUmY" target="_blank" rel="noopener noreferrer" class="btn btn-sm z-depth-0" role="button">Video</a></td>
       </tr>
     </tbody>
   </table>
@@ -127,12 +127,12 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
       <tr>
         <td class="text-nowrap" style="width:5rem"><small class="text-muted">2021/03/02</small></td>
         <td><em>Scaling Graph Neural Networks to Twitter-scale</em><br><small>with <a href="https://www.youtube.com/channel/UCxw9_WYmLqlj5PyXu2AWU_g" target="_blank" rel="noopener noreferrer">Zak Jost</a></small></td>
-        <td class="text-nowrap"><small><a href="https://www.youtube.com/watch?v=ZSMEXchR3w8" target="_blank" rel="noopener noreferrer">[Video]</a></small></td>
+        <td><a href="https://www.youtube.com/watch?v=ZSMEXchR3w8" target="_blank" rel="noopener noreferrer" class="btn btn-sm z-depth-0" role="button">Video</a></td>
       </tr>
       <tr>
         <td class="text-nowrap"><small class="text-muted">2021/01/14</small></td>
         <td><em>My journey, my research at Twitter and Imperial College, and my work at LeadTheFuture</em><br><small>with <a href="https://italia-podcast.it/podcast/smarter-podcast" target="_blank" rel="noopener noreferrer">The Smarter Podcast</a></small></td>
-        <td class="text-nowrap"><small><a href="https://www.youtube.com/watch?v=x4CeQ3S_DCA" target="_blank" rel="noopener noreferrer">[Video]</a> <span class="text-muted">(it)</span></small></td>
+        <td><a href="https://www.youtube.com/watch?v=x4CeQ3S_DCA" target="_blank" rel="noopener noreferrer" class="btn btn-sm z-depth-0" role="button">Video <small class="text-muted">it</small></a></td>
       </tr>
     </tbody>
   </table>

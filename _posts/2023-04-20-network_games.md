@@ -3,6 +3,7 @@ layout: distill
 title: Learning Network Games
 description: Network games are a powerful tool for modelling strategic interactions between individuals or organisations played out on networks, where a player's payoff depends not only on their own actions but also on those of their neighbours. Such games have numerous applications in economics and social sciences, including studying the spread of influence in social networks, the dynamics of financial markets, and the formation of alliances in international relations. The study of network games typically assumes the underlying network structure to be known, which is often wishful thinking. Recently, machine learning approaches have been proposed to tackle this problem by leveraging the observed actions of players to learn the underlying network structure. In this blog post, we outline a novel approach that uses a transformer-like architecture to infer the network structure of a game without explicit knowledge of the utility function associated with the game.
 date: 2023-04-20
+thumbnail: /assets/img/blog/network_games/cover.png
 
 authors:
   - name: Emanuele Rossi

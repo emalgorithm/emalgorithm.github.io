@@ -11,11 +11,12 @@ nav_order: 4
 
 <div class="projects">
 
-<h2 class="category">Talks</h2>
+<h2>Talks</h2>
 
 Invited talks and presentations at academic seminars, workshops, and industry events.
 
-<h3 class="year">2023</h3>
+<div class="publications">
+<h2 class="bibliography">2023</h2>
 
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
@@ -52,7 +53,7 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
   </table>
 </div>
 
-<h3 class="year">2022</h3>
+<h2 class="bibliography">2022</h2>
 
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
@@ -96,7 +97,7 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
   </table>
 </div>
 
-<h3 class="year">2021</h3>
+<h2 class="bibliography">2021</h2>
 
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
@@ -153,7 +154,7 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
   </table>
 </div>
 
-<h3 class="year">2020</h3>
+<h2 class="bibliography">2020</h2>
 
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
@@ -173,7 +174,9 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
   </table>
 </div>
 
-<h2 class="category">Conversations</h2>
+</div>
+
+<h2>Conversations</h2>
 
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
@@ -202,7 +205,7 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
   </table>
 </div>
 
-<h2 class="category">Workshop Involvement</h2>
+<h2>Workshop Involvement</h2>
 
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
@@ -253,9 +256,9 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
   </table>
 </div>
 
-<h2 class="category">Supervision and Mentoring</h2>
+<h2>Supervision and Mentoring</h2>
 
-Mentoring bright and motivated students is one of the most rewarding aspects of my research. I am grateful for their creativity and curiosity, and for how much I learn from them in return.<br>
+<p>Mentoring bright and motivated students is one of the most rewarding aspects of my research. I am grateful for their creativity and curiosity, and for how much I learn from them in return.</p>
 
 Below are the students I have had the pleasure to supervise.
 If you are a <strong>prospective student interested in working with me</strong>, feel free to contact my former mentees to learn more about my mentoring style and what collaboration with me looks like.

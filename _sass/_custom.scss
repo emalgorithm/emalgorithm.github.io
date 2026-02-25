@@ -82,17 +82,6 @@ html[data-theme="dark"] {
   }
 }
 
-// Year sub-dividers — muted label style, visually subordinate to h2.category
-h3.year {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--global-text-color-light);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
 .publications {
   ol.bibliography {
     li {

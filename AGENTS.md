@@ -79,3 +79,39 @@ For troubleshooting, see:
 - [Common Pitfalls & Workarounds](.github/copilot-instructions.md#common-pitfalls--workarounds) in copilot-instructions.md
 - [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for detailed solutions
 - [GitHub Issues](https://github.com/alshedivat/al-folio/issues) to search for your specific problem.
+
+## Cursor Cloud specific instructions
+
+### Services overview
+
+This is a Jekyll static site (al-folio academic theme). The only service to run is the **Jekyll dev server** via Docker Compose. There is no database or backend API.
+
+### Starting the dev server
+
+Docker must be running first. Then:
+
+```bash
+sudo docker compose pull   # ensure latest image
+sudo docker compose up -d  # start in background
+# Site at http://localhost:8080, LiveReload at :35729
+```
+
+The initial build takes ~60s (ImageMagick processes images). Wait for `Server running... press ctrl-c to stop.` in `sudo docker compose logs -f` before testing.
+
+To stop: `sudo docker compose down`
+
+### Lint / format
+
+```bash
+npm install          # installs prettier + liquid plugin
+npx prettier --check .   # lint check
+npx prettier . --write   # auto-format
+```
+
+### Gotchas
+
+- Docker commands require `sudo` in the Cloud Agent VM.
+- The Docker image is `amirpourmand/al-folio:v0.16.3` (pre-built); `docker compose pull` fetches it. Building from the Dockerfile is only needed if Gemfile changes.
+- Jekyll watches for file changes and auto-regenerates, but changes to `_config.yml` trigger a full restart (handled by `bin/entry_point.sh`).
+- There are no automated test suites in this repo; validation is done via `prettier --check` and manual browser verification.
+- This repo is a fork of al-folio. Keep changes content-focused; see `CUSTOMIZE.md` for theming guidance.

@@ -1,3 +1,5 @@
 @AGENTS.md
 
 Remember that this repository is a fork of al-folio, and we will keep integrating upstream changes over time. Our changes should be primarily content-focused, with style modifications kept to a minimum to avoid conflicts with future upstream updates. When making edits or implementing code, always refer to CUSTOMIZE.md for best practices. Also, let me know if any of my changes do not respect these guidelines.
+
+**Pull requests:** always use `gh pr create --repo emalgorithm/emalgorithm.github.io` — the `upstream` remote causes `gh` to resolve the wrong repo otherwise.

@@ -258,32 +258,59 @@ Mentoring bright and motivated students is one of the most rewarding aspects of 
 Below are the students I have had the pleasure to supervise.
 If you are a **prospective student interested in working with me**, feel free to contact my former mentees to learn more about my mentoring style and what collaboration with me looks like.
 
-- **[Davide Marincione](https://gladia.di.uniroma1.it/authors/marincione/)** — <small>2025-05 — Present</small> — PhD Student @ Sapienza University of Rome<br>
-  Project: [Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models](/publications/#marincione2025bio)
-  <br>
-
-- **Harrison Rush** — <small>2024-08 — Present</small> — ML Engineer @ Amboss Technologies<br>
-  Project: MP-Flow: A Deep Graph Reinforcement Learning Agent for Maximizing Throughput in the Lightning Network (Under Review)
-  <br>
-
-- **[Simone Antonelli](https://siantonelli.github.io/)** - <small>2024-10 — Present</small> — ML Research Intern @ Amboss Technologies<br>
-  Project: Predicting Link Closure in the Lightning Network with Temporal Graph Networks (Work in Progress)
-  <br>
-
-- **Marco Pegoraro** - <small>2024-10 — 2025-04</small> — ML Research Intern @ VantAI<br>
-  Project: [Neo 1: a unified model for all-atom structure prediction and generation of all biomolecules](https://www.vant.ai/neo-1)
-  <br>
-
-- **Thomas Castiglione** - <small>2024-03 — 2025-04</small> — ML Researcher @ VantAI<br>
-  Project: [Neo 1: a unified model for all-atom structure prediction and generation of all biomolecules](https://www.vant.ai/neo-1)
-  <br>
-
-- **[Andy Huang](https://shenyanghuang.github.io/)** - <small>2024-03 — 2025-04</small> — PhD Student @ Mila<br>
-  Projects:<br>
-  &nbsp;&nbsp;• [TGB: Temporal Graph Benchmark for Machine Learning on Temporal Graphs](/publications/#tgb_huang_2023)<br>
-  &nbsp;&nbsp;• [UTG: Towards a Unified View of Snapshot and Event Based Models for Temporal Graphs](/publications/#huang_utg_2024)
-  <br>
-
-- **Vincent** — <small>2023-11 — 2024-05</small> — ML Engineer @ Amboss Technologies<br>
-  Project: [Channel Balance Interpolation in the Lightning Network via Machine Learning](/publications/#vincent_lightning_2024)
-  <br>
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      <tr>
+        <td style="width:10rem"><small class="text-muted">2025-05 — Present</small></td>
+        <td>
+          <strong><a href="https://gladia.di.uniroma1.it/authors/marincione/" target="_blank" rel="noopener noreferrer">Davide Marincione</a></strong> — <small class="text-muted">PhD Student @ Sapienza University of Rome</small><br>
+          <small><a href="/publications/#marincione2025bio">Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models</a></small>
+        </td>
+      </tr>
+      <tr>
+        <td><small class="text-muted">2024-08 — Present</small></td>
+        <td>
+          <strong>Harrison Rush</strong> — <small class="text-muted">ML Engineer @ Amboss Technologies</small><br>
+          <small>MP-Flow: A Deep Graph Reinforcement Learning Agent for Maximizing Throughput in the Lightning Network <span class="text-muted">(Under Review)</span></small>
+        </td>
+      </tr>
+      <tr>
+        <td><small class="text-muted">2024-10 — Present</small></td>
+        <td>
+          <strong><a href="https://siantonelli.github.io/" target="_blank" rel="noopener noreferrer">Simone Antonelli</a></strong> — <small class="text-muted">ML Research Intern @ Amboss Technologies</small><br>
+          <small>Predicting Link Closure in the Lightning Network with Temporal Graph Networks <span class="text-muted">(Work in Progress)</span></small>
+        </td>
+      </tr>
+      <tr>
+        <td><small class="text-muted">2024-10 — 2025-04</small></td>
+        <td>
+          <strong>Marco Pegoraro</strong> — <small class="text-muted">ML Research Intern @ VantAI</small><br>
+          <small><a href="https://www.vant.ai/neo-1" target="_blank" rel="noopener noreferrer">Neo 1: a unified model for all-atom structure prediction and generation of all biomolecules</a></small>
+        </td>
+      </tr>
+      <tr>
+        <td><small class="text-muted">2024-03 — 2025-04</small></td>
+        <td>
+          <strong>Thomas Castiglione</strong> — <small class="text-muted">ML Researcher @ VantAI</small><br>
+          <small><a href="https://www.vant.ai/neo-1" target="_blank" rel="noopener noreferrer">Neo 1: a unified model for all-atom structure prediction and generation of all biomolecules</a></small>
+        </td>
+      </tr>
+      <tr>
+        <td><small class="text-muted">2024-03 — 2025-04</small></td>
+        <td>
+          <strong><a href="https://shenyanghuang.github.io/" target="_blank" rel="noopener noreferrer">Andy Huang</a></strong> — <small class="text-muted">PhD Student @ Mila</small><br>
+          <small><a href="/publications/#tgb_huang_2023">TGB: Temporal Graph Benchmark for Machine Learning on Temporal Graphs</a></small><br>
+          <small><a href="/publications/#huang_utg_2024">UTG: Towards a Unified View of Snapshot and Event Based Models for Temporal Graphs</a></small>
+        </td>
+      </tr>
+      <tr>
+        <td><small class="text-muted">2023-11 — 2024-05</small></td>
+        <td>
+          <strong>Vincent Davis</strong> — <small class="text-muted">ML Engineer @ Amboss Technologies</small><br>
+          <small><a href="/publications/#vincent_lightning_2024">Channel Balance Interpolation in the Lightning Network via Machine Learning</a></small>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

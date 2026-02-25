@@ -9,6 +9,8 @@ nav_order: 4
 
 <!-- pages/outreach.md -->
 
+<div class="projects">
+
 <h2 class="category">Talks</h2>
 
 Invited talks and presentations at academic seminars, workshops, and industry events.
@@ -253,10 +255,10 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
 
 <h2 class="category">Supervision and Mentoring</h2>
 
-Mentoring bright and motivated students is one of the most rewarding aspects of my research. I am grateful for their creativity and curiosity, and for how much I learn from them in return.
+Mentoring bright and motivated students is one of the most rewarding aspects of my research. I am grateful for their creativity and curiosity, and for how much I learn from them in return.<br>
 
 Below are the students I have had the pleasure to supervise.
-If you are a **prospective student interested in working with me**, feel free to contact my former mentees to learn more about my mentoring style and what collaboration with me looks like.
+If you are a <strong>prospective student interested in working with me</strong>, feel free to contact my former mentees to learn more about my mentoring style and what collaboration with me looks like.
 
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
@@ -313,4 +315,6 @@ If you are a **prospective student interested in working with me**, feel free to
       </tr>
     </tbody>
   </table>
+</div>
+
 </div>

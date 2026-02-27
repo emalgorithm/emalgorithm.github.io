@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-02-23'
+  last_updated: '2026-02-27'
 papers:
   DHlkBOYAAAAJ:4TOpqqG69KYC:
     citations: 1
     title: Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models
     year: '2025'
   DHlkBOYAAAAJ:8k81kl-MbHgC:
-    citations: 220
+    citations: 225
     title: Temporal Graph Benchmark for Machine Learning on Temporal Graphs
     year: '2023'
   DHlkBOYAAAAJ:9yKSN-GCB0IC:
@@ -18,7 +18,7 @@ papers:
     title: 'UTG: Towards a unified view of snapshot and event based models for temporal graphs'
     year: '2024'
   DHlkBOYAAAAJ:LkGwnXOMwfcC:
-    citations: 29
+    citations: 30
     title: Provably Efficient Causal Model-Based Reinforcement Learning for Systematic Generalization
     year: '2022'
   DHlkBOYAAAAJ:M3ejUd6NZC8C:
@@ -26,7 +26,7 @@ papers:
     title: Channel balance interpolation in the lightning network via machine learning
     year: '2025'
   DHlkBOYAAAAJ:Se3iqnhoufwC:
-    citations: 203
+    citations: 205
     title: Graph Neural Networks for Link Prediction with Subgraph Sketching
     year: '2022'
   DHlkBOYAAAAJ:ULOm3_A8WrAC:
@@ -34,7 +34,7 @@ papers:
     title: 'PINDER: The protein interaction dataset and evaluation resource'
     year: '2024'
   DHlkBOYAAAAJ:YOwf2qJgpHMC:
-    citations: 33
+    citations: 34
     title: Do we really need to drop items with missing modalities in multimodal recommendation?
     year: '2024'
   DHlkBOYAAAAJ:Zph67rFs4hoC:
@@ -50,7 +50,7 @@ papers:
     title: Bayesian Binary Search
     year: '2025'
   DHlkBOYAAAAJ:d1gkVwhDpl0C:
-    citations: 1389
+    citations: 1403
     title: Temporal Graph Networks for Deep Learning on Dynamic Graphs
     year: '2020'
   DHlkBOYAAAAJ:hqOjcs7Dif8C:
@@ -58,11 +58,11 @@ papers:
     title: Edge Directionality Improves Learning on Heterophilic Graphs
     year: '2023'
   DHlkBOYAAAAJ:kNdYIx-mwKoC:
-    citations: 28
+    citations: 30
     title: 'Tgb 2.0: A benchmark for learning on temporal knowledge graphs and heterogeneous graphs'
     year: '2024'
   DHlkBOYAAAAJ:u-x6o8ySG0sC:
-    citations: 552
+    citations: 555
     title: 'SIGN: Scalable Inception Graph Neural Networks'
     year: '2020'
   DHlkBOYAAAAJ:u5HHmVD_uO8C:
@@ -70,10 +70,10 @@ papers:
     title: ncRNA Classification with Graph Convolutional Networks
     year: '2019'
   DHlkBOYAAAAJ:ufrVoPGSRksC:
-    citations: 172
+    citations: 178
     title: On the unreasonable effectiveness of feature propagation in learning on graphs with missing node features
     year: '2021'
   DHlkBOYAAAAJ:zYLM7Y9cAGgC:
-    citations: 471
+    citations: 473
     title: 'Grand: Graph neural diffusion'
     year: '2021'

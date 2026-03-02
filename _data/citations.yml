@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-02-27'
+  last_updated: '2026-03-02'
 papers:
   DHlkBOYAAAAJ:4TOpqqG69KYC:
     citations: 1
     title: Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models
     year: '2025'
   DHlkBOYAAAAJ:8k81kl-MbHgC:
-    citations: 225
+    citations: 224
     title: Temporal Graph Benchmark for Machine Learning on Temporal Graphs
     year: '2023'
   DHlkBOYAAAAJ:9yKSN-GCB0IC:
@@ -50,19 +50,19 @@ papers:
     title: Bayesian Binary Search
     year: '2025'
   DHlkBOYAAAAJ:d1gkVwhDpl0C:
-    citations: 1403
+    citations: 1409
     title: Temporal Graph Networks for Deep Learning on Dynamic Graphs
     year: '2020'
   DHlkBOYAAAAJ:hqOjcs7Dif8C:
-    citations: 171
+    citations: 172
     title: Edge Directionality Improves Learning on Heterophilic Graphs
     year: '2023'
   DHlkBOYAAAAJ:kNdYIx-mwKoC:
-    citations: 30
+    citations: 29
     title: 'Tgb 2.0: A benchmark for learning on temporal knowledge graphs and heterogeneous graphs'
     year: '2024'
   DHlkBOYAAAAJ:u-x6o8ySG0sC:
-    citations: 555
+    citations: 556
     title: 'SIGN: Scalable Inception Graph Neural Networks'
     year: '2020'
   DHlkBOYAAAAJ:u5HHmVD_uO8C:
@@ -70,10 +70,10 @@ papers:
     title: ncRNA Classification with Graph Convolutional Networks
     year: '2019'
   DHlkBOYAAAAJ:ufrVoPGSRksC:
-    citations: 178
+    citations: 179
     title: On the unreasonable effectiveness of feature propagation in learning on graphs with missing node features
     year: '2021'
   DHlkBOYAAAAJ:zYLM7Y9cAGgC:
-    citations: 473
+    citations: 475
     title: 'Grand: Graph neural diffusion'
     year: '2021'

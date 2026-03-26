@@ -16,6 +16,26 @@ nav_order: 4
 Invited talks and presentations at academic seminars, workshops, and industry events.
 
 <div class="publications">
+<h2 class="bibliography">2026</h2>
+
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      <tr>
+        <td class="text-nowrap" style="width:5rem"><small class="text-muted">Jan 30</small></td>
+        <td>
+          <em>Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models</em><br>
+          <small>Earth Species Project Community Deep Dive</small>
+          <div class="links">
+            <a href="../assets/pdf/esp_community_deep_dive_2026.pdf" class="btn btn-sm z-depth-0" role="button">Slides</a>
+            <a href="https://youtu.be/Cd0h0so-c80" target="_blank" rel="noopener noreferrer" class="btn btn-sm z-depth-0" role="button">Video</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <h2 class="bibliography">2023</h2>
 
 <div class="table-responsive">
@@ -210,6 +230,12 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
     <tbody>
+      <tr>
+        <td class="text-nowrap" style="width:5rem"><small class="text-muted">2026/04</small></td>
+        <td><a href="https://sites.google.com/view/post-agi-science-society/home" target="_blank" rel="noopener noreferrer">Post-AGI Science and Society Workshop</a></td>
+        <td class="text-nowrap"><small class="text-muted">ICLR 2026</small></td>
+        <td class="text-nowrap"><small class="text-muted">PC Member</small></td>
+      </tr>
       <tr>
         <td class="text-nowrap" style="width:5rem"><small class="text-muted">2023/12</small></td>
         <td><a href="https://sites.google.com/view/tglworkshop-2023/home" target="_blank" rel="noopener noreferrer">Temporal Graph Learning Workshop</a></td>

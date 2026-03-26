@@ -232,7 +232,7 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
     <tbody>
       <tr>
         <td class="text-nowrap" style="width:5rem"><small class="text-muted">2026/04</small></td>
-        <td><a href="https://sites.google.com/view/post-agi-science-society/home" target="_blank" rel="noopener noreferrer">Post-AGI Science and Society Workshop</a></td>
+        <td><a href="https://p-agi.org/" target="_blank" rel="noopener noreferrer">Post-AGI Science and Society Workshop</a></td>
         <td class="text-nowrap"><small class="text-muted">ICLR 2026</small></td>
         <td class="text-nowrap"><small class="text-muted">PC Member</small></td>
       </tr>

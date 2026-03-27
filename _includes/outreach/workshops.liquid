@@ -1,0 +1,22 @@
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      {% for item in site.data.outreach.workshops %}
+        <tr>
+          <td class="text-nowrap" style="width: 5rem">
+            <small class="text-muted">{{ item.date }}</small>
+          </td>
+          <td>
+            <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+          </td>
+          <td class="text-nowrap">
+            <small class="text-muted">{{ item.venue }}</small>
+          </td>
+          <td class="text-nowrap">
+            <small class="text-muted">{{ item.role }}</small>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

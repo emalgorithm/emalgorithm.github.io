@@ -1,5 +1,3 @@
-talks_description: "Invited talks and presentations at academic seminars, workshops, and industry events."
-
 talks:
   - year: 2026
     items:
@@ -197,9 +195,6 @@ workshops:
     url: https://sites.google.com/view/gclr2021/home
     venue: "AAAI 2021"
     role: "PC Member"
-
-mentoring_description: "Mentoring bright and motivated students is one of the most rewarding aspects of my research. I am grateful for their creativity and curiosity, and for how much I learn from them in return."
-mentoring_cta: "Below are the students I have had the pleasure to supervise. If you are a **prospective student interested in working with me**, feel free to contact my former mentees to learn more about my mentoring style and what collaboration with me looks like."
 
 mentoring:
   - period: "2025/05 — Present"

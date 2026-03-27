@@ -1,0 +1,43 @@
+<div class="publications">
+  {% for year_group in site.data.outreach.talks %}
+    <h2 class="bibliography">{{ year_group.year }}</h2>
+    <div class="table-responsive">
+      <table class="table table-sm table-borderless">
+        <tbody>
+          {% for item in year_group.items %}
+            <tr>
+              <td class="text-nowrap" style="width: 5rem">
+                <small class="text-muted">{{ item.date }}</small>
+              </td>
+              <td>
+                <em>{{ item.title }}</em><br>
+                <small>
+                  {%- if item.venue_prefix %}{{ item.venue_prefix }}{%- endif -%}
+                  {%- if item.venue_url -%}
+                    <a href="{{ item.venue_url }}" target="_blank" rel="noopener noreferrer">{{ item.venue }}</a>
+                  {%- else -%}
+                    {{ item.venue }}
+                  {%- endif -%}
+                  {%- if item.venue_suffix %}{{ item.venue_suffix }}{%- endif -%}
+                </small>
+                {% if item.links %}
+                  <div class="links">
+                    {% for link in item.links %}
+                      <a href="{{ link.url }}"
+                        {%- if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}
+                        class="btn btn-sm z-depth-0"
+                        role="button">
+                        {{- link.label -}}
+                        {%- if link.lang %} <small class="text-muted">{{ link.lang }}</small>{% endif %}
+                      </a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% endfor %}
+</div>

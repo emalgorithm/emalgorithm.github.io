@@ -1,0 +1,37 @@
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      {% for item in site.data.outreach.conversations %}
+        <tr>
+          <td class="text-nowrap" style="width: 5rem">
+            <small class="text-muted">{{ item.date }}</small>
+          </td>
+          <td>
+            <em>{{ item.title }}</em><br>
+            <small>
+              with
+              {%- if item.with_url %}
+                <a href="{{ item.with_url }}" target="_blank" rel="noopener noreferrer">{{ item.with_name }}</a>
+              {%- else %}
+                {{ item.with_name }}
+              {%- endif %}
+            </small>
+            {% if item.links %}
+              <div class="links">
+                {% for link in item.links %}
+                  <a href="{{ link.url }}"
+                    {%- if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}
+                    class="btn btn-sm z-depth-0"
+                    role="button">
+                    {{- link.label -}}
+                    {%- if link.lang %} <small class="text-muted">{{ link.lang }}</small>{% endif %}
+                  </a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

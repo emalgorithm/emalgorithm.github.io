@@ -1,0 +1,35 @@
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      {% for item in site.data.outreach.mentoring %}
+        <tr>
+          <td style="width: 10rem">
+            <small class="text-muted">{{ item.period }}</small>
+          </td>
+          <td>
+            <strong>
+              {%- if item.url -%}
+                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
+              {%- else -%}
+                {{ item.name }}
+              {%- endif -%}
+            </strong>
+            — <small class="text-muted">{{ item.position }}</small>
+            {% for pub in item.publications %}
+              <br>
+              <small>
+                {%- if pub.url -%}
+                  <a href="{{ pub.url }}"{% if pub.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ pub.title }}</a>
+                {%- else -%}
+                  {{ pub.title }}
+                {%- endif -%}
+                {%- if pub.wip %} <span class="text-muted">(Work in Progress)</span>{% endif -%}
+                {%- if pub.under_review %} <span class="text-muted">(Under Review)</span>{% endif -%}
+              </small>
+            {% endfor %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

@@ -1,10 +1,11 @@
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
     <tbody>
-      {% for item in site.data.outreach.conversations %}
+      {% assign conversations = site.data.outreach.conversations | sort: 'date' | reverse %}
+      {% for item in conversations %}
         <tr>
           <td class="text-nowrap" style="width: 5rem">
-            <small class="text-muted">{{ item.date }}</small>
+            <small class="text-muted">{{ item.date | date: '%Y/%m/%d' }}</small>
           </td>
           <td>
             <em>{{ item.title }}</em><br>

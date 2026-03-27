@@ -5,13 +5,7 @@
       {% for item in workshops %}
         <tr>
           <td class="text-nowrap" style="width: 5rem">
-            <small class="text-muted">
-              {% if item.date_precision == 'month' %}
-                {{ item.date | date: '%Y/%m' }}
-              {% else %}
-                {{ item.date | date: '%Y/%m/%d' }}
-              {% endif %}
-            </small>
+            <small class="text-muted">{{ item.date | date: "%Y/%m" }}</small>
           </td>
           <td>
             {%- if item.url -%}

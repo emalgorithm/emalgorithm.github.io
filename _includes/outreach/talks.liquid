@@ -1,61 +1,46 @@
-{% assign talks = site.data.outreach.talks | sort: 'date' | reverse %}
-{% assign current_year = '' %}
+{% assign talks = site.data.outreach.talks | sort: "date" | reverse %}
+{% assign talks_by_year = talks | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-{% for item in talks %}
-  {% assign item_year = item.date | date: '%Y' %}
-  {% if item_year != current_year %}
-    {% assign current_year = item_year %}
-    <h2 class="bibliography">{{ current_year }}</h2>
-    <div class="table-responsive">
-      <table class="table table-sm table-borderless">
-        <tbody>
-  {% endif %}
-  <tr>
-    <td class="text-nowrap" style="width: 5rem">
-      <small class="text-muted">{{ item.date | date: '%b %-d' }}</small>
-    </td>
-    <td>
-      <em>{{ item.title }}</em><br>
-      <small>
-        {%- if item.venue_prefix %}{{ item.venue_prefix }}{%- endif -%}
-        {%- if item.venue_url -%}
-          <a href="{{ item.venue_url }}" target="_blank" rel="noopener noreferrer">{{ item.venue }}</a>
-        {%- else -%}
-          {{ item.venue }}
-        {%- endif -%}
-        {%- if item.venue_suffix %}{{ item.venue_suffix }}{%- endif -%}
-      </small>
-      {% if item.slides_url or item.video_url %}
-        <div class="links">
-          {% if item.slides_url %}
-            <a
-              href="{% if item.slides_url contains '://' %}{{ item.slides_url }}{% else %}{{ item.slides_url | relative_url }}{% endif %}"
-              {% if item.slides_url contains '://' %}
-                target="_blank" rel="noopener noreferrer"
+{% for year_group in talks_by_year %}
+  <h2 class="bibliography">{{ year_group.name }}</h2>
+  <div class="table-responsive">
+    <table class="table table-sm table-borderless">
+      <tbody>
+        {% for item in year_group.items %}
+          <tr>
+            <td class="text-nowrap" style="width: 5rem">
+              <small class="text-muted">{{ item.date | date: "%b %-d" }}</small>
+            </td>
+            <td>
+              <em>{{ item.title }}</em><br>
+              <small>
+                {%- if item.venue_url -%}
+                  <a href="{{ item.venue_url }}" target="_blank" rel="noopener noreferrer">{{ item.venue }}</a>
+                {%- else -%}
+                  {{ item.venue }}
+                {%- endif -%}
+              </small>
+              {% if item.slides_url or item.video_url %}
+                {% assign slides_external = item.slides_url contains "://" %}
+                <div class="links">
+                  {% if item.slides_url %}
+                    <a
+                      href="{% if slides_external %}{{ item.slides_url }}{% else %}{{ item.slides_url | relative_url }}{% endif %}"
+                      {% if slides_external %}target="_blank" rel="noopener noreferrer"{% endif %}
+                      class="btn btn-sm z-depth-0"
+                      role="button"
+                      >Slides</a
+                    >
+                  {% endif %}
+                  {% if item.video_url %}
+                    <a href="{{ item.video_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm z-depth-0" role="button">Video</a>
+                  {% endif %}
+                </div>
               {% endif %}
-              class="btn btn-sm z-depth-0"
-              role="button"
-              >Slides</a
-            >
-          {% endif %}
-          {% if item.video_url %}
-            <a href="{{ item.video_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm z-depth-0" role="button">Video</a>
-          {% endif %}
-        </div>
-      {% endif %}
-    </td>
-  </tr>
-  {% if forloop.last %}
-    </tbody>
-    </table>
-    </div>
-  {% else %}
-    {% assign next_item = talks[forloop.index] %}
-    {% assign next_year = next_item.date | date: '%Y' %}
-    {% if next_year != current_year %}
+            </td>
+          </tr>
+        {% endfor %}
       </tbody>
-      </table>
-      </div>
-    {% endif %}
-  {% endif %}
+    </table>
+  </div>
 {% endfor %}

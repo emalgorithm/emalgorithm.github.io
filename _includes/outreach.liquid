@@ -1,0 +1,167 @@
+{% assign outreach = site.data.outreach %}
+
+<div class="projects">
+
+  <h2>Talks</h2>
+
+  <p>Invited talks and presentations at academic seminars, workshops, and industry events.</p>
+
+  <div class="publications">
+    {% for year_group in outreach.talks %}
+      <h2 class="bibliography">{{ year_group.year }}</h2>
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless">
+          <tbody>
+            {% for item in year_group.items %}
+              <tr>
+                <td class="text-nowrap" style="width: 5rem">
+                  <small class="text-muted">{{ item.date }}</small>
+                </td>
+                <td>
+                  <em>{{ item.title }}</em><br>
+                  <small>
+                    {%- if item.venue_prefix %}{{ item.venue_prefix }}{%- endif -%}
+                    {%- if item.venue_url -%}
+                      <a href="{{ item.venue_url }}" target="_blank" rel="noopener noreferrer">{{ item.venue }}</a>
+                    {%- else -%}
+                      {{ item.venue }}
+                    {%- endif -%}
+                    {%- if item.venue_suffix %}{{ item.venue_suffix }}{%- endif -%}
+                  </small>
+                  {% if item.links %}
+                    <div class="links">
+                      {% for link in item.links %}
+                        <a href="{{ link.url }}"
+                          {%- if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}
+                          class="btn btn-sm z-depth-0"
+                          role="button">
+                          {{- link.label -}}
+                          {%- if link.lang %} <small class="text-muted">{{ link.lang }}</small>{% endif %}
+                        </a>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endfor %}
+  </div>
+
+  <h2>Conversations</h2>
+
+  <div class="table-responsive">
+    <table class="table table-sm table-borderless">
+      <tbody>
+        {% for item in outreach.conversations %}
+          <tr>
+            <td class="text-nowrap" style="width: 5rem">
+              <small class="text-muted">{{ item.date }}</small>
+            </td>
+            <td>
+              <em>{{ item.title }}</em><br>
+              <small>
+                with
+                {%- if item.with_url %}
+                  <a href="{{ item.with_url }}" target="_blank" rel="noopener noreferrer">{{ item.with_name }}</a>
+                {%- else %}
+                  {{ item.with_name }}
+                {%- endif %}
+              </small>
+              {% if item.links %}
+                <div class="links">
+                  {% for link in item.links %}
+                    <a href="{{ link.url }}"
+                      {%- if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}
+                      class="btn btn-sm z-depth-0"
+                      role="button">
+                      {{- link.label -}}
+                      {%- if link.lang %} <small class="text-muted">{{ link.lang }}</small>{% endif %}
+                    </a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Workshop Involvement</h2>
+
+  <div class="table-responsive">
+    <table class="table table-sm table-borderless">
+      <tbody>
+        {% for item in outreach.workshops %}
+          <tr>
+            <td class="text-nowrap" style="width: 5rem">
+              <small class="text-muted">{{ item.date }}</small>
+            </td>
+            <td>
+              <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+            </td>
+            <td class="text-nowrap">
+              <small class="text-muted">{{ item.venue }}</small>
+            </td>
+            <td class="text-nowrap">
+              <small class="text-muted">{{ item.role }}</small>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Supervision and Mentoring</h2>
+
+  <p>
+    Mentoring bright and motivated students is one of the most rewarding aspects of my research. I am grateful for
+    their creativity and curiosity, and for how much I learn from them in return.
+  </p>
+
+  <p>
+    Below are the students I have had the pleasure to supervise. If you are a
+    <strong>prospective student interested in working with me</strong>, feel free to contact my former mentees to
+    learn more about my mentoring style and what collaboration with me looks like.
+  </p>
+
+  <div class="table-responsive">
+    <table class="table table-sm table-borderless">
+      <tbody>
+        {% for item in outreach.mentoring %}
+          <tr>
+            <td style="width: 10rem">
+              <small class="text-muted">{{ item.period }}</small>
+            </td>
+            <td>
+              <strong>
+                {%- if item.url -%}
+                  <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
+                {%- else -%}
+                  {{ item.name }}
+                {%- endif -%}
+              </strong>
+              — <small class="text-muted">{{ item.position }}</small>
+              {% for pub in item.publications %}
+                <br>
+                <small>
+                  {%- if pub.url -%}
+                    <a href="{{ pub.url }}"{% if pub.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ pub.title }}</a>
+                  {%- else -%}
+                    {{ pub.title }}
+                  {%- endif -%}
+                  {%- if pub.wip %} <span class="text-muted">(Work in Progress)</span>{% endif -%}
+                  {%- if pub.under_review %} <span class="text-muted">(Under Review)</span>{% endif -%}
+                </small>
+              {% endfor %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</div>

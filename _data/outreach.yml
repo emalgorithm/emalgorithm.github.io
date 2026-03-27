@@ -7,9 +7,8 @@ talks:
 
   - date: "2023-11-22"
     title: "A Primer on Graph Neural Networks"
-    venue: "COLT Seminar"
+    venue: "COLT Seminar, University of Pompeu Fabra, Barcelona"
     venue_url: https://www.upf.edu/web/colt
-    venue_suffix: ", University of Pompeu Fabra, Barcelona"
     slides_url: /assets/pdf/gnn_primer.pdf
 
   - date: "2023-09-14"
@@ -21,9 +20,8 @@ talks:
 
   - date: "2023-09-07"
     title: "Edge Directionality Improves Learning on Heterophilic Graphs"
-    venue: "Explainability and Applicability of GNNs Workshop"
+    venue: "Explainability and Applicability of GNNs Workshop, Kassel"
     venue_url: https://www.gain-group.de/html/events.html
-    venue_suffix: ", Kassel"
 
   - date: "2022-09-28"
     title: "Improving Machine Learning at Twitter using Graphs"
@@ -33,9 +31,8 @@ talks:
 
   - date: "2022-09-09"
     title: "Learning on Graphs with Missing Node Features"
-    venue: "TigerGraph"
+    venue: "TigerGraph Reading Group"
     venue_url: https://www.tigergraph.com/
-    venue_suffix: " Reading Group"
 
   - date: "2022-03-01"
     title: "Learning on Graphs with Missing Node Features"
@@ -46,14 +43,12 @@ talks:
 
   - date: "2022-02-24"
     title: "Learning on Graphs with Missing Node Features"
-    venue: "Machine Learning Research Group"
+    venue: "Machine Learning Research Group, University of Oxford"
     venue_url: https://www.robots.ox.ac.uk/~parg/
-    venue_suffix: ", University of Oxford"
 
   - date: "2021-11-23"
     title: "Learning on Graphs with Missing Node Features"
-    venue_prefix: "University of Cambridge "
-    venue: "AI Research Group Talks"
+    venue: "University of Cambridge AI Research Group Talks"
     venue_url: http://talks.cam.ac.uk/talk/index/165859
 
   - date: "2021-11-17"
@@ -78,8 +73,7 @@ talks:
 
   - date: "2021-01-22"
     title: "Dynamic Graphs and Temporal Graph Networks"
-    venue_prefix: "University of Liverpool "
-    venue: "Networks and Distributed Computing Series"
+    venue: "University of Liverpool Networks and Distributed Computing Series"
     venue_url: https://seminars.csc.liv.ac.uk/abstract.php?id=979
     slides_url: /assets/pdf/TGN_2021_01_22.pdf
 
@@ -105,56 +99,48 @@ conversations:
 
 workshops:
   - date: "2026-04-01"
-    date_precision: month
     title: "Post-AGI Science and Society Workshop"
     url: https://p-agi.org/
     venue: "ICLR 2026"
     role: "PC Member"
 
   - date: "2023-12-01"
-    date_precision: month
     title: "Temporal Graph Learning Workshop"
     url: https://sites.google.com/view/tglworkshop-2023/home
     venue: "NeurIPS 2023"
     role: "Organizer"
 
   - date: "2022-12-01"
-    date_precision: month
     title: "Temporal Graph Learning Workshop"
     url: https://sites.google.com/view/tglworkshop2022/home#h.q1t0lweplm6e
     venue: "NeurIPS 2022"
     role: "Panel"
 
   - date: "2022-12-01"
-    date_precision: month
     title: "NeurReps Workshop – Symmetry and Geometry in Neural Representations"
     url: https://www.neurreps.org/
     venue: "NeurIPS 2022"
     role: "PC Member"
 
   - date: "2022-02-01"
-    date_precision: month
     title: "GCLR 22 – 2nd Workshop on Graphs and more complex structures for learning and reasoning"
     url: https://sites.google.com/view/gclr2022/home?authuser=0
     venue: "AAAI 2022"
     role: "PC Member"
 
   - date: "2021-10-01"
-    date_precision: month
     title: "GReS – Workshop on Graph Neural Networks for Recommendation and Search"
     url: https://europe.naverlabs.com/gres-workshop/
     venue: "ACM RecSys 2021"
     role: "PC Member"
 
   - date: "2021-04-01"
-    date_precision: month
     title: "GNNSys'21 – Workshop on Graph Neural Networks and Systems"
     url: https://gnnsys.github.io/
     venue: "MLSys 2021"
     role: "PC Member"
 
   - date: "2021-02-01"
-    date_precision: month
     title: "AAAI-21 GCLR"
     url: https://sites.google.com/view/gclr2021/home
     venue: "AAAI 2021"

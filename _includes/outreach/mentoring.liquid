@@ -19,12 +19,23 @@
               <br>
               <small>
                 {%- if pub.url -%}
-                  <a href="{{ pub.url }}"{% if pub.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ pub.title }}</a>
+                  <a
+                    href="{% if pub.external %}{{ pub.url }}{% else %}{{ pub.url | relative_url }}{% endif %}"
+                    {% if pub.external %}
+                      target="_blank" rel="noopener noreferrer"
+                    {% endif %}
+                  >
+                    {{ pub.title }}
+                  </a>
                 {%- else -%}
                   {{ pub.title }}
                 {%- endif -%}
-                {%- if pub.wip %} <span class="text-muted">(Work in Progress)</span>{% endif -%}
-                {%- if pub.under_review %} <span class="text-muted">(Under Review)</span>{% endif -%}
+                {%- if pub.wip %}
+                  <span class="text-muted">(Work in Progress)</span>
+                {%- endif -%}
+                {%- if pub.under_review %}
+                  <span class="text-muted">(Under Review)</span>
+                {%- endif -%}
               </small>
             {% endfor %}
           </td>

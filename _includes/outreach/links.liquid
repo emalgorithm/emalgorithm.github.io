@@ -1,0 +1,17 @@
+<div class="links">
+  {% for link in include.links %}
+    <a
+      href="{% if link.external %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"
+      {% if link.external %}
+        target="_blank" rel="noopener noreferrer"
+      {% endif %}
+      class="btn btn-sm z-depth-0"
+      role="button"
+    >
+      {{- link.label -}}
+      {%- if link.lang %}
+        <small class="text-muted">{{ link.lang }}</small>
+      {% endif %}
+    </a>
+  {% endfor %}
+</div>

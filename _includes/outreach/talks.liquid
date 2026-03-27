@@ -21,17 +21,7 @@
                   {%- if item.venue_suffix %}{{ item.venue_suffix }}{%- endif -%}
                 </small>
                 {% if item.links %}
-                  <div class="links">
-                    {% for link in item.links %}
-                      <a href="{{ link.url }}"
-                        {%- if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}
-                        class="btn btn-sm z-depth-0"
-                        role="button">
-                        {{- link.label -}}
-                        {%- if link.lang %} <small class="text-muted">{{ link.lang }}</small>{% endif %}
-                      </a>
-                    {% endfor %}
-                  </div>
+                  {% include outreach/links.liquid links=item.links %}
                 {% endif %}
               </td>
             </tr>

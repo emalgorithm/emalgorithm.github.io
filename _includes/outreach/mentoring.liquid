@@ -1,10 +1,19 @@
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
     <tbody>
-      {% for item in site.data.outreach.mentoring %}
+      {% assign mentoring = site.data.outreach.mentoring | sort: 'start_date' | reverse %}
+      {% for item in mentoring %}
         <tr>
           <td class="text-nowrap" style="width: 10rem">
-            <small class="text-muted">{{ item.period }}</small>
+            <small class="text-muted">
+              {{ item.start_date | date: '%Y/%m' }}
+              —
+              {% if item.end_date %}
+                {{ item.end_date | date: '%Y/%m' }}
+              {% else %}
+                Present
+              {% endif %}
+            </small>
           </td>
           <td>
             <strong>

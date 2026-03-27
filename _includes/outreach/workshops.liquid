@@ -1,10 +1,17 @@
 <div class="table-responsive">
   <table class="table table-sm table-borderless">
     <tbody>
-      {% for item in site.data.outreach.workshops %}
+      {% assign workshops = site.data.outreach.workshops | sort: 'date' | reverse %}
+      {% for item in workshops %}
         <tr>
           <td class="text-nowrap" style="width: 5rem">
-            <small class="text-muted">{{ item.date }}</small>
+            <small class="text-muted">
+              {% if item.date_precision == 'month' %}
+                {{ item.date | date: '%Y/%m' }}
+              {% else %}
+                {{ item.date | date: '%Y/%m/%d' }}
+              {% endif %}
+            </small>
           </td>
           <td>
             {%- if item.url -%}

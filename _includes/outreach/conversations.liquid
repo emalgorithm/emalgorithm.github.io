@@ -16,7 +16,11 @@
                 {{ item.with_name }}
               {%- endif %}
             </small>
-            {% include outreach/links.liquid links=item.links %}
+            {% if item.video_url %}
+              <div class="links">
+                <a href="{{ item.video_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm z-depth-0" role="button">Video</a>
+              </div>
+            {% endif %}
           </td>
         </tr>
       {% endfor %}

@@ -1,0 +1,27 @@
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      {% assign workshops = site.data.outreach.workshops | sort: 'date' | reverse %}
+      {% for item in workshops %}
+        <tr>
+          <td class="text-nowrap" style="width: 5rem">
+            <small class="text-muted">{{ item.date | date: '%Y/%m' }}</small>
+          </td>
+          <td>
+            {%- if item.url -%}
+              <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+            {%- else -%}
+              {{ item.title }}
+            {%- endif -%}
+          </td>
+          <td class="text-nowrap">
+            <small class="text-muted">{{ item.venue }}</small>
+          </td>
+          <td class="text-nowrap">
+            <small class="text-muted">{{ item.role }}</small>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

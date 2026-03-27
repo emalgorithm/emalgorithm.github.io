@@ -19,9 +19,7 @@
                 {%- endif -%}
                 {%- if item.venue_suffix %}{{ item.venue_suffix }}{%- endif -%}
               </small>
-              {% if item.links %}
-                {% include outreach/links.liquid links=item.links %}
-              {% endif %}
+              {% include outreach/links.liquid links=item.links %}
             </td>
           </tr>
         {% endfor %}

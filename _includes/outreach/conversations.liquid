@@ -1,0 +1,30 @@
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      {% assign conversations = site.data.outreach.conversations | sort: 'date' | reverse %}
+      {% for item in conversations %}
+        <tr>
+          <td class="text-nowrap" style="width: 5rem">
+            <small class="text-muted">{{ item.date | date: '%Y/%m/%d' }}</small>
+          </td>
+          <td>
+            <em>{{ item.title }}</em><br>
+            <small>
+              with
+              {%- if item.with_url %}
+                <a href="{{ item.with_url }}" target="_blank" rel="noopener noreferrer">{{ item.with_name }}</a>
+              {%- else %}
+                {{ item.with_name }}
+              {%- endif %}
+            </small>
+            {% if item.video_url %}
+              <div class="links">
+                <a href="{{ item.video_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm z-depth-0" role="button">Video</a>
+              </div>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

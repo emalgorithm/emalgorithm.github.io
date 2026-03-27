@@ -4,7 +4,7 @@
 
   <h2>Talks</h2>
 
-  <p>Invited talks and presentations at academic seminars, workshops, and industry events.</p>
+  <p>{{ outreach.talks_description }}</p>
 
   <div class="publications">
     {% for year_group in outreach.talks %}
@@ -117,16 +117,9 @@
 
   <h2>Supervision and Mentoring</h2>
 
-  <p>
-    Mentoring bright and motivated students is one of the most rewarding aspects of my research. I am grateful for
-    their creativity and curiosity, and for how much I learn from them in return.
-  </p>
+  <p>{{ outreach.mentoring_description }}</p>
 
-  <p>
-    Below are the students I have had the pleasure to supervise. If you are a
-    <strong>prospective student interested in working with me</strong>, feel free to contact my former mentees to
-    learn more about my mentoring style and what collaboration with me looks like.
-  </p>
+  <p>{{ outreach.mentoring_cta | markdownify | remove: '<p>' | remove: '</p>' }}</p>
 
   <div class="table-responsive">
     <table class="table table-sm table-borderless">

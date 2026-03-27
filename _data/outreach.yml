@@ -4,12 +4,8 @@ talks:
       - date: "Jan 30"
         title: "Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models"
         venue: "Earth Species Project Community Deep Dive"
-        links:
-          - label: Slides
-            url: /assets/pdf/esp_community_deep_dive_2026.pdf
-          - label: Video
-            url: https://youtu.be/Cd0h0so-c80
-            external: true
+        slides_url: /assets/pdf/esp_community_deep_dive_2026.pdf
+        video_url: https://youtu.be/Cd0h0so-c80
 
   - year: 2023
     items:
@@ -18,20 +14,14 @@ talks:
         venue: "COLT Seminar"
         venue_url: https://www.upf.edu/web/colt
         venue_suffix: ", University of Pompeu Fabra, Barcelona"
-        links:
-          - label: Slides
-            url: /assets/pdf/gnn_primer.pdf
+        slides_url: /assets/pdf/gnn_primer.pdf
 
       - date: "Sep 14"
         title: "Edge Directionality Improves Learning on Heterophilic Graphs"
         venue: "Temporal Graph Reading Group"
         venue_url: https://www.cs.mcgill.ca/~shuang43/rg.html
-        links:
-          - label: Slides
-            url: /assets/pdf/dirgnn_tgl_reading_group.pdf
-          - label: Video
-            url: https://www.youtube.com/watch?v=VjpUSR1NZvI
-            external: true
+        slides_url: /assets/pdf/dirgnn_tgl_reading_group.pdf
+        video_url: https://www.youtube.com/watch?v=VjpUSR1NZvI
 
       - date: "Sep 07"
         title: "Edge Directionality Improves Learning on Heterophilic Graphs"
@@ -45,11 +35,7 @@ talks:
         title: "Improving Machine Learning at Twitter using Graphs"
         venue: "Privacy Week"
         venue_url: https://privacyweek.it/
-        links:
-          - label: Video
-            url: https://privacyweek.it/event/potenziare-lapprendimento-automatico-su-twitter-utilizzando-i-grafi/
-            external: true
-            lang: "it"
+        video_url: https://privacyweek.it/event/potenziare-lapprendimento-automatico-su-twitter-utilizzando-i-grafi/
 
       - date: "Sep 09"
         title: "Learning on Graphs with Missing Node Features"
@@ -61,13 +47,8 @@ talks:
         title: "Learning on Graphs with Missing Node Features"
         venue: "Learning on Graphs and Geometry Reading Group"
         venue_url: https://portal.valencelabs.com/logg
-        links:
-          - label: Slides
-            url: https://docs.google.com/presentation/d/11dAeJRalTI7K1YAxMNz_yElZ0lVO5Bw7n0LBqSd-OUY/edit#slide=id.g1017b3d77ca_0_0
-            external: true
-          - label: Video
-            url: https://www.youtube.com/watch?v=xe5A-xQTBdM
-            external: true
+        slides_url: https://docs.google.com/presentation/d/11dAeJRalTI7K1YAxMNz_yElZ0lVO5Bw7n0LBqSd-OUY/edit#slide=id.g1017b3d77ca_0_0
+        video_url: https://www.youtube.com/watch?v=xe5A-xQTBdM
 
       - date: "Feb 24"
         title: "Learning on Graphs with Missing Node Features"
@@ -96,9 +77,7 @@ talks:
       - date: "Apr 26"
         title: "Machine Learning on Dynamic Graphs: Temporal Graph Networks"
         venue: "Intel ML Seminar"
-        links:
-          - label: Slides
-            url: /assets/pdf/intel_tgn.pdf
+        slides_url: /assets/pdf/intel_tgn.pdf
 
       - date: "Apr 09"
         title: "Machine Learning on Dynamic Graphs: Temporal Graph Networks"
@@ -110,9 +89,7 @@ talks:
         venue_prefix: "University of Liverpool "
         venue: "Networks and Distributed Computing Series"
         venue_url: https://seminars.csc.liv.ac.uk/abstract.php?id=979
-        links:
-          - label: Slides
-            url: /assets/pdf/TGN_2021_01_22.pdf
+        slides_url: /assets/pdf/TGN_2021_01_22.pdf
 
   - year: 2020
     items:
@@ -120,32 +97,21 @@ talks:
         title: "TGN: Temporal Graph Networks"
         venue: "AISC"
         venue_url: https://ai.science/
-        links:
-          - label: Slides
-            url: /assets/pdf/tgn_aisc_2020.pdf
-          - label: Video
-            url: https://www.youtube.com/watch?v=W1GvX2ZcUmY
-            external: true
+        slides_url: /assets/pdf/tgn_aisc_2020.pdf
+        video_url: https://www.youtube.com/watch?v=W1GvX2ZcUmY
 
 conversations:
   - date: "2021/03/02"
     title: "Scaling Graph Neural Networks to Twitter-scale"
     with_name: "Zak Jost"
     with_url: https://www.youtube.com/channel/UCxw9_WYmLqlj5PyXu2AWU_g
-    links:
-      - label: Video
-        url: https://www.youtube.com/watch?v=ZSMEXchR3w8
-        external: true
+    video_url: https://www.youtube.com/watch?v=ZSMEXchR3w8
 
   - date: "2021/01/14"
     title: "My journey, my research at Twitter and Imperial College, and my work at LeadTheFuture"
     with_name: "The Smarter Podcast"
     with_url: https://italia-podcast.it/podcast/smarter-podcast
-    links:
-      - label: Video
-        url: https://www.youtube.com/watch?v=x4CeQ3S_DCA
-        external: true
-        lang: "it"
+    video_url: https://www.youtube.com/watch?v=x4CeQ3S_DCA
 
 workshops:
   - date: "2026/04"

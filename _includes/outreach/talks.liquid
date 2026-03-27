@@ -1,5 +1,5 @@
-{% assign talks = site.data.outreach.talks | sort: "date" | reverse %}
-{% assign talks_by_year = talks | group_by_exp: "item", "item.date | date: '%Y'" %}
+{% assign talks = site.data.outreach.talks | sort: 'date' | reverse %}
+{% assign talks_by_year = talks | group_by_exp: 'item', "item.date | date: '%Y'" %}
 
 {% for year_group in talks_by_year %}
   <h2 class="bibliography">{{ year_group.name }}</h2>
@@ -9,7 +9,7 @@
         {% for item in year_group.items %}
           <tr>
             <td class="text-nowrap" style="width: 5rem">
-              <small class="text-muted">{{ item.date | date: "%b %-d" }}</small>
+              <small class="text-muted">{{ item.date | date: '%b %-d' }}</small>
             </td>
             <td>
               <em>{{ item.title }}</em><br>
@@ -21,12 +21,14 @@
                 {%- endif -%}
               </small>
               {% if item.slides_url or item.video_url %}
-                {% assign slides_external = item.slides_url contains "://" %}
+                {% assign slides_external = item.slides_url contains '://' %}
                 <div class="links">
                   {% if item.slides_url %}
                     <a
                       href="{% if slides_external %}{{ item.slides_url }}{% else %}{{ item.slides_url | relative_url }}{% endif %}"
-                      {% if slides_external %}target="_blank" rel="noopener noreferrer"{% endif %}
+                      {% if slides_external %}
+                        target="_blank" rel="noopener noreferrer"
+                      {% endif %}
                       class="btn btn-sm z-depth-0"
                       role="button"
                       >Slides</a

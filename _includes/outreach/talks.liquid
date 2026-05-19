@@ -20,18 +20,30 @@
                   {{ item.venue }}
                 {%- endif -%}
               </small>
-              {% if item.slides_url or item.video_url %}
-                {% assign slides_external = item.slides_url contains '://' %}
+              {% if item.slides_html_url or item.slides_pdf_url or item.video_url %}
                 <div class="links">
-                  {% if item.slides_url %}
+                  {% if item.slides_html_url %}
+                    {% assign html_external = item.slides_html_url contains '://' %}
                     <a
-                      href="{% if slides_external %}{{ item.slides_url }}{% else %}{{ item.slides_url | relative_url }}{% endif %}"
-                      {% if slides_external %}
+                      href="{% if html_external %}{{ item.slides_html_url }}{% else %}{{ item.slides_html_url | relative_url }}{% endif %}"
+                      {% if html_external %}
                         target="_blank" rel="noopener noreferrer"
                       {% endif %}
                       class="btn btn-sm z-depth-0"
                       role="button"
-                      >Slides</a
+                      >Slides (HTML)</a
+                    >
+                  {% endif %}
+                  {% if item.slides_pdf_url %}
+                    {% assign pdf_external = item.slides_pdf_url contains '://' %}
+                    <a
+                      href="{% if pdf_external %}{{ item.slides_pdf_url }}{% else %}{{ item.slides_pdf_url | relative_url }}{% endif %}"
+                      {% if pdf_external %}
+                        target="_blank" rel="noopener noreferrer"
+                      {% endif %}
+                      class="btn btn-sm z-depth-0"
+                      role="button"
+                      >Slides (PDF)</a
                     >
                   {% endif %}
                   {% if item.video_url %}

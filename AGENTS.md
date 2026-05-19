@@ -1,3 +1,5 @@
+> **This is a fork.** Site-specific instructions are in [LOCAL_AGENTS.md](LOCAL_AGENTS.md).
+
 # Agent Guidelines for al-folio
 
 A simple, clean, and responsive Jekyll theme for academics.

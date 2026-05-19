@@ -1,21 +1,28 @@
 talks:
+  - date: "2026-05-19"
+    title: "Machine Learning on Temporal Graphs: From Foundations to Emerging Frontiers"
+    venue: "Linguae-ML Seminar, Ecole Normale Superieure (Paris)"
+    slides_html_url: /assets/presentations/temporal_graphs_linguae_ml_2026_05_19.html
+    slides_pdf_url: /assets/presentations/temporal_graphs_linguae_ml_2026_05_19.pdf
+    # source: https://github.com/emalgorithm/presentations/commit/9cee8ec7a7f95967b5a2bf677bdabae1bb5ca3dc
+
   - date: "2026-01-30"
     title: "Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models"
     venue: "Earth Species Project Community Deep Dive"
-    slides_url: /assets/pdf/esp_community_deep_dive_2026.pdf
+    slides_pdf_url: /assets/pdf/esp_community_deep_dive_2026.pdf
     video_url: https://youtu.be/Cd0h0so-c80
 
   - date: "2023-11-22"
     title: "A Primer on Graph Neural Networks"
     venue: "COLT Seminar, University of Pompeu Fabra, Barcelona"
     venue_url: https://www.upf.edu/web/colt
-    slides_url: /assets/pdf/gnn_primer.pdf
+    slides_pdf_url: /assets/pdf/gnn_primer.pdf
 
   - date: "2023-09-14"
     title: "Edge Directionality Improves Learning on Heterophilic Graphs"
     venue: "Temporal Graph Reading Group"
     venue_url: https://www.cs.mcgill.ca/~shuang43/rg.html
-    slides_url: /assets/pdf/dirgnn_tgl_reading_group.pdf
+    slides_pdf_url: /assets/pdf/dirgnn_tgl_reading_group.pdf
     video_url: https://www.youtube.com/watch?v=VjpUSR1NZvI
 
   - date: "2023-09-07"
@@ -38,7 +45,7 @@ talks:
     title: "Learning on Graphs with Missing Node Features"
     venue: "Learning on Graphs and Geometry Reading Group"
     venue_url: https://portal.valencelabs.com/logg
-    slides_url: https://docs.google.com/presentation/d/11dAeJRalTI7K1YAxMNz_yElZ0lVO5Bw7n0LBqSd-OUY/edit#slide=id.g1017b3d77ca_0_0
+    slides_pdf_url: https://docs.google.com/presentation/d/11dAeJRalTI7K1YAxMNz_yElZ0lVO5Bw7n0LBqSd-OUY/edit#slide=id.g1017b3d77ca_0_0
     video_url: https://www.youtube.com/watch?v=xe5A-xQTBdM
 
   - date: "2022-02-24"
@@ -64,7 +71,7 @@ talks:
   - date: "2021-04-26"
     title: "Machine Learning on Dynamic Graphs: Temporal Graph Networks"
     venue: "Intel ML Seminar"
-    slides_url: /assets/pdf/intel_tgn.pdf
+    slides_pdf_url: /assets/pdf/intel_tgn.pdf
 
   - date: "2021-04-09"
     title: "Machine Learning on Dynamic Graphs: Temporal Graph Networks"
@@ -75,13 +82,13 @@ talks:
     title: "Dynamic Graphs and Temporal Graph Networks"
     venue: "University of Liverpool Networks and Distributed Computing Series"
     venue_url: https://seminars.csc.liv.ac.uk/abstract.php?id=979
-    slides_url: /assets/pdf/TGN_2021_01_22.pdf
+    slides_pdf_url: /assets/pdf/TGN_2021_01_22.pdf
 
   - date: "2020-07-21"
     title: "TGN: Temporal Graph Networks"
     venue: "AISC"
     venue_url: https://ai.science/
-    slides_url: /assets/pdf/tgn_aisc_2020.pdf
+    slides_pdf_url: /assets/pdf/tgn_aisc_2020.pdf
     video_url: https://www.youtube.com/watch?v=W1GvX2ZcUmY
 
 conversations:

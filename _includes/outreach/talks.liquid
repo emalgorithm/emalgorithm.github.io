@@ -21,7 +21,6 @@
                 {%- endif -%}
               </small>
               {% if item.slides_url or item.slides_html_url or item.slides_pdf_url or item.video_url %}
-                {% assign slides_external = item.slides_url contains '://' %}
                 {% assign html_external = item.slides_html_url contains '://' %}
                 {% assign pdf_external = item.slides_pdf_url contains '://' %}
                 <div class="links">
@@ -34,6 +33,7 @@
                       >Slides (HTML)</a
                     >
                   {% elsif item.slides_url %}
+                    {% assign slides_external = item.slides_url contains '://' %}
                     <a
                       href="{% if slides_external %}{{ item.slides_url }}{% else %}{{ item.slides_url | relative_url }}{% endif %}"
                       {% if slides_external %}target="_blank" rel="noopener noreferrer"{% endif %}

@@ -26,7 +26,9 @@
                     {% assign html_external = item.slides_html_url contains '://' %}
                     <a
                       href="{% if html_external %}{{ item.slides_html_url }}{% else %}{{ item.slides_html_url | relative_url }}{% endif %}"
-                      {% if html_external %}target="_blank" rel="noopener noreferrer"{% endif %}
+                      {% if html_external %}
+                        target="_blank" rel="noopener noreferrer"
+                      {% endif %}
                       class="btn btn-sm z-depth-0"
                       role="button"
                       >Slides (HTML)</a
@@ -36,7 +38,9 @@
                     {% assign pdf_external = item.slides_pdf_url contains '://' %}
                     <a
                       href="{% if pdf_external %}{{ item.slides_pdf_url }}{% else %}{{ item.slides_pdf_url | relative_url }}{% endif %}"
-                      {% if pdf_external %}target="_blank" rel="noopener noreferrer"{% endif %}
+                      {% if pdf_external %}
+                        target="_blank" rel="noopener noreferrer"
+                      {% endif %}
                       class="btn btn-sm z-depth-0"
                       role="button"
                       >Slides (PDF)</a

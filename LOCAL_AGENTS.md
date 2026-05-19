@@ -12,4 +12,4 @@ Always use `gh pr create --repo emalgorithm/emalgorithm.github.io` — the `upst
 
 ## Presentations
 
-Slide files live in `assets/presentations/`. Name files `{topic}_{venue}_{date}` in lowercase with underscores; HTML and PDF share the same base name. In `_data/outreach.yml`, add a `# source: <commit-url>` comment below the slide URL pointing to the exact commit that generated the slides.
+Slide files live in `assets/presentations/` and are committed as regular git objects (not LFS — GitHub Pages does not serve LFS files). Name files `{topic}_{venue}_{date}` in lowercase with underscores; HTML and PDF share the same base name. In `_data/outreach.yml`, add a `# source: <commit-url>` comment below the slide URL pointing to the exact commit that generated the slides.

@@ -1,4 +1,12 @@
 talks:
+  - date: "2026-05-19"
+    title: "Machine Learning on Temporal Graphs: From Foundations to Emerging Frontiers"
+    venue: "LinguaML Seminar, Ecole Normale Superieure"
+    slides_html_url: /assets/presentations/ML_Temporal_Graphs_Slides_bundle.html
+    slides_pdf_url: /assets/presentations/ML_Temporal_Graphs_Slides_2026_05_19.pdf
+    source_commit: 9cee8ec7a7f95967b5a2bf677bdabae1bb5ca3dc
+    source_commit_url: https://github.com/emalgorithm/presentations/commit/9cee8ec7a7f95967b5a2bf677bdabae1bb5ca3dc
+
   - date: "2026-01-30"
     title: "Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models"
     venue: "Earth Species Project Community Deep Dive"

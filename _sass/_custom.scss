@@ -10,85 +10,123 @@
   }
 }
 
+// Base hues for publication type badges
+$badge-conference-hue: #1565c0;
+$badge-workshop-hue: #2e7d32;
+$badge-journal-hue: #c62828;
+$badge-preprint-hue: #e65100;
+$badge-default-hue: #546e7a;
+
+// Same tinting formula used for the venue abbr pill and award badge below
+@mixin soft-badge($hue) {
+  background-color: color-mix(in srgb, #{$hue} 16%, white) !important;
+  color: color-mix(in srgb, #{$hue} 85%, black) !important;
+  border-color: color-mix(in srgb, #{$hue} 32%, white) !important;
+}
+
+@mixin soft-badge-dark($hue) {
+  background-color: color-mix(in srgb, #{$hue} 35%, var(--global-card-bg-color)) !important;
+  color: color-mix(in srgb, #{$hue} 40%, white) !important;
+  border-color: color-mix(in srgb, #{$hue} 55%, var(--global-card-bg-color)) !important;
+}
+
 // Publication Type Badges
+// !important needed on all color properties to override mdbootstrap's .badge { color/bg: !important }
 .pubtype-tags {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 
   .badge {
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 0.2rem 0.5rem;
     margin-bottom: 0.25rem;
-    border-radius: 0.25rem;
+    border-radius: 0.3rem;
+    border: 1px solid transparent;
     display: block;
     width: 100%;
     text-align: center;
   }
 
   .badge-conference {
-    background-color: #007bff;
-    color: white;
+    @include soft-badge($badge-conference-hue);
   }
-
   .badge-workshop {
-    background-color: #28a745;
-    color: white;
+    @include soft-badge($badge-workshop-hue);
   }
-
   .badge-journal {
-    background-color: #dc3545;
-    color: white;
+    @include soft-badge($badge-journal-hue);
   }
-
   .badge-preprint {
-    background-color: #ffc107;
-    color: #212529;
+    @include soft-badge($badge-preprint-hue);
   }
-
   .badge-default {
-    background-color: #6c757d;
-    color: white;
+    @include soft-badge($badge-default-hue);
   }
 }
 
-// Dark mode adaptations for publication type badges
-html[data-theme="dark"] {
-  .pubtype-tags {
-    .badge-conference {
-      background-color: #4dabf7;
-      color: var(--global-card-bg-color) !important;
-    }
-
-    .badge-workshop {
-      background-color: #51cf66;
-      color: var(--global-card-bg-color) !important;
-    }
-
-    .badge-journal {
-      background-color: #ff6b6b;
-      color: var(--global-card-bg-color) !important;
-    }
-
-    .badge-preprint {
-      background-color: #ffd43b;
-      color: var(--global-card-bg-color) !important;
-    }
-
-    .badge-default {
-      background-color: #868e96;
-      color: var(--global-card-bg-color) !important;
-    }
-  }
-}
-
+// Venue abbr pill and award badge — soft tint using theme color
+// Overrides solid fill from _publications.scss; award badge also needs !important to beat bib.liquid inline styles
 .publications {
   ol.bibliography {
     li {
-      .links {
-        a.btn {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
+      .abbr abbr,
+      .links a.btn[style*="background-color"] {
+        background-color: color-mix(in srgb, var(--global-theme-color) 16%, white) !important;
+        color: color-mix(in srgb, var(--global-theme-color) 85%, black) !important;
+        border: 1px solid color-mix(in srgb, var(--global-theme-color) 32%, white) !important;
+      }
+
+      .abbr abbr a {
+        color: color-mix(in srgb, var(--global-theme-color) 85%, black) !important;
+      }
+
+      .links a.btn {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+    }
+  }
+}
+
+// Dark mode overrides for all publication badges
+html[data-theme="dark"] {
+  .pubtype-tags {
+    .badge-conference {
+      @include soft-badge-dark($badge-conference-hue);
+    }
+    .badge-workshop {
+      @include soft-badge-dark($badge-workshop-hue);
+    }
+    .badge-journal {
+      @include soft-badge-dark($badge-journal-hue);
+    }
+    .badge-preprint {
+      @include soft-badge-dark($badge-preprint-hue);
+    }
+    .badge-default {
+      @include soft-badge-dark($badge-default-hue);
+    }
+  }
+
+  .publications {
+    ol.bibliography {
+      li {
+        .abbr abbr {
+          background-color: color-mix(in srgb, var(--global-theme-color) 35%, var(--global-card-bg-color)) !important;
+          color: color-mix(in srgb, var(--global-theme-color) 40%, white) !important;
+          border: 1px solid color-mix(in srgb, var(--global-theme-color) 55%, var(--global-card-bg-color)) !important;
+
+          a {
+            color: color-mix(in srgb, var(--global-theme-color) 40%, white) !important;
+          }
+        }
+
+        .links a.btn[style*="background-color"] {
+          background-color: color-mix(in srgb, var(--global-theme-color) 70%, var(--global-card-bg-color)) !important;
+          color: white !important;
+          border: 1px solid color-mix(in srgb, var(--global-theme-color) 85%, var(--global-card-bg-color)) !important;
         }
       }
     }

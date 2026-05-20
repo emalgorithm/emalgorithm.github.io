@@ -1,5 +1,38 @@
 ---
 ---
+@article{rossi2026lac,
+  title       = {Communicating Sound Through Natural Language},
+  author      = {Emanuele Rossi and Emanuele Rodol\`a},
+  year        = {2026},
+  journal     = {arXiv},
+  arxiv       = {2605.08750},
+  abbr        = {arXiv},
+  preview     = {lac.png},
+  website     = {https://erodola.github.io/lac-demo/},
+  pubtype     = {preprint},
+  bibtex_show = {true},
+  selected    = {true},
+  abstract    = {We introduce lexical acoustic coding (LAC), a framework that enables LLM agents to transmit audio through natural language. A sender converts a waveform into interpretable, non-learned acoustic descriptors, quantizes each with a feature-specific interval vocabulary, and verbalizes the result as a plain English sentence. The receiver parses the sentence back into labels, inverts each label to an interval target, and renders a waveform via a decoder with closed-loop refinement. We frame LAC as a finite-rate lossy quantizer, exposing trade-offs among vocabulary size, transmission rate, and audio fidelity, and show that plain text can preserve enough acoustic information for intelligible reconstruction while remaining human-readable and editable.}
+}
+
+
+@article{antonelli2026lightning,
+  title       = {Predicting Channel Closures in the Lightning Network with Machine Learning},
+  author      = {Simone Antonelli and Vincent Davis and Harrison Rush and Anthony Potdevin and Jesse Shrader and Vikash Singh and Emanuele Rossi},
+  year        = {2026},
+  journal     = {arXiv},
+  arxiv       = {2605.12759},
+  abbr        = {arXiv},
+  preview     = {lightning_network_closure.png},
+  code        = {https://github.com/AmbossTech/ln-channel-closure-prediction},
+  dataset     = {https://huggingface.co/datasets/Amboss-Tech/ln-gossip},
+  xthread     = {https://x.com/ambosstech/status/2056751895692431520?s=20},
+  pubtype     = {preprint},
+  bibtex_show = {true},
+  abstract    = {We study the problem of predicting channel closure types in the Lightning Network using machine learning. We construct a dataset from two years of network activity and benchmark multiple approaches including MLPs and temporal graph neural networks. Our findings show that temporal and behavioural factors—specifically node activity recency and closure history—are the primary drivers of predictive performance, outweighing network topology. A simple MLP surpasses graph-based models, highlighting how the network's privacy constraints limit what is predictable from publicly available data alone. We release our dataset and code to support future research.}
+}
+
+
 @article{malitesta2026missing,
   title       = {Training-Free Graph-Based Imputation of Missing Modalities in Multimodal Recommendation},
   author      = {Daniele Malitesta and Emanuele Rossi and Claudio Pomo and Tommaso Di Noia and Fragkiskos D. Malliaros},
@@ -138,7 +171,6 @@
   abbr        = {ICML},
   preview     = {plinder.png},
   biorxiv     = {2024.07.17.603980v4},
-  selected    = {true},
   code        = {https://github.com/plinder-org/plinder},
   dataset     = {https://console.cloud.google.com/storage/browser/plinder},
   docs        = {https://plinder-org.github.io/plinder},
@@ -207,7 +239,6 @@
   abbr        = {LoG},
   code        = {https://github.com/emalgorithm/directed-graph-neural-network},
   blog        = {/blog/2023/dirgnn/},
-  selected    = {true},
   preview     = {dir-gnn.png},
   pubtype     = {conference},
   bibtex_show = {true},

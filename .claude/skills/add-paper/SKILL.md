@@ -8,6 +8,7 @@ Add the paper(s) provided by the user to `_bibliography/papers.bib`. Follow thes
 ## Step 1 — Fetch metadata
 
 Fetch the paper's abstract page (arXiv, ACL Anthology, NeurIPS proceedings, etc.) and extract:
+
 - Title
 - Authors (full names, in order)
 - Year

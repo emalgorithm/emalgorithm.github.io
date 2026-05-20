@@ -41,7 +41,7 @@ If the merge stops due to conflicts, do not abort. For every conflicting file, a
 3.  Once all conflicts are resolved, commit the merge with the message: "chore: sync with upstream al-folio".
 4.  **Build & Verify locally before pushing:**
     - Run `docker compose up --build -d` and wait for the server to be ready: `until docker compose logs 2>&1 | grep -q "Server running"; do sleep 5; done`
-    - Invoke the `/verify` skill with this prompt: *"Check that the site at http://localhost:8080 is working correctly after an upstream sync. Verify: home page loads, navigation works, publications page renders, CV page renders, dark mode toggle works, no JS errors in console. Report any regressions."*
+    - Invoke the `/verify` skill with this prompt: _"Check that the site at http://localhost:8080 is working correctly after an upstream sync. Verify: home page loads, navigation works, publications page renders, CV page renders, dark mode toggle works, no JS errors in console. Report any regressions."_
     - If `/verify` returns FAIL or BLOCKED, attempt to fix the issue and amend the commit before proceeding.
     - If an issue cannot be resolved automatically, stop and report it to me with a clear description before proceeding.
 5.  Push the branch to origin: `git push origin <branch-name>`.

@@ -111,7 +111,6 @@ html[data-theme="dark"] {
             color: color-mix(in srgb, var(--global-theme-color) 85%, black) !important;
           }
         }
-
       }
 
       // Award badge (e.g. "SPOTLIGHT (TOP 15%)") — inline style in bib.liquid, needs !important to override
@@ -145,7 +144,6 @@ html[data-theme="dark"] {
               color: color-mix(in srgb, var(--global-theme-color) 40%, white) !important;
             }
           }
-
         }
 
         .links {

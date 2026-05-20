@@ -40,12 +40,12 @@ If the merge stops due to conflicts, do not abort. For every conflicting file, a
 2.  If you are unsure about a specific conflict (e.g., logic is too complex to merge safely), stop and ask me for guidance on that specific file.
 3.  Once all conflicts are resolved, commit the merge with the message: "chore: sync with upstream al-folio".
 4.  **Build & Verify locally before pushing:**
-    - Run `docker compose up --build` and wait for the site to be available at `http://localhost:8080`.
-    - Use the browser to inspect the running site: check navigation, key pages (home, publications, CV), images, and dark mode.
-    - If you find build errors or visual regressions, attempt to fix them and amend the commit.
+    - Run `docker compose up --build -d` and wait for the server to be ready: `until docker compose logs 2>&1 | grep -q "Server running"; do sleep 5; done`
+    - Invoke the `/verify` skill with this prompt: *"Check that the site at http://localhost:8080 is working correctly after an upstream sync. Verify: home page loads, navigation works, publications page renders, CV page renders, dark mode toggle works, no JS errors in console. Report any regressions."*
+    - If `/verify` returns FAIL or BLOCKED, attempt to fix the issue and amend the commit before proceeding.
     - If an issue cannot be resolved automatically, stop and report it to me with a clear description before proceeding.
 5.  Push the branch to origin: `git push origin <branch-name>`.
-6.  Create a pull request to `main` using GitHub CLI. For the PR description, summarize what the upstream integration added or updated.
+6.  Create a pull request to `main` using the GitHub API (not `gh pr create`, which fails on merge commits): `gh api repos/<owner>/<repo>/pulls --method POST -f title="..." -f head="<branch>" -f base="main" -f body="..."`. The PR description must include: a summary of upstream changes pulled in, the conflict resolution table, and the merge reminder. Extract the PR URL from the `html_url` field of the response.
 7.  **Report:** At the end, output a Markdown table summarizing:
     - Files that had conflicts.
     - The resolution strategy you used (e.g., "Kept Local Content", "Merged Config", "Adopted Upstream Structure").

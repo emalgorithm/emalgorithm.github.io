@@ -16,79 +16,144 @@
   margin-bottom: 0.5rem;
 
   .badge {
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 0.2rem 0.5rem;
     margin-bottom: 0.25rem;
-    border-radius: 0.25rem;
+    border-radius: 0.3rem;
+    border: 1px solid transparent;
     display: block;
     width: 100%;
     text-align: center;
   }
 
+  // !important needed on all properties to override mdbootstrap's .badge { color/bg: !important }
   .badge-conference {
-    background-color: #007bff;
-    color: white;
+    background-color: #d4e4fd !important;
+    color: #1248a0 !important;
+    border-color: #a8caf9 !important;
   }
 
   .badge-workshop {
-    background-color: #28a745;
-    color: white;
+    background-color: #d1ead2 !important;
+    color: #1b5e20 !important;
+    border-color: #a8d5aa !important;
   }
 
   .badge-journal {
-    background-color: #dc3545;
-    color: white;
+    background-color: #f9d5db !important;
+    color: #921924 !important;
+    border-color: #f0a8b2 !important;
   }
 
   .badge-preprint {
-    background-color: #ffc107;
-    color: #212529;
+    background-color: #fee8c0 !important;
+    color: #924600 !important;
+    border-color: #fcc878 !important;
   }
 
   .badge-default {
-    background-color: #6c757d;
-    color: white;
+    background-color: #e8eef4 !important;
+    color: #374151 !important;
+    border-color: #cdd6e0 !important;
   }
 }
 
 // Dark mode adaptations for publication type badges
+// Deep saturated backgrounds + bright colored text for a vivid but legible dark-mode look
 html[data-theme="dark"] {
   .pubtype-tags {
     .badge-conference {
-      background-color: #4dabf7;
-      color: var(--global-card-bg-color) !important;
+      background-color: #1a4a7a !important;
+      color: #7ec8ff !important;
+      border-color: #2a6aaa !important;
     }
 
     .badge-workshop {
-      background-color: #51cf66;
-      color: var(--global-card-bg-color) !important;
+      background-color: #1a5228 !important;
+      color: #7de89a !important;
+      border-color: #267838 !important;
     }
 
     .badge-journal {
-      background-color: #ff6b6b;
-      color: var(--global-card-bg-color) !important;
+      background-color: #6e1a22 !important;
+      color: #ffaab0 !important;
+      border-color: #962430 !important;
     }
 
     .badge-preprint {
-      background-color: #ffd43b;
-      color: var(--global-card-bg-color) !important;
+      background-color: #6e3e00 !important;
+      color: #ffe08a !important;
+      border-color: #9e5a00 !important;
     }
 
     .badge-default {
-      background-color: #868e96;
-      color: var(--global-card-bg-color) !important;
+      background-color: #38424e !important;
+      color: #c0ccd8 !important;
+      border-color: #4e5c6a !important;
     }
   }
 }
 
+// Soft venue badge (the abbr pill above the teaser image) and soft award badge
+// Overrides the solid theme-color fill from _publications.scss
 .publications {
   ol.bibliography {
     li {
+      .abbr {
+        abbr {
+          background-color: color-mix(in srgb, var(--global-theme-color) 16%, white) !important;
+          color: color-mix(in srgb, var(--global-theme-color) 85%, black) !important;
+          border: 1px solid color-mix(in srgb, var(--global-theme-color) 32%, white) !important;
+
+          a {
+            color: color-mix(in srgb, var(--global-theme-color) 85%, black) !important;
+          }
+        }
+
+      }
+
+      // Award badge (e.g. "SPOTLIGHT (TOP 15%)") — inline style in bib.liquid, needs !important to override
       .links {
+        a.btn[style*="background-color"] {
+          background-color: color-mix(in srgb, var(--global-theme-color) 16%, white) !important;
+          color: color-mix(in srgb, var(--global-theme-color) 85%, black) !important;
+          border: 1px solid color-mix(in srgb, var(--global-theme-color) 32%, white) !important;
+        }
+
         a.btn {
           padding-left: 0.5rem;
           padding-right: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+html[data-theme="dark"] {
+  .publications {
+    ol.bibliography {
+      li {
+        .abbr {
+          abbr {
+            background-color: color-mix(in srgb, var(--global-theme-color) 35%, var(--global-card-bg-color)) !important;
+            color: color-mix(in srgb, var(--global-theme-color) 40%, white) !important;
+            border: 1px solid color-mix(in srgb, var(--global-theme-color) 55%, var(--global-card-bg-color)) !important;
+
+            a {
+              color: color-mix(in srgb, var(--global-theme-color) 40%, white) !important;
+            }
+          }
+
+        }
+
+        .links {
+          a.btn[style*="background-color"] {
+            background-color: color-mix(in srgb, var(--global-theme-color) 70%, var(--global-card-bg-color)) !important;
+            color: white !important;
+            border: 1px solid color-mix(in srgb, var(--global-theme-color) 85%, var(--global-card-bg-color)) !important;
+          }
         }
       }
     }

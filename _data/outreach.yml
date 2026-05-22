@@ -4,7 +4,7 @@ talks:
     venue: "Linguae-ML Seminar, Ecole Normale Superieure (Paris)"
     slides_html_url: /assets/presentations/temporal_graphs_linguae_ml_2026_05_19.html
     slides_pdf_url: /assets/presentations/temporal_graphs_linguae_ml_2026_05_19.pdf
-    # source: https://github.com/emalgorithm/presentations/commit/9cee8ec7a7f95967b5a2bf677bdabae1bb5ca3dc
+    # source: https://github.com/emalgorithm/presentations/commit/e80a31a7ae9d52d8653f1b2d37870cf8b77f23bc
 
   - date: "2026-01-30"
     title: "Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models"

@@ -212,7 +212,7 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-model-merging-improves-zero-shot-generalization-in-bioacoustic-foundation-models-has-been-accepted-at-the-neurips-2025-workshop-on-ai-for-animal-communication",
           title: 'Our paper “Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models” has been...',
           description: "",
-          section: "News",},{id: "news-new-preprint-out-communicating-sound-through-natural-language-introduces-lexical-acoustic-coding-lac-a-framework-that-lets-llm-agents-communicate-audio-through-plain-english-sentences-check-out-the-demo",
+          section: "News",},{id: "news-new-preprint-out-communicating-sound-through-natural-language-introduces-lexical-acoustic-coding-lac-a-framework-that-lets-llm-agents-communicate-audio-through-plain-english-sentences-check-out-the-demo-and-thread",
           title: 'New preprint out: “Communicating Sound Through Natural Language” introduces lexical acoustic coding (LAC),...',
           description: "",
           section: "News",},{id: "projects-project-1",

@@ -1,0 +1,7 @@
+# Publication topic filters: slug -> display label.
+# The slug must match the `topics` field used in _bibliography/papers.bib.
+# Do not use `all` as a slug here — it is reserved for the "All" button.
+animal-communication: ML x Animal Communication
+graphs: ML x Graphs
+lightning-network: ML x Lightning Network
+molecular-biology: ML x Molecular Biology

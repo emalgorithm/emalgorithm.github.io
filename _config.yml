@@ -63,7 +63,7 @@ al_folio:
       enabled: true
   compat:
     bootstrap:
-      enabled: true # fork uses Bootstrap-era markup (CV grid, outreach includes, _custom.scss); bridge until migrated to Tailwind
+      enabled: false # core tailwind.css already ships the grid/navbar utilities the fork needs; compat's .collapse{visibility:hidden} broke the desktop navbar
       support_window: v1.0-v1.2
       deprecates_in: v1.3
       removed_in: v2.0

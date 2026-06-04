@@ -10,6 +10,8 @@ This repo is a fork of al-folio. Keep changes content-focused; minimise style/te
 
 Always use `gh pr create --repo emalgorithm/emalgorithm.github.io` — the `upstream` remote causes `gh` to resolve the wrong repo otherwise.
 
+Squash-merge our own feature PRs; use a regular (non-squash) merge only for upstream-sync PRs, to preserve al-folio's commit history.
+
 ## Presentations
 
 Slide files live in `assets/presentations/` and are committed as regular git objects (not LFS — GitHub Pages does not serve LFS files). Name files `{topic}_{venue}_{date}` in lowercase with underscores; HTML and PDF share the same base name. In `_data/outreach.yml`, add a `# source: <commit-url>` comment below the slide URL pointing to the exact commit that generated the slides.

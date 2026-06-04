@@ -1,4 +1,21 @@
 {% if site.bib_search %}
   <script src="{{ '/assets/js/bibsearch.js' | relative_url | bust_file_cache }}" type="module"></script>
-  <input type="text" id="bibsearch" spellcheck="false" autocomplete="off" class="search bibsearch-form-input" placeholder="Type to filter">
+  <div class="publication-filters" aria-label="Publication filters">
+    <input
+      type="text"
+      id="bibsearch"
+      spellcheck="false"
+      autocomplete="off"
+      class="search bibsearch-form-input"
+      placeholder="Type to filter"
+      aria-label="Search publications"
+    >
+    <div class="publication-topic-filters" role="group" aria-label="Filter publications by topic">
+      <button type="button" class="publication-topic-filter active" data-topic="all" aria-pressed="true">All</button>
+      <button type="button" class="publication-topic-filter" data-topic="animal-communication" aria-pressed="false">ML x Animal Communication</button>
+      <button type="button" class="publication-topic-filter" data-topic="graphs" aria-pressed="false">ML x Graphs</button>
+      <button type="button" class="publication-topic-filter" data-topic="lightning-network" aria-pressed="false">ML x Lightning Network</button>
+      <button type="button" class="publication-topic-filter" data-topic="molecular-biology" aria-pressed="false">ML x Molecular Biology</button>
+    </div>
+  </div>
 {% endif %}

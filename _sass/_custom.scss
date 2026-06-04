@@ -30,6 +30,52 @@ $badge-default-hue: #546e7a;
   border-color: color-mix(in srgb, #{$hue} 55%, var(--global-card-bg-color)) !important;
 }
 
+// Publication topic filters
+.publication-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  margin: 1.5rem 0 0.5rem;
+
+  .bibsearch-form-input {
+    margin-right: 0;
+  }
+}
+
+.publication-topic-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.publication-topic-filter {
+  background-color: transparent;
+  color: var(--global-text-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  padding: 0.42rem 0.75rem;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+
+  &:hover,
+  &:focus {
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    outline: none;
+  }
+
+  &.active {
+    background-color: color-mix(in srgb, var(--global-theme-color) 16%, white);
+    color: color-mix(in srgb, var(--global-theme-color) 85%, black);
+    border-color: color-mix(in srgb, var(--global-theme-color) 32%, white);
+  }
+}
+
 // Publication Type Badges
 // !important needed on all color properties to override mdbootstrap's .badge { color/bg: !important }
 .pubtype-tags {
@@ -92,6 +138,14 @@ $badge-default-hue: #546e7a;
 
 // Dark mode overrides for all publication badges
 html[data-theme="dark"] {
+  .publication-topic-filter {
+    &.active {
+      background-color: color-mix(in srgb, var(--global-theme-color) 35%, var(--global-card-bg-color));
+      color: color-mix(in srgb, var(--global-theme-color) 40%, white);
+      border-color: color-mix(in srgb, var(--global-theme-color) 55%, var(--global-card-bg-color));
+    }
+  }
+
   .pubtype-tags {
     .badge-conference {
       @include soft-badge-dark($badge-conference-hue);

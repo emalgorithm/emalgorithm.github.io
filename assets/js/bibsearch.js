@@ -15,17 +15,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const allTopic = "all";
   const searchInput = document.getElementById(selectors.searchInput);
   const topicButtons = Array.from(document.querySelectorAll(selectors.topicButton));
-  let activeTopic = "all";
+  let activeTopic = allTopic;
 
   if (!searchInput) {
     return;
   }
 
-  const entryTopics = (entry) => {
-    const topicElement = entry.querySelector(selectors.topicMetadata);
-    const topics = topicElement ? topicElement.dataset.topics : "";
-    return topics.split(/[,\s]+/).filter(Boolean);
-  };
+  // Entries and their topics are static for the page lifetime, so resolve them once.
+  const entries = Array.from(document.querySelectorAll(selectors.entry));
+  const entryTopics = new Map(
+    entries.map((entry) => {
+      const topicElement = entry.querySelector(selectors.topicMetadata);
+      const topics = topicElement ? topicElement.dataset.topics : "";
+      return [entry, topics.split(/[,\s]+/).filter(Boolean)];
+    })
+  );
 
   const setActiveTopic = (topic) => {
     const matchingButton = topicButtons.find((button) => button.dataset.topic === topic);
@@ -65,20 +69,19 @@ document.addEventListener("DOMContentLoaded", function () {
     window.history[method]({}, "", url);
   };
 
-  const getSearchTermFromUrl = () => {
-    const querySearchTerm = new URLSearchParams(window.location.search).get(params.search);
-    if (querySearchTerm !== null) {
-      return querySearchTerm;
-    }
-
-    const hashValue = decodeURIComponent(window.location.hash.substring(1)); // Remove the '#' character
-    return hashValue && !document.getElementById(hashValue) ? hashValue : "";
-  };
-
   const setStateFromUrl = () => {
     const urlParams = new URLSearchParams(window.location.search);
     setActiveTopic(urlParams.get(params.topic) || allTopic);
-    searchInput.value = getSearchTermFromUrl();
+
+    const querySearchTerm = urlParams.get(params.search);
+    if (querySearchTerm !== null) {
+      searchInput.value = querySearchTerm;
+    } else {
+      // Backward-compat with upstream al-folio: a hash that isn't a real entry
+      // anchor (e.g. #graph) is treated as a search term; real #bibkey anchors scroll.
+      const hashValue = decodeURIComponent(window.location.hash.substring(1));
+      searchInput.value = hashValue && !document.getElementById(hashValue) ? hashValue : "";
+    }
   };
 
   const hideEmptyGroups = () => {
@@ -121,11 +124,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    document.querySelectorAll(selectors.entry).forEach((element) => {
-      const topics = entryTopics(element);
-      const matchesTopic = activeTopic === allTopic || topics.includes(activeTopic);
-      const text = element.innerText.toLowerCase();
-      const matchesSearch = searchTerm === "" || (CSS.highlights ? !nonMatchingSearchElements.has(element) : text.includes(searchTerm));
+    entries.forEach((element) => {
+      const matchesTopic = activeTopic === allTopic || entryTopics.get(element).includes(activeTopic);
+      const matchesSearch =
+        searchTerm === "" || (CSS.highlights ? !nonMatchingSearchElements.has(element) : element.textContent.toLowerCase().includes(searchTerm));
 
       if (!matchesTopic || !matchesSearch) {
         element.classList.add("unloaded");
@@ -153,15 +155,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  window.addEventListener("hashchange", function () {
+  const syncFromUrl = () => {
     setStateFromUrl();
     applyFilters();
-  });
-  window.addEventListener("popstate", function () {
-    setStateFromUrl();
-    applyFilters();
-  });
+  };
 
-  setStateFromUrl();
-  applyFilters();
+  window.addEventListener("hashchange", syncFromUrl);
+  window.addEventListener("popstate", syncFromUrl);
+
+  syncFromUrl();
+  // Canonicalize the address bar on load (e.g. drop an unknown ?topic=) without adding history.
+  syncUrl({ replace: true });
 });

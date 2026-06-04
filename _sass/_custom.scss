@@ -70,9 +70,7 @@ $badge-default-hue: #546e7a;
   }
 
   &.active {
-    background-color: color-mix(in srgb, var(--global-theme-color) 16%, white);
-    color: color-mix(in srgb, var(--global-theme-color) 85%, black);
-    border-color: color-mix(in srgb, var(--global-theme-color) 32%, white);
+    @include soft-badge(var(--global-theme-color));
   }
 }
 
@@ -140,9 +138,7 @@ $badge-default-hue: #546e7a;
 html[data-theme="dark"] {
   .publication-topic-filter {
     &.active {
-      background-color: color-mix(in srgb, var(--global-theme-color) 35%, var(--global-card-bg-color));
-      color: color-mix(in srgb, var(--global-theme-color) 40%, white);
-      border-color: color-mix(in srgb, var(--global-theme-color) 55%, var(--global-card-bg-color));
+      @include soft-badge-dark(var(--global-theme-color));
     }
   }
 

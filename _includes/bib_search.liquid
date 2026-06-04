@@ -12,10 +12,9 @@
     >
     <div class="publication-topic-filters" role="group" aria-label="Filter publications by topic">
       <button type="button" class="publication-topic-filter active" data-topic="all" aria-pressed="true">All</button>
-      <button type="button" class="publication-topic-filter" data-topic="animal-communication" aria-pressed="false">ML x Animal Communication</button>
-      <button type="button" class="publication-topic-filter" data-topic="graphs" aria-pressed="false">ML x Graphs</button>
-      <button type="button" class="publication-topic-filter" data-topic="lightning-network" aria-pressed="false">ML x Lightning Network</button>
-      <button type="button" class="publication-topic-filter" data-topic="molecular-biology" aria-pressed="false">ML x Molecular Biology</button>
+      {% for topic in site.data.topics %}
+        <button type="button" class="publication-topic-filter" data-topic="{{ topic[0] }}" aria-pressed="false">{{ topic[1] }}</button>
+      {% endfor %}
     </div>
   </div>
 {% endif %}

@@ -49,14 +49,14 @@ $badge-default-hue: #546e7a;
 }
 
 .publication-topic-filter {
-  background-color: transparent;
+  background-color: color-mix(in srgb, var(--global-text-color) 4%, transparent);
   color: var(--global-text-color);
   border: 1px solid var(--global-divider-color);
-  border-radius: 6px;
+  border-radius: 999px;
   cursor: pointer;
   font-size: 0.95rem;
   line-height: 1.2;
-  padding: 0.42rem 0.75rem;
+  padding: 0.4rem 0.9rem;
   transition:
     background-color 0.15s ease,
     border-color 0.15s ease,
@@ -64,6 +64,7 @@ $badge-default-hue: #546e7a;
 
   &:hover,
   &:focus {
+    background-color: color-mix(in srgb, var(--global-theme-color) 10%, transparent);
     color: var(--global-theme-color);
     border-color: var(--global-theme-color);
     outline: none;

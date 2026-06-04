@@ -112,6 +112,10 @@ analytics:
   pirsch: # your Pirsch analytics site ID (length 32 characters)
   openpanel: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
 
+# Umami analytics is not supported by the v1 al_analytics plugin; injected locally via _includes/scripts.liquid override.
+umami_analytics: 50feeb64-c144-4d7b-a713-583ada640dcc # your Umami website ID
+enable_umami_analytics: true # enables Umami analytics (https://umami.is/)
+
 # For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
 google_site_verification: # your google-site-verification ID (Google Search Console)
 bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)

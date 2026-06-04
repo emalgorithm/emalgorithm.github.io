@@ -202,3 +202,9 @@ html[data-theme="dark"] {
     }
   }
 }
+
+// Publication / outreach link buttons were uppercase under v0.x mdbootstrap
+// (.btn { text-transform: uppercase }); v1's core .btn is not. Restore it.
+.links a.btn {
+  text-transform: uppercase;
+}

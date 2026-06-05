@@ -41,12 +41,15 @@ on:
 jobs:
   link-checker:
     runs-on: ubuntu-latest
-    # only run on the main repo
-    if: github.repository == 'alshedivat/al-folio'
+    # Fork: run on every PR but keep it advisory. `continue-on-error` means a
+    # broken (or flaky external) link surfaces in the run + job summary without
+    # ever blocking the merge. Upstream gated this to its own repo; we want the
+    # signal on our content PRs.
     steps:
       - uses: actions/checkout@v4
 
       - name: Link Checker 🔗
+        continue-on-error: true
         uses: lycheeverse/lychee-action@v2.0.2
         with:
           fail: true

@@ -149,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   topicButtons.forEach((button) => {
     button.addEventListener("click", function () {
+      searchInput.value = ""; // Clicking a topic clears any pending search query.
       setActiveTopic(this.dataset.topic || allTopic);
       syncUrl();
       applyFilters();

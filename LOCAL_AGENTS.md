@@ -6,6 +6,10 @@ This file contains site-specific instructions for emalgorithm.github.io, a fork 
 
 This repo is a fork of al-folio. Keep changes content-focused; minimise style/template edits to reduce merge conflicts with upstream updates. Refer to `CUSTOMIZE.md` before making any theme changes.
 
+## Running locally
+
+Use Docker: `docker compose up -d` → http://localhost:8080/. `baseurl` is empty here, so the site is at `/`, not `/al-folio/` — ignore the upstream docs on this.
+
 ## Pull Requests
 
 Always use `gh pr create --repo emalgorithm/emalgorithm.github.io` — the `upstream` remote causes `gh` to resolve the wrong repo otherwise.

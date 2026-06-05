@@ -159,7 +159,7 @@
 
 @article{kovtun_pinder_2024,
   title       = {PINDER: The Protein Interaction Dataset and Evaluation Resource},
-  author      = {Daniel Kovtun and Mehmet Akdel and Alexander Goncearenco and Guoqing Zhou and Graham Holt and David Baugher and Dejun Lin and Yusuf Adeshina and Thomas Castiglione and Xiaoyun Wang and Céline Marquet and Matt McPartlon and Tomas Geffner and Gabriele Corso and Hannes Stärk and Zachary Carpenter and Emine Kucukbenli and Michael Bronstein and Luca Naef},
+  author      = {Daniel Kovtun and Mehmet Akdel and Alexander Goncearenco and Guoqing Zhou and Graham Holt and David Baugher and Dejun Lin and Yusuf Adeshina and Thomas Castiglione and Xiaoyun Wang and Céline Marquet and Matt McPartlon and Tomas Geffner and Emanuele Rossi and Gabriele Corso and Hannes Stärk and Zachary Carpenter and Emine Kucukbenli and Michael Bronstein and Luca Naef},
   year        = {2024},
   journal     = {bioRxiv},
   abbr        = {bioRxiv},
@@ -176,19 +176,19 @@
 
 @article{durairaj_plinder_2024,
   title       = {PLINDER: The Protein-Ligand Interactions Dataset and Evaluation Resource},
-  author      = {Janani Durairaj and Yusuf Adeshina and Zhonglin Cao and Xuejin Zhang and Vladas Oleinikovas and Thomas Duignan and Zachary McClure and Xavier Robin and Danny Kovtun and Emanuele Rossi and Guoqing Zhou and Srimukh Veccham and Clemens Isert and Yuxing Peng and Prabindh Sundareson and Mehmet Akdel and Gabriele Corso and Hannes Stärk and Zachary Carpenter and Michael Bronstein and Emine Kucukbenli and Torsten Schwede and Luca Naef},
+  author      = {Janani Durairaj and Yusuf Adeshina and Zhonglin Cao and Xuejin Zhang and Vladas Oleinikovas and Thomas Duignan and Zachary McClure and Xavier Robin and Gabriel Studer and Danny Kovtun and Emanuele Rossi and Guoqing Zhou and Srimukh Veccham and Clemens Isert and Yuxing Peng and Prabindh Sundareson and Mehmet Akdel and Gabriele Corso and Hannes Stärk and Gerardo Tauriello and Zachary Carpenter and Michael Bronstein and Emine Kucukbenli and Torsten Schwede and Luca Naef},
   year        = {2024},
   journal     = {ICML ML for Life and Material Science Workshop},
   abbr        = {ICML},
   preview     = {plinder.png},
-  biorxiv     = {2024.07.17.603980v4},
+  biorxiv     = {2024.07.17.603955v3},
   code        = {https://github.com/plinder-org/plinder},
   dataset     = {https://console.cloud.google.com/storage/browser/plinder},
   docs        = {https://plinder-org.github.io/plinder},
   pubtype     = {workshop},
   topics      = {molecular-biology},
   bibtex_show = {true},
-  abstract    = {Protein-protein interactions (PPIs) are fundamental to understanding biological processes and play a key role in therapeutic advancements. As deep-learning docking methods for PPIs gain traction, benchmarking protocols and datasets tailored for effective training and evaluation of their generalization capabilities and performance across real-world scenarios become imperative. Aiming to overcome limitations of existing approaches, we introduce PINDER, a comprehensive annotated dataset that uses structural clustering to derive non-redundant interface-based data splits and includes holo (bound), apo (unbound), and computationally predicted structures. PINDER consists of 2,319,564 dimeric PPI systems (and up to 25 million augmented PPIs) and 1,955 high-quality test PPIs with interface data leakage removed. Additionally, PINDER provides a test subset with 180 dimers for comparison to AlphaFold-Multimer without any interface leakage with respect to its training set. Unsurprisingly, the PINDER benchmark reveals that the performance of existing docking models is highly overestimated when evaluated on leaky test sets. Most importantly, by retraining DiffDock-PP on PINDER interface-clustered splits, we show that interface cluster-based sampling of the training split, along with the diverse and less leaky validation split, leads to strong generalization improvements.}
+  abstract    = {Protein-ligand interactions (PLI) are foundational to small molecule drug design. With computational methods striving towards experimental accuracy, there is a critical demand for a well-curated and diverse PLI dataset. Existing datasets are often limited in size and diversity, and commonly used evaluation sets suffer from training information leakage, hindering the realistic assessment of method generalization capabilities. To address these shortcomings, we present PLINDER, the largest and most annotated dataset to date, comprising 449,383 PLI systems, each with over 500 annotations, similarity metrics at protein, pocket, interaction and ligand levels, and paired unbound (apo) and predicted structures. We propose an approach to generate training and evaluation splits that minimizes task-specific leakage and maximizes test set quality, and compare the resulting performance of DiffDock when retrained with different kinds of splits.}
 }
 
 @article{huang_utg_2024,

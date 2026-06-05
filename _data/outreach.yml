@@ -160,7 +160,7 @@ mentoring:
     position: "PhD Student @ Sapienza University of Rome"
     publications:
       - title: "Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models"
-        url: /publications/#marincione2025bio
+        url: /publications/?q=marincione2025bio
 
   - start_date: "2024-10-01"
     name: "Simone Antonelli"
@@ -168,7 +168,7 @@ mentoring:
     position: "ML Research Intern @ Amboss Technologies"
     publications:
       - title: "Predicting Link Closure in the Lightning Network with Temporal Graph Networks"
-        wip: true
+        url: /publications/?q=antonelli2026lightning
 
   - start_date: "2024-10-01"
     end_date: "2025-04-01"

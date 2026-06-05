@@ -75,6 +75,33 @@ $badge-default-hue: #546e7a;
   }
 }
 
+// The local compact/full author wrappers keep selected authors visible while
+// collapsing the middle of long lists. Mirror the core direct-child author
+// selectors for the nested markup.
+.publications ol.bibliography li .author {
+  .authors-compact > em,
+  .authors-full > em {
+    border-bottom: 1px solid;
+    font-style: normal;
+  }
+
+  .authors-compact > .more-authors,
+  .authors-full > .more-authors {
+    color: var(--global-text-color-light);
+    border-bottom: 1px dashed var(--global-text-color-light);
+    cursor: pointer;
+  }
+
+  .authors-compact > .more-authors:hover,
+  .authors-compact > .more-authors:focus,
+  .authors-full > .more-authors:hover,
+  .authors-full > .more-authors:focus {
+    color: var(--global-text-color);
+    border-bottom-color: var(--global-text-color);
+    outline: none;
+  }
+}
+
 // Publication Type Badges
 // !important needed on all color properties to override mdbootstrap's .badge { color/bg: !important }
 .pubtype-tags {

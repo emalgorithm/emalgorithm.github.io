@@ -50,6 +50,15 @@ jobs:
       - name: Run upgrade audit 🧪
         run: bundle exec al-folio upgrade audit
 
+      - name: Fail on stale local overrides 🛡️
+        # Local overrides (see .al-folio-overrides.yml) shadow gem-owned files.
+        # When a gem bump (often via an upstream sync that raises the Gemfile
+        # pins) changes one of those files, our shadow copy may silently miss
+        # the upstream change. This gate fails the build so the override is
+        # reconciled: `al-folio upgrade overrides diff PATH`, re-base, then
+        # `al-folio upgrade overrides accept PATH`.
+        run: bundle exec al-folio upgrade overrides audit --fail-on-stale
+
       - name: Upload upgrade report 📄
         if: always()
         uses: actions/upload-artifact@v4

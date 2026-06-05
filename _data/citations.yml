@@ -1,14 +1,10 @@
 metadata:
-  last_updated: '2026-05-22'
+  last_updated: '2026-06-05'
 papers:
   DHlkBOYAAAAJ:-f6ydRqryjwC:
     citations: 0
     title: Communicating Sound Through Natural Language
     year: '2026'
-  DHlkBOYAAAAJ:4DMP91E08xMC:
-    citations: 37
-    title: 'Particle methods for viscous flows: analogies and differences between the SPH and DVH methods'
-    year: '2016'
   DHlkBOYAAAAJ:4TOpqqG69KYC:
     citations: 3
     title: Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models
@@ -18,47 +14,31 @@ papers:
     title: Deep Learning on Real-World Graphs
     year: '2025'
   DHlkBOYAAAAJ:8k81kl-MbHgC:
-    citations: 248
+    citations: 253
     title: Temporal Graph Benchmark for Machine Learning on Temporal Graphs
     year: '2023'
-  DHlkBOYAAAAJ:9ZlFYXVOiuMC:
-    citations: 1
-    title: 'From waste to self-healing concrete: the missing PHA-link'
-    year: '2022'
   DHlkBOYAAAAJ:9yKSN-GCB0IC:
     citations: 37
     title: Tuning word2vec for large scale recommendation systems
     year: '2020'
-  DHlkBOYAAAAJ:IWHjjKOFINEC:
-    citations: 35
-    title: Numerical simulation of 2D-vorticity dynamics using particle methods
-    year: '2015'
   DHlkBOYAAAAJ:KlAtU1dfN6UC:
     citations: 20
     title: 'UTG: Towards a unified view of snapshot and event based models for temporal graphs'
     year: '2024'
-  DHlkBOYAAAAJ:L8Ckcad2t8MC:
-    citations: 0
-    title: Results from the ARGO-YBJ experiment
-    year: '2011'
   DHlkBOYAAAAJ:LkGwnXOMwfcC:
-    citations: 34
+    citations: 35
     title: Provably Efficient Causal Model-Based Reinforcement Learning for Systematic Generalization
     year: '2022'
   DHlkBOYAAAAJ:M3ejUd6NZC8C:
     citations: 4
     title: Channel balance interpolation in the lightning network via machine learning
     year: '2025'
-  DHlkBOYAAAAJ:QIV2ME_5wuYC:
-    citations: 0
-    title: 'Toward Operational Decision Support Systems for Wildfire Risk Management: Lesson Learnt on Data Integration and Modelling from a Benchmark Case Study'
-    year: '2025'
   DHlkBOYAAAAJ:Se3iqnhoufwC:
-    citations: 222
+    citations: 225
     title: Graph Neural Networks for Link Prediction with Subgraph Sketching
     year: '2022'
   DHlkBOYAAAAJ:ULOm3_A8WrAC:
-    citations: 30
+    citations: 32
     title: 'PINDER: The protein interaction dataset and evaluation resource'
     year: '2024'
   DHlkBOYAAAAJ:Wp0gIr-vW9MC:
@@ -66,63 +46,43 @@ papers:
     title: Description of a collaborative sperm whale birth and shifts in coda vocal styles during key events
     year: '2026'
   DHlkBOYAAAAJ:YOwf2qJgpHMC:
-    citations: 44
+    citations: 47
     title: Do we really need to drop items with missing modalities in multimodal recommendation?
     year: '2024'
-  DHlkBOYAAAAJ:ZeXyd9-uunAC:
-    citations: 0
-    title: 'SPH simulations of a suspension of super-paramagnetic particles: tuning the rheology using a rotating magnetic field'
-    year: '2021'
   DHlkBOYAAAAJ:Zph67rFs4hoC:
-    citations: 85
+    citations: 89
     title: 'PLINDER: The protein-ligand interactions dataset and evaluation resource'
     year: '2024'
   DHlkBOYAAAAJ:_FxGoFyzp5QC:
-    citations: 12
+    citations: 13
     title: Learning to Infer Structures of Network Games
     year: '2022'
   DHlkBOYAAAAJ:_kc_bZDykSQC:
     citations: 6
     title: Bayesian Binary Search
     year: '2025'
-  DHlkBOYAAAAJ:aqlVkmm33-oC:
-    citations: 0
-    title: Gamma-Ray Astronomy with ARGO-YBJ
-    year: '2012'
   DHlkBOYAAAAJ:d1gkVwhDpl0C:
-    citations: 1591
+    citations: 1636
     title: Temporal Graph Networks for Deep Learning on Dynamic Graphs
     year: '2020'
-  DHlkBOYAAAAJ:dhFuZR0502QC:
-    citations: 10
-    title: Quantum computation of molecular geometry via many-body nuclear spin echoes
-    year: '2025'
   DHlkBOYAAAAJ:hC7cP41nSMkC:
     citations: 0
     title: Predicting Channel Closures in the Lightning Network with Machine Learning
     year: '2026'
   DHlkBOYAAAAJ:hqOjcs7Dif8C:
-    citations: 192
+    citations: 196
     title: Edge Directionality Improves Learning on Heterophilic Graphs
     year: '2023'
   DHlkBOYAAAAJ:kNdYIx-mwKoC:
-    citations: 37
+    citations: 42
     title: 'Tgb 2.0: A benchmark for learning on temporal knowledge graphs and heterogeneous graphs'
     year: '2024'
-  DHlkBOYAAAAJ:mVmsd5A6BfQC:
-    citations: 63
-    title: Multiple bifurcations of the flow over stalled airfoils when changing the Reynolds number
-    year: '2018'
   DHlkBOYAAAAJ:qUcmZB5y_30C:
     citations: 2
     title: Training-free Graph-based Imputation of Missing Modalities in Multimodal Recommendation
     year: '2026'
-  DHlkBOYAAAAJ:qxL8FJ1GzNcC:
-    citations: 38
-    title: Simulating 2D viscous flow around geometries with vertices through the Diffused Vortex Hydrodynamics method
-    year: '2016'
   DHlkBOYAAAAJ:u-x6o8ySG0sC:
-    citations: 579
+    citations: 585
     title: 'SIGN: Scalable Inception Graph Neural Networks'
     year: '2020'
   DHlkBOYAAAAJ:u5HHmVD_uO8C:
@@ -134,6 +94,6 @@ papers:
     title: On the unreasonable effectiveness of feature propagation in learning on graphs with missing node features
     year: '2021'
   DHlkBOYAAAAJ:zYLM7Y9cAGgC:
-    citations: 511
+    citations: 522
     title: 'Grand: Graph neural diffusion'
     year: '2021'

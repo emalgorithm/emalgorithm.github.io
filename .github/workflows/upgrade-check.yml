@@ -1,0 +1,68 @@
+name: Upgrade contract checks
+
+on:
+  push:
+    branches:
+      - master
+      - main
+      - v1.0-dev
+    paths:
+      - "_config.yml"
+      - "_data/**"
+      - "_pages/**"
+      - "_posts/**"
+      - "_projects/**"
+      - "assets/**"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "test/integration_upgrade_cli.sh"
+      - ".github/workflows/upgrade-check.yml"
+  pull_request:
+    branches:
+      - master
+      - main
+      - v1.0-dev
+    paths:
+      - "_config.yml"
+      - "_data/**"
+      - "_pages/**"
+      - "_posts/**"
+      - "_projects/**"
+      - "assets/**"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "test/integration_upgrade_cli.sh"
+      - ".github/workflows/upgrade-check.yml"
+
+jobs:
+  upgrade-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby 💎
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.5"
+          bundler-cache: true
+
+      - name: Run upgrade audit 🧪
+        run: bundle exec al-folio upgrade audit
+
+      - name: Fail on stale local overrides 🛡️
+        # Local overrides (see .al-folio-overrides.yml) shadow gem-owned files.
+        # When a gem bump (often via an upstream sync that raises the Gemfile
+        # pins) changes one of those files, our shadow copy may silently miss
+        # the upstream change. This gate fails the build so the override is
+        # reconciled: `al-folio upgrade overrides diff PATH`, re-base, then
+        # `al-folio upgrade overrides accept PATH`.
+        run: bundle exec al-folio upgrade overrides audit --fail-on-stale
+
+      - name: Upload upgrade report 📄
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: al-folio-upgrade-report
+          path: al-folio-upgrade-report.md
+          if-no-files-found: ignore

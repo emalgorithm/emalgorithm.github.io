@@ -38,6 +38,10 @@ jobs:
   visual-regression:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    # Visual parity is measured against the stock al-folio v0.16.3 baseline tag,
+    # which a customized site fork is expected to differ from (and the tag does
+    # not exist here). Only run on the upstream al-folio repo.
+    if: github.repository == 'alshedivat/al-folio'
     steps:
       - name: Checkout candidate 🛎️
         uses: actions/checkout@v4

@@ -41,5 +41,5 @@ overrides:
     gem_version: 1.0.11
     upstream_path: assets/js/bibsearch.js
     upstream_sha256: 959f7ee592686a73204b936eada490fe07f7bb6b723a8c8ee98266e4a71dd3fb
-    local_sha256: 74a9a2c849a0d0d6d4210127c11e7b3c777d221cd1a5d4c8f65903d170edbb13
-    acknowledged_at: "2026-06-04"
+    local_sha256: 9a5cbc72dbb134102451b168c361cff661ad350cf1e25ab94c1a06ca22de29ce
+    acknowledged_at: "2026-06-05"

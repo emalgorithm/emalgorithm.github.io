@@ -208,13 +208,3 @@ html[data-theme="dark"] {
 .links a.btn {
   text-transform: uppercase;
 }
-
-// About-page section headings: the gem renders them lowercase ("news",
-// "selected publications"). Capitalize via CSS instead of overriding
-// _layouts/about.liquid, so this stays additive (no gem-version pin).
-// Scoped by the stable section hrefs the gem emits inside the <h2>.
-h2 a[href$="/news/"],
-h2 a[href$="/blog/"],
-h2 a[href$="/publications/"] {
-  text-transform: capitalize;
-}

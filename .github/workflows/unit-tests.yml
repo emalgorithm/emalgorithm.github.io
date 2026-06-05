@@ -41,6 +41,11 @@ on:
 jobs:
   comments-integration-tests:
     runs-on: ubuntu-latest
+    # Starter-development checks (style-contract + cross-gem integration tests):
+    # they assert the thin-starter boundary and gem internals, which a downstream
+    # site fork intentionally diverges from (local overrides, custom content,
+    # empty baseurl). Only run on the upstream al-folio repo.
+    if: github.repository == 'alshedivat/al-folio'
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4

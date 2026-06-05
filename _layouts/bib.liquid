@@ -77,153 +77,91 @@
     <div class="title">{{ entry.title }}</div>
     <!-- Author -->
     <div class="author">
-      {%- assign author_array_size = entry.author_array | size -%}
-      {%- assign last_index = author_array_size | minus: 1 -%}
+      {% assign author_array_size = entry.author_array | size %}
 
-      {%- assign author_array_limit = author_array_size -%}
-      {%- if site.max_author_limit and author_array_size > site.max_author_limit -%}
-        {%- assign author_array_limit = site.max_author_limit -%}
-      {%- endif -%}
+      {% assign author_array_limit = author_array_size %}
+      {% if site.max_author_limit and author_array_size > site.max_author_limit %}
+        {% assign author_array_limit = site.max_author_limit %}
+      {% endif %}
 
-      {%- comment -%}
-        Compact view shows the first authors (up to author_array_limit), the final author,
-        and the site owner ("self") — collapsing any gaps to a clickable ellipsis. Locate
-        self first so the owner's name is never hidden. A second, hidden span holds the full
-        author list; the ellipsis / "show less" toggles between the two.
-      {%- endcomment -%}
-      {%- assign self_index = -1 -%}
-      {%- for author in entry.author_array -%}
-        {%- assign self_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
-        {%- if site.scholar.last_name contains self_last_name and site.scholar.first_name contains author.first -%}
-          {%- assign self_index = forloop.index0 -%}
-          {%- break -%}
+      {%- for author in entry.author_array limit: author_array_limit -%}
+        {% assign author_is_self = false %}
+        {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+        {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+        {% if site.scholar.last_name contains author_last_name %}
+          {% if site.scholar.first_name contains author.first %}
+            {% assign author_is_self = true %}
+          {% endif %}
         {%- endif -%}
-      {%- endfor -%}
+        {% assign coauthor_url = null %}
+        {%- assign clean_last_name = author_last_name | downcase | remove_accents -%}
+        {% if site.data.coauthors[clean_last_name] %}
+          {%- for coauthor in site.data.coauthors[clean_last_name] -%}
+            {% if coauthor.firstname contains author.first %}
+              {%- assign coauthor_url = coauthor.url -%}
+              {% break %}
+            {%- endif -%}
+          {% endfor %}
+        {%- endif -%}
 
-      {%- comment -%} Count authors hidden by the compact view (everyone but the first N, self, and the last author). {%- endcomment -%}
-      {%- assign hidden_count = 0 -%}
-      {%- for author in entry.author_array -%}
-        {%- assign author_index = forloop.index0 -%}
-        {%- assign shown = false -%}
-        {%- if author_index < author_array_limit %}{% assign shown = true %}{% endif -%}
-        {%- if author_index == self_index %}{% assign shown = true %}{% endif -%}
-        {%- if author_index == last_index %}{% assign shown = true %}{% endif -%}
-        {%- unless shown %}{% assign hidden_count = hidden_count | plus: 1 %}{% endunless -%}
-      {%- endfor -%}
+        {%- if forloop.length > 1 -%}
+          {% if forloop.first == false -%}
+            {%- if forloop.length > 2 %}, {% elsif forloop.length == 2 %}  {% endif %}
+          {%- endif %}
+          {%- if forloop.last and author_array_limit == author_array_size %}and {% endif -%}
+        {% endif %}
+        {%- if author_is_self -%}
+          <em>
+            {{- author.first }}
+            {{ author_last_html -}}
+          </em>
+        {%- else -%}
+          {%- if coauthor_url -%}
+            <a href="{{ coauthor_url }}">
+              {{- author.first }}
+              {{ author_last_html -}}
+            </a>
+          {%- else -%}
+            {{- author.first }}
+            {{ author_last_html -}}
+          {% endif %}
+        {%- endif -%}
+      {% endfor %}
+      {%- assign more_authors = author_array_size | minus: author_array_limit -%}
 
-      {%- comment -%} ===== Compact author list ===== {%- endcomment -%}
-      <span class="authors-compact">
-        {%- assign last_shown_index = -1 -%}
-        {%- for author in entry.author_array -%}
-          {%- assign author_index = forloop.index0 -%}
-          {%- assign show_author = false -%}
-          {%- if author_index < author_array_limit %}{% assign show_author = true %}{% endif -%}
-          {%- if author_index == self_index %}{% assign show_author = true %}{% endif -%}
-          {%- if author_index == last_index %}{% assign show_author = true %}{% endif -%}
-          {%- if show_author -%}
-            {%- assign author_is_self = false -%}
-            {%- if author_index == self_index %}{% assign author_is_self = true %}{% endif -%}
-            {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
-            {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
-            {%- assign coauthor_url = null -%}
-            {%- assign clean_last_name = author_last_name | downcase | remove_accents -%}
-            {%- if site.data.coauthors[clean_last_name] -%}
-              {%- for coauthor in site.data.coauthors[clean_last_name] -%}
-                {%- if coauthor.firstname contains author.first -%}
-                  {%- assign coauthor_url = coauthor.url -%}
-                  {%- break -%}
-                {%- endif -%}
-              {%- endfor -%}
-            {%- endif -%}
-            {%- comment -%} Separator: clickable ellipsis when authors were skipped, otherwise the normal comma/"and". {%- endcomment -%}
-            {%- if last_shown_index >= 0 -%}
-              {%- assign contiguous_index = last_shown_index | plus: 1 -%}
-              {%- if author_index > contiguous_index -%}
-                {{ ', ' -}}
-                <span
-                  class="more-authors"
-                  role="button"
-                  tabindex="0"
-                  title="Show all authors"
-                  onclick="var a = this.closest('.author'); a.querySelector('.authors-compact').style.display = 'none'; a.querySelector('.authors-full').style.display = 'inline';"
-                  onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }"
-                  >…</span
-                >
-                {{- ', ' }}
-              {%- else -%}
-                {%- if author_array_size > 2 %}, {% elsif author_array_size == 2 %}  {% endif -%}
-                {%- if forloop.last and hidden_count == 0 %}and {% endif -%}
-              {%- endif -%}
-            {%- endif -%}
-            {%- if author_is_self -%}
-              <em>
-                {{- author.first }}
-                {{ author_last_html -}}
-              </em>
-            {%- elsif coauthor_url -%}
-              <a href="{{ coauthor_url }}">
-                {{- author.first }}
-                {{ author_last_html -}}
-              </a>
-            {%- else -%}
-              {{ author.first }}
-              {{ author_last_html }}
-            {%- endif -%}
-            {%- assign last_shown_index = author_index -%}
-          {%- endif -%}
+      {%- assign more_authors_hide = more_authors | append: ' more author' -%}
+      {% if more_authors > 0 %}
+        {%- if more_authors > 1 -%}
+          {% assign more_authors_hide = more_authors_hide | append: 's' %}
+        {%- endif -%}
+        {% assign more_authors_show = '' %}
+        {%- for author in entry.author_array offset: author_array_limit -%}
+          {% assign more_authors_show = more_authors_show | append: author.first | append: ' ' | append: author.last %}
+          {% unless forloop.last %}
+            {% assign more_authors_show = more_authors_show | append: ', ' %}
+          {% endunless %}
         {%- endfor -%}
-      </span>
-
-      {%- comment -%} ===== Full author list (hidden until expanded) ===== {%- endcomment -%}
-      {%- if hidden_count > 0 -%}
-        <span class="authors-full" style="display: none;">
-          {%- for author in entry.author_array -%}
-            {%- assign author_index = forloop.index0 -%}
-            {%- assign author_is_self = false -%}
-            {%- if author_index == self_index %}{% assign author_is_self = true %}{% endif -%}
-            {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
-            {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
-            {%- assign coauthor_url = null -%}
-            {%- assign clean_last_name = author_last_name | downcase | remove_accents -%}
-            {%- if site.data.coauthors[clean_last_name] -%}
-              {%- for coauthor in site.data.coauthors[clean_last_name] -%}
-                {%- if coauthor.firstname contains author.first -%}
-                  {%- assign coauthor_url = coauthor.url -%}
-                  {%- break -%}
-                {%- endif -%}
-              {%- endfor -%}
-            {%- endif -%}
-            {%- unless forloop.first -%}
-              {%- if author_array_size > 2 %}, {% elsif author_array_size == 2 %}  {% endif -%}
-              {%- if forloop.last %}and {% endif -%}
-            {%- endunless -%}
-            {%- if author_is_self -%}
-              <em>
-                {{- author.first }}
-                {{ author_last_html -}}
-              </em>
-            {%- elsif coauthor_url -%}
-              <a href="{{ coauthor_url }}">
-                {{- author.first }}
-                {{ author_last_html -}}
-              </a>
-            {%- else -%}
-              {{ author.first }}
-              {{ author_last_html }}
-            {%- endif -%}
-          {%- endfor -%}
-          {{ ' ' -}}
-          <span
-            class="more-authors"
-            role="button"
-            tabindex="0"
-            title="Show fewer authors"
-            onclick="var a = this.closest('.author'); a.querySelector('.authors-full').style.display = 'none'; a.querySelector('.authors-compact').style.display = 'inline';"
-            onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }"
-            >[show less]</span
-          >
+        {%- assign more_authors_show = more_authors_show | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+        , and
+        <span
+          class="more-authors"
+          title="click to view {{ more_authors_hide }}"
+          onclick="
+              var element = this;
+              element.setAttribute('title', '');
+              var more_authors_text = element.textContent == '{{ more_authors_hide }}' ? '{{ more_authors_show }}' : '{{ more_authors_hide }}';
+              var cursorPosition = 0;
+              var textAdder = setInterval(function(){
+                element.innerHTML = more_authors_text.substring(0, cursorPosition + 1);
+                if (++cursorPosition == more_authors_text.length){
+                  clearInterval(textAdder);
+                }
+            }, '{{ site.more_authors_animation_delay }}');
+          "
+        >
+          {{- more_authors_hide -}}
         </span>
-      {%- endif -%}
+      {% endif %}
       {% if entry.annotation %}
         <i
           class="fa-solid fa-circle-info ml-1"

@@ -28,7 +28,7 @@ I’m a postdoctoral researcher in the [Gladia](https://gladia.di.uniroma1.it) g
 
 This direction grows out of a broader interest in how machine learning can uncover structure in complex systems, from graphs to structural biology and animal communication. During my PhD at **Twitter** and **Imperial College London**, supervised by [Michael Bronstein](https://en.wikipedia.org/wiki/Michael_Bronstein), I focused on **machine learning on graphs**, developing methods such as [Temporal Graph Networks](https://arxiv.org/abs/2006.10637). I later worked on **[generative models for structural biology and drug discovery](https://proximabio.com/neo-1)** at Vant AI, before moving to my current research direction.
 
-Since 2024 I’ve also been an ML advisor for [Amboss](https://amboss.tech), where we [explore how machine learning can improve]({{ '/publications/' | relative_url }}?topic=lightning-network) the **Lightning Network**, a Bitcoin layer-2 protocol that makes payments fast and scalable.
+Since 2024 I’ve also been an ML advisor for [Amboss](https://amboss.tech), where we [explore how machine learning can improve]({{ '/publications/' | relative_url }}?topic=lightning-network) the **Lightning Network**, a layer-2 protocol that makes Bitcoin payments fast and scalable.
 
 Earlier in my career, I was part of Fabula AI, a deep learning startup for fake news detection that was [acquired by Twitter](https://techcrunch.com/2019/06/03/twitter-bags-deep-learning-talent-behind-london-startup-fabula-ai). I hold degrees in Computer Science from **Imperial College London** and the **University of Cambridge**.
 

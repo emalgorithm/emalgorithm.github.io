@@ -1,4 +1,12 @@
 talks:
+  - date: "2026-07-10"
+    title: "Graph Machine Learning for Dynamic Financial Networks"
+    venue: "Swissquote Workshop on Graph Learning in Financial Networks, EPFL"
+    venue_url: https://www.epfl.ch/schools/cdm/college-of-management-of-technology/research/swiss-finance-institute/events/other-events/workshop-on-graph-learning-in-financial-networks/
+    slides_html_url: /assets/presentations/graph_machine_learning_dynamic_financial_networks_epfl_2026_07_10.html
+    slides_pdf_url: /assets/presentations/graph_machine_learning_dynamic_financial_networks_epfl_2026_07_10.pdf
+    # source: https://github.com/emalgorithm/presentations/commit/f9e8a9bf184d6c15c8e885f8c0936d0d2e119225
+
   - date: "2026-05-19"
     title: "Machine Learning on Temporal Graphs: From Foundations to Emerging Frontiers"
     venue: "Linguae-ML Seminar, Ecole Normale Superieure (Paris)"

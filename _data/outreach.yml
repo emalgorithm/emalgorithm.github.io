@@ -1,6 +1,6 @@
 talks:
   - date: "2026-07-10"
-    title: "Graph Machine Learning for Dynamic Financial Networks"
+    title: "Graph Machine Learning for Dynamic Financial Networks: From Foundations to the Lightning Network"
     venue: "Swissquote Workshop on Graph Learning in Financial Networks, EPFL"
     venue_url: https://www.epfl.ch/schools/cdm/college-of-management-of-technology/research/swiss-finance-institute/events/other-events/workshop-on-graph-learning-in-financial-networks/
     slides_html_url: /assets/presentations/graph_machine_learning_dynamic_financial_networks_epfl_2026_07_10.html

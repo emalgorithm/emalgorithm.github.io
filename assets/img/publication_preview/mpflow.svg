@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 382" width="1040" height="382" role="img" aria-label="MP-Flow reinforcement learning loop: an MPNN policy observes the Lightning graph, opens one channel, and is rewarded by the increase in max flow. The loop is revealed step by step: environment, agent, state, action, reward.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 382" width="1040" height="382" role="img" aria-label="MP-Flow reinforcement learning loop: an MPNN policy observes the Lightning graph, opens one channel, and is rewarded by the increase in max flow.">
   <defs>
     <marker id="mp-arrow-state" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L0,6 L8.5,3 z" fill="#7c3aed"/>
@@ -16,42 +16,13 @@
 
   <style>
     svg { font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
-    text { -webkit-user-select: none; user-select: none; }
-
-    /* Each presentation "reveal" fades in in sequence, holds, then the loop resets. */
-    .stage { opacity: 0; }
-    .stage1 { animation: rev1 9s infinite linear; }
-    .stage2 { animation: rev2 9s infinite linear; }
-    .stage3 { animation: rev3 9s infinite linear; }
-    .stage4 { animation: rev4 9s infinite linear; }
-    .stage5 { animation: rev5 9s infinite linear; }
-
-    @keyframes rev1 { 0%,3% { opacity: 0; } 5%,93% { opacity: 1; } 100% { opacity: 0; } }
-    @keyframes rev2 { 0%,16% { opacity: 0; } 18%,93% { opacity: 1; } 100% { opacity: 0; } }
-    @keyframes rev3 { 0%,31% { opacity: 0; } 33%,93% { opacity: 1; } 100% { opacity: 0; } }
-    @keyframes rev4 { 0%,48% { opacity: 0; } 50%,93% { opacity: 1; } 100% { opacity: 0; } }
-    @keyframes rev5 { 0%,64% { opacity: 0; } 66%,93% { opacity: 1; } 100% { opacity: 0; } }
-
-    /* Gentle pulse on the selected policy score, active while the agent is on screen. */
-    .pick { animation: pickPulse 9s infinite ease-in-out; }
-    @keyframes pickPulse {
-      0%,18% { opacity: 0; }
-      22% { opacity: 1; }
-      30% { transform: scaleY(1); }
-      36% { transform: scaleY(1.14); }
-      42% { transform: scaleY(1); }
-      93% { opacity: 1; }
-      100% { opacity: 0; }
-    }
-    .pick { transform-box: fill-box; transform-origin: bottom; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .stage, .pick { animation: none; opacity: 1; }
-    }
   </style>
 
-  <!-- (1) ENVIRONMENT panel -->
-  <g class="stage stage1">
+  <!-- Solid white backdrop so arrows and labels read clearly in both light and dark themes. -->
+  <rect x="0" y="0" width="1040" height="382" rx="12" fill="#ffffff"/>
+
+  <!-- ENVIRONMENT panel -->
+  <g>
     <rect x="52" y="52" width="430" height="316" rx="10" fill="#ffffff" stroke="#d7dee8" filter="url(#mp-shadow)"/>
     <text x="72" y="82" font-size="14" font-weight="800" fill="#94a3b8" letter-spacing="1.5">ENVIRONMENT</text>
     <text x="72" y="106" font-size="17" font-weight="900" fill="#1a202c">Lightning graph</text>
@@ -106,8 +77,8 @@
     </g>
   </g>
 
-  <!-- (2) AGENT panel -->
-  <g class="stage stage2">
+  <!-- AGENT panel -->
+  <g>
     <rect x="646" y="96" width="342" height="228" rx="10" fill="#ffffff" stroke="#d8b4fe" filter="url(#mp-shadow)"/>
     <text x="668" y="126" font-size="14" font-weight="800" fill="#94a3b8" letter-spacing="1.5">AGENT</text>
     <text x="668" y="150" font-size="17" font-weight="900" fill="#7c3aed">MPNN policy</text>
@@ -116,31 +87,25 @@
     <g transform="translate(676 196)">
       <rect x="0" y="66" width="34" height="26" rx="4" fill="#e9d5ff"/>
       <rect x="52" y="40" width="34" height="52" rx="4" fill="#c4b5fd"/>
-      <rect class="pick" x="104" y="8" width="34" height="84" rx="4" fill="#7c3aed"/>
+      <rect x="104" y="8" width="34" height="84" rx="4" fill="#7c3aed"/>
       <rect x="156" y="52" width="34" height="40" rx="4" fill="#c4b5fd"/>
       <rect x="208" y="70" width="34" height="22" rx="4" fill="#e9d5ff"/>
       <text x="121" y="-2" text-anchor="middle" font-size="14" font-weight="900" fill="#7c3aed">pick best</text>
     </g>
   </g>
 
-  <!-- (3) state: environment -> agent -->
-  <g class="stage stage3">
-    <path d="M486 140 H642" fill="none" stroke="#7c3aed" stroke-width="3.5" marker-end="url(#mp-arrow-state)"/>
-    <text x="564" y="124" text-anchor="middle" font-size="16" font-weight="900" fill="#7c3aed">1) state s<tspan baseline-shift="sub" font-size="12.5">t</tspan></text>
-    <text x="564" y="160" text-anchor="middle" font-size="14" font-weight="700" fill="#64748b">current graph</text>
-  </g>
+  <!-- 1) state: environment -> agent -->
+  <path d="M486 140 H642" fill="none" stroke="#7c3aed" stroke-width="3.5" marker-end="url(#mp-arrow-state)"/>
+  <text x="564" y="124" text-anchor="middle" font-size="16" font-weight="900" fill="#7c3aed">1) state s<tspan baseline-shift="sub" font-size="12.5">t</tspan></text>
+  <text x="564" y="160" text-anchor="middle" font-size="14" font-weight="700" fill="#64748b">current graph</text>
 
-  <!-- (4) action: agent -> environment -->
-  <g class="stage stage4">
-    <path d="M642 218 H486" fill="none" stroke="#2563eb" stroke-width="3.5" marker-end="url(#mp-arrow-opened)"/>
-    <text x="564" y="202" text-anchor="middle" font-size="16" font-weight="900" fill="#2563eb">2) action a<tspan baseline-shift="sub" font-size="12.5">t</tspan></text>
-    <text x="564" y="238" text-anchor="middle" font-size="14" font-weight="700" fill="#64748b">open one channel, 0.2 &#8383;</text>
-  </g>
+  <!-- 2) action: agent -> environment -->
+  <path d="M642 218 H486" fill="none" stroke="#2563eb" stroke-width="3.5" marker-end="url(#mp-arrow-opened)"/>
+  <text x="564" y="202" text-anchor="middle" font-size="16" font-weight="900" fill="#2563eb">2) action a<tspan baseline-shift="sub" font-size="12.5">t</tspan></text>
+  <text x="564" y="238" text-anchor="middle" font-size="14" font-weight="700" fill="#64748b">open one channel, 0.2 &#8383;</text>
 
-  <!-- (5) reward: environment -> agent -->
-  <g class="stage stage5">
-    <path d="M486 296 H642" fill="none" stroke="#e65100" stroke-width="3.5" marker-end="url(#mp-arrow-orange)"/>
-    <text x="564" y="280" text-anchor="middle" font-size="16" font-weight="900" fill="#e65100">3) reward r<tspan baseline-shift="sub" font-size="12.5">t</tspan></text>
-    <text x="564" y="316" text-anchor="middle" font-size="14" font-weight="700" fill="#64748b">max flow gain</text>
-  </g>
+  <!-- 3) reward: environment -> agent -->
+  <path d="M486 296 H642" fill="none" stroke="#e65100" stroke-width="3.5" marker-end="url(#mp-arrow-orange)"/>
+  <text x="564" y="280" text-anchor="middle" font-size="16" font-weight="900" fill="#e65100">3) reward r<tspan baseline-shift="sub" font-size="12.5">t</tspan></text>
+  <text x="564" y="316" text-anchor="middle" font-size="14" font-weight="700" fill="#64748b">max flow gain</text>
 </svg>

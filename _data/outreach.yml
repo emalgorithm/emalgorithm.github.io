@@ -191,8 +191,8 @@ mentoring:
     name: "Harrison Rush"
     position: "ML Engineer @ Amboss Technologies"
     publications:
-      - title: "MP-Flow: A Deep Graph Reinforcement Learning Agent for Maximizing Throughput in the Lightning Network"
-        under_review: true
+      - title: "MPFlow: Learning Budgeted Max-Flow Optimization on the Lightning Network with Deep Graph Reinforcement Learning"
+        url: /publications/?q=rush2026mpflow
 
   - start_date: "2024-03-01"
     end_date: "2025-04-01"

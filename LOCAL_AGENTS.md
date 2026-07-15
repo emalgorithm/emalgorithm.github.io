@@ -8,7 +8,10 @@ This repo is a fork of al-folio. Keep changes content-focused; minimise style/te
 
 ## Running locally
 
-Use Docker: `docker compose up -d` → http://localhost:8080/. `baseurl` is empty here, so the site is at `/`, not `/al-folio/` — ignore the upstream docs on this.
+Use Docker: `docker compose up -d` → http://localhost:8080/. If Docker is down, start it.
+`baseurl` is empty here, so the site is at `/`, not `/al-folio/` — ignore the upstream docs on this.
+
+DO NOT use Ruby directly for running. If Docker is down, start it
 
 ## Pull Requests
 

@@ -89,16 +89,16 @@ nav_order: 5
     <span id="full-cv-label" class="cv-version-label">Full</span>
 </div>
 
-<iframe id="cv-frame" title="Emanuele Rossi CV" src="{{ '/assets/pdf/emanuele_rossi_cv.pdf' | relative_url }}?v=20260716-scholar" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
+<iframe id="cv-frame" title="Emanuele Rossi CV" src="{{ '/assets/pdf/emanuele_rossi_cv.pdf' | relative_url }}?v=20260716-links" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
 This browser does not support PDFs. Please download the PDF to view it:
-<a href="{{ '/assets/pdf/emanuele_rossi_cv.pdf' | relative_url }}?v=20260716-scholar">Download PDF</a>
+<a href="{{ '/assets/pdf/emanuele_rossi_cv.pdf' | relative_url }}?v=20260716-links">Download PDF</a>
 </iframe>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const versions = {
-            short: "{{ '/assets/pdf/emanuele_rossi_cv.pdf' | relative_url }}?v=20260716-scholar",
-            full: "{{ '/assets/pdf/emanuele_rossi_cv_full.pdf' | relative_url }}?v=20260716-scholar",
+            short: "{{ '/assets/pdf/emanuele_rossi_cv.pdf' | relative_url }}?v=20260716-links",
+            full: "{{ '/assets/pdf/emanuele_rossi_cv_full.pdf' | relative_url }}?v=20260716-links",
         };
         const frame = document.getElementById("cv-frame");
         const toggle = document.getElementById("cv-version-toggle");

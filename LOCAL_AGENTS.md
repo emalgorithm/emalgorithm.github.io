@@ -26,3 +26,7 @@ Slide files live in `assets/presentations/` and are committed as regular git obj
 ## Publications
 
 When adding custom fields to `_bibliography/papers.bib`, add them to `filtered_bibtex_keywords` in `_config.yml` unless they should intentionally appear in exported BibTeX.
+
+## CV
+
+Edit `assets/pdf/emanuele_rossi_cv.tex`, using `\iffullcv` for full-only content. Run `assets/pdf/build_cv.sh` to generate both PDFs. Keep the short CV to one page and update the PDF cache version in `_pages/cv.md`.

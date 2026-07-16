@@ -1,5 +1,14 @@
 \documentclass[10pt, letterpaper]{article}
 
+% Build the one-page CV by default. The full flag is ready for extended
+% sections when they are added later.
+\newif\iffullcv
+\ifdefined\FULLCV
+    \fullcvtrue
+\else
+    \fullcvfalse
+\fi
+
 % Packages:
 \usepackage[
     ignoreheadfoot, % set margins without considering header and footer

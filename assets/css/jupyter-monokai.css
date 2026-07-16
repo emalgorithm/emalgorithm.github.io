@@ -164,16 +164,6 @@ body > #header .header-bar {
   }
 }
 
-.fa {
-  display: inline-block;
-  font:
-    normal normal normal 10pt/1 "FontAwesome",
-    sans-serif;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .dropdown-menu {
   font-family: sans-serif;
   font-size: 13pt;
@@ -215,13 +205,6 @@ body > #header .header-bar {
   background: rgba(93, 92, 82, 0.25);
   border-color: rgba(93, 92, 82, 0.25);
   transition: 200ms ease;
-}
-
-.dropdown-menu .divider {
-  height: 1px;
-  margin: 0px 0px;
-  overflow: hidden;
-  background-color: rgba(93, 92, 82, 0.5);
 }
 
 .dropdown-menu > .disabled > a,

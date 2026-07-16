@@ -157,24 +157,6 @@ giscus:
 disqus_shortname: al-folio # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
-# External sources.
-# If you have blog posts published on medium.com or other external sources,
-# you can display them in your blog by adding a link to the RSS feed.
-# Optional: Set default categories and tags for posts from each source.
-external_sources:
-  - name: Towards Data Science
-    posts:
-      - url: https://towardsdatascience.com/temporal-graph-learning-in-2023-d28d1640dbf2/
-        published_date: 2023-01-16
-      - url: https://towardsdatascience.com/temporal-graph-benchmark-bb5cc26fcf11/
-        published_date: 2023-12-09
-      - url: https://towardsdatascience.com/temporal-graph-learning-in-2024-feaa9371b8e2/
-        published_date: 2024-01-18
-  - name: GraphCore Blog
-    posts:
-      - url: https://www.graphcore.ai/posts/accelerating-and-scaling-temporal-graph-networks-on-the-graphcore-ipu
-        published_date: 2022-06-14
-
 # -----------------------------------------------------------------------------
 # Newsletter
 # -----------------------------------------------------------------------------

@@ -53,13 +53,6 @@
 \setlength{\parindent}{0pt} % no indentation
 \setlength{\topskip}{0pt} % no top skip
 \setlength{\columnsep}{0cm} % set column seperation
-\makeatletter
-\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
-\patchcmd{\ps@customFooterStyle}{\thepage}{
-    \color{gray}\textit{\small Emanuele Rossi - Page \thepage{} of \pageref*{LastPage}}
-}{}{} % replace number by desired string
-\makeatother
-\pagestyle{customFooterStyle}
 
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
 
@@ -133,7 +126,7 @@
         \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
         \LenToUnit{\paperheight-1.0 cm}
     ){\vtop{{\null}\makebox[0pt][c]{
-        \small\color{gray}\textit{Last updated in April 2025}\hspace{\widthof{Last updated in April 2025}}
+        \small\color{gray}\textit{Last updated in July 2026}\hspace{\widthof{Last updated in July 2026}}
     }}}%
   }%
 }%
@@ -159,10 +152,6 @@
         \vspace{0.3 cm}
 
         \normalsize
-        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Barcelona}%
-        \kern 0.25 cm%
-        \AND%
-        \kern 0.25 cm%
         \mbox{\hrefWithoutArrow{mailto:emanuele.rossi1909@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}emanuele.rossi1909@gmail.com}}%
         \kern 0.25 cm%
         \AND%
@@ -198,8 +187,7 @@
     \vspace{0.10 cm}
     \begin{onecolentry}
         \begin{highlights}
-            \item My research focused on the development of new \textbf{Graph Neural Networks} methods for large-scale real-world applications
-            \item My work has been published at top conferences including ICML, ICLR, AAAI and RecSys
+            \item Research focused on \textbf{graph machine learning methods} for large real-world systems
         \end{highlights}
     \end{onecolentry}
 
@@ -209,16 +197,8 @@
     \textit{Oct 2018 – Jun 2019}}
         \textbf{University of Cambridge}
 
-        \textit{Master in Advanced Computer Science} -- \textit{Supervisor: Prof. Pietro Liò}
+        \textit{Master in Advanced Computer Science, Distinction} (\textbf{4.0 GPA})
     \end{twocolentry}
-
-    \vspace{0.10 cm}
-    \begin{onecolentry}
-        \begin{highlights}
-            \item Graduated with \textbf{Distinction} (\textbf{4.0 GPA})
-            \item Thesis: "\textbf{Graph Deep Learning for ncRNA data}" (\href{https://arxiv.org/abs/1905.06515}{published} at KDD 2019 GDL workshop)
-        \end{highlights}
-    \end{onecolentry}
 
     \vspace{0.2 cm}
 
@@ -226,22 +206,33 @@
     \textit{Oct 2015 – Jun 2018}}
         \textbf{Imperial College London}
 
-        \textit{Bachelor in Computer Science}
+        \textit{Bachelor in Computer Science, First Class Honors} (\textbf{4.0 GPA})
+    \end{twocolentry}
+
+    \section{Experience}
+
+    \begin{twocolentry}{
+    \textit{Rome (remote)}
+
+    \textit{Oct 2025 – Present}}
+        \textbf{Postdoctoral Researcher}
+
+        \textit{\href{https://gladia.di.uniroma1.it/}{GLADIA Research Group}, Sapienza University of Rome}
     \end{twocolentry}
 
     \vspace{0.10 cm}
     \begin{onecolentry}
         \begin{highlights}
-            \item Graduated with \textbf{First Class Honors} (\textbf{4.0 GPA})
+            \item Developing machine learning methods to decode animal communication. Supervisor: Prof. Emanuele Rodolà
         \end{highlights}
     \end{onecolentry}
 
-    \section{Experience}
+    \vspace{0.2 cm}
 
     \begin{twocolentry}{
     \textit{NYC (remote)}
 
-    \textit{Jan 2024 – Present}}
+    \textit{Jan 2024 – Aug 2025}}
         \textbf{Machine Learning Researcher}
 
         \textit{VantAI}
@@ -251,12 +242,6 @@
     \begin{onecolentry}
         \begin{highlights}
             \item \textbf{Co-led development of \href{https://www.vant.ai/neo-1}{Neo-1}}, a state-of-the-art all-atom latent diffusion model for multimodal structure prediction and de-novo generation of biomolecular complexes, trained on 100+ GPUs.
-            \begin{itemize}
-                \item \textbf{Model Design}: Led the design and exploration of model architectures, diffusion formulations, and inference methods, establishing efficient experimentation workflows.
-                \item \textbf{Data Curation}: Contributed to the development of high-quality, leakage-free biomolecular datasets (see \href{https://www.plinder.sh/}{Plinder}, \href{https://www.pinder.sh/}{Pinder}) used to train the model.
-                \item \textbf{Mentoring}: Mentored and supervised 3 interns who made substantial contributions to the project.
-                \item \textbf{Cross-functional Collaboration}: Collaborated closely with computational biologists and chemists to assess and enhance model applicability and accuracy.
-            \end{itemize}
         \end{highlights}
     \end{onecolentry}
 
@@ -274,9 +259,7 @@
     \vspace{0.10 cm}
     \begin{onecolentry}
         \begin{highlights}
-            \item Research and development of \textbf{graph neural networks}, working on both \textbf{fundamental research} and \textbf{production systems}
-            \item Successfully \textbf{scaled GNN architectures} to process Twitter's social graph with \textbf{tens of billions of edges}
-            \item Designed and deployed an \textbf{embedding-based recommendation system} for the "who to follow" feature, resulting in \textbf{1.2M+ additional daily follow actions} on the platform
+            \item Developed \textbf{graph ML models} for Twitter's social graph and deployed a recommendation model that generated \textbf{1.2M additional daily follows}
         \end{highlights}
     \end{onecolentry}
 
@@ -294,12 +277,11 @@
     \vspace{0.10 cm}
     \begin{onecolentry}
         \begin{highlights}
-            \item Developed \textbf{novel graph deep learning models} for \textbf{fake news classification}
-            \item Fabula AI was acquired by Twitter in June 2019
+            \item Developed graph ML models for fake news detection as part of Fabula AI's small research team before \href{https://techcrunch.com/2019/06/03/twitter-bags-deep-learning-talent-behind-london-startup-fabula-ai/}{Twitter acquired the company}
         \end{highlights}
     \end{onecolentry}
 
-    \vspace{0.2 cm}
+    \vspace{0.1 cm}
 
     \begin{twocolentry}{
     \textit{California}
@@ -310,61 +292,33 @@
         \textit{Google}
     \end{twocolentry}
 
-    \vspace{0.10 cm}
-    \begin{onecolentry}
-        \begin{highlights}
-            \item Worked in the \textbf{Google Play Store} infrastructure team
-        \end{highlights}
-    \end{onecolentry}
-
-    \section{Selected Publications}
+    \section{\texorpdfstring{Selected Publications \hfill \normalfont\small \hrefWithoutArrow{https://emanuelerossi.co.uk/publications/}{Full list}}{Selected Publications}}
 
     \begin{onecolentry}
         \begin{highlightsforbulletentries}
-            \item \textit{J. Durairaj et al.} \href{https://arxiv.org/abs/2407.12269}{PLINDER: The Protein-Ligand Interactions Dataset and Evaluation Resource}. \textit{ICML ML for Life and Material Science Workshop 2024}. Comprehensive dataset and benchmark for protein-ligand interaction prediction.
+            \item \textit{E. Rossi et al.} \href{https://arxiv.org/abs/2006.10637}{Temporal Graph Networks for Deep Learning on Dynamic Graphs}. \textit{ICML GRL Workshop 2020}. \textbf{1,700+ citations} and \href{https://github.com/twitter-research/tgn}{\textbf{1,000+ GitHub stars}}.
 
-            \item \textit{E. Rossi et al.} \href{https://arxiv.org/abs/2305.10498}{Edge Directionality Improves Learning on Heterophilic Graphs}. \textit{Learning on Graphs Conference 2023}. Novel framework for graph neural networks on directed graphs, showing significant improvements on heterophilic graphs.
+            \item \textit{E. Rossi$^*$, F. Frasca$^*$ et al.} \href{https://arxiv.org/abs/2004.11198}{SIGN: Scalable Inception Graph Neural Networks}. \textit{ICML GRL Workshop 2020}. \textbf{600+ citations} and used in \href{https://medium.com/airbnb-engineering/graph-machine-learning-at-airbnb-f868d65f36ee}{\textbf{production at Airbnb}}.
 
-            \item \textit{B. Chamberlain, S. Shirobokov, E. Rossi et al.} \href{https://arxiv.org/abs/2209.15486}{Graph Neural Networks for Link Prediction with Subgraph Sketching}. \textit{ICLR 2022, Oral (top 5\%)}. First GNN model to scale link prediction to graphs with millions of nodes thanks to sketching, a hashing technique which enables efficient computation of subgraph statistics.
+            \item \textit{B. Chamberlain, S. Shirobokov, E. Rossi et al.} \href{https://arxiv.org/abs/2209.15486}{Graph Neural Networks for Link Prediction with Subgraph Sketching}. \textit{ICLR 2023, Oral (top 5\%)}. \textbf{200+ citations}.
 
-            \item \textit{E. Rossi et al.} \href{https://arxiv.org/abs/2006.10637}{Temporal Graph Networks for Deep Learning on Dynamic Graphs}. \textit{ICML 2020 GRL Workshop}. Novel model for deep learning on dynamic graphs ($>$1k \href{https://github.com/twitter-research/tgn}{Github stars}). Adopted by \href{https://memgraph.com/blog/amazon-user-item-recommender-with-tgn-and-memgraph}{memgraph} (graph analytics company) and used by GraphCore to \href{https://www.graphcore.ai/posts/accelerating-and-scaling-temporal-graph-networks-on-the-graphcore-ipu}{benchmark their hardware}.
-
-            \item \textit{E. Rossi$^*$, F. Frasca$^*$ et al.} \href{https://arxiv.org/abs/2004.11198}{SIGN: Scalable Inception Graph Neural Networks}. \textit{ICML 2020 GRL Workshop}. First graph deep learning model to scale to graphs with billions of edges. Used in \href{https://medium.com/airbnb-engineering/graph-machine-learning-at-airbnb-f868d65f36ee}{production by Airbnb}.
+            \item \textit{E. Rossi et al.} \href{https://arxiv.org/abs/2305.10498}{Edge Directionality Improves Learning on Heterophilic Graphs}. \textit{Learning on Graphs 2023}.
         \end{highlightsforbulletentries}
     \end{onecolentry}
 
-    \section{Projects and Awards}
+    \section{Leadership}
 
     \begin{twocolentry}{
 
 
     \textit{Jun 2018 – Mar 2023}}
-        \textbf{LeadTheFuture}
-
-        \textit{Co-Founder}
+        \textbf{Co-Founder, LeadTheFuture} (\href{https://forbes.it/2020/03/01/stage-da-google-o-alla-nasa-con-leadthefuture-idea-di-tre-ragazzi-italiani/}{Forbes article})
     \end{twocolentry}
 
     \vspace{0.10 cm}
     \begin{onecolentry}
         \begin{highlights}
-            \item \href{http://leadthefuture.tech/}{\textbf{LeadTheFuture}} is a \textbf{non-profit mentoring organization} and the \textbf{largest merit-based STEM community in Italy}, with more than \textbf{200 mentors} (engineers, researchers, and entrepreneurs) and \textbf{500 selected mentees}
-            \item Our work has been featured in \href{https://forbes.it/2020/03/01/stage-da-google-o-alla-nasa-con-leadthefuture-idea-di-tre-ragazzi-italiani/}{Forbes}
-        \end{highlights}
-    \end{onecolentry}
-
-    \vspace{0.2 cm}
-
-    \begin{twocolentry}{
-
-
-    \textit{}}
-        \textbf{Talks and Blog Posts}
-    \end{twocolentry}
-
-    \vspace{0.10 cm}
-    \begin{onecolentry}
-        \begin{highlights}
-            \item I have written a series of blog posts on my research (\href{https://emanuelerossi.co.uk/blog/}{full list}) and have been invited to give over 10 talks (\href{https://emanuelerossi.co.uk/presentations/}{full list})
+            \item Built a non-profit mentoring community with more than \textbf{200 mentors} and \textbf{500 selected mentees}
         \end{highlights}
     \end{onecolentry}
 

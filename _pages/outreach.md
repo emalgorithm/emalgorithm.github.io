@@ -2,7 +2,7 @@
 layout: page
 title: Outreach
 permalink: /outreach/
-description: Talks, panels, community work, and research mentoring.
+description: Talks, panels, community work, research mentoring, grants, and awards.
 nav: true
 nav_order: 4
 ---
@@ -28,3 +28,11 @@ Mentoring bright and motivated students is one of the most rewarding aspects of 
 Below are the students I have had the pleasure to supervise. If you are a **prospective student interested in working with me**, feel free to contact my former mentees to learn more about my mentoring style and what collaboration with me looks like.
 
 {% include outreach/mentoring.liquid %}
+
+## Research Grants & Fellowships
+
+{% include outreach/research_grants.liquid %}
+
+## Awards
+
+{% include outreach/awards.liquid %}

@@ -2,7 +2,7 @@
 layout: page
 title: Outreach
 permalink: /outreach/
-description: Talks, panels, community work, and research mentoring.
+description: Talks, panels, community work, research mentoring, grants, and awards.
 nav: true
 nav_order: 4
 ---

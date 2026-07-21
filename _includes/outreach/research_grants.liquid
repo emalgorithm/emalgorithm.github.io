@@ -14,36 +14,30 @@
             </small>
           </td>
           <td>
-            <strong>{{ item.title }}</strong>
-            <span class="text-muted">— {{ item.institution }}</span><br>
-            {% if item.project %}
-              <small
-                ><em>{{ item.project }}</em></small
-              ><br>
-            {% endif %}
-            {% if item.description %}
-              <small>{{ item.description }}</small>
-            {% endif %}
-            <span class="research-grant-meta-mobile">
-              <span class="research-grant-value">{{ item.value }}</span>
-              {% if item.value_qualifier %}
-                <small class="text-muted">{{ item.value_qualifier }}</small>
-              {% endif %}
-              {% if item.duration %}
-                <br>
-                <small class="text-muted">{{ item.duration }}</small>
-              {% endif %}
-            </span>
-          </td>
-          <td class="research-grant-meta">
-            <span class="research-grant-value">{{ item.value }}</span>
-            {% if item.value_qualifier %}
-              <small class="text-muted">{{ item.value_qualifier }}</small>
-            {% endif %}
-            {% if item.duration %}
-              <br>
-              <small class="text-muted">{{ item.duration }}</small>
-            {% endif %}
+            <div class="research-grant-content">
+              <div>
+                <strong>{{ item.title }}</strong>
+                <span class="text-muted">— {{ item.institution }}</span><br>
+                {% if item.project %}
+                  <small
+                    ><em>{{ item.project }}</em></small
+                  ><br>
+                {% endif %}
+                {% if item.description %}
+                  <small>{{ item.description }}</small>
+                {% endif %}
+              </div>
+              <div class="research-grant-meta">
+                <span>{{ item.value }}</span>
+                {% if item.value_qualifier %}
+                  <small class="text-muted">{{ item.value_qualifier }}</small>
+                {% endif %}
+                {% if item.duration %}
+                  <br>
+                  <small class="text-muted">{{ item.duration }}</small>
+                {% endif %}
+              </div>
+            </div>
           </td>
         </tr>
       {% endfor %}

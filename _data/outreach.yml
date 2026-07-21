@@ -161,6 +161,52 @@ workshops:
     venue: "AAAI 2021"
     role: "PC Member"
 
+awards:
+  - date: "2017-01-01"
+    title: "Olav Beckmann Project Prize"
+    institution: "Imperial College London"
+    description: "For outstanding second-year project work."
+
+  - date: "2017-01-01"
+    years: "2016, 2017"
+    title: "Engineering Dean's List"
+    institution: "Imperial College London"
+    description: "Top 10% of cohort. Received in two consecutive years."
+
+  - date: "2016-01-01"
+    title: "G-Research Prize (Gloucester Research Ltd Prize at the time of award)"
+    institution: "Imperial College London"
+    description: "Awarded annually to up to 10 non-final-year Computer Science students for academic excellence."
+
+  - date: "2015-05-22"
+    title: "President's Undergraduate Scholarship"
+    institution: "Imperial College London"
+    description: "Imperial's most prestigious undergraduate award, recognizing academic excellence and potential. Funding: £3,000."
+
+research_grants:
+  - date: "2026-07-02"
+    title: "ISCRA-C Research Computing Grant"
+    institution: "CINECA"
+    project: "DOLPH-ID: Dolphin Emitter Identification from Whistle Acoustics"
+    description: "Allocation of 8,500 GPU-hours on Leonardo's NVIDIA A100 64 GB accelerators."
+    value: "≈€20,000"
+    value_qualifier: "equivalent"
+    duration: "9 months"
+
+  - date: "2026-04-01"
+    title: "Research Fellowship"
+    institution: "Sapienza University of Rome"
+    description: "For postdoctoral research on machine learning for non-human communication."
+    value: "€36,000"
+    duration: "12 months"
+
+  - date: "2023-02-06"
+    years: "2022, 2023"
+    title: "Google Cloud Research Credits"
+    institution: "Google"
+    description: "GCP credits for PhD research. Received in two consecutive years."
+    value: "$1,000/year"
+
 mentoring:
   - start_date: "2025-05-01"
     name: "Davide Marincione"

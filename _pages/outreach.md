@@ -28,3 +28,11 @@ Mentoring bright and motivated students is one of the most rewarding aspects of 
 Below are the students I have had the pleasure to supervise. If you are a **prospective student interested in working with me**, feel free to contact my former mentees to learn more about my mentoring style and what collaboration with me looks like.
 
 {% include outreach/mentoring.liquid %}
+
+## Awards
+
+{% include outreach/awards.liquid %}
+
+## Research Grants & Fellowships
+
+{% include outreach/research_grants.liquid %}

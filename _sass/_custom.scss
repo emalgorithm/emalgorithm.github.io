@@ -236,31 +236,26 @@ html[data-theme="dark"] {
   text-transform: uppercase;
 }
 
-.research-grants-table {
+.research-grant-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+
   .research-grant-meta {
-    width: 9rem;
+    min-width: 9rem;
     text-align: right;
     white-space: nowrap;
-  }
-
-  .research-grant-value {
-    font-weight: 400;
-  }
-
-  .research-grant-meta-mobile {
-    display: none;
-    margin-top: 0.2rem;
   }
 }
 
 @media (max-width: 575.98px) {
-  .research-grants-table {
-    .research-grant-meta {
-      display: none;
-    }
+  .research-grant-content {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
 
-    .research-grant-meta-mobile {
-      display: block;
+    .research-grant-meta {
+      min-width: 0;
+      text-align: left;
     }
   }
 }

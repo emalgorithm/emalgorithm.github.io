@@ -1,0 +1,52 @@
+<div class="table-responsive">
+  <table class="table table-sm table-borderless research-grants-table">
+    <tbody>
+      {% assign research_grants = site.data.outreach.research_grants | sort: 'date' | reverse %}
+      {% for item in research_grants %}
+        <tr>
+          <td class="text-nowrap" style="width: 5rem">
+            <small class="text-muted">
+              {%- if item.years -%}
+                {{ item.years }}
+              {%- else -%}
+                {{ item.date | date: '%Y' }}
+              {%- endif -%}
+            </small>
+          </td>
+          <td>
+            <strong>{{ item.title }}</strong>
+            <span class="text-muted">— {{ item.institution }}</span><br>
+            {% if item.project %}
+              <small
+                ><em>{{ item.project }}</em></small
+              ><br>
+            {% endif %}
+            {% if item.description %}
+              <small>{{ item.description }}</small>
+            {% endif %}
+            <span class="research-grant-meta-mobile">
+              <span class="research-grant-value">{{ item.value }}</span>
+              {% if item.value_qualifier %}
+                <small class="text-muted">{{ item.value_qualifier }}</small>
+              {% endif %}
+              {% if item.duration %}
+                <br>
+                <small class="text-muted">{{ item.duration }}</small>
+              {% endif %}
+            </span>
+          </td>
+          <td class="research-grant-meta">
+            <span class="research-grant-value">{{ item.value }}</span>
+            {% if item.value_qualifier %}
+              <small class="text-muted">{{ item.value_qualifier }}</small>
+            {% endif %}
+            {% if item.duration %}
+              <br>
+              <small class="text-muted">{{ item.duration }}</small>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

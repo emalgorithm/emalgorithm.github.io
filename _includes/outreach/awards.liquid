@@ -1,0 +1,25 @@
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <tbody>
+      {% assign awards = site.data.outreach.awards | sort: 'date' | reverse %}
+      {% for item in awards %}
+        <tr>
+          <td class="text-nowrap" style="width: 5rem">
+            <small class="text-muted">
+              {%- if item.years -%}
+                {{ item.years }}
+              {%- else -%}
+                {{ item.date | date: '%Y' }}
+              {%- endif -%}
+            </small>
+          </td>
+          <td>
+            <strong>{{ item.title }}</strong>
+            <span class="text-muted">— {{ item.institution }}</span><br>
+            <small>{{ item.description }}</small>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

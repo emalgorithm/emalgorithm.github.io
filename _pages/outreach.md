@@ -29,10 +29,10 @@ Below are the students I have had the pleasure to supervise. If you are a **pros
 
 {% include outreach/mentoring.liquid %}
 
-## Awards
-
-{% include outreach/awards.liquid %}
-
 ## Research Grants & Fellowships
 
 {% include outreach/research_grants.liquid %}
+
+## Awards
+
+{% include outreach/awards.liquid %}

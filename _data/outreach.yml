@@ -256,9 +256,9 @@ mentoring:
     position: "PhD Student @ Mila"
     publications:
       - title: "TGB: Temporal Graph Benchmark for Machine Learning on Temporal Graphs"
-        url: /publications/#tgb_huang_2023
+        url: /publications/?q=tgb_huang_2023
       - title: "UTG: Towards a Unified View of Snapshot and Event Based Models for Temporal Graphs"
-        url: /publications/#huang_utg_2024
+        url: /publications/?q=huang_utg_2024
 
   - start_date: "2023-11-01"
     end_date: "2024-05-01"
@@ -266,4 +266,4 @@ mentoring:
     position: "ML Engineer @ Amboss Technologies"
     publications:
       - title: "Channel Balance Interpolation in the Lightning Network via Machine Learning"
-        url: /publications/#vincent_lightning_2024
+        url: /publications/?q=vincent_lightning_2024

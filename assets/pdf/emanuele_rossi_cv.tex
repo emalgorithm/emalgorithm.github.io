@@ -1,4 +1,4 @@
-\documentclass[10pt, letterpaper]{article}
+\documentclass[11pt, letterpaper]{article}
 
 % Build the one-page CV by default. The full flag is ready for extended
 % sections when they are added later.
@@ -12,10 +12,10 @@
 % Packages:
 \usepackage[
     ignoreheadfoot, % set margins without considering header and footer
-    top=1.5 cm, % seperation between body and page edge from the top
-    bottom=1.5 cm, % seperation between body and page edge from the bottom
-    left=2 cm, % seperation between body and page edge from the left
-    right=2 cm, % seperation between body and page edge from the right
+    top=1.5 cm, % separation between body and page edge from the top
+    bottom=1.5 cm, % separation between body and page edge from the bottom
+    left=2 cm, % separation between body and page edge from the left
+    right=2 cm, % separation between body and page edge from the right
     footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging
 ]{geometry} % for adjusting page geometry
@@ -64,6 +64,7 @@
 \setlength{\columnsep}{0cm} % set column seperation
 
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titleformat{\subsection}{\needspace{3\baselineskip}\bfseries\normalsize\color{primaryColor}}{}{0pt}{}
 
 \titlespacing{\section}{
     % left space:
@@ -75,6 +76,8 @@
     % bottom space:
     0.15 cm
 } % section title spacing
+
+\titlespacing{\subsection}{0pt}{0.14 cm}{0.06 cm}
 
 \renewcommand\labelitemi{$\circ$} % custom bullet points
 \newenvironment{highlights}{
@@ -161,29 +164,34 @@
         \vspace{0.3 cm}
 
         \normalsize
-        \mbox{\hrefWithoutArrow{mailto:emanuele.rossi1909@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}emanuele.rossi1909@gmail.com}}%
+        \mbox{\hrefWithoutArrow{mailto:emanuele.rossi1909@gmail.com}{\color{primaryColor}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}emanuele.rossi1909@gmail.com}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://www.emanuelerossi.co.uk/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}Website}}%
+        \mbox{\hrefWithoutArrow{https://www.emanuelerossi.co.uk/}{\color{primaryColor}{\footnotesize\faLink}\hspace*{0.13cm}Website}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://scholar.google.com/citations?user=DHlkBOYAAAAJ}{\color{black}{\footnotesize\faGraduationCap}\hspace*{0.13cm}Scholar}}%
+        \mbox{\hrefWithoutArrow{https://scholar.google.com/citations?user=DHlkBOYAAAAJ}{\color{primaryColor}{\footnotesize\faGraduationCap}\hspace*{0.13cm}Scholar}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://linkedin.com/in/emanuele-rossi/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}LinkedIn}}%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/emanuele-rossi/}{\color{primaryColor}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}LinkedIn}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://github.com/emalgorithm}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}GitHub}}%
+        \mbox{\hrefWithoutArrow{https://github.com/emalgorithm}{\color{primaryColor}{\footnotesize\faGithub}\hspace*{0.13cm}GitHub}}%
     \end{header}
 
     \vspace{0.15 cm}
 
     \begin{onecolentry}
         Researcher working on machine learning for animal communication, part of a broader interest in leveraging ML to recover structure in complex systems: previously social graphs (Temporal Graph Networks, SIGN) at Twitter and Imperial College London, and generative models for biomolecules at VantAI.
+    \end{onecolentry}
+
+    \vspace{0.08 cm}
+    \begin{onecolentry}
+        \textbf{\hrefWithoutArrow{https://scholar.google.com/citations?user=DHlkBOYAAAAJ}{\color{primaryColor}Google Scholar metrics:}} 4,261 citations; h-index 15 (July 2026).
     \end{onecolentry}
 
     \section{Education}
@@ -341,5 +349,11 @@
             \item Built a non-profit mentoring community with more than \textbf{200 mentors} and \textbf{500 selected mentees}
         \end{highlights}
     \end{onecolentry}
+
+    \iffullcv
+        \input{emanuele_rossi_cv_outreach.tex}
+        \newpage
+        \input{emanuele_rossi_cv_publications.tex}
+    \fi
 
 \end{document}

@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-07-29'
+  last_updated: '2026-08-07'
 papers:
   DHlkBOYAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -14,7 +14,7 @@ papers:
     title: Deep Learning on Real-World Graphs
     year: '2025'
   DHlkBOYAAAAJ:8k81kl-MbHgC:
-    citations: 286
+    citations: 290
     title: Temporal Graph Benchmark for Machine Learning on Temporal Graphs
     year: '2023'
   DHlkBOYAAAAJ:9yKSN-GCB0IC:
@@ -26,7 +26,7 @@ papers:
     title: 'MPFlow: Learning Budgeted Max-Flow Optimization on the Lightning Network with Deep Graph Reinforcement Learning'
     year: '2026'
   DHlkBOYAAAAJ:KlAtU1dfN6UC:
-    citations: 21
+    citations: 22
     title: 'UTG: Towards a unified view of snapshot and event based models for temporal graphs'
     year: '2024'
   DHlkBOYAAAAJ:LkGwnXOMwfcC:
@@ -38,12 +38,12 @@ papers:
     title: Channel balance interpolation in the lightning network via machine learning
     year: '2025'
   DHlkBOYAAAAJ:Se3iqnhoufwC:
-    citations: 234
+    citations: 235
     title: Graph Neural Networks for Link Prediction with Subgraph Sketching
     year: '2022'
   DHlkBOYAAAAJ:ULOm3_A8WrAC:
-    citations: 38
-    title: 'PINDER: The protein interaction dataset and evaluation resource'
+    citations: 39
+    title: 'PINDER: the protein interaction dataset and evaluation resource'
     year: '2024'
   DHlkBOYAAAAJ:Wp0gIr-vW9MC:
     citations: 1
@@ -54,7 +54,7 @@ papers:
     title: Do we really need to drop items with missing modalities in multimodal recommendation?
     year: '2024'
   DHlkBOYAAAAJ:Zph67rFs4hoC:
-    citations: 98
+    citations: 105
     title: 'PLINDER: The protein-ligand interactions dataset and evaluation resource'
     year: '2024'
   DHlkBOYAAAAJ:_FxGoFyzp5QC:
@@ -62,11 +62,11 @@ papers:
     title: Learning to Infer Structures of Network Games
     year: '2022'
   DHlkBOYAAAAJ:_kc_bZDykSQC:
-    citations: 6
+    citations: 7
     title: Bayesian binary search
-    year: '2024'
+    year: '2025'
   DHlkBOYAAAAJ:d1gkVwhDpl0C:
-    citations: 1785
+    citations: 1784
     title: Temporal Graph Networks for Deep Learning on Dynamic Graphs
     year: '2020'
   DHlkBOYAAAAJ:hC7cP41nSMkC:
@@ -74,19 +74,19 @@ papers:
     title: Predicting Channel Closures in the Lightning Network with Machine Learning
     year: '2026'
   DHlkBOYAAAAJ:hqOjcs7Dif8C:
-    citations: 205
+    citations: 207
     title: Edge Directionality Improves Learning on Heterophilic Graphs
     year: '2023'
   DHlkBOYAAAAJ:kNdYIx-mwKoC:
-    citations: 52
+    citations: 59
     title: 'Tgb 2.0: A benchmark for learning on temporal knowledge graphs and heterogeneous graphs'
     year: '2024'
   DHlkBOYAAAAJ:qUcmZB5y_30C:
-    citations: 3
+    citations: 4
     title: Training-free Graph-based Imputation of Missing Modalities in Multimodal Recommendation
     year: '2026'
   DHlkBOYAAAAJ:u-x6o8ySG0sC:
-    citations: 603
+    citations: 602
     title: 'SIGN: Scalable Inception Graph Neural Networks'
     year: '2020'
   DHlkBOYAAAAJ:u5HHmVD_uO8C:
@@ -94,10 +94,10 @@ papers:
     title: ncRNA Classification with Graph Convolutional Networks
     year: '2019'
   DHlkBOYAAAAJ:ufrVoPGSRksC:
-    citations: 196
+    citations: 200
     title: On the unreasonable effectiveness of feature propagation in learning on graphs with missing node features
     year: '2021'
   DHlkBOYAAAAJ:zYLM7Y9cAGgC:
-    citations: 549
+    citations: 550
     title: 'Grand: Graph neural diffusion'
     year: '2021'

@@ -7,6 +7,8 @@ on:
       - main
     paths:
       - "assets/**"
+      - "_data/**"
+      - "scripts/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -34,6 +36,8 @@ on:
       - main
     paths:
       - "assets/**"
+      - "_data/**"
+      - "scripts/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -84,6 +88,10 @@ jobs:
           cache: "npm"
       - name: Install JS deps 📦
         run: npm ci
+      - name: Audit collaboration data 🌍
+        run: |
+          npm run test:collaborations
+          npm run audit:collaborations
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:

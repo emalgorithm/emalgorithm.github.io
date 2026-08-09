@@ -1,0 +1,442 @@
+{
+  "metadata": {
+    "scope": "core",
+    "minimum_joint_papers": 2,
+    "verified_on": "2026-08-07",
+    "country_policy": "Current primary professional institution or work location; never nationality or inferred residence."
+  },
+  "papers": [
+    {
+      "key": "rush2026mpflow",
+      "title": "MPFlow: Learning Budgeted Max-Flow Optimization on the Lightning Network with Deep Graph Reinforcement Learning",
+      "year": 2026
+    },
+    { "key": "rossi2026lac", "title": "Communicating Sound Through Natural Language", "year": 2026 },
+    { "key": "antonelli2026lightning", "title": "Predicting Channel Closures in the Lightning Network with Machine Learning", "year": 2026 },
+    {
+      "key": "malitesta2026missing",
+      "title": "Training-Free Graph-Based Imputation of Missing Modalities in Multimodal Recommendation",
+      "year": 2026
+    },
+    {
+      "key": "aluma2026collaborative_sperm_whale_birth",
+      "title": "Description of a collaborative sperm whale birth and shifts in coda vocal styles during key events",
+      "year": 2026
+    },
+    { "key": "marincione2025bio", "title": "Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models", "year": 2025 },
+    { "key": "singh_bayesian_2024", "title": "Bayesian Binary Search", "year": 2025 },
+    { "key": "vincent_lightning_2024", "title": "Channel Balance Interpolation in the Lightning Network via Machine Learning", "year": 2025 },
+    {
+      "key": "tgb2_gastinger_2024",
+      "title": "TGB 2.0: A Benchmark for Learning on Temporal Knowledge Graphs and Heterogeneous Graphs",
+      "year": 2024
+    },
+    {
+      "key": "malitesta_multimodal_2024",
+      "title": "Do We Really Need to Drop Items with Missing Modalities in Multimodal Recommendation?",
+      "year": 2024
+    },
+    { "key": "kovtun_pinder_2024", "title": "PINDER: The Protein Interaction Dataset and Evaluation Resource", "year": 2024 },
+    { "key": "durairaj_plinder_2024", "title": "PLINDER: The Protein-Ligand Interactions Dataset and Evaluation Resource", "year": 2024 },
+    { "key": "huang_utg_2024", "title": "UTG: Towards a Unified View of Snapshot and Event Based Models for Temporal Graphs", "year": 2024 },
+    { "key": "tgb_huang_2023", "title": "Temporal Graph Benchmark for Machine Learning on Temporal Graphs", "year": 2023 },
+    { "key": "dirgnn_rossi_2023", "title": "Edge Directionality Improves Learning on Heterophilic Graphs", "year": 2023 },
+    { "key": "chamberlain2022lpsketching", "title": "Graph Neural Networks for Link Prediction with Subgraph Sketching", "year": 2022 },
+    {
+      "key": "mutti2022causalrl",
+      "title": "Provably Efficient Causal Model-Based Reinforcement Learning for Systematic Generalization",
+      "year": 2022
+    },
+    { "key": "rossi2022networkgames", "title": "Learning to Infer Structures of Network Games", "year": 2022 },
+    {
+      "key": "rossi2021fp",
+      "title": "On the Unreasonable Effectiveness of Feature propagation in Learning on Graphs with Missing Node Features",
+      "year": 2022
+    },
+    { "key": "chamberlain2021grand", "title": "GRAND: Graph Neural Diffusion", "year": 2021 },
+    { "key": "chamberlain2020word2vec", "title": "Tuning Word2vec for Large Scale Recommendation Systems", "year": 2020 },
+    { "key": "rossi2020tgn", "title": "Temporal Graph Networks for Deep Learning on Dynamic Graphs", "year": 2020 },
+    { "key": "rossi2020sign", "title": "SIGN: Scalable Inception Graph Neural Networks", "year": 2020 },
+    { "key": "rossi2019ncrna", "title": "ncRNA Classification with Graph Convolutional Networks", "year": 2019 }
+  ],
+  "collaborators": [
+    {
+      "id": "michael-bronstein",
+      "name": "Michael Bronstein",
+      "aliases": ["Michael M. Bronstein"],
+      "country": { "code": "GB", "name": "United Kingdom" },
+      "institution": "University of Oxford",
+      "profile_url": "https://www.cs.ox.ac.uk/people/michael.bronstein/",
+      "affiliation_source": "https://algo.cs.ox.ac.uk/people/michael.bronstein/",
+      "verified_on": "2026-08-07",
+      "papers": [
+        "aluma2026collaborative_sperm_whale_birth",
+        "kovtun_pinder_2024",
+        "durairaj_plinder_2024",
+        "tgb_huang_2023",
+        "dirgnn_rossi_2023",
+        "chamberlain2022lpsketching",
+        "mutti2022causalrl",
+        "rossi2022networkgames",
+        "rossi2021fp",
+        "chamberlain2021grand",
+        "chamberlain2020word2vec",
+        "rossi2020tgn",
+        "rossi2020sign",
+        "rossi2019ncrna"
+      ]
+    },
+    {
+      "id": "ben-chamberlain",
+      "name": "Ben Chamberlain",
+      "aliases": [],
+      "country": { "code": "GB", "name": "United Kingdom" },
+      "institution": "Ellison Institute of Technology Oxford",
+      "profile_url": "https://eit.org/people/ben-chamberlain",
+      "affiliation_source": "https://eit.org/people/ben-chamberlain",
+      "verified_on": "2026-08-07",
+      "papers": ["chamberlain2022lpsketching", "rossi2021fp", "chamberlain2021grand", "chamberlain2020word2vec", "rossi2020tgn", "rossi2020sign"]
+    },
+    {
+      "id": "vincent-davis",
+      "name": "Vincent Davis",
+      "aliases": [],
+      "country": { "code": "US", "name": "United States" },
+      "institution": "Independent researcher",
+      "profile_url": "https://www.linkedin.com/in/davisv97",
+      "affiliation_source": "https://www.linkedin.com/in/davisv97",
+      "verified_on": "2026-08-07",
+      "papers": ["rush2026mpflow", "antonelli2026lightning", "singh_bayesian_2024", "vincent_lightning_2024"]
+    },
+    {
+      "id": "vikash-singh",
+      "name": "Vikash Singh",
+      "aliases": [],
+      "country": { "code": "US", "name": "United States" },
+      "institution": "Stillmark",
+      "profile_url": "https://www.linkedin.com/in/vikashsingh101",
+      "affiliation_source": "https://amboss.tech/doc/mpflow-paper.pdf",
+      "verified_on": "2026-08-07",
+      "papers": ["rush2026mpflow", "antonelli2026lightning", "singh_bayesian_2024", "vincent_lightning_2024"]
+    },
+    {
+      "id": "fabrizio-frasca",
+      "name": "Fabrizio Frasca",
+      "aliases": [],
+      "country": { "code": "IL", "name": "Israel" },
+      "institution": "Technion – Israel Institute of Technology",
+      "profile_url": "https://noired.github.io/",
+      "affiliation_source": "https://noired.github.io/",
+      "verified_on": "2026-08-07",
+      "papers": ["dirgnn_rossi_2023", "chamberlain2022lpsketching", "rossi2020tgn", "rossi2020sign"]
+    },
+    {
+      "id": "federico-monti",
+      "name": "Federico Monti",
+      "aliases": [],
+      "country": { "code": "GB", "name": "United Kingdom" },
+      "institution": "Graphcore",
+      "profile_url": "https://uk.linkedin.com/in/federico-monti",
+      "affiliation_source": "https://uk.linkedin.com/in/federico-monti",
+      "verified_on": "2026-08-07",
+      "papers": ["rossi2022networkgames", "rossi2020tgn", "rossi2020sign", "rossi2019ncrna"]
+    },
+    {
+      "id": "harrison-rush",
+      "name": "Harrison Rush",
+      "aliases": [],
+      "country": { "code": "US", "name": "United States" },
+      "institution": "Amboss Technologies",
+      "profile_url": "https://www.amboss.tech/team",
+      "affiliation_source": "https://amboss.tech/doc/mpflow-paper.pdf",
+      "verified_on": "2026-08-07",
+      "papers": ["rush2026mpflow", "antonelli2026lightning", "singh_bayesian_2024"]
+    },
+    {
+      "id": "jesse-shrader",
+      "name": "Jesse Shrader",
+      "aliases": [],
+      "country": { "code": "US", "name": "United States" },
+      "institution": "Amboss Technologies",
+      "profile_url": "https://www.amboss.tech/team",
+      "affiliation_source": "https://amboss.tech/doc/mpflow-paper.pdf",
+      "verified_on": "2026-08-07",
+      "papers": ["rush2026mpflow", "antonelli2026lightning", "singh_bayesian_2024"]
+    },
+    {
+      "id": "shenyang-huang",
+      "name": "Shenyang Huang",
+      "aliases": [],
+      "country": { "code": "CA", "name": "Canada" },
+      "institution": "LawZero",
+      "profile_url": "https://shenyanghuang.github.io/",
+      "affiliation_source": "https://shenyanghuang.github.io/",
+      "verified_on": "2026-08-07",
+      "papers": ["tgb2_gastinger_2024", "huang_utg_2024", "tgb_huang_2023"]
+    },
+    {
+      "id": "farimah-poursafaei",
+      "name": "Farimah Poursafaei",
+      "aliases": [],
+      "country": { "code": "CA", "name": "Canada" },
+      "institution": "BNP Paribas",
+      "profile_url": "https://ca.linkedin.com/in/farimah-poursafaei-133195167",
+      "affiliation_source": "https://ca.linkedin.com/in/farimah-poursafaei-133195167",
+      "verified_on": "2026-08-07",
+      "papers": ["tgb2_gastinger_2024", "huang_utg_2024", "tgb_huang_2023"]
+    },
+    {
+      "id": "reihaneh-rabbany",
+      "name": "Reihaneh Rabbany",
+      "aliases": [],
+      "country": { "code": "CA", "name": "Canada" },
+      "institution": "McGill University",
+      "profile_url": "https://www.reirab.com/",
+      "affiliation_source": "https://www.reirab.com/",
+      "verified_on": "2026-08-07",
+      "papers": ["tgb2_gastinger_2024", "huang_utg_2024", "tgb_huang_2023"]
+    },
+    {
+      "id": "guillaume-rabusseau",
+      "name": "Guillaume Rabusseau",
+      "aliases": [],
+      "country": { "code": "CA", "name": "Canada" },
+      "institution": "Université de Montréal",
+      "profile_url": "https://www-labs.iro.umontreal.ca/~grabus/",
+      "affiliation_source": "https://institut-courtois.umontreal.ca/en/team/guillaume-rabusseau/",
+      "verified_on": "2026-08-07",
+      "papers": ["tgb2_gastinger_2024", "huang_utg_2024", "tgb_huang_2023"]
+    },
+    {
+      "id": "simone-antonelli",
+      "name": "Simone Antonelli",
+      "aliases": [],
+      "country": { "code": "GB", "name": "United Kingdom" },
+      "institution": "Google DeepMind",
+      "profile_url": "https://siantonelli.github.io/",
+      "affiliation_source": "https://siantonelli.github.io/",
+      "verified_on": "2026-08-07",
+      "papers": ["rush2026mpflow", "antonelli2026lightning"]
+    },
+    {
+      "id": "emanuele-rodola",
+      "name": "Emanuele Rodolà",
+      "aliases": ["Emanuele Rodol\\`a"],
+      "country": { "code": "IT", "name": "Italy" },
+      "institution": "Sapienza University of Rome",
+      "profile_url": "https://gladia.di.uniroma1.it/emanuele-rodola/",
+      "affiliation_source": "https://research.uniroma1.it/researcher/39ac1000ee2d70ccee6238d30a628c9789f427784a6bc9fe600fe89a",
+      "verified_on": "2026-08-07",
+      "papers": ["rossi2026lac", "marincione2025bio"]
+    },
+    {
+      "id": "daniele-malitesta",
+      "name": "Daniele Malitesta",
+      "aliases": [],
+      "country": { "code": "IT", "name": "Italy" },
+      "institution": "LUISS University",
+      "profile_url": "https://danielemalitesta.github.io/",
+      "affiliation_source": "https://danielemalitesta.github.io/",
+      "verified_on": "2026-08-07",
+      "papers": ["malitesta2026missing", "malitesta_multimodal_2024"]
+    },
+    {
+      "id": "claudio-pomo",
+      "name": "Claudio Pomo",
+      "aliases": [],
+      "country": { "code": "IT", "name": "Italy" },
+      "institution": "Polytechnic University of Bari",
+      "profile_url": "https://it.linkedin.com/in/claudiopomo",
+      "affiliation_source": "https://it.linkedin.com/in/claudiopomo",
+      "verified_on": "2026-08-07",
+      "papers": ["malitesta2026missing", "malitesta_multimodal_2024"]
+    },
+    {
+      "id": "tommaso-di-noia",
+      "name": "Tommaso Di Noia",
+      "aliases": [],
+      "country": { "code": "IT", "name": "Italy" },
+      "institution": "Polytechnic University of Bari",
+      "profile_url": "https://www.tommasodinoia.it/",
+      "affiliation_source": "https://terzamissione.poliba.it/team/di-noia-t",
+      "verified_on": "2026-08-07",
+      "papers": ["malitesta2026missing", "malitesta_multimodal_2024"]
+    },
+    {
+      "id": "fragkiskos-malliaros",
+      "name": "Fragkiskos D. Malliaros",
+      "aliases": [],
+      "country": { "code": "FR", "name": "France" },
+      "institution": "CentraleSupélec",
+      "profile_url": "https://fragkiskosm.github.io/",
+      "affiliation_source": "https://fragkiskosm.github.io/",
+      "verified_on": "2026-08-07",
+      "papers": ["malitesta2026missing", "malitesta_multimodal_2024"]
+    },
+    {
+      "id": "roberto-dessi",
+      "name": "Roberto Dessì",
+      "aliases": ["Roberto Dess\\`i"],
+      "country": { "code": "ES", "name": "Spain" },
+      "institution": "Not Diamond",
+      "profile_url": "https://robertodessi.github.io/",
+      "affiliation_source": "https://es.linkedin.com/in/robertodessi11",
+      "verified_on": "2026-08-07",
+      "papers": ["aluma2026collaborative_sperm_whale_birth", "marincione2025bio"]
+    },
+    {
+      "id": "pietro-lio",
+      "name": "Pietro Liò",
+      "aliases": ["Pietro Lio"],
+      "country": { "code": "GB", "name": "United Kingdom" },
+      "institution": "University of Cambridge",
+      "profile_url": "https://www.cl.cam.ac.uk/~pl219/",
+      "affiliation_source": "https://www.cl.cam.ac.uk/~pl219/",
+      "verified_on": "2026-08-07",
+      "papers": ["singh_bayesian_2024", "rossi2019ncrna"]
+    },
+    {
+      "id": "jacob-danovitch",
+      "name": "Jacob Danovitch",
+      "aliases": [],
+      "country": { "code": "US", "name": "United States" },
+      "institution": "Microsoft",
+      "profile_url": "https://jacobdanovitch.me/",
+      "affiliation_source": "https://www.microsoft.com/en-us/research/people/jdanovitch/",
+      "verified_on": "2026-08-07",
+      "papers": ["tgb2_gastinger_2024", "tgb_huang_2023"]
+    },
+    {
+      "id": "mehmet-akdel",
+      "name": "Mehmet Akdel",
+      "aliases": [],
+      "country": { "code": "CH", "name": "Switzerland" },
+      "institution": "Proxima",
+      "profile_url": "https://ch.linkedin.com/in/mehmet-akdel",
+      "affiliation_source": "https://ch.linkedin.com/in/mehmet-akdel",
+      "verified_on": "2026-08-07",
+      "papers": ["kovtun_pinder_2024", "durairaj_plinder_2024"]
+    },
+    {
+      "id": "guoqing-zhou",
+      "name": "Guoqing Zhou",
+      "aliases": [],
+      "country": { "code": "US", "name": "United States" },
+      "institution": "NVIDIA",
+      "profile_url": "https://www.linkedin.com/in/gqzhou",
+      "affiliation_source": "https://www.linkedin.com/in/gqzhou",
+      "verified_on": "2026-08-07",
+      "papers": ["kovtun_pinder_2024", "durairaj_plinder_2024"]
+    },
+    {
+      "id": "yusuf-adeshina",
+      "name": "Yusuf Adeshina",
+      "aliases": [],
+      "country": { "code": "US", "name": "United States" },
+      "institution": "Amazon Web Services",
+      "profile_url": "https://www.linkedin.com/in/yusuf-adeshina",
+      "affiliation_source": "https://www.linkedin.com/in/yusuf-adeshina",
+      "verified_on": "2026-08-07",
+      "papers": ["kovtun_pinder_2024", "durairaj_plinder_2024"]
+    },
+    {
+      "id": "gabriele-corso",
+      "name": "Gabriele Corso",
+      "aliases": [],
+      "country": { "code": "GB", "name": "United Kingdom" },
+      "institution": "Boltz",
+      "profile_url": "https://gcorso.github.io/",
+      "affiliation_source": "https://www.linkedin.com/in/gcorso",
+      "verified_on": "2026-08-07",
+      "papers": ["kovtun_pinder_2024", "durairaj_plinder_2024"]
+    },
+    {
+      "id": "hannes-stark",
+      "name": "Hannes Stärk",
+      "aliases": [],
+      "country": { "code": "US", "name": "United States" },
+      "institution": "Boltz",
+      "profile_url": "https://hannes-stark.com/",
+      "affiliation_source": "https://www.linkedin.com/in/hannes-stark",
+      "verified_on": "2026-08-07",
+      "papers": ["kovtun_pinder_2024", "durairaj_plinder_2024"]
+    },
+    {
+      "id": "zachary-carpenter",
+      "name": "Zachary Carpenter",
+      "aliases": [],
+      "country": { "code": "US", "name": "United States" },
+      "institution": "Proxima",
+      "profile_url": "https://proximabio.com/team",
+      "affiliation_source": "https://proximabio.com/contact",
+      "verified_on": "2026-08-07",
+      "papers": ["kovtun_pinder_2024", "durairaj_plinder_2024"]
+    },
+    {
+      "id": "emine-kucukbenli",
+      "name": "Emine Kucukbenli",
+      "aliases": [],
+      "country": { "code": "US", "name": "United States" },
+      "institution": "NVIDIA",
+      "profile_url": "https://www.linkedin.com/in/kucukben",
+      "affiliation_source": "https://www.linkedin.com/in/kucukben",
+      "verified_on": "2026-08-07",
+      "papers": ["kovtun_pinder_2024", "durairaj_plinder_2024"]
+    },
+    {
+      "id": "luca-naef",
+      "name": "Luca Naef",
+      "aliases": [],
+      "country": { "code": "US", "name": "United States" },
+      "institution": "Proxima",
+      "profile_url": "https://www.linkedin.com/in/lnaef",
+      "affiliation_source": "https://www.linkedin.com/in/lnaef",
+      "verified_on": "2026-08-07",
+      "papers": ["kovtun_pinder_2024", "durairaj_plinder_2024"]
+    },
+    {
+      "id": "xiaowen-dong",
+      "name": "Xiaowen Dong",
+      "aliases": [],
+      "country": { "code": "GB", "name": "United Kingdom" },
+      "institution": "University of Oxford",
+      "profile_url": "https://eng.ox.ac.uk/people/xiaowen-dong",
+      "affiliation_source": "https://eng.ox.ac.uk/people/xiaowen-dong",
+      "verified_on": "2026-08-07",
+      "papers": ["rossi2022networkgames", "rossi2021fp"]
+    },
+    {
+      "id": "maria-gorinova",
+      "name": "Maria I. Gorinova",
+      "aliases": [],
+      "country": { "code": "GB", "name": "United Kingdom" },
+      "institution": "Tessl",
+      "profile_url": "https://uk.linkedin.com/in/mariagorinova",
+      "affiliation_source": "https://tessl.io/blog/proposed-evaluation-framework-for-coding-agents/",
+      "verified_on": "2026-08-07",
+      "papers": ["rossi2021fp", "chamberlain2021grand"]
+    },
+    {
+      "id": "davide-eynard",
+      "name": "Davide Eynard",
+      "aliases": [],
+      "country": { "code": "GB", "name": "United Kingdom" },
+      "institution": "Mozilla.ai",
+      "profile_url": "https://davide.eynard.it/",
+      "affiliation_source": "https://blog.mozilla.ai/author/davide-eynard/",
+      "verified_on": "2026-08-07",
+      "papers": ["rossi2020tgn", "rossi2020sign"]
+    },
+    {
+      "id": "daniel-kovtun",
+      "name": "Daniel Kovtun",
+      "aliases": ["Danny Kovtun"],
+      "country": { "code": "US", "name": "United States" },
+      "institution": "Proxima",
+      "profile_url": "https://www.linkedin.com/in/daniel-kovtun-646204118",
+      "affiliation_source": "https://www.linkedin.com/in/daniel-kovtun-646204118",
+      "verified_on": "2026-08-07",
+      "papers": ["kovtun_pinder_2024", "durairaj_plinder_2024"]
+    }
+  ]
+}

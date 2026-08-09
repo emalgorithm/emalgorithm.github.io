@@ -1,7 +1,9 @@
 {
   "scripts": {
+    "audit:collaborations": "node scripts/collaborations-audit.mjs",
     "lint:prettier": "prettier . --check",
     "lint:style-contract": "node test/style_contract.js",
+    "test:collaborations": "node --test test/collaborations-audit.test.mjs",
     "test:visual": "playwright test --config test/visual/playwright.config.js",
     "test:visual:update": "playwright test --config test/visual/playwright.config.js --update-snapshots"
   },

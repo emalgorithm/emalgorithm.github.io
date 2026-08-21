@@ -353,7 +353,7 @@ def render(
     lines.extend(render_grants(grants))
     lines.extend([""])
     lines.extend(render_awards(awards))
-    lines.extend(["", r"\newpage", ""])
+    lines.append("")
     lines.extend(render_talks(talks))
     return "\n".join(lines) + "\n"
 

@@ -163,6 +163,7 @@ workshops:
 
 awards:
   - date: "2017-01-01"
+    years: "2017"
     title: "Olav Beckmann Project Prize"
     institution: "Imperial College London"
     description: "For outstanding second-year project work."
@@ -174,6 +175,7 @@ awards:
     description: "Top 10% of cohort. Received in two consecutive years."
 
   - date: "2016-01-01"
+    years: "2016"
     title: "G-Research Prize (Gloucester Research Ltd Prize at the time of award)"
     institution: "Imperial College London"
     description: "Awarded annually to up to 10 non-final-year Computer Science students for academic excellence."
@@ -209,6 +211,7 @@ research_grants:
 
 mentoring:
   - start_date: "2025-05-01"
+    end_date: "2026-03-01"
     name: "Davide Marincione"
     url: https://gladia.di.uniroma1.it/authors/marincione/
     position: "PhD Student @ Sapienza University of Rome"
@@ -217,6 +220,7 @@ mentoring:
         url: /publications/?q=marincione2025bio
 
   - start_date: "2024-10-01"
+    end_date: "2026-07-01"
     name: "Simone Antonelli"
     url: https://siantonelli.github.io/
     position: "ML Research Intern @ Amboss Technologies"

@@ -17,7 +17,7 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
 
 {% include outreach/conversations.liquid %}
 
-## Workshop Involvement
+## Academic Service
 
 {% include outreach/workshops.liquid %}
 

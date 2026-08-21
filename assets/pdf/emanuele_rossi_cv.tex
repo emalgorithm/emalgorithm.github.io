@@ -126,6 +126,44 @@
     \endonecolentry
 } % new environment for two column entries
 
+% Narrower right columns for full-CV outreach entries. The default
+% twocolentry remains wide enough for locations and date ranges in Experience.
+\newenvironment{shortdateentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 2.5 cm}
+    \begin{paracol}{2}
+    \raggedright
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{daterangeentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 3.5 cm}
+    \begin{paracol}{2}
+    \raggedright
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{grantentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 3.75 cm}
+    \begin{paracol}{2}
+    \raggedright
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
 \newenvironment{header}{
     \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
 }{
@@ -191,7 +229,7 @@
 
     \vspace{0.08 cm}
     \begin{onecolentry}
-        \textbf{\hrefWithoutArrow{https://scholar.google.com/citations?user=DHlkBOYAAAAJ}{\color{primaryColor}Google Scholar metrics:}} 4,261 citations; h-index 15 (July 2026).
+        \textbf{\hrefWithoutArrow{https://scholar.google.com/citations?user=DHlkBOYAAAAJ}{\color{primaryColor}Google Scholar metrics:}} 4,444 citations; h-index 15 (August 2026).
     \end{onecolentry}
 
     \section{Education}
@@ -317,22 +355,40 @@
         \textbf{Animal Communication \& Audio}
 
         \begin{highlightsforbulletentries}
-            \item \textit{F. Mustun et al.} OpenWhistle: A Large-Scale Longitudinal Dataset and Benchmark of Bottlenose Dolphin Vocalizations. \textit{Under Review 2026}.
-
-            \item \textit{E. Rossi and E. Rodolà.} \href{https://arxiv.org/abs/2605.08750}{Communicating Sound Through Natural Language}. \textit{arXiv 2026}.
-
-            \item \textit{D. Marincione et al.} \href{https://arxiv.org/abs/2511.05171}{Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models}. \textit{NeurIPS Workshop on AI for Animal Communication 2025, Spotlight (top 15\%)}.
+            \item \textit{D. Marincione, D. Crisostomi, R. Dessì, E. Rodolà, and \textbf{E. Rossi}.} \href{https://arxiv.org/abs/2511.05171}{Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models}. \textit{NeurIPS Workshop on AI for Animal Communication 2025, Spotlight (top 15\%)}.
         \end{highlightsforbulletentries}
+    \end{onecolentry}
 
-        \vspace{0.05 cm}
+    \begin{onecolentry}
+        \begin{highlightsforbulletentries}
+            \item \textit{F. Mustun, C. Semenzin, R. Dessì, P. R. Guerrero, P. Orhan, A. Emanuelli, \textbf{E. Rossi} et al.} OpenWhistle: A Large-Scale Longitudinal Dataset and Benchmark of Bottlenose Dolphin Vocalizations. \textit{Under Review 2026}.
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
+
+    \begin{onecolentry}
+        \begin{highlightsforbulletentries}
+            \item \textit{\textbf{E. Rossi} and E. Rodolà.} \href{https://arxiv.org/abs/2605.08750}{Communicating Sound Through Natural Language}. \textit{arXiv 2026}.
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
+
+    \vspace{0.05 cm}
+    \begin{onecolentry}
         \textbf{Graph Learning}
 
         \begin{highlightsforbulletentries}
-            \item \textit{E. Rossi et al.} \href{https://arxiv.org/abs/2006.10637}{Temporal Graph Networks for Deep Learning on Dynamic Graphs}. \textit{ICML GRL Workshop 2020}. \textbf{1,700+ citations} and \href{https://github.com/twitter-research/tgn}{\textbf{1,000+ GitHub stars}}.
+            \item \textit{\textbf{E. Rossi} et al.} \href{https://arxiv.org/abs/2006.10637}{Temporal Graph Networks for Deep Learning on Dynamic Graphs}. \textit{ICML GRL Workshop 2020}. \textbf{1,700+ citations} and \href{https://github.com/twitter-research/tgn}{\textbf{1,000+ GitHub stars}}.
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
 
-            \item \textit{E. Rossi$^*$, F. Frasca$^*$ et al.} \href{https://arxiv.org/abs/2004.11198}{SIGN: Scalable Inception Graph Neural Networks}. \textit{ICML GRL Workshop 2020}. \textbf{600+ citations} and used in \href{https://medium.com/airbnb-engineering/graph-machine-learning-at-airbnb-f868d65f36ee}{\textbf{production at Airbnb}}.
+    \begin{onecolentry}
+        \begin{highlightsforbulletentries}
+            \item \textit{\textbf{E. Rossi}$^*$, F. Frasca$^*$ et al.} \href{https://arxiv.org/abs/2004.11198}{SIGN: Scalable Inception Graph Neural Networks}. \textit{ICML GRL Workshop 2020}. \textbf{600+ citations} and used in \href{https://medium.com/airbnb-engineering/graph-machine-learning-at-airbnb-f868d65f36ee}{\textbf{production at Airbnb}}.
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
 
-            \item \textit{B. Chamberlain, S. Shirobokov, E. Rossi et al.} \href{https://arxiv.org/abs/2209.15486}{Graph Neural Networks for Link Prediction with Subgraph Sketching}. \textit{ICLR 2023, Oral (top 5\%)}. \textbf{200+ citations}.
+    \begin{onecolentry}
+        \begin{highlightsforbulletentries}
+            \item \textit{B. Chamberlain, S. Shirobokov, \textbf{E. Rossi} et al.} \href{https://arxiv.org/abs/2209.15486}{Graph Neural Networks for Link Prediction with Subgraph Sketching}. \textit{ICLR 2023, Oral (top 5\%)}. \textbf{200+ citations}.
         \end{highlightsforbulletentries}
     \end{onecolentry}
 
@@ -354,7 +410,6 @@
 
     \iffullcv
         \input{emanuele_rossi_cv_outreach.tex}
-        \newpage
         \input{emanuele_rossi_cv_publications.tex}
     \fi
 

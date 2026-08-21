@@ -16,6 +16,7 @@ NESTED_ENTRY_RE = re.compile(r"^      - ([a-z_]+):\s*(.*)$")
 NESTED_FIELD_RE = re.compile(r"^        ([a-z_]+):\s*(.*)$")
 TOP_LEVEL_RE = re.compile(r"^[a-z_]+:\s*$")
 TALK_FIELDS = ("date", "title", "venue")
+WORKSHOP_FIELDS = ("date", "title", "venue", "role")
 GRANT_FIELDS = ("date", "title", "institution")
 AWARD_FIELDS = ("date", "title", "institution", "description")
 MENTOR_FIELDS = ("start_date", "name", "position")
@@ -202,9 +203,9 @@ def display_date(item: dict[str, str]) -> str:
 
 
 def mentoring_date_range(item: dict) -> str:
-    start = item["_parsed_start_date"].strftime("%d/%m/%Y")
+    start = item["_parsed_start_date"].strftime("%m/%Y")
     end = (
-        item["_parsed_end_date"].strftime("%d/%m/%Y")
+        item["_parsed_end_date"].strftime("%m/%Y")
         if item.get("_parsed_end_date")
         else "Present"
     )
@@ -227,20 +228,23 @@ def render_mentoring(items: list[dict]) -> list[str]:
                 publication_text += " (Work in Progress)"
             if publication.get("under_review") == "true":
                 publication_text += " (Under Review)"
-            details += rf"\\[-0.02 cm]{publication_text}"
+            details += (
+                rf"\\[-0.02 cm]{{\small\emergencystretch=1em {publication_text}}}"
+            )
 
         lines.extend(
             [
-                r"\begin{twocolentry}{",
-                rf"\textit{{{mentoring_date_range(item)}}}}}",
+                r"\needspace{4\baselineskip}",
+                r"\begin{daterangeentry}{",
+                rf"\mbox{{\small\textit{{{mentoring_date_range(item)}}}}}}}",
                 r"    \begin{itemize}[leftmargin=10pt, nosep]",
                 rf"        \item {details}",
                 r"    \end{itemize}",
-                r"\end{twocolentry}",
+                r"\end{daterangeentry}",
             ]
         )
         if index != len(items) - 1:
-            lines.extend(["", r"\vspace{0.10 cm}", ""])
+            lines.extend(["", r"\vspace{0.06 cm}", ""])
 
     return lines
 
@@ -251,17 +255,44 @@ def render_talks(talks: list[dict[str, str]]) -> list[str]:
     for index, talk in enumerate(talks):
         lines.extend(
             [
-                r"\begin{twocolentry}{",
+                r"\needspace{4\baselineskip}",
+                r"\begin{shortdateentry}{",
                 rf"\textit{{{display_date(talk)}}}}}",
                 r"    \begin{itemize}[leftmargin=10pt, nosep]",
                 rf"        \item \textit{{{latex_escape(talk['title'])}}}\\[-0.02 cm]",
-                rf"        {linked_venue(talk)}{resource_links(talk)}",
+                rf"        {{\small {linked_venue(talk)}{resource_links(talk)}}}",
                 r"    \end{itemize}",
-                r"\end{twocolentry}",
+                r"\end{shortdateentry}",
             ]
         )
         if index != len(talks) - 1:
-            lines.extend(["", r"\vspace{0.10 cm}", ""])
+            lines.extend(["", r"\vspace{0.04 cm}", ""])
+
+    return lines
+
+
+def render_workshops(workshops: list[dict[str, str]]) -> list[str]:
+    lines = [r"\section{Academic Service}", ""]
+
+    for index, workshop in enumerate(workshops):
+        details = (
+            rf"{{\small \textbf{{{linked_text(workshop['title'], workshop.get('url'))}}}"
+            rf" -- {latex_escape(workshop['venue'])}"
+            rf"\\[-0.02 cm]\textit{{{latex_escape(workshop['role'])}}}}}"
+        )
+        lines.extend(
+            [
+                r"\needspace{4\baselineskip}",
+                r"\begin{shortdateentry}{",
+                rf"\textit{{{workshop['_parsed_date'].strftime('%m/%Y')}}}}}",
+                r"    \begin{itemize}[leftmargin=10pt, nosep]",
+                rf"        \item {details}",
+                r"    \end{itemize}",
+                r"\end{shortdateentry}",
+            ]
+        )
+        if index != len(workshops) - 1:
+            lines.extend(["", r"\vspace{0.04 cm}", ""])
 
     return lines
 
@@ -272,16 +303,17 @@ def render_grants(grants: list[dict[str, str]]) -> list[str]:
     for index, grant in enumerate(grants):
         right_column = rf"\textit{{{display_date(grant)}}}"
         if grant.get("value"):
-            right_column += (
-                rf"\\[0.02 cm]\textbf{{{latex_escape(grant['value'])}}}"
-            )
-        if grant.get("value_qualifier"):
-            right_column += (
-                rf"\\[-0.02 cm]{latex_escape(grant['value_qualifier'])}"
-            )
+            value = latex_escape(grant["value"])
+            if grant.get("value_qualifier"):
+                qualifier = latex_escape(grant["value_qualifier"])
+                right_column += (
+                    rf"\\[0.02 cm]\mbox{{\small\textbf{{{value}}} {qualifier}}}"
+                )
+            else:
+                right_column += rf"\\[0.02 cm]\textbf{{{value}}}"
         if grant.get("duration"):
             right_column += (
-                rf"\\[-0.02 cm]{latex_escape(grant['duration'])}"
+                rf"\\[-0.02 cm]{{\small {latex_escape(grant['duration'])}}}"
             )
 
         details = (
@@ -290,24 +322,25 @@ def render_grants(grants: list[dict[str, str]]) -> list[str]:
         )
         if grant.get("project"):
             details += (
-                rf"\\[-0.02 cm]\textit{{{latex_escape(grant['project'])}}}"
+                rf"\\[-0.02 cm]{{\small \textit{{{latex_escape(grant['project'])}}}}}"
             )
         if grant.get("description"):
             details += (
-                rf"\\[-0.02 cm]{latex_escape(grant['description'])}"
+                rf"\\[-0.02 cm]{{\small {latex_escape(grant['description'])}}}"
             )
 
         lines.extend(
             [
-                rf"\begin{{twocolentry}}{{{right_column}}}",
+                r"\needspace{4\baselineskip}",
+                rf"\begin{{grantentry}}{{{right_column}}}",
                 r"    \begin{itemize}[leftmargin=10pt, nosep]",
                 rf"        \item {details}",
                 r"    \end{itemize}",
-                r"\end{twocolentry}",
+                r"\end{grantentry}",
             ]
         )
         if index != len(grants) - 1:
-            lines.extend(["", r"\vspace{0.10 cm}", ""])
+            lines.extend(["", r"\vspace{0.06 cm}", ""])
 
     return lines
 
@@ -319,26 +352,28 @@ def render_awards(awards: list[dict[str, str]]) -> list[str]:
         details = (
             rf"\textbf{{{latex_escape(award['title'])}}}"
             rf" -- {latex_escape(award['institution'])}"
-            rf"\\[-0.02 cm]{latex_escape(award['description'])}"
+            rf"\\[-0.02 cm]{{\small {latex_escape(award['description'])}}}"
         )
         lines.extend(
             [
-                r"\begin{twocolentry}{",
+                r"\needspace{4\baselineskip}",
+                r"\begin{shortdateentry}{",
                 rf"\textit{{{display_date(award)}}}}}",
                 r"    \begin{itemize}[leftmargin=10pt, nosep]",
                 rf"        \item {details}",
                 r"    \end{itemize}",
-                r"\end{twocolentry}",
+                r"\end{shortdateentry}",
             ]
         )
         if index != len(awards) - 1:
-            lines.extend(["", r"\vspace{0.10 cm}", ""])
+            lines.extend(["", r"\vspace{0.06 cm}", ""])
 
     return lines
 
 
 def render(
     talks: list[dict[str, str]],
+    workshops: list[dict[str, str]],
     grants: list[dict[str, str]],
     awards: list[dict[str, str]],
     mentoring: list[dict],
@@ -355,6 +390,8 @@ def render(
     lines.extend(render_awards(awards))
     lines.append("")
     lines.extend(render_talks(talks))
+    lines.extend([""])
+    lines.extend(render_workshops(workshops))
     return "\n".join(lines) + "\n"
 
 
@@ -365,14 +402,17 @@ def main() -> None:
     args = parser.parse_args()
 
     talks = load_section(args.source, "talks", TALK_FIELDS)
+    workshops = load_section(args.source, "workshops", WORKSHOP_FIELDS)
     grants = load_section(args.source, "research_grants", GRANT_FIELDS)
     awards = load_section(args.source, "awards", AWARD_FIELDS)
     mentoring = load_mentoring(args.source)
     args.output.write_text(
-        render(talks, grants, awards, mentoring, args.source), encoding="utf-8"
+        render(talks, workshops, grants, awards, mentoring, args.source),
+        encoding="utf-8",
     )
     print(
-        f"Generated {len(talks)} talks, {len(grants)} grants, "
+        f"Generated {len(talks)} talks, {len(workshops)} workshops, "
+        f"{len(grants)} grants, "
         f"{len(awards)} awards, and {len(mentoring)} mentoring entries "
         f"from {args.source}."
     )

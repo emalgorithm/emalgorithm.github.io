@@ -12,10 +12,10 @@
 % Packages:
 \usepackage[
     ignoreheadfoot, % set margins without considering header and footer
-    top=1.5 cm, % seperation between body and page edge from the top
-    bottom=1.5 cm, % seperation between body and page edge from the bottom
-    left=2 cm, % seperation between body and page edge from the left
-    right=2 cm, % seperation between body and page edge from the right
+    top=1.5 cm, % separation between body and page edge from the top
+    bottom=1.5 cm, % separation between body and page edge from the bottom
+    left=1.5 cm, % separation between body and page edge from the left
+    right=1.5 cm, % separation between body and page edge from the right
     footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging
 ]{geometry} % for adjusting page geometry
@@ -64,17 +64,20 @@
 \setlength{\columnsep}{0cm} % set column seperation
 
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titleformat{\subsection}{\needspace{3\baselineskip}\bfseries\normalsize\color{primaryColor}}{}{0pt}{}
 
 \titlespacing{\section}{
     % left space:
     -1pt
 }{
     % top space:
-    0.2 cm
+    0.05 cm
 }{
     % bottom space:
-    0.15 cm
+    0.10 cm
 } % section title spacing
+
+\titlespacing{\subsection}{0pt}{0.14 cm}{0.06 cm}
 
 \renewcommand\labelitemi{$\circ$} % custom bullet points
 \newenvironment{highlights}{
@@ -123,6 +126,44 @@
     \endonecolentry
 } % new environment for two column entries
 
+% Narrower right columns for full-CV outreach entries. The default
+% twocolentry remains wide enough for locations and date ranges in Experience.
+\newenvironment{shortdateentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 2.5 cm}
+    \begin{paracol}{2}
+    \raggedright
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{daterangeentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 3.5 cm}
+    \begin{paracol}{2}
+    \raggedright
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{grantentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 3.75 cm}
+    \begin{paracol}{2}
+    \raggedright
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
 \newenvironment{header}{
     \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
 }{
@@ -161,29 +202,34 @@
         \vspace{0.3 cm}
 
         \normalsize
-        \mbox{\hrefWithoutArrow{mailto:emanuele.rossi1909@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}emanuele.rossi1909@gmail.com}}%
+        \mbox{\hrefWithoutArrow{mailto:emanuele.rossi1909@gmail.com}{\color{primaryColor}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}emanuele.rossi1909@gmail.com}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://www.emanuelerossi.co.uk/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}Website}}%
+        \mbox{\hrefWithoutArrow{https://www.emanuelerossi.co.uk/}{\color{primaryColor}{\footnotesize\faLink}\hspace*{0.13cm}Website}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://scholar.google.com/citations?user=DHlkBOYAAAAJ}{\color{black}{\footnotesize\faGraduationCap}\hspace*{0.13cm}Scholar}}%
+        \mbox{\hrefWithoutArrow{https://scholar.google.com/citations?user=DHlkBOYAAAAJ}{\color{primaryColor}{\footnotesize\faGraduationCap}\hspace*{0.13cm}Scholar}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://linkedin.com/in/emanuele-rossi/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}LinkedIn}}%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/emanuele-rossi/}{\color{primaryColor}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}LinkedIn}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://github.com/emalgorithm}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}GitHub}}%
+        \mbox{\hrefWithoutArrow{https://github.com/emalgorithm}{\color{primaryColor}{\footnotesize\faGithub}\hspace*{0.13cm}GitHub}}%
     \end{header}
 
     \vspace{0.15 cm}
 
     \begin{onecolentry}
-        Researcher working on machine learning for animal communication, part of a broader interest in leveraging ML to recover structure in complex systems: previously social graphs (Temporal Graph Networks, SIGN) at Twitter and Imperial College London, and generative models for biomolecules at VantAI.
+        Researcher working on machine learning for animal communication, part of a broader interest in leveraging ML to recover structure in complex systems: previously ML on graphs (Temporal Graph Networks, SIGN) at Twitter and Imperial College London, and generative models for biomolecules at VantAI.
+    \end{onecolentry}
+
+    \vspace{0.08 cm}
+    \begin{onecolentry}
+        \textbf{\hrefWithoutArrow{https://scholar.google.com/citations?user=DHlkBOYAAAAJ}{\color{primaryColor}Google Scholar metrics:}} 4,444 citations; h-index 15 (August 2026).
     \end{onecolentry}
 
     \section{Education}
@@ -234,7 +280,7 @@
     \vspace{0.10 cm}
     \begin{onecolentry}
         \begin{highlights}
-            \item Developing machine learning methods for animal communication.
+            \item Developing novel machine-learning methods to deepen our understanding of non-human communication.
         \end{highlights}
     \end{onecolentry}
 
@@ -309,20 +355,40 @@
         \textbf{Animal Communication \& Audio}
 
         \begin{highlightsforbulletentries}
-            \item \textit{E. Rossi and E. Rodolà.} \href{https://arxiv.org/abs/2605.08750}{Communicating Sound Through Natural Language}. \textit{arXiv 2026}.
-
-            \item \textit{D. Marincione et al.} \href{https://arxiv.org/abs/2511.05171}{Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models}. \textit{NeurIPS Workshop on AI for Animal Communication 2025, Spotlight (top 15\%)}.
+            \item \textit{D. Marincione, D. Crisostomi, R. Dessì, E. Rodolà, and \textbf{E. Rossi}.} \href{https://arxiv.org/abs/2511.05171}{Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models}. \textit{NeurIPS Workshop on AI for Animal Communication 2025, Spotlight (top 15\%)}.
         \end{highlightsforbulletentries}
+    \end{onecolentry}
 
-        \vspace{0.05 cm}
+    \begin{onecolentry}
+        \begin{highlightsforbulletentries}
+            \item \textit{F. Mustun, C. Semenzin, R. Dessì, P. R. Guerrero, P. Orhan, A. Emanuelli, \textbf{E. Rossi} et al.} OpenWhistle: A Large-Scale Longitudinal Dataset and Benchmark of Bottlenose Dolphin Vocalizations. \textit{Under Review 2026}.
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
+
+    \begin{onecolentry}
+        \begin{highlightsforbulletentries}
+            \item \textit{\textbf{E. Rossi} and E. Rodolà.} \href{https://arxiv.org/abs/2605.08750}{Communicating Sound Through Natural Language}. \textit{arXiv 2026}.
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
+
+    \vspace{0.05 cm}
+    \begin{onecolentry}
         \textbf{Graph Learning}
 
         \begin{highlightsforbulletentries}
-            \item \textit{E. Rossi et al.} \href{https://arxiv.org/abs/2006.10637}{Temporal Graph Networks for Deep Learning on Dynamic Graphs}. \textit{ICML GRL Workshop 2020}. \textbf{1,700+ citations} and \href{https://github.com/twitter-research/tgn}{\textbf{1,000+ GitHub stars}}.
+            \item \textit{\textbf{E. Rossi} et al.} \href{https://arxiv.org/abs/2006.10637}{Temporal Graph Networks for Deep Learning on Dynamic Graphs}. \textit{ICML GRL Workshop 2020}. \textbf{1,700+ citations} and \href{https://github.com/twitter-research/tgn}{\textbf{1,000+ GitHub stars}}.
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
 
-            \item \textit{E. Rossi$^*$, F. Frasca$^*$ et al.} \href{https://arxiv.org/abs/2004.11198}{SIGN: Scalable Inception Graph Neural Networks}. \textit{ICML GRL Workshop 2020}. \textbf{600+ citations} and used in \href{https://medium.com/airbnb-engineering/graph-machine-learning-at-airbnb-f868d65f36ee}{\textbf{production at Airbnb}}.
+    \begin{onecolentry}
+        \begin{highlightsforbulletentries}
+            \item \textit{\textbf{E. Rossi}$^*$, F. Frasca$^*$ et al.} \href{https://arxiv.org/abs/2004.11198}{SIGN: Scalable Inception Graph Neural Networks}. \textit{ICML GRL Workshop 2020}. \textbf{600+ citations} and used in \href{https://medium.com/airbnb-engineering/graph-machine-learning-at-airbnb-f868d65f36ee}{\textbf{production at Airbnb}}.
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
 
-            \item \textit{B. Chamberlain, S. Shirobokov, E. Rossi et al.} \href{https://arxiv.org/abs/2209.15486}{Graph Neural Networks for Link Prediction with Subgraph Sketching}. \textit{ICLR 2023, Oral (top 5\%)}. \textbf{200+ citations}.
+    \begin{onecolentry}
+        \begin{highlightsforbulletentries}
+            \item \textit{B. Chamberlain, S. Shirobokov, \textbf{E. Rossi} et al.} \href{https://arxiv.org/abs/2209.15486}{Graph Neural Networks for Link Prediction with Subgraph Sketching}. \textit{ICLR 2023, Oral (top 5\%)}. \textbf{200+ citations}.
         \end{highlightsforbulletentries}
     \end{onecolentry}
 
@@ -341,5 +407,10 @@
             \item Built a non-profit mentoring community with more than \textbf{200 mentors} and \textbf{500 selected mentees}
         \end{highlights}
     \end{onecolentry}
+
+    \iffullcv
+        \input{emanuele_rossi_cv_outreach.tex}
+        \input{emanuele_rossi_cv_publications.tex}
+    \fi
 
 \end{document}

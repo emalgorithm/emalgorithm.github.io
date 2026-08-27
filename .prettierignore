@@ -5,6 +5,8 @@ assets/css/main.scss
 assets/js/distillpub/template.v2.js
 assets/js/search/*.js
 assets/plotly/demo.html
+# Vendored, minified Natural Earth geometry
+assets/json/natural-earth-countries-110m.geojson
 assets/presentations/**
 lighthouse_results/**
 _posts/2015-10-20-math.md

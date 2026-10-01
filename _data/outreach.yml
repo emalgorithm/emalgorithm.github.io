@@ -100,6 +100,14 @@ talks:
     video_url: https://www.youtube.com/watch?v=W1GvX2ZcUmY
 
 conversations:
+  - date: "2026-09-30"
+    title: "What if a Model Knows More Than it Can Say?"
+    outlet: "Earth Species Project"
+    outlet_url: https://earthspecies.org/
+    description: "On model merging, generalization across species, and what AI can help us discover about animal communication."
+    article_url: https://earthspecies.org/2026/09/30/what-if-a-model-knows-more-than-it-can-say/
+    article_label: "Interview"
+
   - date: "2021-03-02"
     title: "Scaling Graph Neural Networks to Twitter-scale"
     with_name: "Zak Jost"

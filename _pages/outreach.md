@@ -2,7 +2,7 @@
 layout: page
 title: Outreach
 permalink: /outreach/
-description: Talks, panels, community work, research mentoring, grants, and awards.
+description: Talks, media appearances, interviews, community work, research mentoring, grants, and awards.
 nav: true
 nav_order: 4
 ---
@@ -13,7 +13,7 @@ Invited talks and presentations at academic seminars, workshops, and industry ev
 
 {% include outreach/talks.liquid %}
 
-## Conversations
+## Media & Interviews
 
 {% include outreach/conversations.liquid %}
 

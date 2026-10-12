@@ -22,3 +22,5 @@ vendor
 *.fls
 *.log
 *.synctex.gz
+assets/pdf/emanuele_rossi_cv_outreach.tex
+assets/pdf/emanuele_rossi_cv_publications.tex

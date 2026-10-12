@@ -170,6 +170,11 @@ workshops:
     role: "PC Member"
 
 awards:
+  - date: "2026-10-09"
+    title: "Top Reviewer Award"
+    institution: "NeurIPS 2026"
+    description: "Recognized among the top 10% of reviewers for outstanding contributions to peer review."
+
   - date: "2017-01-01"
     years: "2017"
     title: "Olav Beckmann Project Prize"

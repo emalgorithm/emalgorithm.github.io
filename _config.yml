@@ -442,6 +442,7 @@ filtered_bibtex_keywords:
     pubtype,
     docs,
     dataset,
+    dataset_name,
     selected,
     slides,
     supp,

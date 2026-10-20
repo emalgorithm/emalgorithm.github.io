@@ -57,7 +57,8 @@ After resolving, also check the auto-merged diff (`git diff --cached --stat HEAD
 ## 4. Known traps
 
 - **Duplicate YAML keys** — the fork once gated starter-only workflows with `if: github.repository == 'alshedivat/al-folio'`; upstream now does the same. The `check-yaml` pre-commit hook fails on the duplicate `if:`; drop the fork's copy.
-- **Pre-commit reformats files** (e.g. `assets/css/main.scss` Liquid spacing) and leaves them unstaged. Revert with `git checkout -- <file>` rather than committing unrelated formatting.
+- **Prettier upgrades reformat files** (e.g. `assets/css/main.scss` Liquid spacing). Keep the reformat: CI's `npx prettier . --check` uses the new version and fails otherwise.
+- **Stale local overrides** — when an `al_folio_core` bump changes a file the fork overrides, CI's `overrides audit --fail-on-stale` fails. Diff the old vs new gem copy, port upstream's change into the local file, then accept (see step 5).
 - Host `bundle exec` is broken; use Docker for everything Ruby.
 
 ## 5. Verify
@@ -68,7 +69,13 @@ until docker compose logs --since 5m 2>&1 | grep -q "Server running"; do sleep 5
 for p in / /publications/ /cv/ /blog/ /outreach/ /news/; do
   printf "%s %s\n" "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8080$p)" "$p"; done
 docker compose exec -T jekyll sh -c 'cd /srv/jekyll && bundle list | grep al_'   # new gem versions loaded
+
+# Same gates CI runs:
+npx prettier . --check
+docker compose exec -T jekyll sh -c 'cd /srv/jekyll && bundle exec al-folio upgrade audit && bundle exec al-folio upgrade overrides audit --fail-on-stale'
 ```
+
+For each override reported `stale`, compare the gem versions (`gem fetch al_folio_core -v <old> && gem unpack ...` in the container; the new one is under `/usr/local/bundle/gems/`), apply upstream's diff to the local file, then `bundle exec al-folio upgrade overrides accept <path>` and prettier-format `.al-folio-overrides.yml`. Re-accept any override that prettier reformatted.
 
 Then in the built-in browser: home, publications and CV render; the dark-mode toggle (`#light-toggle`) flips `data-theme`; the console shows no errors other than the dev-only livereload CSP block. Fix regressions before pushing.
 

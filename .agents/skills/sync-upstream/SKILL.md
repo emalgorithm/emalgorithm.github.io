@@ -1,53 +1,86 @@
 ---
 name: sync-upstream
-description:
+description: Merge the latest upstream al-folio (alshedivat/al-folio) into this fork while keeping site content and customizations, verify the build in Docker, and open a PR. Use when asked to sync, update or pull from upstream al-folio.
 ---
 
-I need to update my repository with changes from the upstream `al-folio` repository while preserving my personal customizations.
+# Sync with upstream al-folio
 
-Please execute the following "Upstream Sync Workflow":
+Goal: one merge commit on a `chore/sync-upstream-<timestamp>` branch whose second parent is `upstream/main`, verified locally, opened as a PR. Work autonomously; only stop for a genuinely ambiguous conflict.
 
-**Phase 1: Clean Start**
+## 1. Branch
 
-1.  Check status to ensure the working tree is clean. If not, stop and tell me.
-2.  Switch to the `main` branch: `git checkout main`.
-3.  Pull the latest changes from my remote: `git pull origin main`.
-4.  Create and switch to a new temporary sync branch: `git checkout -b chore/sync-upstream-$(date +%Y%m%d-%H%M%S)`.
+```bash
+git fetch origin && git fetch upstream
+git status --short          # tracked modifications → stop and ask; untracked files are fine
+git switch -c chore/sync-upstream-$(date +%Y%m%d-%H%M%S) origin/main
+```
 
-**Phase 2: Fetch & Merge**
+Branch from `origin/main` directly — `main` is often checked out in another worktree (Codex/Cursor), so `git checkout main` can fail.
 
-1.  Fetch the upstream remote: `git fetch upstream`.
-2.  Attempt to merge upstream main: `git merge upstream/main`.
+## 2. Merge
 
-**Phase 3: Intelligent Conflict Resolution**
-If the merge stops due to conflicts, do not abort. For every conflicting file, analyze the `<<<<<<< HEAD` (my changes) vs `>>>>>>> upstream` (their changes) and apply these rules:
+Check that the fork shares recent history with upstream first:
 
-- **Global Rule:** If the conflict is purely formatting or whitespace, prefer Upstream.
-- **Rule for `_config.yml`:**
-  - KEEP my personal values (e.g., `title`, `email`, `url`, `repository`, social links).
-  - ACCEPT new configuration keys/settings added by upstream.
-  - UPDATE version numbers or dependencies if upstream changed them.
-- **Rule for Content (`_pages/`, `_bibliography/`, `_posts/`, `_data/`):**
-  - Heavily bias towards MY changes. I do not want to overwrite my bio, papers, or personal data with the template defaults.
-  - Only accept upstream changes if they look like structural fixes (e.g., front matter syntax updates).
-- **Rule for Layouts/Includes (`_layouts/`, `_includes/`, `_sass/`):**
-  - Heavily bias towards UPSTREAM changes to get new features/bug fixes.
-  - **Crucial:** Check if I added custom scripts (like analytics), custom CSS classes, or specific HTML blocks. If so, re-inject my custom code into the new upstream structure. My custom styles live in `_sass/_custom.scss` — always preserve this file's contents.
+```bash
+git log -1 --format='%h %ad %s' --date=short $(git merge-base HEAD upstream/main)
+```
 
-**Phase 4: Finalization**
+- **Recent base (normal case):** `git merge upstream/main`.
+- **Ancient base (e.g. 2017) / a flood of `add/add` conflicts:** an earlier sync PR was squash-merged, which drops the upstream parent. Find the newest upstream PR commit already in the fork by subject, and merge with it as an explicit base:
 
-1.  For each resolved file, automatically `git add` it.
-2.  If you are unsure about a specific conflict (e.g., logic is too complex to merge safely), stop and ask me for guidance on that specific file.
-3.  Once all conflicts are resolved, commit the merge with the message: "chore: sync with upstream al-folio".
-4.  **Build & Verify locally before pushing:**
-    - Run `docker compose up --build -d` and wait for the server to be ready: `until docker compose logs 2>&1 | grep -q "Server running"; do sleep 5; done`
-    - Invoke the `/verify` skill with this prompt: _"Check that the site at http://localhost:8080 is working correctly after an upstream sync. Verify: home page loads, navigation works, publications page renders, CV page renders, dark mode toggle works, no JS errors in console. Report any regressions."_
-    - If `/verify` returns FAIL or BLOCKED, attempt to fix the issue and amend the commit before proceeding.
-    - If an issue cannot be resolved automatically, stop and report it to me with a clear description before proceeding.
-5.  Push the branch to origin: `git push origin <branch-name>`.
-6.  Create a pull request to `main` using the GitHub API (not `gh pr create`, which fails on merge commits): `gh api repos/<owner>/<repo>/pulls --method POST -f title="..." -f head="<branch>" -f base="main" -f body="..."`. The PR description must include: a summary of upstream changes pulled in, the conflict resolution table, and the merge reminder. Extract the PR URL from the `html_url` field of the response.
-7.  **Report:** At the end, output a Markdown table summarizing:
-    - Files that had conflicts.
-    - The resolution strategy you used (e.g., "Kept Local Content", "Merged Config", "Adopted Upstream Structure").
+  ```bash
+  git log upstream/main --format='%H|%s' | grep -E '\(#[0-9]+\)$' | while IFS='|' read h s; do
+    git log HEAD --format=%s | grep -qxF "$s" && { echo "$h $s"; break; }; done
+  BASE=<hash from above>
+  git merge-tree --write-tree --merge-base=$BASE HEAD upstream/main   # preview: lists real conflicts
+  git read-tree -m -u $BASE HEAD upstream/main
+  git merge-index -o -q git-merge-one-file -a
+  git rev-parse upstream/main > .git/MERGE_HEAD
+  echo "chore: sync with upstream al-folio" > .git/MERGE_MSG
+  ```
 
-At the end, remind me to use a regular merge (not a squash merge) when merging the PR into main. This preserves the detailed commit history of al-folio, making future upstream syncs smoother.
+  Resolve conflicts, then `git commit --no-edit`. The commit records the real upstream parent, so the next sync is a normal merge again.
+
+## 3. Resolve conflicts
+
+The fork is a thin starter: runtime lives in `al_*` gems, so conflicts are almost always config, content or CI.
+
+- `_config.yml`: keep personal values (title, url, icon, analytics IDs, socials, toggles the site turned on); take new upstream keys, plugin entries and version/SRI pins.
+- `Gemfile` / `Gemfile.lock` / `package*.json`: take upstream, then re-add any fork-only gems. The `Gemfile` plugin group and `_config.yml` `plugins:` must stay in sync.
+- Content (`_pages`, `_bibliography`, `_data`, `_news`, `_projects`, own `_posts`): keep the fork. `_data/citations.yml` is the fork's own Scholar data — always `--ours`.
+- `.gitignore`, docs, workflows: usually union both sides.
+- Local overrides (`_sass/_custom.scss`, any `_includes`/`_layouts` override listed in `.al-folio-overrides.yml`): keep the fork; if upstream changed the overridden gem file, port the fork's tweak onto it.
+- If a conflict needs a judgment call about site behavior, ask.
+
+After resolving, also check the auto-merged diff (`git diff --cached --stat HEAD`) for upstream changes to fork content. New upstream demo posts are fine — the fork keeps al-folio's demo posts.
+
+## 4. Known traps
+
+- **Duplicate YAML keys** — the fork once gated starter-only workflows with `if: github.repository == 'alshedivat/al-folio'`; upstream now does the same. The `check-yaml` pre-commit hook fails on the duplicate `if:`; drop the fork's copy.
+- **Pre-commit reformats files** (e.g. `assets/css/main.scss` Liquid spacing) and leaves them unstaged. Revert with `git checkout -- <file>` rather than committing unrelated formatting.
+- Host `bundle exec` is broken; use Docker for everything Ruby.
+
+## 5. Verify
+
+```bash
+docker compose up --build -d
+until docker compose logs --since 5m 2>&1 | grep -q "Server running"; do sleep 5; done
+for p in / /publications/ /cv/ /blog/ /outreach/ /news/; do
+  printf "%s %s\n" "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8080$p)" "$p"; done
+docker compose exec -T jekyll sh -c 'cd /srv/jekyll && bundle list | grep al_'   # new gem versions loaded
+```
+
+Then in the built-in browser: home, publications and CV render; the dark-mode toggle (`#light-toggle`) flips `data-theme`; the console shows no errors other than the dev-only livereload CSP block. Fix regressions before pushing.
+
+## 6. Push and open PR
+
+```bash
+git push -u origin HEAD
+gh api repos/emalgorithm/emalgorithm.github.io/pulls --method POST \
+  -f title="chore: sync with upstream al-folio" -f head="$(git branch --show-current)" -f base=main \
+  -F body=@<body.md> -q .html_url
+```
+
+(`gh pr create` can fail on merge commits and resolves the wrong repo because of the `upstream` remote.) The body should list the upstream changes pulled in, a conflict-resolution table (file → resolution), verification results, and the reminder below.
+
+**Merge the PR with a regular merge commit, never squash.** Squashing drops the upstream parent and breaks the next sync (see step 2).

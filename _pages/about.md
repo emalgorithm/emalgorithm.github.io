@@ -9,6 +9,7 @@ profile:
   image: me.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
+    <img src="/assets/img/sea_lion.jpg" class="img-fluid z-depth-1 rounded" alt="Diving with a sea lion" loading="lazy">
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page

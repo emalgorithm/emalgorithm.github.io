@@ -40,15 +40,14 @@ on:
 
 jobs:
   comments-integration-tests:
-    runs-on: ubuntu-latest
-    # Starter-development checks (style-contract + cross-gem integration tests):
-    # they assert the thin-starter boundary and gem internals, which a downstream
-    # site fork intentionally diverges from (local overrides, custom content,
-    # empty baseurl). Only run on the upstream al-folio repo.
+    # Upstream-only: this checks the starter's own invariants (the thin-starter
+    # style contract, demo content). It must not run on sites created from the
+    # template, where local _layouts/_includes/_sass overrides are supported.
     if: github.repository == 'alshedivat/al-folio'
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
@@ -57,13 +56,13 @@ jobs:
           bundler-cache: true
 
       - name: Setup Python 🐍
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.13"
           cache: "pip"
 
       - name: Setup Node 🧰
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: "20"
           cache: "npm"
@@ -96,3 +95,6 @@ jobs:
 
       - name: Run CSS minify integration test 🎨
         run: bash test/integration_css_minify.sh
+
+      - name: Run new plugin integration checks 🧩
+        run: bash test/integration_new_plugins.sh

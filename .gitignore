@@ -26,3 +26,5 @@ vendor
 # Python bytecode from bin/ helper scripts
 __pycache__/
 *.pyc
+assets/pdf/emanuele_rossi_cv_outreach.tex
+assets/pdf/emanuele_rossi_cv_publications.tex

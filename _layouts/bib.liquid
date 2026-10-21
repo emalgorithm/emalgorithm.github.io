@@ -41,7 +41,7 @@
           {% else %}
             {% assign preview_video_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
           {% endif %}
-          {% include video.liquid path=preview_video_path class="preview z-depth-1 rounded" controls=true %}
+          {% include video.liquid path=preview_video_path class="preview z-depth-1 rounded" autoplay=true loop=true muted=true %}
         {% elsif entry.preview contains '://' %}
           <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
         {% else %}

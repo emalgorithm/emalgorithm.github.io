@@ -8,7 +8,7 @@ middle_name:
 last_name: Rossi
 contact_note: >
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Postdoctoral researcher at Sapienza University of Rome developing machine learning methods to understand animal communication.
+  Postdoctoral researcher at Sapienza University of Rome developing novel machine learning methods to understand animal communication.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.

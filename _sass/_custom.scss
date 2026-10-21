@@ -10,6 +10,12 @@
   }
 }
 
+// Video previews are inline-block, which leaves a line-box gap below them;
+// render them as blocks so the badge spacing matches image previews
+.publications ol.bibliography li video.preview {
+  display: block;
+}
+
 // Base hues for publication type badges
 $badge-conference-hue: #1565c0;
 $badge-workshop-hue: #2e7d32;

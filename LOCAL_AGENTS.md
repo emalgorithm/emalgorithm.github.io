@@ -29,4 +29,4 @@ When adding custom fields to `_bibliography/papers.bib`, add them to `filtered_b
 
 ## CV
 
-Edit `assets/pdf/emanuele_rossi_cv.tex`, using `\iffullcv` for full-only content. Run `assets/pdf/build_cv.sh` to generate both PDFs. Keep the short CV to one page and update the PDF cache version in `_pages/cv.md`.
+Edit `assets/pdf/emanuele_rossi_cv.tex`, using `\iffullcv` for full-only content. Run `assets/pdf/build_cv.sh` to generate both PDFs. The full CV's mentoring, grants, awards, talks, service and publication sections are generated from `_data/outreach.yml`, `_bibliography/papers.bib` and `_data/citations.yml`, so update those sources rather than the generated `.tex` files. Keep the short CV to one page and update the PDF cache version in `_pages/cv.md`.

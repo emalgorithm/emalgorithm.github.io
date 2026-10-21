@@ -9,13 +9,22 @@
     \fullcvfalse
 \fi
 
+% Review builds (\def\SHOWCHANGES{1}) mark edits: \added in green,
+% \deleted struck through in red. Normal builds show the edited text only.
+\newif\ifshowchanges
+\ifdefined\SHOWCHANGES
+    \showchangestrue
+\else
+    \showchangesfalse
+\fi
+
 % Packages:
 \usepackage[
     ignoreheadfoot, % set margins without considering header and footer
-    top=1.5 cm, % seperation between body and page edge from the top
-    bottom=1.5 cm, % seperation between body and page edge from the bottom
-    left=2 cm, % seperation between body and page edge from the left
-    right=2 cm, % seperation between body and page edge from the right
+    top=1.5 cm, % separation between body and page edge from the top
+    bottom=1.5 cm, % separation between body and page edge from the bottom
+    left=1.5 cm, % separation between body and page edge from the left
+    right=1.5 cm, % separation between body and page edge from the right
     footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging
 ]{geometry} % for adjusting page geometry
@@ -24,6 +33,7 @@
 \usepackage{array} % tabularx requires this
 \usepackage[dvipsnames]{xcolor} % for coloring text
 \definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage[normalem]{ulem} % for struck-through deletions in review builds
 \usepackage{enumitem} % for customizing lists
 \usepackage{fontawesome5} % for using icons
 \usepackage{amsmath} % for math
@@ -64,17 +74,20 @@
 \setlength{\columnsep}{0cm} % set column seperation
 
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titleformat{\subsection}{\needspace{3\baselineskip}\bfseries\normalsize\color{primaryColor}}{}{0pt}{}
 
 \titlespacing{\section}{
     % left space:
     -1pt
 }{
     % top space:
-    0.2 cm
+    0.05 cm
 }{
     % bottom space:
-    0.15 cm
+    0.10 cm
 } % section title spacing
+
+\titlespacing{\subsection}{0pt}{0.14 cm}{0.06 cm}
 
 \renewcommand\labelitemi{$\circ$} % custom bullet points
 \newenvironment{highlights}{
@@ -123,6 +136,44 @@
     \endonecolentry
 } % new environment for two column entries
 
+% Narrower right columns for full-CV outreach entries. The default
+% twocolentry remains wide enough for locations and date ranges in Experience.
+\newenvironment{shortdateentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 2.5 cm}
+    \begin{paracol}{2}
+    \raggedright
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{daterangeentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 3.5 cm}
+    \begin{paracol}{2}
+    \raggedright
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{grantentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 3.75 cm}
+    \begin{paracol}{2}
+    \raggedright
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
 \newenvironment{header}{
     \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
 }{
@@ -147,6 +198,18 @@
 \renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
 
 
+\newcommand{\added}[1]{\ifshowchanges{\color{ForestGreen}#1}\else#1\fi}
+\newcommand{\deleted}[1]{\ifshowchanges{\color{red}\sout{#1}}\fi}
+% One-line entry header: bold title and italic organisation on the left,
+% dates (and location) flush right, moved to the next line only if they don't fit.
+\newcommand{\entryheader}[3]{
+    \begin{onecolentry}
+        \textbf{#1}, \textit{#2}{\unskip\nobreak\hfil\penalty50\hskip1em\hbox{}\nobreak\hfil\textit{#3}\parfillskip=0pt\finalhyphendemerits=0\par}
+    \end{onecolentry}
+}
+
+\newenvironment{addedblock}{\ifshowchanges\color{ForestGreen}\fi}{}
+
 \begin{document}
     \newcommand{\AND}{\unskip
         \cleaders\copy\ANDbox\hskip\wd\ANDbox
@@ -158,33 +221,92 @@
     \begin{header}
         \textbf{\fontsize{24 pt}{24 pt}\selectfont Emanuele Rossi}
 
-        \vspace{0.3 cm}
+        \vspace{0.1 cm}
 
         \normalsize
-        \mbox{\hrefWithoutArrow{mailto:emanuele.rossi1909@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}emanuele.rossi1909@gmail.com}}%
+        \mbox{\hrefWithoutArrow{mailto:emanuele.rossi1909@gmail.com}{\color{primaryColor}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}emanuele.rossi1909@gmail.com}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://www.emanuelerossi.co.uk/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}Website}}%
+        \mbox{\hrefWithoutArrow{https://www.emanuelerossi.co.uk/}{\color{primaryColor}{\footnotesize\faLink}\hspace*{0.13cm}Website}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://scholar.google.com/citations?user=DHlkBOYAAAAJ}{\color{black}{\footnotesize\faGraduationCap}\hspace*{0.13cm}Scholar}}%
+        \mbox{\hrefWithoutArrow{https://scholar.google.com/citations?user=DHlkBOYAAAAJ}{\color{primaryColor}{\footnotesize\faGraduationCap}\hspace*{0.13cm}Scholar}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://linkedin.com/in/emanuele-rossi/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}LinkedIn}}%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/emanuele-rossi/}{\color{primaryColor}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}LinkedIn}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://github.com/emalgorithm}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}GitHub}}%
+        \mbox{\hrefWithoutArrow{https://github.com/emalgorithm}{\color{primaryColor}{\footnotesize\faGithub}\hspace*{0.13cm}GitHub}}%
     \end{header}
 
     \vspace{0.15 cm}
 
     \begin{onecolentry}
-        Researcher working on machine learning for animal communication, part of a broader interest in leveraging ML to recover structure in complex systems: previously social graphs (Temporal Graph Networks, SIGN) at Twitter and Imperial College London, and generative models for biomolecules at VantAI.
+        Machine learning researcher developing methods to understand non-human communication, as part of a broader interest in using ML to uncover structure in complex systems: previously graph learning at Twitter and Imperial College London, and generative models for biomolecules at VantAI.
     \end{onecolentry}
+
+    \vspace{0.08 cm}
+    \begin{onecolentry}
+        \textbf{\hrefWithoutArrow{https://scholar.google.com/citations?user=DHlkBOYAAAAJ}{\color{primaryColor}Google Scholar metrics:}} 4,800+ citations; h-index 16 (October 2026).
+    \end{onecolentry}
+
+    \section{Experience}
+
+    \entryheader{Postdoctoral Researcher}{\href{https://gladia.di.uniroma1.it/}{GLADIA}, Sapienza University of Rome}{Oct 2025 – Present, Rome (remote)}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Developing novel machine-learning methods to deepen our understanding of non-human communication.
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.2 cm}
+
+    \entryheader{Machine Learning Advisor}{\href{https://amboss.tech}{Amboss Technologies}}{Oct 2023 – Present, Remote}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Advising the ML team on graph and reinforcement learning methods for the \textbf{Bitcoin Lightning Network}.
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.2 cm}
+
+    \entryheader{Machine Learning Researcher}{VantAI}{Jan 2024 – Aug 2025, NYC (remote)}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item \textbf{Co-led development of \href{https://www.vant.ai/neo-1}{Neo-1}}, a state-of-the-art all-atom latent diffusion model for multimodal structure prediction and de-novo generation of biomolecular complexes, trained on 100+ GPUs.
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.2 cm}
+
+    \entryheader{Machine Learning Researcher}{Twitter}{Jun 2019 – Feb 2023, London}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Developed \textbf{graph ML models} for Twitter's social graph and deployed a recommendation model that generated \textbf{1.2M additional daily follows}
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.2 cm}
+
+    \entryheader{Machine Learning Researcher}{Fabula AI}{Mar 2019 – Jun 2019, London}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Developed graph ML models for fake news detection as part of Fabula AI's small research team before \href{https://techcrunch.com/2019/06/03/twitter-bags-deep-learning-talent-behind-london-startup-fabula-ai/}{Twitter acquired the company}
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.2 cm}
+
+    \entryheader{Software Engineering Intern}{Google}{Jul 2017 – Oct 2017, California}
 
     \section{Education}
 
@@ -220,125 +342,73 @@
         \textit{Bachelor in Computer Science, First Class Honors} (\textbf{4.0 GPA})
     \end{twocolentry}
 
-    \section{Experience}
-
-    \begin{twocolentry}{
-    \textit{Rome (remote)}
-
-    \textit{Oct 2025 – Present}}
-        \textbf{Postdoctoral Researcher}
-
-        \textit{\href{https://gladia.di.uniroma1.it/}{GLADIA Research Group}, Sapienza University of Rome} -- \textit{With Prof. E. Rodolà}
-    \end{twocolentry}
-
-    \vspace{0.10 cm}
-    \begin{onecolentry}
-        \begin{highlights}
-            \item Developing machine learning methods for animal communication.
-        \end{highlights}
-    \end{onecolentry}
-
-    \vspace{0.1 cm}
-
-    \begin{twocolentry}{
-    \textit{NYC (remote)}
-
-    \textit{Jan 2024 – Aug 2025}}
-        \textbf{Machine Learning Researcher}
-
-        \textit{VantAI}
-    \end{twocolentry}
-
-    \vspace{0.10 cm}
-    \begin{onecolentry}
-        \begin{highlights}
-            \item \textbf{Co-led development of \href{https://www.vant.ai/neo-1}{Neo-1}}, a state-of-the-art all-atom latent diffusion model for multimodal structure prediction and de-novo generation of biomolecular complexes, trained on 100+ GPUs.
-        \end{highlights}
-    \end{onecolentry}
-
-    \vspace{0.1 cm}
-
-    \begin{twocolentry}{
-    \textit{London}
-
-    \textit{Jun 2019 – Feb 2023}}
-        \textbf{Machine Learning Researcher}
-
-        \textit{Twitter}
-    \end{twocolentry}
-
-    \vspace{0.10 cm}
-    \begin{onecolentry}
-        \begin{highlights}
-            \item Developed \textbf{graph ML models} for Twitter's social graph and deployed a recommendation model that generated \textbf{1.2M additional daily follows}
-        \end{highlights}
-    \end{onecolentry}
-
-    \vspace{0.1 cm}
-
-    \begin{twocolentry}{
-    \textit{London}
-
-    \textit{Mar 2019 – Jun 2019}}
-        \textbf{Machine Learning Researcher}
-
-        \textit{Fabula AI}
-    \end{twocolentry}
-
-    \vspace{0.10 cm}
-    \begin{onecolentry}
-        \begin{highlights}
-            \item Developed graph ML models for fake news detection as part of Fabula AI's small research team before \href{https://techcrunch.com/2019/06/03/twitter-bags-deep-learning-talent-behind-london-startup-fabula-ai/}{Twitter acquired the company}
-        \end{highlights}
-    \end{onecolentry}
-
-    \vspace{0.1 cm}
-
-    \begin{twocolentry}{
-    \textit{California}
-
-    \textit{Jul 2017 – Oct 2017}}
-        \textbf{Software Engineering Intern}
-
-        \textit{Google}
-    \end{twocolentry}
-
+    % The full CV lists every publication instead of a selection.
+    \iffullcv
+        \input{emanuele_rossi_cv_publications.tex}
+    \else
     \section{\texorpdfstring{Selected Publications \hfill \normalfont\small \hrefWithoutArrow{https://emanuelerossi.co.uk/publications/}{Full list}}{Selected Publications}}
 
     \begin{onecolentry}
         \textbf{Animal Communication \& Audio}
 
         \begin{highlightsforbulletentries}
-            \item \textit{E. Rossi and E. Rodolà.} \href{https://arxiv.org/abs/2605.08750}{Communicating Sound Through Natural Language}. \textit{arXiv 2026}.
-
-            \item \textit{D. Marincione et al.} \href{https://arxiv.org/abs/2511.05171}{Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models}. \textit{NeurIPS Workshop on AI for Animal Communication 2025, Spotlight (top 15\%)}.
-        \end{highlightsforbulletentries}
-
-        \vspace{0.05 cm}
-        \textbf{Graph Learning}
-
-        \begin{highlightsforbulletentries}
-            \item \textit{E. Rossi et al.} \href{https://arxiv.org/abs/2006.10637}{Temporal Graph Networks for Deep Learning on Dynamic Graphs}. \textit{ICML GRL Workshop 2020}. \textbf{1,700+ citations} and \href{https://github.com/twitter-research/tgn}{\textbf{1,000+ GitHub stars}}.
-
-            \item \textit{E. Rossi$^*$, F. Frasca$^*$ et al.} \href{https://arxiv.org/abs/2004.11198}{SIGN: Scalable Inception Graph Neural Networks}. \textit{ICML GRL Workshop 2020}. \textbf{600+ citations} and used in \href{https://medium.com/airbnb-engineering/graph-machine-learning-at-airbnb-f868d65f36ee}{\textbf{production at Airbnb}}.
-
-            \item \textit{B. Chamberlain, S. Shirobokov, E. Rossi et al.} \href{https://arxiv.org/abs/2209.15486}{Graph Neural Networks for Link Prediction with Subgraph Sketching}. \textit{ICLR 2023, Oral (top 5\%)}. \textbf{200+ citations}.
+            \item \textit{D. Marincione, D. Crisostomi, R. Dessì, E. Rodolà, and \textbf{E. Rossi}.} \href{https://arxiv.org/abs/2511.05171}{Model Merging Improves Zero-Shot Generalization in Bioacoustic Foundation Models}. \textit{NeurIPS 2025 AI for Animal Comm.\ Workshop, Spotlight (top 15\%)}.
         \end{highlightsforbulletentries}
     \end{onecolentry}
 
-    \section{Leadership}
+    \begin{onecolentry}
+        \begin{highlightsforbulletentries}
+            \item \textit{F. Mustun, C. Semenzin, \ldots, \textbf{E. Rossi} et al.} \href{https://arxiv.org/abs/2609.34839}{OpenWhistle: A Large-Scale Longitudinal Dataset and Benchmark of Bottlenose Dolphin Vocalizations}. \textit{NeurIPS 2026, Spotlight (top 1.3\%)}.
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
 
-    \begin{twocolentry}{
+    \begin{onecolentry}
+        \begin{highlightsforbulletentries}
+            \item \textit{\textbf{E. Rossi} and E. Rodolà.} \href{https://arxiv.org/abs/2605.08750}{Communicating Sound Through Natural Language}. \textit{Under review, 2026}.
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
 
+    \vspace{0.05 cm}
+    \begin{onecolentry}
+        \textbf{Graph Learning}
 
-    \textit{Jun 2018 – Mar 2023}}
-        \textbf{Co-Founder, LeadTheFuture} (\href{https://forbes.it/2020/03/01/stage-da-google-o-alla-nasa-con-leadthefuture-idea-di-tre-ragazzi-italiani/}{Forbes article})
-    \end{twocolentry}
+        \begin{highlightsforbulletentries}
+            \item \textit{\textbf{E. Rossi} et al.} \href{https://arxiv.org/abs/2006.10637}{Temporal Graph Networks for Deep Learning on Dynamic Graphs}. \textit{ICML GRL Workshop 2020}. \textbf{2,000+ citations} and \href{https://github.com/twitter-research/tgn}{\textbf{1,200+ GitHub stars}}.
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
 
-    \vspace{0.10 cm}
+    \begin{onecolentry}
+        \begin{highlightsforbulletentries}
+            \item \textit{\textbf{E. Rossi}$^*$, F. Frasca$^*$ et al.} \href{https://arxiv.org/abs/2004.11198}{SIGN: Scalable Inception Graph Neural Networks}. \textit{ICML GRL Workshop 2020}. \textbf{600+ citations} and used in \href{https://medium.com/airbnb-engineering/graph-machine-learning-at-airbnb-f868d65f36ee}{\textbf{production at Airbnb}}.
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
+
+    \begin{onecolentry}
+        \begin{highlightsforbulletentries}
+            \item \textit{B. Chamberlain, S. Shirobokov, \textbf{E. Rossi} et al.} \href{https://arxiv.org/abs/2209.15486}{Graph Neural Networks for Link Prediction with Subgraph Sketching}. \textit{ICLR 2023, Oral (top 5\%)}. \textbf{200+ citations}.
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
+    \fi
+
+    % The full CV lists grants, awards, supervision, talks and service here; the
+    % short CV folds mentoring, funding and recognition into the section below.
+    \iffullcv
+        \input{emanuele_rossi_cv_outreach.tex}
+    \fi
+
+    \iffullcv
+        \section{Leadership}
+    \else
+        \section{Leadership, Mentoring \& Recognition}
+    \fi
+
     \begin{onecolentry}
         \begin{highlights}
-            \item Built a non-profit mentoring community with more than \textbf{200 mentors} and \textbf{500 selected mentees}
+            \item \textbf{Leadership:} co-founded LeadTheFuture (\href{https://forbes.it/2020/03/01/stage-da-google-o-alla-nasa-con-leadthefuture-idea-di-tre-ragazzi-italiani/}{Forbes article}), a non-profit mentoring community with more than \textbf{200 mentors} and \textbf{500 selected mentees} (2018–2023).
+    \unless\iffullcv
+            \item \textbf{Mentoring:} supervised \textbf{7 students and engineers} across Sapienza, Mila, VantAI and Amboss, resulting in \textbf{6 joint papers} (e.g.\ NeurIPS, LoG, IEEE ICBC).
+            \item \textbf{Funding \& recognition:} CINECA ISCRA-C compute grant (\textbf{8,500 A100 GPU-hours}, 2026); NeurIPS 2026 Top Reviewer (top 10\%); Organizer, NeurIPS 2023 Temporal Graph Learning Workshop.
+    \fi
         \end{highlights}
     \end{onecolentry}
 

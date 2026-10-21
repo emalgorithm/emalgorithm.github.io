@@ -231,7 +231,7 @@ mentoring:
     url: https://siantonelli.github.io/
     position: "ML Research Intern @ Amboss Technologies"
     publications:
-      - title: "Predicting Link Closure in the Lightning Network with Temporal Graph Networks"
+      - title: "Predicting Channel Closures in the Lightning Network with Machine Learning"
         url: /publications/?q=antonelli2026lightning
 
   - start_date: "2024-10-01"

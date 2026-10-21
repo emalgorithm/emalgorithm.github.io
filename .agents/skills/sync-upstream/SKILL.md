@@ -1,11 +1,20 @@
 ---
 name: sync-upstream
-description: Merge the latest upstream al-folio (alshedivat/al-folio) into this fork while keeping site content and customizations, verify the build in Docker, and open a PR. Use when asked to sync, update or pull from upstream al-folio.
+description: Merge the latest upstream al-folio (alshedivat/al-folio) into this fork while keeping site content and customizations, verify the build and visuals in Docker, have an independent agent review it, merge the PR and report what changed. Use when asked to sync, update or pull from upstream al-folio, and for the scheduled monthly sync.
 ---
 
 # Sync with upstream al-folio
 
-Goal: one merge commit on a `chore/sync-upstream-<timestamp>` branch whose second parent is `upstream/main`, verified locally, opened as a PR. Work autonomously; only stop for a genuinely ambiguous conflict.
+Goal: one merge commit on a `chore/sync-upstream-<timestamp>` branch whose second parent is `upstream/main`, verified locally (build, CI gates, visuals), independently reviewed, merged, and summarised for the site owner. Work autonomously. On a genuinely ambiguous conflict or an unresolved review finding, leave the PR open and say why in the report instead of merging.
+
+## 0. Anything to sync?
+
+```bash
+git fetch upstream
+git log --oneline --no-merges origin/main..upstream/main
+```
+
+If nothing is new, or every new commit is upstream housekeeping that doesn't affect the fork (`refresh star history chart`, `refresh README screenshots`, `Update Google Scholar citations`, `Auto update markdown TOC`), stop and report "nothing worth syncing" in one line.
 
 ## 1. Branch
 
@@ -78,7 +87,16 @@ docker compose exec -T jekyll sh -c 'cd /srv/jekyll && bundle exec al-folio upgr
 
 For each override reported `stale`, compare the gem versions (`gem fetch al_folio_core -v <old> && gem unpack ...` in the container; the new one is under `/usr/local/bundle/gems/`), apply upstream's diff to the local file, then `bundle exec al-folio upgrade overrides accept <path>` and prettier-format `.al-folio-overrides.yml`. Re-accept any override that prettier reformatted.
 
-Then in the built-in browser: home, publications and CV render; the dark-mode toggle (`#light-toggle`) flips `data-theme`; the console shows no errors other than the dev-only livereload CSP block. Fix regressions before pushing.
+Then in the built-in browser: home, publications and CV render; the dark-mode toggle (`#light-toggle`) flips `data-theme`; the console shows no errors other than the dev-only livereload CSP block.
+
+**Visual comparison against the live site.** The live site is the baseline, since it is built from `origin/main`. First confirm the latest Pages deployment is for `origin/main` (`gh api repos/emalgorithm/emalgorithm.github.io/deployments -q '.[0].sha'` equals `git rev-parse origin/main`; wait for the deploy otherwise). Then, with the candidate served on `:8080`:
+
+```bash
+npx playwright install chromium   # once per Playwright version
+node .agents/skills/sync-upstream/compare_site.mjs <scratch-dir>/visual
+```
+
+It screenshots home, publications, CV, blog, outreach and news at desktop and mobile width in light and dark theme, and writes baseline/candidate/diff PNGs plus a per-shot diff percentage. Small diffs from animated previews are noise; a block shifted down shifts everything below it, so find where the first difference starts in the diff image and compare the two screenshots there. The bar is: everything looks as before or better, with nothing missing, broken, unstyled or harder to read. Fix regressions before pushing.
 
 ## 6. Push and open PR
 
@@ -92,3 +110,35 @@ gh api repos/emalgorithm/emalgorithm.github.io/pulls --method POST \
 (Plain `gh pr create` resolves the wrong repo because of the `upstream` remote.) The body should list the upstream changes pulled in, a conflict-resolution table (file → resolution), verification results, and the reminder below.
 
 **Merge the PR with a regular merge commit, never squash.** Squashing drops the upstream parent and breaks the next sync (see step 2).
+
+## 7. Independent review
+
+Spawn a separate agent (Agent tool, `general-purpose`, fresh context, not a fork of this conversation) to review the PR before merging. Give it the PR URL, the branch name, the visual-comparison directory, and this brief:
+
+- Check every conflict resolution against step 3: personal `_config.yml` values kept, new upstream keys and pins taken, `Gemfile` plugin group and `_config.yml` `plugins:` in sync, fork content and `_data/citations.yml` untouched, new upstream demo posts excluded.
+- Scan the full upstream diff (`git diff origin/main...HEAD`) for anything the merge silently dropped or that changes site behaviour the PR body doesn't mention.
+- Run the step-5 gates again (prettier, `upgrade audit`, `overrides audit --fail-on-stale`) and read the CI results on the PR.
+- Inspect the visual comparison: look at every shot with a non-trivial diff, side by side, and judge whether the page looks the same or better.
+- Return a list of findings, each marked blocking or non-blocking, with file/page and evidence. Report only, no edits.
+
+Fix blocking findings, re-run the affected checks, and ask the reviewer to re-check if the fix was substantial. Note non-blocking findings in the report.
+
+## 8. Merge
+
+```bash
+gh pr checks <number> --repo emalgorithm/emalgorithm.github.io --watch --fail-fast
+gh pr merge <number> --repo emalgorithm/emalgorithm.github.io --merge --delete-branch
+```
+
+Only merge when CI is green and the review has no open blocking findings. Then `docker compose down`.
+
+## 9. Report
+
+End with a short report for the site owner, at most ~15 lines:
+
+- **Synced:** upstream range, PR link, merged or not (and why).
+- **What changed upstream that matters for this site:** a few bullets, each one line on what it is and why it's relevant, e.g. a new plugin, a feature flag, a gem bump fixing something visible, a new config option.
+- **Worth using:** for anything the site could take advantage of, the concrete step (e.g. "enable `al_marimo` in `_config.yml` and `Gemfile` to embed notebooks in posts").
+- **Review notes:** non-blocking findings, if any.
+
+Skip upstream changes that don't affect this fork (CI for the starter repo, README screenshots, docs-only edits) or mention them in one line at most.

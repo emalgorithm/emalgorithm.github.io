@@ -35,8 +35,9 @@ git log -1 --format='%h %ad %s' --date=short $(git merge-base HEAD upstream/main
   git merge-tree --write-tree --merge-base=$BASE HEAD upstream/main   # preview: lists real conflicts
   git read-tree -m -u $BASE HEAD upstream/main
   git merge-index -o -q git-merge-one-file -a
-  git rev-parse upstream/main > .git/MERGE_HEAD
-  echo "chore: sync with upstream al-folio" > .git/MERGE_MSG
+  GD=$(git rev-parse --git-dir)   # .git is a file in worktrees
+  git rev-parse upstream/main > "$GD/MERGE_HEAD"
+  echo "chore: sync with upstream al-folio" > "$GD/MERGE_MSG"
   ```
 
   Resolve conflicts, then `git commit --no-edit`. The commit records the real upstream parent, so the next sync is a normal merge again.
@@ -52,7 +53,7 @@ The fork is a thin starter: runtime lives in `al_*` gems, so conflicts are almos
 - Local overrides (`_sass/_custom.scss`, any `_includes`/`_layouts` override listed in `.al-folio-overrides.yml`): keep the fork; if upstream changed the overridden gem file, port the fork's tweak onto it.
 - If a conflict needs a judgment call about site behavior, ask.
 
-After resolving, also check the auto-merged diff (`git diff --cached --stat HEAD`) for upstream changes to fork content. New upstream demo posts are fine — the fork keeps al-folio's demo posts.
+After resolving, also check the auto-merged diff (`git diff --cached --stat HEAD`) for upstream changes to fork content. The fork hides al-folio's demo posts via `_config.yml` `exclude:` (not deletion, to avoid conflicts): add any new upstream `_posts/` demo files there.
 
 ## 4. Known traps
 
@@ -88,6 +89,6 @@ gh api repos/emalgorithm/emalgorithm.github.io/pulls --method POST \
   -F body=@<body.md> -q .html_url
 ```
 
-(`gh pr create` can fail on merge commits and resolves the wrong repo because of the `upstream` remote.) The body should list the upstream changes pulled in, a conflict-resolution table (file → resolution), verification results, and the reminder below.
+(Plain `gh pr create` resolves the wrong repo because of the `upstream` remote.) The body should list the upstream changes pulled in, a conflict-resolution table (file → resolution), verification results, and the reminder below.
 
 **Merge the PR with a regular merge commit, never squash.** Squashing drops the upstream parent and breaks the next sync (see step 2).

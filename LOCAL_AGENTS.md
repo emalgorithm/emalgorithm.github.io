@@ -4,7 +4,7 @@ This file contains site-specific instructions for emalgorithm.github.io, a fork 
 
 ## Fork Policy
 
-This repo is a fork of al-folio. Keep changes content-focused; minimise style/template edits to reduce merge conflicts with upstream updates. Refer to `CUSTOMIZE.md` before making any theme changes.
+This repo is a fork of al-folio. Keep changes content-focused; minimise style/template edits to reduce merge conflicts with upstream updates. Refer to `docs/CUSTOMIZE.md` before making any theme changes.
 
 ## Running locally
 

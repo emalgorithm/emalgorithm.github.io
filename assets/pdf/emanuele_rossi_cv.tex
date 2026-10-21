@@ -251,7 +251,7 @@
 
     \vspace{0.08 cm}
     \begin{onecolentry}
-        \textbf{\hrefWithoutArrow{https://scholar.google.com/citations?user=DHlkBOYAAAAJ}{\color{primaryColor}Google Scholar metrics:}} 4,500+ citations; h-index 15 (August 2026).
+        \textbf{\hrefWithoutArrow{https://scholar.google.com/citations?user=DHlkBOYAAAAJ}{\color{primaryColor}Google Scholar metrics:}} 4,800+ citations; h-index 16 (October 2026).
     \end{onecolentry}
 
     \section{Experience}
@@ -342,6 +342,10 @@
         \textit{Bachelor in Computer Science, First Class Honors} (\textbf{4.0 GPA})
     \end{twocolentry}
 
+    % The full CV lists every publication instead of a selection.
+    \iffullcv
+        \input{emanuele_rossi_cv_publications.tex}
+    \else
     \section{\texorpdfstring{Selected Publications \hfill \normalfont\small \hrefWithoutArrow{https://emanuelerossi.co.uk/publications/}{Full list}}{Selected Publications}}
 
     \begin{onecolentry}
@@ -369,7 +373,7 @@
         \textbf{Graph Learning}
 
         \begin{highlightsforbulletentries}
-            \item \textit{\textbf{E. Rossi} et al.} \href{https://arxiv.org/abs/2006.10637}{Temporal Graph Networks for Deep Learning on Dynamic Graphs}. \textit{ICML GRL Workshop 2020}. \textbf{1,700+ citations} and \href{https://github.com/twitter-research/tgn}{\textbf{1,200+ GitHub stars}}.
+            \item \textit{\textbf{E. Rossi} et al.} \href{https://arxiv.org/abs/2006.10637}{Temporal Graph Networks for Deep Learning on Dynamic Graphs}. \textit{ICML GRL Workshop 2020}. \textbf{2,000+ citations} and \href{https://github.com/twitter-research/tgn}{\textbf{1,200+ GitHub stars}}.
         \end{highlightsforbulletentries}
     \end{onecolentry}
 
@@ -384,9 +388,14 @@
             \item \textit{B. Chamberlain, S. Shirobokov, \textbf{E. Rossi} et al.} \href{https://arxiv.org/abs/2209.15486}{Graph Neural Networks for Link Prediction with Subgraph Sketching}. \textit{ICLR 2023, Oral (top 5\%)}. \textbf{200+ citations}.
         \end{highlightsforbulletentries}
     \end{onecolentry}
+    \fi
 
-    % The short CV folds mentoring, funding and recognition into this section;
-    % the full CV lists them in detail in the generated sections below.
+    % The full CV lists grants, awards, supervision, talks and service here; the
+    % short CV folds mentoring, funding and recognition into the section below.
+    \iffullcv
+        \input{emanuele_rossi_cv_outreach.tex}
+    \fi
+
     \iffullcv
         \section{Leadership}
     \else
@@ -402,10 +411,5 @@
     \fi
         \end{highlights}
     \end{onecolentry}
-
-    \iffullcv
-        \input{emanuele_rossi_cv_outreach.tex}
-        \input{emanuele_rossi_cv_publications.tex}
-    \fi
 
 \end{document}

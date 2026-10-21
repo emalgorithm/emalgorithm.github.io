@@ -208,13 +208,6 @@ research_grants:
     value_qualifier: "equivalent"
     duration: "9 months"
 
-  - date: "2026-04-01"
-    title: "Research Fellowship"
-    institution: "Sapienza University of Rome"
-    description: "For postdoctoral research on machine learning for non-human communication."
-    value: "€36,000"
-    duration: "12 months"
-
   - date: "2023-02-06"
     years: "2022, 2023"
     title: "Google Cloud Research Credits"

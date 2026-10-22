@@ -4,6 +4,7 @@ title: Presentations
 permalink: /presentations/
 description: Redirecting to Outreach.
 nav: false
+sitemap: false
 ---
 
 <!DOCTYPE html>

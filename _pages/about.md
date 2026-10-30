@@ -2,7 +2,6 @@
 layout: about
 title: About
 permalink: /
-description: Emanuele Rossi, machine learning researcher at Sapienza University of Rome working on ML for animal communication. Previously PhD at Twitter and Imperial College London on graph neural networks (Temporal Graph Networks).
 subtitle: MLxAnimal Communication @ Sapienza University
 
 profile:

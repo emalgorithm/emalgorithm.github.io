@@ -7,7 +7,7 @@ thumbnail: /assets/img/blog/network_games/cover.png
 
 authors:
   - name: Emanuele Rossi
-    url: "www.emanuelerossi.co.uk"
+    url: "https://emanuelerossi.co.uk"
     affiliations:
       name: Imperial College London
   - name: Michael Bronstein

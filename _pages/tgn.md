@@ -2,7 +2,7 @@
 layout: page
 title: Temporal Graph Networks (TGN)
 permalink: /tgn/
-description: A framework for deep learning on dynamic graphs that change over time, developed at Twitter.
+description: A framework for deep learning on graphs that change over time, developed at Twitter. Cited over 2,000 times, with 1,200+ stars on GitHub.
 nav: false
 ---
 
@@ -29,7 +29,7 @@ nav: false
 
 ## In short
 
-Most graph neural networks assume a graph that does not change. Many real systems are not like that: in social networks, financial transactions or recommender systems, nodes and edges keep appearing over time. **Temporal Graph Networks (TGN)** learn directly from such a graph seen as a continuous stream of timestamped events.
+Most graph neural networks assume a graph that does not change. Many real systems are not like that: nodes and edges keep appearing over time in social networks, financial transactions and recommender systems, but also across science, from the contact networks through which epidemics spread, to interactions between proteins or brain regions, to the social structure of animal groups. **Temporal Graph Networks (TGN)** learn directly from such a graph seen as a continuous stream of timestamped events.
 
 The key idea is a **memory** for every node: a compact summary of everything that node has been involved in so far, updated each time a new event touches it. When the model needs a representation of a node, it combines this memory with information from the node's recent neighbours through a graph attention layer. This makes TGN both more accurate and more efficient than previous approaches to dynamic graphs.
 
@@ -42,11 +42,16 @@ TGN is a framework made of a few interchangeable modules:
 - **Memory updater**: a recurrent network (such as a GRU) that updates each node's memory with its new messages.
 - **Embedding module**: computes up-to-date node embeddings by aggregating memories of temporal neighbours with graph attention. This also handles nodes whose memory is stale because they have not been active recently.
 
+<div class="row justify-content-center mt-3">
+  <div class="col-sm-11">
+    {% include figure.liquid path="assets/img/tgn_training_flow.png" class="img-fluid rounded" alt="TGN training flow: a batch of timestamped interactions produces node embeddings, edge probabilities and a loss, then messages that update each node's memory" %}
+  </div>
+</div>
+<div class="caption">
+  How TGN processes a batch of interactions during training: (1) compute node embeddings from the current memory, (2) decode them into edge probabilities and (3) compute the loss; then (4) build messages from the batch and (5) use them to update the memory of the nodes involved.
+</div>
+
 Several earlier models for dynamic graphs, such as JODIE, DyRep and TGAT, can be expressed as particular choices of these modules. The paper includes an ablation study of the different components and identifies the best-performing configuration.
-
-## Abstract
-
-Graph Neural Networks (GNNs) have recently become increasingly popular due to their ability to learn complex systems of relations or interactions arising in a broad spectrum of problems ranging from biology and particle physics to social networks and recommendation systems. Despite the plethora of different models for deep learning on graphs, few approaches have been proposed thus far for dealing with graphs that present some sort of dynamic nature (e.g. evolving features or connectivity over time). In this paper, we present Temporal Graph Networks (TGNs), a generic, efficient framework for deep learning on dynamic graphs represented as sequences of timed events. Thanks to a novel combination of memory modules and graph-based operators, TGNs are able to significantly outperform previous approaches being at the same time more computationally efficient. We furthermore show that several previous models for learning on dynamic graphs can be cast as specific instances of our framework. We perform a detailed ablation study of different components of our framework and devise the best configuration that achieves state-of-the-art performance on several transductive and inductive prediction tasks for dynamic graphs.
 
 ## Code
 
